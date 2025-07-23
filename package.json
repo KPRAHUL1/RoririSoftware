@@ -20,6 +20,8 @@
     "path": "^0.12.7",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "react-fast-marquee": "^1.6.5",
+    "react-icons": "^5.5.0",
     "react-router-dom": "^7.7.0",
     "tailwind-variants": "^1.0.0",
     "tailwindcss": "^4.1.11"

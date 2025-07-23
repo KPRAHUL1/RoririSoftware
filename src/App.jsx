@@ -3,6 +3,8 @@ import Loader from "./components/loader";
 import { Route, Router, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
+import Footer from "./components/Footer";
+import Internship from "./pages/Internship/Internship";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -19,7 +21,9 @@ const App = () => {
      <Navbar/>
     <Routes>
       <Route path="/" element={<Home/>}/>
+      <Route path="/internship" element={<Internship/>}/>
     </Routes>
+    <Footer/>
     </>
    
   );
