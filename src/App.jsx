@@ -1,20 +1,27 @@
 import React, { useEffect, useState } from "react";
 import Loader from "./components/loader";
+import { Route, Router, Routes } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 2000); // Adjust delay
+    const timer = setTimeout(() => setLoading(false), 2000);
     return () => clearTimeout(timer);
   }, []);
 
   if (loading) return <Loader />;
 
   return (
-    <div className="p-10 text-center">
-      <h1 className="text-4xl font-bold text-blue-600">Welcome to RoririSoft 💻</h1>
-    </div>
+    <>
+     <Navbar/>
+    <Routes>
+      <Route path="/" element={<Home/>}/>
+    </Routes>
+    </>
+   
   );
 };
 
