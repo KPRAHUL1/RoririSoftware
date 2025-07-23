@@ -98,10 +98,10 @@ const Navbar = () => {
           </li>
         ))}
       </ul>
-       <div className="hidden md:block">
+       <div className="hidden lg:block">
         <a
           href="/book-consultation"
-          className="bg-black text-white px-5 py-2.5 rounded-lg shadow-lg  transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+          className="bg-black cursor-target text-white px-5 py-2.5 rounded-lg shadow-lg  transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
         >
           Let's Talk
         </a>
@@ -113,7 +113,7 @@ const Navbar = () => {
          <div className="hidden md:block">
         <a
           href="/book-consultation"
-          className="bg-black text-white px-5 py-2.5 rounded-lg shadow-lg  transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+          className="bg-black cursor-target text-white px-5 py-2.5 rounded-lg shadow-lg  transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
         >
           Let's Talk
         </a>

@@ -4,6 +4,9 @@ import TextType from '../components/ui/TextType/TypeWriter';
 import SplitText from '../components/ui/SplitText/splitText';
 import CountUp from '../components/ui/CountUp/CountUp';
 import TargetCursor from '../components/ui/TargetCursor/TargetCursor';
+import { ArrowBigRight, ArrowRight } from 'lucide-react';
+import Marquees from '../components/ui/Marquee/Marquee';
+import ScrollVelocity from '../components/ui/ScrollVelocity/ScrollVelocity';
 
 const Home = () => {
   return (
@@ -21,7 +24,7 @@ const Home = () => {
       
       
     </div>
-    <div className='flex flex-col-reverse md:flex-row '>  
+    <div className='flex flex-col-reverse md:flex-row bg-gray-50'>  
       
       <div className="relative   left-0 w-[300px] h-[300px] sm:w-[250px] sm:h-[250px] md:w-[600px] md:h-[600px] flex items-center justify-center">
         <img
@@ -47,7 +50,7 @@ const Home = () => {
       <div className='flex flex-col  justify-center p-5 z-10'>
        <h1 className='text-6xl '>Innovation at the Core of</h1>
        <TextType className='text-black z-50'
-  text={["Every Solution.", "Em powering Individual.", "Paving A Way ToSuccess."]}
+  text={["Every Solution.", "Evaluate Your Business.", "Paving A Way ToSuccess."]}
   typingSpeed={75}
   pauseDuration={1500}
   showCursor={true}
@@ -74,7 +77,13 @@ const Home = () => {
         spinDuration={2}
         hideDefaultCursor={true}
       />
-      <button className="cursor-target">Click me!</button>
+      <button className="cursor-target flex from-purple-500 px-3 py-2
+      bg-gradient-to-r
+      text-white
+      rounded-lg
+    to-blue-500
+    hover:from-purple-600 // Keep this
+    hover:to-blue-600 ">Book a free Consulting <ArrowRight/></button>
     </div>
 {
   [{count:'100',name:'Projects'},{count:'60',name:'Employees'},{count:'7',name:'Years'}].map((item,index)=>(
@@ -109,7 +118,14 @@ const Home = () => {
       </div>
       
     </div>
+  <Marquees/>
   
+<ScrollVelocity
+texts={['RORIRI','INOVATION']}
+  velocity={100} 
+  className="custom-scroll-text"
+/>
+
     </>
    
   );
