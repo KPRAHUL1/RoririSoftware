@@ -1,9 +1,17 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {motion as Motion ,AnimatePresence} from 'framer-motion'
 import { ChevronDown, Menu, X } from "lucide-react";
+import { AnimatedHamburgerButton } from "./ui/AnimatedHamburgerButtom/AnimatedHamburgerButton";
+
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openSubMenuIndex, setOpenSubMenuIndex] = useState(null);
+  const [activePath, setActivePath] = useState(''); // State to hold the active path
+
+  // Set active path based on current URL on component mount
+  useEffect(() => {
+    setActivePath(window.location.pathname);
+  }, []);
 
   const navItems = [
     { title: "Home", path: "/" },
@@ -26,7 +34,7 @@ const Navbar = () => {
         { title: "Internship", path: "/services/internship" },
       ],
     },
-    { title: "Product", path: "/product" }, 
+    { title: "Product", path: "/product" },
     { title: "Internship", path: "/internship" },
     { title: "Careers", path: "/careers" },
   ];
@@ -75,19 +83,27 @@ const Navbar = () => {
           <li key={index} className="relative group">
             <a
               href={item.path}
-              className="flex items-center gap-1 text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 py-2 px-3 rounded-md hover:bg-blue-50"
+              className={`
+                flex items-center gap-1 text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200 py-2 px-3 rounded-md hover:bg-blue-50
+                ${activePath === item.path ? 'text-blue-600 bg-blue-50' : ''}
+              `}
+              onClick={() => setActivePath(item.path)} // Update active path on click
             >
               {item.title}
               {item.submenu?.length > 0 && <ChevronDown size={16} className="transition-transform group-hover:rotate-180" />}
             </a>
             {item.submenu?.length > 0 && (
-              <Motion.ul 
+              <Motion.ul
               className="absolute top-full left-1/2 -translate-x-1/2 bg-white shadow-xl rounded-lg mt-0 p-2 min-w-[200px] hidden group-hover:block z-10 border border-gray-100 animate-fade-in-up pt-2">
                 {item.submenu.map((subItem, subIndex) => (
                   <li key={subIndex} className="px-2 py-2 flex hover:bg-blue-50 rounded-md transition-colors duration-200">
                     <a
                       href={subItem.path}
-                      className="block text-gray-700 hover:text-blue-600 font-normal "
+                      className={`
+                        block text-gray-700 hover:text-blue-600 font-normal
+                        ${activePath === subItem.path ? 'text-blue-600 font-semibold' : ''}
+                      `}
+                      onClick={() => setActivePath(subItem.path)} // Update active path on click
                     >
                       {subItem.title}
                     </a>
@@ -106,11 +122,10 @@ const Navbar = () => {
           Let's Talk
         </a>
       </div>
-     
 
 
       <div className="lg:hidden flex gap-3 items-center">
-         <div className="hidden md:block">
+          <div className="hidden md:block">
         <a
           href="/book-consultation"
           className="bg-black cursor-target text-white px-5 py-2.5 rounded-lg shadow-lg  transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
@@ -120,9 +135,9 @@ const Navbar = () => {
       </div>
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="p-2 text-gray-700 hover:text-blue-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className=" text-gray-700 hover:text-blue-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
         >
-          {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          <AnimatedHamburgerButton/>
         </button>
       </div>
 
@@ -140,9 +155,18 @@ const Navbar = () => {
                 <Motion.li key={index} variants={listItemVariants}>
                   <div
                     onClick={() => item.submenu ? toggleSubMenu(index) : setIsMobileMenuOpen(false)}
-                    className="flex justify-between items-center text-gray-800 font-medium cursor-pointer py-2 px-3 rounded-md hover:bg-blue-50 transition-colors duration-200"
+                    className={`
+                      flex justify-between items-center text-gray-800 font-medium cursor-pointer py-2 px-3 rounded-md hover:bg-blue-50 transition-colors duration-200
+                      ${activePath === item.path ? 'text-blue-600 bg-blue-50' : ''}
+                    `}
                   >
-                    <a href={item.path} onClick={() => setIsMobileMenuOpen(false)}>
+                    <a
+                      href={item.path}
+                      onClick={() => {
+                        setIsMobileMenuOpen(false);
+                        setActivePath(item.path); // Update active path on click
+                      }}
+                    >
                       {item.title}
                     </a>
                     {item.submenu?.length > 0 && (
@@ -164,8 +188,14 @@ const Navbar = () => {
                         <Motion.li key={subIndex} variants={listItemVariants}>
                           <a
                             href={subItem.path}
-                            onClick={() => setIsMobileMenuOpen(false)}
-                            className="block text-gray-600 p-2 hover:text-blue-600 py-1 px-2 rounded-md hover:bg-blue-50 transition-colors duration-200"
+                            onClick={() => {
+                              setIsMobileMenuOpen(false);
+                              setActivePath(subItem.path); // Update active path on click
+                            }}
+                            className={`
+                              block text-gray-600 p-2 hover:text-blue-600 py-1 px-2 rounded-md hover:bg-blue-50 transition-colors duration-200
+                              ${activePath === subItem.path ? 'text-blue-600 font-semibold' : ''}
+                            `}
                           >
                             {subItem.title}
                           </a>
@@ -182,7 +212,7 @@ const Navbar = () => {
                   className="bg-black text-white px-4 py-2.5 rounded-lg shadow-lg hover:bg-blue-700 block text-center transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                 Let's Talk
+                  Let's Talk
                 </a>
               </Motion.li>
             </ul>
@@ -192,4 +222,4 @@ const Navbar = () => {
     </nav>
   );
 };
-export default Navbar
+export default Navbar;

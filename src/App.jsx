@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Footer from "./components/Footer";
 import Internship from "./pages/Internship/Internship";
+import Contact from "./pages/Contact/Contact";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -22,6 +23,7 @@ const App = () => {
     <Routes>
       <Route path="/" element={<Home/>}/>
       <Route path="/internship" element={<Internship/>}/>
+      <Route path="/contact" element={<Contact/>}/>
     </Routes>
     <Footer/>
     </>

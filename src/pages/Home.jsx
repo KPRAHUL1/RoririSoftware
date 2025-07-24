@@ -4,9 +4,13 @@ import TextType from '../components/ui/TextType/TypeWriter';
 import SplitText from '../components/ui/SplitText/splitText';
 import CountUp from '../components/ui/CountUp/CountUp';
 import TargetCursor from '../components/ui/TargetCursor/TargetCursor';
-import { ArrowBigRight, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import Marquees from '../components/ui/Marquee/Marquee';
 import ScrollVelocity from '../components/ui/ScrollVelocity/ScrollVelocity';
+import Whatwedo from './WhatweDo/Whatwedo';
+import TestimonialPage from './Founderpage';
+import CallToAction from './Contact/components/CalltoAction';
+import MarketingSection from './MarcetingSection/MarketingSection';
 
 const Home = () => {
   return (
@@ -119,12 +123,15 @@ const Home = () => {
       
     </div>
   <Marquees/>
-  
+<Whatwedo/>
 <ScrollVelocity
 texts={['RORIRI','INOVATION']}
   velocity={100} 
   className="custom-scroll-text"
 />
+<MarketingSection/>
+<TestimonialPage/>
+<CallToAction/>
 
     </>
    
