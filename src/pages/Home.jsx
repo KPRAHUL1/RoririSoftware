@@ -11,7 +11,6 @@ import Whatwedo from './WhatweDo/Whatwedo';
 import TestimonialPage from './Founderpage';
 import CallToAction from './Contact/components/CalltoAction';
 import MarketingSection from './MarcetingSection/MarketingSection';
-
 const Home = () => {
   
   return (
@@ -121,15 +120,24 @@ const Home = () => {
 
     </div>
       </div>
-      
+      <iframe src="https://lottie.host/embed/ae52e585-f936-4010-bd2d-5bb57251e4f3/KnL7beewYH.lottie"></iframe>
     </div>
   <Marquees/>
 <Whatwedo/>
+<div className='h-screen flex flex-col justify-center items-center'>
+  <div>
+    <h1>About</h1>
+    <span>The Story of <span>Roriri Soft</span> </span>
+    <p>A Growing Company with Clear Vision.</p>
+  </div>
+</div>
+ 
 <ScrollVelocity
-texts={['RORIRI SOFTWARE','TECHNOLOGIES']}
+texts={['RORIRI SOFT ★','TECHNOLOGIES ★']}
   velocity={100} 
   className="custom-scroll-text"
 />
+
 <MarketingSection/>
 <TestimonialPage/>
 <CallToAction/>

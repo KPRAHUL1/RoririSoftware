@@ -1,5 +1,4 @@
 import React from 'react';
-import image from '../../assets/whatwedo/image.png'
 import RotatingText from '../../components/ui/RotatingText/Rotating';
 const servicesData = [
   {
@@ -44,7 +43,7 @@ const Whatwedo = () => {
         
       </div>
       <div className=''>
-       <img src={image} alt=""  className='w-lvh'/>
+     <iframe src="https://lottie.host/embed/b9f88715-a4aa-4140-92fc-508617d211fd/oQXGninZOZ.lottie" className='h-full lg:w-[500px]'></iframe>
       </div>
 
       <div className="relative max-w-7xl mx-auto">
