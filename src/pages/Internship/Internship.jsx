@@ -1,6 +1,5 @@
 import React from 'react'
 import InternshipRegistrationForm from './components/Form'
-import hero from '../../assets/images/image.png'
 import certificate from '../../assets/certificate/image.png'
 import TextType from '../../components/ui/TextType/TypeWriter';
 import brand from '../../assets/brand/image.png';
@@ -17,15 +16,11 @@ const Internship = () => {
  
       <div className="flex flex-col md:flex-row items-center gap-3   ">
         <div className="flex items-center w-fit">
-  <img
-    src={hero}
-    alt="Happy intern celebrating with a laptop"
-    className="w-auto h-auto lg:h-[600px] object-cover  rounded-xl "
-    onError={(e) => {
-      e.target.onerror = null;
-      e.target.src = "https://placehold.co/400x500/CCCCCC/333333?text=Image+Not+Found";
-    }}
-  />
+      <iframe
+  src="https://lottie.host/embed/0ca277e9-edcb-4d84-9658-acb2a601682a/WKanSlAvri.lottie"
+  className="w-full max-w-[500px] h-[300px] sm:h-[350px] md:h-[400px] lg:h-[600px] lg:w-[600px] object-cover rounded-xl mx-auto"
+/>
+
 </div>
 
 
@@ -33,7 +28,7 @@ const Internship = () => {
         <h1 className="text-3xl sm:text-4xl lg:text-6xl font-medium text-gray-900 leading-tight mb-4">
           Elevate your Career With our <br />
         <TextType textColors={'#ffffff'}
-           text={['Intern ship Program.','Work Shop Program.','Skill Develop Program.']} className='text-green-500' />
+           text={['Intern ship Program.','Work Shop Program.','Skill Develop Program.']} className='text-blue-500' />
 
 
          
@@ -42,7 +37,7 @@ const Internship = () => {
           As the first in Tamil Nadu, we offer a unique dashboard to track student tasks, progress, and performance.
         </p>
         <div className="flex justify-center lg:justify-start">
-          <button className="bg-green-600 cursor-target hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-md shadow-md transition-colors duration-300 flex items-center gap-2">
+          <button className="bg-blue-500 cursor-target hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-md shadow-md transition-colors duration-300 flex items-center gap-2">
             Register Now
             <svg
               xmlns="http://www.w3.org/2000/svg"

@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Footer from "./components/Footer";
 import Internship from "./pages/Internship/Internship";
 import Contact from "./pages/Contact/Contact";
+import Product from "./pages/Product/Product";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -33,6 +34,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/internship" element={<Internship />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/products" element={<Product />} />
         </Routes>
       </div>
       <Footer />
