@@ -13,6 +13,7 @@ import CallToAction from './Contact/components/CalltoAction';
 import MarketingSection from './MarcetingSection/MarketingSection';
 
 const Home = () => {
+  
   return (
     <>
      <div className="absolute    ">
@@ -34,12 +35,12 @@ const Home = () => {
         <img
           src="hero1.897db1b8.png"
           alt="Hand"
-          className="absolute lg:w-full lg:h-full  object-contain z-10 lg:mt-80 mt-32 md:mt-72"
+          className="absolute lg:w-full lg:h-full  object-contain z-10 lg:mt-70 mt-32 md:mt-72"
         />
         <Motion.img
           src="hero2.a3ba59f7.png"
           alt="Globe"
-          className="absolute xl:w-[30%] xl:h-[30%] h-36 w-36 object-contain z-10 xl:ml-28"
+          className="absolute xl:w-[40%] xl:h-[30%] h-36 w-36 object-contain z-10 xl:ml-28"
           style={{ top: '25%', left: '30%' }}
           initial={{ y: 0 }}
           animate={{ y: [0, -20, 0] }}
@@ -53,7 +54,7 @@ const Home = () => {
       </div>
       <div className='flex flex-col  justify-center p-5 z-10'>
        <h1 className='text-6xl '>Innovation at the Core of</h1>
-       <TextType className='text-black z-50'
+       <TextType className='text-[#f8acff] z-50'
   text={["Every Solution.", "Evaluate Your Business.", "Paving A Way ToSuccess."]}
   typingSpeed={75}
   pauseDuration={1500}
@@ -93,7 +94,7 @@ const Home = () => {
   [{count:'100',name:'Projects'},{count:'60',name:'Employees'},{count:'7',name:'Years'}].map((item,index)=>(
     <>
     <Motion.div key={index}
-  className="bg-white cursor-target shadow-lg rounded-2xl p-4 w-[100px] sm:w-[160px] md:w-[180px] flex flex-col items-center justify-center transition-transform hover:scale-[1.05] hover:shadow-xl border border-gray-100 dark:border-zinc-700"
+  className="bg-white cursor-target shadow-lg rounded-2xl p-4 w-[200px] sm:w-[160px] md:w-[180px] flex flex-col items-center justify-center transition-transform hover:scale-[1.05] hover:shadow-xl border border-gray-100 dark:border-zinc-700"
   initial={{ opacity: 0, y: -20 }} // Changed y from 20 to -20
   animate={{ opacity: 1, y: 0 }}
   transition={{ duration: 0.6, ease: "easeOut" }}
@@ -125,7 +126,7 @@ const Home = () => {
   <Marquees/>
 <Whatwedo/>
 <ScrollVelocity
-texts={['RORIRI','INOVATION']}
+texts={['RORIRI SOFTWARE','TECHNOLOGIES']}
   velocity={100} 
   className="custom-scroll-text"
 />

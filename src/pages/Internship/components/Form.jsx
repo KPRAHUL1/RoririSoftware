@@ -2,12 +2,12 @@ import React from 'react';
 
 const InternshipRegistrationForm = () => {
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center font-sans mb-5">
-      <div className=" w-full flex flex-col lg:flex-row bg-white rounded-xl  overflow-hidden">
-        <div className="lg:w-1/2 p-8 sm:p-12 flex flex-col justify-center bg-white">
+    <div className="min-h-screen  flex items-center lg:p-10 p-5 justify-center font-sans mb-5" >
+      <div className=" w-full flex flex-col lg:flex-row  rounded-xl  overflow-hidden lg:p-5">
+        <div className="lg:w-1/2 p-8 sm:p-12 flex flex-col justify-center ">
           <h2 className="text-green-600 text-lg font-semibold mb-2">Contact Us</h2>
           <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 leading-tight mb-6">
-            Get in touch with us today
+            Get in touch with us <br/>today
           </h1>
           <p className="text-gray-600 text-lg">
             Reach out to explore endless possibilities with Ronri Software Solutions!
@@ -23,7 +23,7 @@ const InternshipRegistrationForm = () => {
               <input
                 type="text"
                 placeholder="Full Name"
-                className="w-full p-4 border border-green-200 rounded-lg focus:ring-2 focus:ring-green-400 focus:border-transparent outline-none transition duration-200 bg-white text-gray-800"
+                className="w-full p-4 border cursor-target border-green-200 rounded-lg focus:ring-2 focus:ring-green-400 focus:border-transparent outline-none transition duration-200 bg-white text-gray-800"
               />
             </div>
 

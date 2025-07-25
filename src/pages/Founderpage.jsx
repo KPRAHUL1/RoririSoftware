@@ -4,7 +4,7 @@ import image from '../assets/image.png'
 import founder from '../assets/founderimage/image.png'
 const TestimonialPage = () => {
   return (
-    <div className=" flex items-center flex-col lg:flex-row bg-gray-50 justify-center py-12 px-4 sm:px-6 lg:px-20 gap-10 font-inter">
+    <div className=" flex items-center flex-col lg:flex-row min-h-screen bg-gray-50 justify-center py-12 px-4 sm:px-6 lg:px-20 gap-10 font-inter">
       <div className=" mx-auto flex flex-col lg:flex-row items-center justify-center gap-12">
         <div className="flex-shrink-0">
           <img
