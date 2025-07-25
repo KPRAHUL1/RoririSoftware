@@ -95,14 +95,14 @@ const Navbar = () => {
       animate={{ y: showNavbar ? 0 : '-100%' }}
       transition={{ duration: 0.3, ease: "easeOut" }}
     >
-      <div className="flex items-center gap-2 md:gap-4">
+      <a className="flex items-center gap-2 md:gap-4" href="/">
         <img
           src="LogoWeb.png"
           alt="Roriri Logo"
           className="w-24 md:w-36 rounded-md"
           onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/120x40/000000/FFFFFF?text=Roriri"; }}
         />
-      </div>
+      </a>
 
       <ul className="hidden lg:flex gap-6 lg:gap-8 items-center">
         {navItems.map((item, index) => (
@@ -143,7 +143,7 @@ const Navbar = () => {
       </ul>
       <div className="hidden lg:block">
         <a
-          href="/book-consultation"
+          href="/contact"
           className="bg-black cursor-target text-white px-5 py-2.5 rounded-lg shadow-lg  transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
         >
           Let's Talk
@@ -153,7 +153,7 @@ const Navbar = () => {
       <div className="lg:hidden flex gap-3 items-center">
         <div className="hidden md:block">
           <a
-            href="/book-consultation"
+            href="/contact"
             className="bg-black cursor-target text-white px-5 py-2.5 rounded-lg shadow-lg  transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
           >
             Let's Talk
@@ -233,7 +233,7 @@ const Navbar = () => {
               ))}
               <Motion.li variants={listItemVariants} className="mt-4">
                 <a
-                  href="/book-consultation"
+                  href="/contact"
                   className="bg-black text-white px-4 py-2.5 rounded-lg shadow-lg hover:bg-blue-700 block text-center transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >

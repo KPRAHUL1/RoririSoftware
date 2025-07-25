@@ -11,18 +11,22 @@ import Whatwedo from './WhatweDo/Whatwedo';
 import TestimonialPage from './Founderpage';
 import CallToAction from './Contact/components/CalltoAction';
 import MarketingSection from './MarcetingSection/MarketingSection';
+import { Link, useNavigate } from 'react-router-dom';
 const Home = () => {
+  const navigate = useNavigate();
   
   return (
     <>
      <div className="absolute    ">
       
       <div className=" ">
+        <Link to={'/'}> 
         <img
           src="izhtech_animation.gif"
           alt="Animation"
-          className=" md:h-[600px] h-72 hidden md:block "
+          className=" md:h-[600px] h-72 hidden md:block " 
         />
+       </Link>
       </div>
 
       
@@ -81,13 +85,13 @@ const Home = () => {
         spinDuration={2}
         hideDefaultCursor={true}
       />
-      <button className="cursor-target flex from-purple-500 px-3 py-2
+      <button className="cursor-target flex from-purple-500 px-3 py-2 
       bg-gradient-to-r
       text-white
       rounded-lg
     to-blue-500
     hover:from-purple-600 // Keep this
-    hover:to-blue-600 ">Book a free Consulting <ArrowRight/></button>
+    hover:to-blue-600 " onClick={()=>navigate('/contact')}>Book a free Consulting <ArrowRight/></button>
     </div>
 {
   [{count:'100',name:'Projects'},{count:'60',name:'Employees'},{count:'7',name:'Years'}].map((item,index)=>(
@@ -120,7 +124,7 @@ const Home = () => {
 
     </div>
       </div>
-      <iframe src="https://lottie.host/embed/ae52e585-f936-4010-bd2d-5bb57251e4f3/KnL7beewYH.lottie"></iframe>
+    
     </div>
   <Marquees/>
 <Whatwedo/>
