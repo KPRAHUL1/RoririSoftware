@@ -41,7 +41,7 @@ const TextType = ({
   };
 
   const getCurrentTextColor = () => {
-    if (textColors.length === 0) return "#f8acff";
+    if (textColors.length === 0) return "";
     return textColors[currentTextIndex % textColors.length];
   };
 

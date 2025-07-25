@@ -53,7 +53,7 @@ const Home = () => {
       </div>
       <div className='flex flex-col  justify-center p-5 z-10'>
        <h1 className='text-6xl '>Innovation at the Core of</h1>
-       <TextType className='text-black z-50'
+       <TextType className='text-[#f8acff] z-50'
   text={["Every Solution.", "Evaluate Your Business.", "Paving A Way ToSuccess."]}
   typingSpeed={75}
   pauseDuration={1500}
