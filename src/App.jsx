@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import Internship from "./pages/Internship/Internship";
 import Contact from "./pages/Contact/Contact";
 import Product from "./pages/Product/Product";
+import About from "./pages/About/About";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -32,6 +33,7 @@ const App = () => {
       <div className="pt-[72px] md:pt-[88px] lg:pt-[88px]">
         <Routes>
           <Route path="/" element={<Home />} />
+           <Route path="/about" element={<About />} />
           <Route path="/internship" element={<Internship />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/products" element={<Product />} />
