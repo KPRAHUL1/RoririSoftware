@@ -9,6 +9,7 @@ import CircularGallery from '../../components/ui/CircularGallary/CircularGallary
 import InternshipProgramsPage from './components/InternShipProgramPage';
 import WhatSetsUsApartPage from './components/SetupPage';
 const Internship = () => {
+
   return (
     <>
   

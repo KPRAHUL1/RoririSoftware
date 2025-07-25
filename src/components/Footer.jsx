@@ -2,7 +2,6 @@ import React from 'react';
 import { Facebook, Instagram, Linkedin, X, Phone, Mail } from 'lucide-react';
 
 const Footer = () => {
-  // Define link data for each section
   const linksData = [
     { name: 'Home', href: '#' },
     { name: 'About Us', href: '#' },
@@ -29,9 +28,9 @@ const Footer = () => {
   ];
 
   const productData = [
-    { name: 'Alo Invoice', href: '#' },
+    { name: 'Roriri ', href: '#' },
     { name: 'Fast X', href: '#' },
-    { name: 'Alo Foodie', href: '#' },
+    { name: 'Roriri ERP', href: '#' },
   ];
 
   return (
@@ -47,7 +46,7 @@ const Footer = () => {
               className="h-10 rounded-md"
             />
           </div>
-          <a href="mailto:hr@aloinfotech.in" className="text-blue-400 transition duration-300 flex items-center">
+          <a href="mailto:hr@aloinfotech.in" className="text-xl cursor-target transition duration-300 flex items-center">
             <Mail className="w-5 h-5 mr-2" /> hr@roririsoft.com
           </a>
         </div>

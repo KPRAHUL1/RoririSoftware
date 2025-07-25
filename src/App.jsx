@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Loader from "./components/loader";
-import { Route, Router, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom"; // Import useLocation
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Footer from "./components/Footer";
@@ -9,25 +9,34 @@ import Contact from "./pages/Contact/Contact";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
+  const location = useLocation();
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 2000);
+    const timer = setTimeout(() => setLoading(false), 1000);
     return () => clearTimeout(timer);
   }, []);
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }, [location.pathname]);
 
   if (loading) return <Loader />;
 
   return (
     <>
-     <Navbar/>
-    <Routes>
-      <Route path="/" element={<Home/>}/>
-      <Route path="/internship" element={<Internship/>}/>
-      <Route path="/contact" element={<Contact/>}/>
-    </Routes>
-    <Footer/>
+      <Navbar />
+      <div className="pt-[72px] md:pt-[88px] lg:pt-[88px]">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/internship" element={<Internship />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </div>
+      <Footer />
     </>
-   
   );
 };
 
