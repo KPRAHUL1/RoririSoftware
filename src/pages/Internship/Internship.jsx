@@ -60,7 +60,7 @@ const Internship = () => {
         <h2 className="text-xl sm:text-1xl font-semibold text-gray-500  text-center">
         Recognized By
       </h2>
-          <span className="text-green-600 font-bold text-3xl">Start Up India</span>
+          <span className="text-blue-600 font-bold text-3xl">Start Up India</span>
       </div>
         <div className="flex flex-col items-center">
           <img
@@ -77,7 +77,7 @@ const Internship = () => {
     <WhatSetsUsApartPage/>
       <InternshipProgramsPage/>
        <div style={{ height: '600px', position: 'relative' }} className=''>
-        <h1 className='text-center text-black text-5xl font-normal '>Intern <span className='text-green-400'>To</span> Our Employees</h1>
+        <h1 className='text-center text-black text-5xl font-normal '>Intern <span className='text-blue-400'>To</span> Our Employees</h1>
   <CircularGallery bend={3} textColor="black" borderRadius={0.05} scrollEase={0.02}/>
     </div>
    
@@ -92,7 +92,7 @@ const Internship = () => {
           />       
         </div>
         <div className="flex flex-col justify-center text-center md:text-left p-4">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-normal leading-tight mb-4 text-green-600">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-normal leading-tight mb-4 text-blue-600">
             Project <span className="text-gray-800">Internship</span>
           </h1>
           <p className="text-lg sm:text-xl text-gray-700 mb-6">
@@ -104,7 +104,7 @@ const Internship = () => {
             developers, hands-on experience, and exposure to a collaborative environment
             designed to enhance your technical and professional skills.
           </p>
-          <button className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 ease-in-out self-center md:self-start">
+          <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 ease-in-out self-center md:self-start">
             Register Now →
           </button>
         </div>
@@ -115,7 +115,7 @@ const Internship = () => {
         <div className="flex flex-col justify-center text-center md:text-left">
           <h1 className="text-lg font-normal text-gray-500 leading-tight mb-4">
             Our Valid <br />
-            <span className="text-green-500 text-5xl">Internship</span> <br />
+            <span className="text-blue-500 text-5xl">Internship</span> <br />
            <span className='text-5xl text-white'> Certifications
             </span>
           </h1>
