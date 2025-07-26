@@ -12,6 +12,8 @@ import TestimonialPage from './Founderpage';
 import CallToAction from './Contact/components/CalltoAction';
 import MarketingSection from './MarcetingSection/MarketingSection';
 import { Link, useNavigate } from 'react-router-dom';
+import AboutSection from './About/components/AboutSection';
+import CompanyHighlightsSection from './About/components/CompanyHighlightsSection';
 const Home = () => {
   const navigate = useNavigate();
   
@@ -128,14 +130,8 @@ const Home = () => {
     </div>
   <Marquees/>
 <Whatwedo/>
-<div className='h-screen flex flex-col justify-center items-center'>
-  <div>
-    <h1>About</h1>
-    <span>The Story of <span>Roriri Soft</span> </span>
-    <p>A Growing Company with Clear Vision.</p>
-  </div>
-</div>
- 
+<AboutSection/>
+ <CompanyHighlightsSection/>
 <ScrollVelocity
 texts={['RORIRI SOFT ★','TECHNOLOGIES ★']}
   velocity={100} 
