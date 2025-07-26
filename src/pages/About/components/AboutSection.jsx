@@ -92,13 +92,13 @@ const AboutSection = () => {
             />
           </div>
 
-          <Motion.button
+          <Motion.a href='/about'
             whileHover={{ scale: 1.05, boxShadow: "0px 8px 15px rgba(0, 0, 0, 0.2)" }}
             whileTap={{ scale: 0.95 }}
             className='bg-purple-600 text-white px-8 py-3 rounded-full text-lg font-medium hover:bg-purple-700 transition-all duration-300 shadow-xl'
           >
             Visit more →
-          </Motion.button>
+          </Motion.a>
         </Motion.div>
 
         {/* Right Section - Cards (Now designed for a more pronounced "scroll-into-view" effect) */}
