@@ -6,8 +6,10 @@ import Home from "./pages/Home";
 import Footer from "./components/Footer";
 import Internship from "./pages/Internship/Internship";
 import Contact from "./pages/Contact/Contact";
-import Product from "./pages/Product/Product";
 import About from "./pages/About/About";
+import Products from "./pages/Product/components/ProductCard";
+import Product from "./pages/Product/Product";
+import MobileAppDevelopmentPage from "./pages/Services/components/MobileApp-development";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -36,7 +38,8 @@ const App = () => {
            <Route path="/about" element={<About />} />
           <Route path="/internship" element={<Internship />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/products" element={<Product />} />
+          <Route path="/products" element={<Product/>}/>
+          <Route path="/services/mobile-app-development" element={<MobileAppDevelopmentPage/>}/>
         </Routes>
       </div>
       <Footer />
