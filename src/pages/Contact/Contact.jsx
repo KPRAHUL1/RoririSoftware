@@ -1,6 +1,7 @@
 import React from 'react'
 import contact from "../../assets/whatwedo/17.3dc54da2.svg"
 import { Handshake, Headset, HelpCircle } from 'lucide-react';
+import ContactUsPage from './components/ContactUsPage';
 
 const Contact = () => {
      const enquiryTypes = [
@@ -81,7 +82,7 @@ const Contact = () => {
     </div>
        
     </div>
-
+<ContactUsPage/>
        
   </div>
    <div className=" bg-white  text-gray-900 font-inter py-8 px-4 sm:px-6  flex flex-col items-center">
@@ -107,6 +108,7 @@ const Contact = () => {
       </div>
     </div>
     </div>
+    
   </>
   )
 }
