@@ -14,6 +14,7 @@ import MarketingSection from './MarcetingSection/MarketingSection';
 import { Link, useNavigate } from 'react-router-dom';
 import AboutSection from './About/components/AboutSection';
 import CompanyHighlightsSection from './About/components/CompanyHighlightsSection';
+import Products from './Product/components/ProductCard';
 const Home = () => {
   const navigate = useNavigate();
   
@@ -137,6 +138,7 @@ texts={['RORIRI SOFT ★','TECHNOLOGIES ★']}
   velocity={100} 
   className="custom-scroll-text"
 />
+<Products/>
 
 <MarketingSection/>
 <TestimonialPage/>
