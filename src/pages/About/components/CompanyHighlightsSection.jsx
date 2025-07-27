@@ -200,13 +200,13 @@ const CompanyHighlightsSection = () => {
         </div>
       </Motion.div>
 
-
+ 
       <Motion.div variants={itemVariants} className='max-w-4xl mx-auto'>
         <h3 className='text-3xl font-medium text-center text-purple-700 mb-8'>Meet Our Leader</h3>
         <Slider {...mdCarouselSettings}>
           {mdPhotos.map((photo) => (
-            <div key={photo.id}>
-              <div className="relative w-full h-64 flex items-center justify-center px-2"> 
+            <div key={photo.id} className='mr-5'>
+              <div className="relative w-full h-64 flex  items-center m-5 justify-center px-2"> 
                 <img
                   src={photo.src}
                   alt={photo.alt}
@@ -216,13 +216,15 @@ const CompanyHighlightsSection = () => {
                     e.target.src = 'https://via.placeholder.com/400x300?text=Image+Not+Found';
                   }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent rounded-xl flex items-end p-4">
+                <div className="absolute inset-0  rounded-xl flex items-end p-4">
                   <p className="text-white text-md font-semibold">{photo.alt}</p>
                 </div>
               </div>
             </div>
           ))}
         </Slider>
+
+
       </Motion.div>
     </Motion.section>
   );

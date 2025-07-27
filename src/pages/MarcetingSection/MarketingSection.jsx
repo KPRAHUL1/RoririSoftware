@@ -158,7 +158,7 @@ const MarketingSection = () => {
       <div className="flex flex-col lg:flex-row max-w-7xl mx-auto bg-white rounded-lg shadow-xl overflow-hidden w-full">
 
         <div className="flex-1 p-8 sm:p-12 lg:p-16 flex flex-col justify-center text-center lg:text-left">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-4">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-4">
             You don't know marketing
           </h1>
           <p className="text-base sm:text-lg text-gray-700 mb-8 max-w-lg lg:max-w-none mx-auto lg:mx-0">

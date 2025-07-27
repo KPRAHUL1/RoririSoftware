@@ -4,6 +4,7 @@ import FounderSection from '../Founder/Founderpage';
 import banner from "../../assets/about/image.png"
 import TextType from '../../components/ui/TextType/TypeWriter';
 import WeBelieveInSection from './components/WeBeliveSection';
+import FounderProfileSection from './components/FounderPage';
 const solutions = [
   {
     title: "Solutions made Simple",
@@ -86,7 +87,7 @@ const About = () => {
       </div>
     </section>
     </section>
-    <FounderSection/>
+    <FounderProfileSection/>
 </>
   )
 }

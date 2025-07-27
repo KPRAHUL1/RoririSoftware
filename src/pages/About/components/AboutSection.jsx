@@ -1,7 +1,7 @@
 // src/components/AboutSection.jsx
 import React from 'react';
 import { motion as Motion } from 'framer-motion';
-
+import './About.css'
 const cardData = [
   {
     id: 1, // Unique ID
@@ -102,7 +102,7 @@ const AboutSection = () => {
         </Motion.div>
 
         {/* Right Section - Cards (Now designed for a more pronounced "scroll-into-view" effect) */}
-        <div className='flex flex-col md:w-1/2 p-4 space-y-8 max-h-[85vh] md:max-h-[90vh] overflow-y-auto custom-scrollbar pr-2'> {/* Increased max-h, added pr-2 for scrollbar room */}
+       <div className="flex flex-col md:w-1/2 p-4 md:mt-40 space-y-8 max-h-[85vh] md:max-h-[90vh] overflow-y-auto hide-scrollbar pr-2">{/* Increased max-h, added pr-2 for scrollbar room */}
           {cardData.map((card) => (
             <Motion.div
               key={card.id}
