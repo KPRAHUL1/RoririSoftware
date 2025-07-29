@@ -10,6 +10,9 @@ import About from "./pages/About/About";
 import Products from "./pages/Product/components/ProductCard";
 import Product from "./pages/Product/Product";
 import MobileAppDevelopmentPage from "./pages/Services/components/MobileApp-development";
+import Career from "./pages/Career/Career"
+import JobDescriptionPage from "./pages/Career/JobDescription";
+import JobApplicationForm from "./pages/Career/components/JobApplicationForm";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -40,6 +43,9 @@ const App = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/products" element={<Product/>}/>
           <Route path="/services/mobile-app-development" element={<MobileAppDevelopmentPage/>}/>
+          <Route path="/careers" element={<Career/>}/>
+           <Route path="/jobs/:jobId" element={<JobDescriptionPage />} />
+           <Route path="/jobapplicationform" element={<JobApplicationForm/>}/>
         </Routes>
       </div>
       <Footer />
