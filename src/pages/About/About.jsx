@@ -1,6 +1,5 @@
 import {motion as Motion } from 'framer-motion'
 import React from 'react'
-import FounderSection from '../Founder/Founderpage';
 import banner from "../../assets/about/image.png"
 import TextType from '../../components/ui/TextType/TypeWriter';
 import WeBelieveInSection from './components/WeBeliveSection';
@@ -26,6 +25,17 @@ const About = () => {
     hidden: { opacity: 0, y: 20 },
     show: { opacity: 1, y: 0, transition: { duration: 0.6 } }
   }
+      const sectionVariants = {
+        hidden: { opacity: 0, y: 50 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+    };
+
+    // Animation variants for cards/items
+    const cardVariants = {
+        hidden: { opacity: 0, scale: 0.9 },
+        visible: { opacity: 1, scale: 1, transition: { duration: 0.5, ease: "easeOut" } }
+    };
+
   return (
 <>
   <section className="  bg-cover bg-center " >
@@ -87,6 +97,198 @@ const About = () => {
       </div>
     </section>
     </section>
+     <Motion.section
+                className="relative bg-white py-16 md:py-24 overflow-hidden rounded-b-lg shadow-lg"
+                initial="hidden"
+                animate="visible"
+                variants={sectionVariants}
+            >
+                <div className="container mx-auto px-4 flex flex-col items-center justify-center text-center max-w-screen-xl">
+                    <p className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600 mb-4 rounded-lg">We are</p>
+                    <Motion.h1
+                        className="text-4xl md:text-6xl font-extrabold leading-tight mb-8 text-gray-900 rounded-lg"
+                        initial={{ opacity: 0, y: -50 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.2 }}
+                    >
+                        A team balanced, fuels in creativity and drives unstoppable success
+                    </Motion.h1>
+
+                    {/* Images from the "We are" section */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+                        <Motion.img
+                            src="https://placehold.co/600x400/E0E7FF/312E81?text=Team+Image+1"
+                            alt="Team Collaboration"
+                            className="w-full rounded-xl shadow-lg object-cover h-64 md:h-80"
+                            initial={{ opacity: 0, x: -50 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.8, delay: 0.4 }}
+                            onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/600x400/E0E7FF/312E81?text=Team+Image+1'; }}
+                        />
+                        <Motion.img
+                            src="https://placehold.co/600x400/B8B8F0/312E81?text=Team+Image+2"
+                            alt="Team Meeting"
+                            className="w-full rounded-xl shadow-lg object-cover h-64 md:h-80"
+                            initial={{ opacity: 0, x: 50 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.8, delay: 0.6 }}
+                            onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/600x400/B8B8F0/312E81?text=Team+Image+2'; }}
+                        />
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8 w-full">
+                        <Motion.img
+                            src="https://placehold.co/400x300/E0E7FF/312E81?text=Office+Life+1"
+                            alt="Office Life 1"
+                            className="w-full rounded-xl shadow-lg object-cover h-64"
+                            initial={{ opacity: 0, y: 50 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 0.8 }}
+                            onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/400x300/E0E7FF/312E81?text=Office+Life+1'; }}
+                        />
+                        <Motion.img
+                            src="https://placehold.co/400x300/B8B8F0/312E81?text=Office+Life+2"
+                            alt="Office Life 2"
+                            className="w-full rounded-xl shadow-lg object-cover h-64"
+                            initial={{ opacity: 0, y: 50 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 1.0 }}
+                            onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/400x300/B8B8F0/312E81?text=Office+Life+2'; }}
+                        />
+                        <Motion.img
+                            src="https://placehold.co/400x300/E0E7FF/312E81?text=Office+Life+3"
+                            alt="Office Life 3"
+                            className="w-full rounded-xl shadow-lg object-cover h-64"
+                            initial={{ opacity: 0, y: 50 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 1.2 }}
+                            onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/400x300/E0E7FF/312E81?text=Office+Life+3'; }}
+                        />
+                    </div>
+                </div>
+            </Motion.section>
+
+            {/* Our Culture Section */}
+            <Motion.section
+                className="py-16 md:py-24 bg-gray-100 rounded-lg shadow-md mx-auto my-12 max-w-screen-xl px-4"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+                variants={sectionVariants}
+            >
+                <div className="container mx-auto text-center">
+                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 leading-tight rounded-lg">Our Culture</h2>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {/* Work life Balance Card */}
+                        <Motion.div
+                            className="bg-white p-6 rounded-xl shadow-lg text-left"
+                            variants={cardVariants}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, amount: 0.2 }}
+                            transition={{ delay: 0.1 }}
+                        >
+                            <img src="https://placehold.co/400x250/E0E7FF/312E81?text=Work+Life+Balance" alt="Work life Balance" className="w-full h-48 object-cover rounded-lg mb-4" onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/400x250/E0E7FF/312E81?text=Work+Life+Balance'; }} />
+                            <h3 className="text-xl font-semibold text-gray-900 rounded-lg">Work life Balance</h3>
+                        </Motion.div>
+
+                        {/* Placeholder Card 1 */}
+                        <Motion.div
+                            className="bg-white p-6 rounded-xl shadow-lg text-left"
+                            variants={cardVariants}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, amount: 0.2 }}
+                            transition={{ delay: 0.2 }}
+                        >
+                            <img src="https://placehold.co/400x250/B8B8F0/312E81?text=Culture+Image+1" alt="Culture Image 1" className="w-full h-48 object-cover rounded-lg mb-4" onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/400x250/B8B8F0/312E81?text=Culture+Image+1'; }} />
+                            <h3 className="text-xl font-semibold text-gray-900 rounded-lg">Team Activities</h3>
+                        </Motion.div>
+
+                        {/* Placeholder Card 2 */}
+                        <Motion.div
+                            className="bg-white p-6 rounded-xl shadow-lg text-left"
+                            variants={cardVariants}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, amount: 0.2 }}
+                            transition={{ delay: 0.3 }}
+                        >
+                            <img src="https://placehold.co/400x250/E0E7FF/312E81?text=Culture+Image+2" alt="Culture Image 2" className="w-full h-48 object-cover rounded-lg mb-4" onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/400x250/E0E7FF/312E81?text=Culture+Image+2'; }} />
+                            <h3 className="text-xl font-semibold text-gray-900 rounded-lg">Relaxation Zones</h3>
+                        </Motion.div>
+
+                        {/* Life at #roriri section */}
+                        <div className="lg:col-span-3 flex flex-col items-center justify-center py-8">
+                            <h3 className="text-3xl font-bold text-gray-900 mb-8 rounded-lg text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">Life at #roriri</h3>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
+                                <Motion.img
+                                    src="https://placehold.co/400x300/B8B8F0/312E81?text=Life+at+Roriri+1"
+                                    alt="Life at Roriri 1"
+                                    className="w-full rounded-xl shadow-lg object-cover h-64"
+                                    initial={{ opacity: 0, y: 50 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true, amount: 0.2 }}
+                                    transition={{ delay: 0.1 }}
+                                    onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/400x300/B8B8F0/312E81?text=Life+at+Roriri+1'; }}
+                                />
+                                <Motion.img
+                                    src="https://placehold.co/400x300/E0E7FF/312E81?text=Life+at+Roriri+2"
+                                    alt="Life at Roriri 2"
+                                    className="w-full rounded-xl shadow-lg object-cover h-64"
+                                    initial={{ opacity: 0, y: 50 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true, amount: 0.2 }}
+                                    transition={{ delay: 0.2 }}
+                                    onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/400x300/E0E7FF/312E81?text=Life+at+Roriri+2'; }}
+                                />
+                                <Motion.img
+                                    src="https://placehold.co/400x300/B8B8F0/312E81?text=Life+at+Roriri+3"
+                                    alt="Life at Roriri 3"
+                                    className="w-full rounded-xl shadow-lg object-cover h-64"
+                                    initial={{ opacity: 0, y: 50 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true, amount: 0.2 }}
+                                    transition={{ delay: 0.3 }}
+                                    onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/400x300/B8B8F0/312E81?text=Life+at+Roriri+3'; }}
+                                />
+                                <Motion.img
+                                    src="https://placehold.co/400x300/E0E7FF/312E81?text=Life+at+Roriri+4"
+                                    alt="Life at Roriri 4"
+                                    className="w-full rounded-xl shadow-lg object-cover h-64"
+                                    initial={{ opacity: 0, y: 50 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true, amount: 0.2 }}
+                                    transition={{ delay: 0.4 }}
+                                    onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/400x300/E0E7FF/312E81?text=Life+at+Roriri+4'; }}
+                                />
+                                <Motion.img
+                                    src="https://placehold.co/400x300/B8B8F0/312E81?text=Life+at+Roriri+5"
+                                    alt="Life at Roriri 5"
+                                    className="w-full rounded-xl shadow-lg object-cover h-64"
+                                    initial={{ opacity: 0, y: 50 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true, amount: 0.2 }}
+                                    transition={{ delay: 0.5 }}
+                                    onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/400x300/B8B8F0/312E81?text=Life+at+Roriri+5'; }}
+                                />
+                                <Motion.img
+                                    src="https://placehold.co/400x300/E0E7FF/312E81?text=Life+at+Roriri+6"
+                                    alt="Life at Roriri 6"
+                                    className="w-full rounded-xl shadow-lg object-cover h-64"
+                                    initial={{ opacity: 0, y: 50 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true, amount: 0.2 }}
+                                    transition={{ delay: 0.6 }}
+                                    onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/400x300/E0E7FF/312E81?text=Life+at+Roriri+6'; }}
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </Motion.section>
+
     <FounderProfileSection/>
 </>
   )
