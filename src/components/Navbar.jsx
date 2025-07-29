@@ -211,7 +211,7 @@ const Navbar = () => {
                       transition={{ duration: 0.3 }}
                     >
                       {item.submenu.map((subItem, subIndex) => (
-                        <Motion.li key={subIndex} variants={listItemVariants}>
+                        <Motion.li key={subIndex} >
                           <a
                             href={subItem.path}
                             onClick={() => {

@@ -1,19 +1,23 @@
 import React from 'react';
 import RotatingText from '../../components/ui/RotatingText/Rotating';
+import { useNavigate } from 'react-router-dom';
 const servicesData = [
   {
     id: 1,
     title: 'ERP Solutions',
+    path:'erp-solutions',
     description: 'Provides ERP solutions for organizations to streamline processes.',
   },
   {
     id: 2,
     title: 'Mobile App Development',
+    path:'mobile-app-development',
     description: 'Develops mobile apps to enhance your digital presence.',
   },
   {
     id: 3,
     title: 'Website Development',
+    path:'web-app-development',
     description: 'Builds custom web applications tailored to your business needs.',
   },
   {
@@ -29,11 +33,13 @@ const servicesData = [
   {
     id: 6,
     title: 'IT Consulting',
+    path:'it-consulting',
     description: 'Offers expert IT consulting to optimize your operations.',
   },
 ];
 
 const Whatwedo = () => {
+  const navigate = useNavigate();
   return (
     <div className="min-h-screen flex lg:flex-row flex-col-reverse gap-5 bg-white text-gray-800 font-inter relative overflow-hidden py-16 px-4 sm:px-6 lg:px-8">
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
@@ -69,7 +75,7 @@ const Whatwedo = () => {
         </div>
         <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8 ">
           {servicesData.map((service) => (
-            <div
+            <div onClick={()=>navigate(`/services/${service?.path}`)}
               key={service.id}
               className={`
                 relative bg-white rounded-xl shadow-lg p-6 group cursor-target

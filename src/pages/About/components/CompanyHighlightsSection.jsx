@@ -5,17 +5,27 @@ import Slider from 'react-slick';
 import founder1 from '../../../assets/founderimage/002.png';
 import roriri1 from '../../../assets/roriri/photoRoriri.png';
 import roriri2 from "../../../assets/roriri/Garden.jpg"; 
+import { land1, land10,land11,land2,land3,land4,land5,land6,land7,land9 } from '../../../assets/landscap/landscape';
 
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const awardPhotos = [
-  { id: 1, src: roriri1, alt: 'Company Award 1' },
-  { id: 2, src: roriri2, alt: 'Company Award 2' },
-  { id: 3, src: roriri1, alt: 'Company Award 3' },
-  { id: 4, src: roriri2, alt: 'Company Award 4' },
-  { id: 5, src: roriri2, alt: 'Company Award 5' },
+  { id: 1, src: roriri1 },
+  { id: 2, src: roriri2 },
+  { id: 3, src: land1},
+  { id: 4, src: land3 },
+  { id: 5, src: land1 },
+  { id: 5, src: land4 },
+  { id: 5, src: land5 },
+  { id: 5, src: land6 },
+  { id: 5, src: land7 },
+  { id: 5, src: land9},
+  { id: 5, src: land2 },
+  { id: 5, src: land11 },
+  { id: 5, src: land10 },
+  { id: 5, src: land1 },
 ];
 
 const mdPhotos = [
@@ -46,7 +56,7 @@ const itemVariants = {
 
 const CompanyHighlightsSection = () => {
   const awardCarouselSettings = {
-    dots: true,      
+    // dots: true,      
     infinite: true,    
     speed: 500,        
     slidesToShow: 1,   
@@ -119,7 +129,6 @@ const CompanyHighlightsSection = () => {
 
     
       <Motion.div variants={itemVariants} className='mb-20 max-w-6xl mx-auto'>
-        <h3 className='text-3xl font-medium text-center text-purple-700 mb-8'>Awards & Recognitions</h3>
         <div className="relative"> 
           <Slider {...awardCarouselSettings}>
             {awardPhotos.map((photo) => (
@@ -128,7 +137,7 @@ const CompanyHighlightsSection = () => {
                   <img
                     src={photo.src}
                     alt={photo.alt}
-                    className="w-full h-full object-cover rounded-xl shadow-lg"
+                    className="object-fit   rounded-xl shadow-lg"
                
                     onError={(e) => {
                       console.error("Image failed to load:", photo.src, e);
