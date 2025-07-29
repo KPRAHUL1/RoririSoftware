@@ -28,7 +28,8 @@
     "react-transition-group": "^4.4.5",
     "slick-carousel": "^1.8.1",
     "tailwind-variants": "^1.0.0",
-    "tailwindcss": "^4.1.11"
+    "tailwindcss": "^4.1.11",
+    "three": "^0.178.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.30.1",

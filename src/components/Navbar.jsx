@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { motion as Motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, Menu, X } from "lucide-react";
 import { AnimatedHamburgerButton } from "./ui/AnimatedHamburgerButtom/AnimatedHamburgerButton";
-
+import logo from '../assets/logo/LogoWeb.png'
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openSubMenuIndex, setOpenSubMenuIndex] = useState(null);
@@ -48,7 +48,7 @@ const Navbar = () => {
         { title: "ERP Solutions", path: "/services/erp-solutions" },
         { title: `Mobile Application`, path: "/services/mobile-app-development" },
         { title: "Web Development", path: "/services/web-app-development" },
-        { title: "Digital Marketing", path: "/services/digital-marketing" },
+        { title: "IT Consulting", path: "/services/it-consulting" },
         { title: "Internship", path: "/services/internship" },
       ],
     },
@@ -97,7 +97,7 @@ const Navbar = () => {
     >
       <a className="flex items-center gap-2 md:gap-4" href="/">
         <img
-          src="LogoWeb.png"
+          src={logo}
           alt="Roriri Logo"
           className="w-24 md:w-36 rounded-md"
           onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/120x40/000000/FFFFFF?text=Roriri"; }}
@@ -127,7 +127,7 @@ const Navbar = () => {
                     <a
                       href={subItem.path}
                       className={`
-                        block text-gray-700 hover:text-blue-600 font-normal
+                        block text-gray-700 hover:text-blue-600 font-normal z-40
                         ${activePath === subItem.path ? 'text-blue-600 font-semibold' : ''}
                       `}
                       onClick={() => setActivePath(subItem.path)}
@@ -144,7 +144,7 @@ const Navbar = () => {
       <div className="hidden lg:block">
         <a
           href="/contact"
-          className="bg-black cursor-target text-white px-5 py-2.5 rounded-lg shadow-lg  transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+          className="bg-gradient-to-r from-purple-700 to-indigo-700  cursor-target text-white px-5 py-2.5 rounded-lg shadow-lg  transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
         >
           Let's Talk
         </a>
@@ -154,7 +154,7 @@ const Navbar = () => {
         <div className="hidden md:block">
           <a
             href="/contact"
-            className="bg-black cursor-target text-white px-5 py-2.5 rounded-lg shadow-lg  transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+            className="bg-gradient-to-r from-purple-700 to-indigo-700 cursor-target text-white px-5 py-2.5 rounded-lg shadow-lg  transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
           >
             Let's Talk
           </a>
@@ -198,7 +198,7 @@ const Navbar = () => {
                     {item.submenu?.length > 0 && (
                       <ChevronDown
                         size={20}
-                        className={`transition-transform duration-300 ${openSubMenuIndex === index ? "rotate-180" : ""}`}
+                        className={`transition-transform duration-300  ${openSubMenuIndex === index ? "rotate-180" : ""}`}
                       />
                     )}
                   </div>
@@ -219,7 +219,7 @@ const Navbar = () => {
                               setActivePath(subItem.path);
                             }}
                             className={`
-                              block text-gray-600 p-2 hover:text-blue-600 py-1 px-2 rounded-md hover:bg-blue-50 transition-colors duration-200
+                              block text-gray-600 p-2 z-30 hover:text-blue-600 py-1 px-2 rounded-md hover:bg-blue-50 transition-colors duration-200
                               ${activePath === subItem.path ? 'text-blue-600 font-semibold' : ''}
                             `}
                           >
@@ -234,7 +234,7 @@ const Navbar = () => {
               <Motion.li variants={listItemVariants} className="mt-4">
                 <a
                   href="/contact"
-                  className="bg-black text-white px-4 py-2.5 rounded-lg shadow-lg hover:bg-blue-700 block text-center transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+                  className="bg-gradient-to-r from-purple-700 to-indigo-700  text-white px-4 py-2.5 rounded-lg shadow-lg hover:bg-blue-700 block text-center transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Let's Talk

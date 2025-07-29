@@ -1,5 +1,5 @@
-import React from 'react';
-import { motion as Motion } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion as Motion , AnimatePresence } from 'framer-motion';
 import TextType from '../components/ui/TextType/TypeWriter';
 import SplitText from '../components/ui/SplitText/splitText';
 import CountUp from '../components/ui/CountUp/CountUp';
@@ -16,12 +16,41 @@ import AboutSection from './About/components/AboutSection';
 import CompanyHighlightsSection from './About/components/CompanyHighlightsSection';
 import Products from './Product/components/ProductCard';
 const Home = () => {
+     const [showWorkshopAd, setShowWorkshopAd] = useState(true);
   const navigate = useNavigate();
   
   return (
-    <>
+    <>   <AnimatePresence>
+                {showWorkshopAd && (
+                    <Motion.div
+                        initial={{ opacity: 0, y: -50 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -50 }}
+                        transition={{ duration: 0.5, ease: "easeOut" }}
+                        className="relative bg-gradient-to-r from-purple-700 to-indigo-700 text-white p-3 md:p-4 text-center text-sm md:text-base flex items-center justify-center space-x-4 rounded-b-lg shadow-lg z-10"
+                    >
+                        <a
+                            href="https://www.linkedin.com/company/roririsoft/" // Replace with actual LinkedIn/Instagram/Registration link
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex-grow flex items-center justify-center hover:underline cursor-pointer"
+                        >
+                            🎉 Don't miss our "Future IT Professionals Workshop"! Click here to register!
+                        </a>
+                        <Motion.button
+                            onClick={() => setShowWorkshopAd(false)}
+                            className="p-1 rounded-full hover:bg-white hover:bg-opacity-20 transition-colors duration-200"
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.9 }}
+                            aria-label="Dismiss advertisement"
+                        >
+                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                        </Motion.button>
+                    </Motion.div>
+                )}
+            </AnimatePresence>
      <div className="absolute    ">
-      
+     
       <div className=" ">
         <Link to={'/'}> 
         <img
