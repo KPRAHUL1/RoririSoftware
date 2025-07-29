@@ -1,6 +1,6 @@
 import React from 'react';
 import { Facebook, Instagram, Linkedin, X, Phone, Mail } from 'lucide-react';
-
+import logo from '../assets/logo/LogoWeb.png'
 const Footer = () => {
   const linksData = [
     { name: 'Home', href: '#' },
@@ -41,7 +41,7 @@ const Footer = () => {
           <div className="mb-4 sm:mb-0">
             {/* Using a placeholder image for the logo */}
             <img
-              src="LogoWeb.png"
+              src={logo}
               alt="Roriri Tech"
               className="h-10 rounded-md"
             />

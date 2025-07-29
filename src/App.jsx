@@ -10,6 +10,10 @@ import About from "./pages/About/About";
 import Products from "./pages/Product/components/ProductCard";
 import Product from "./pages/Product/Product";
 import MobileAppDevelopmentPage from "./pages/Services/components/MobileApp-development";
+import ERPSolutions from "./pages/Services/components/ERP_solution";
+import WebDevelopment from "./pages/Services/components/Web_developmentDetailsPage";
+import IT_Consulting from "./pages/Services/components/IT_Consulting";
+import EventPage from "./pages/Event/Event";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -39,7 +43,12 @@ const App = () => {
           <Route path="/internship" element={<Internship />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/products" element={<Product/>}/>
+           <Route path="/events" element={<EventPage/>}/>
           <Route path="/services/mobile-app-development" element={<MobileAppDevelopmentPage/>}/>
+          <Route path="/services/web-app-development" element={<WebDevelopment/>}/>
+          <Route path="/services/erp-solutions" element={<ERPSolutions/>}/>
+          <Route path="/services/it-consulting" element={<IT_Consulting/>}/>
+          <Route path="/services/internship" element={<Internship />} />
         </Routes>
       </div>
       <Footer />
