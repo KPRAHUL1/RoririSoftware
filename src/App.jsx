@@ -14,6 +14,9 @@ import ERPSolutions from "./pages/Services/components/ERP_solution";
 import WebDevelopment from "./pages/Services/components/Web_developmentDetailsPage";
 import IT_Consulting from "./pages/Services/components/IT_Consulting";
 import EventPage from "./pages/Event/Event";
+import Career from "./pages/Career/Career"
+import JobDescriptionPage from "./pages/Career/JobDescription";
+import JobApplicationForm from "./pages/Career/components/JobApplicationForm";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -49,6 +52,9 @@ const App = () => {
           <Route path="/services/erp-solutions" element={<ERPSolutions/>}/>
           <Route path="/services/it-consulting" element={<IT_Consulting/>}/>
           <Route path="/services/internship" element={<Internship />} />
+            <Route path="/careers" element={<Career/>}/>
+           <Route path="/jobs/:jobId" element={<JobDescriptionPage />} />
+           <Route path="/jobapplicationform" element={<JobApplicationForm/>}/>
         </Routes>
       </div>
       <Footer />
