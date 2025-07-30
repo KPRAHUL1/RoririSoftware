@@ -17,6 +17,7 @@ import EventPage from "./pages/Event/Event";
 import Career from "./pages/Career/Career"
 import JobDescriptionPage from "./pages/Career/JobDescription";
 import JobApplicationForm from "./pages/Career/components/JobApplicationForm";
+import ServicesPage from "./pages/Services/service";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -47,6 +48,7 @@ const App = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/products" element={<Product/>}/>
            <Route path="/events" element={<EventPage/>}/>
+           <Route path="/services" element={<ServicesPage/>}/>
           <Route path="/services/mobile-app-development" element={<MobileAppDevelopmentPage/>}/>
           <Route path="/services/web-app-development" element={<WebDevelopment/>}/>
           <Route path="/services/erp-solutions" element={<ERPSolutions/>}/>

@@ -339,14 +339,7 @@ const MobileAppDevelopmentPage = () => {
       </div>
 
       {/* WhatsApp floating button */}
-      <div className="fixed bottom-8 right-8 z-50">
-        <button className="group w-16 h-16 bg-green-500 hover:bg-green-600 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 flex items-center justify-center">
-          <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
-            <span className="text-green-500 font-bold text-sm">W</span>
-          </div>
-          <div className="absolute inset-0 rounded-full bg-green-400 animate-ping opacity-20"></div>
-        </button>
-      </div>
+   
       <TimelinePage/>
             <div className="flex flex-wrap justify-center gap-4 max-w-6xl mx-auto">
             {specializations.map((spec, index) => (
