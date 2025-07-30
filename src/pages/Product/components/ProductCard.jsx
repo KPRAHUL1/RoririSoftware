@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion as Motion } from 'framer-motion';
 import TextType from '../../../components/ui/TextType/TypeWriter';
+import { product1,product2,product3 } from '../../../assets/product/product';
 
 // Main App component
 const Products = () => {
@@ -16,19 +17,19 @@ const Products = () => {
       name: 'Roriri’s Attendance App',
       tagline: 'Revolutionize Attendance Tracking',
       description: 'Revolutionize attendance tracking with Roriri’s easy-to-use app. From marking attendance to generating detailed reports, our app ensures accuracy and saves valuable time for organizations, schools, and teams alike.',
-      imageUrl: 'https://placehold.co/600x400/4B0082/FFFFFF?text=Roriri+App+Image', // Placeholder image
+      imageUrl: product1, // Placeholder image
     },
     {
       name: 'Referral Dashboard',
       tagline: 'Effortless Campaign Management',
       description: 'Track and manage referral campaigns effortlessly with an intuitive dashboard. Monitor performance, reward advocates, and drive business growth with actionable insights and seamless integrations.',
-      imageUrl: 'https://placehold.co/600x400/9932CC/FFFFFF?text=Referral+Dashboard+Image', // Placeholder image
+      imageUrl: product2, // Placeholder image
     },
     {
       name: 'Sales Management Dashboard',
       tagline: 'Actionable Sales Insights',
       description: 'Actionable insights into your sales pipeline with a powerful dashboard. From lead tracking to revenue forecasting, manage your team’s performance and boost productivity—all in one place.',
-      imageUrl: 'https://placehold.co/600x400/BA55D3/FFFFFF?text=Sales+Dashboard+Image', // Placeholder image
+      imageUrl: product3, // Placeholder image
     },
   ];
 
