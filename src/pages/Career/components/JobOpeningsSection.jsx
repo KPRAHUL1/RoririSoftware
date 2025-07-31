@@ -117,7 +117,7 @@ const JobOpeningsSection = () => {
     <div className="bg-white-50 py-16 px-4"> {/* Using light gray background as per screenshot */}
       <div className="container mx-auto">
         <motion.h2
-          className="text-3xl md:text-4xl font-extrabold text-gray-800 mb-12 text-center md:text-left"
+          className="text-3xl md:text-4xl font-medium text-gray-800 mb-12 text-center md:text-left"
           initial="hidden"
           animate="visible"
           variants={headerVariants}
