@@ -21,16 +21,6 @@ const servicesData = [
     description: 'Builds custom web applications tailored to your business needs.',
   },
   {
-    id: 4,
-    title: 'Digital Marketing',
-    description: 'Enhances your online presence through effective strategies.',
-  },
-  {
-    id: 5,
-    title: 'UI/UX Designing',
-    description: 'Crafts intuitive and visually appealing user interfaces.',
-  },
-  {
     id: 6,
     title: 'IT Consulting',
     path:'it-consulting',
