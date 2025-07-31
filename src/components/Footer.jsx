@@ -3,34 +3,31 @@ import { Facebook, Instagram, Linkedin, X, Phone, Mail } from 'lucide-react';
 import logo from '../assets/logo/LogoWeb.png'
 const Footer = () => {
   const linksData = [
-    { name: 'Home', href: '#' },
-    { name: 'About Us', href: '#' },
-    { name: 'Careers', href: '#' },
-    { name: 'Faq', href: '#' },
-    { name: 'Privacy Policy', href: '#' },
-    { name: 'Terms and Condition', href: '#' },
+    { name: 'Home', href: '/' },
+    { name: 'About Us', href: '/about' },
+    { name: 'Careers', href: '/career' },
+    { name: 'Privacy Policy', href: '/privacy-policy' },
+    { name: 'Terms and Condition', href: '/terms-and-condition' },
     { name: 'Refund Policy', href: '#' },
-    { name: 'Contact Us', href: '#' },
+    { name: 'Contact Us', href: '/contact' },
   ];
 
   const aboutUsData = [
-    { name: 'Our Story', href: '#' },
-    { name: 'Events', href: '#' },
+    { name: 'Our Story', href: '/about' },
+    { name: 'Events', href: '/events' },
   ];
 
   const servicesData = [
-    { name: 'AI services', href: '#' },
-    { name: 'Mobile app development', href: '#' },
-    { name: 'Website development', href: '#' },
-    { name: 'Block chain development', href: '#' },
-    { name: 'All Products & Trials', href: '#' },
-    { name: 'IT consulting', href: '#' },
+    { name: 'Mobile app development', href: '/mobile-app-development' },
+    { name: 'Website development', href: '/web-development' },
+    { name: 'All Products & Trials', href: '/products' },
+    { name: 'IT consulting', href: '/it-consulting' },
   ];
 
   const productData = [
-    { name: 'Roriri ', href: '#' },
-    { name: 'Fast X', href: '#' },
-    { name: 'Roriri ERP', href: '#' },
+    { name: 'ERP Solutions ', href: '/erp-solutions' },
+    { name: 'Roriri Attedence App', href: '/products' },
+    { name: 'Nexemy', href: '/products' },
   ];
 
   return (
@@ -67,16 +64,16 @@ const Footer = () => {
               NALLANATHAPURAM,KALAKAD, <br /> Tamil Nadu 629003
             </p>
             <div className="flex space-x-4 mt-4">
-              <a href="#" className="text-gray-400 transition duration-300">
+              <a href="https://www.facebook.com/RoririSoftwareSolutionsPvtLtd/" className="text-gray-400 transition duration-300">
                 <Facebook className="w-6 h-6" />
               </a>
-              <a href="#" className="text-gray-400  transition duration-300">
+              <a href="https://www.instagram.com/roriri_it_park/" className="text-gray-400  transition duration-300">
                 <Instagram className="w-6 h-6" />
               </a>
-              <a href="#" className="text-gray-400  transition duration-300">
+              <a href="https://www.linkedin.com/company/roriri-software-solutions-pvt-ltd/" className="text-gray-400  transition duration-300">
                 <Linkedin className="w-6 h-6" />
               </a>
-              <a href="#" className="text-gray-400  transition duration-300">
+              <a href="https://youtube.com/@roriri_soft?si=u-VGsjZ_rmU7-liH" className="text-gray-400  transition duration-300">
                 <X className="w-6 h-6" />
               </a>
             </div>
