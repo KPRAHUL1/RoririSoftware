@@ -6,17 +6,16 @@ import JobApplicationForm from './components/JobApplicationForm';
 const Career = () => {
   return (
     <div className="min-h-screen bg-white flex flex-col items-center justify-center p-4 overflow-hidden">
-      {/* Background shapes (simplified) */}
-      <div className="absolute top-0 left-0 w-64 h-64 bg-purple-100 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob"></div>
-      <div className="absolute bottom-0 right-0 w-64 h-64 bg-pink-100 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-2000"></div>
-
+      
       <motion.div
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="text-center z-10"
+        className=" z-10 flex flex-col md:flex-row gap-5 h-screen items-center"
       >
-        <h1 className="text-5xl md:text-6xl font-extrabold text-purple-700 mb-4 tracking-tight leading-tight">
+         <iframe src="https://lottie.host/embed/61a72e2e-67db-4441-83e7-13ff833a4663/UZaKn8T5Dg.lottie" className='h-full w-full md:h-[400px] md:w-[400px]'></iframe>
+      <div className="flex flex-col">
+                 <h1 className="text-5xl md:text-6xl font-medium text-purple-700 mb-4 tracking-tight leading-tight">
           <motion.span
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -81,6 +80,8 @@ const Career = () => {
           </svg>
         </motion.button>
         </a>
+        </div> 
+
       </motion.div>
        <div style={{position:'relative',top:'40px'
        }}>
