@@ -43,7 +43,7 @@ const FounderProfileSection = () => {
           </p>
           <div className="flex justify-center md:justify-start">
             <a
-              href="linkedin.com/in/ragupathi-r-69a80b39"
+              href="https://linkedin.com/in/ragupathi-r-69a80b39"
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-600 hover:text-blue-800 transition duration-200 flex items-center gap-2"

@@ -80,7 +80,7 @@ const AboutSection = () => {
           className='flex flex-col items-center md:items-start md:w-1/2 p-4 text-center md:text-left'
         >
           <h1 className='text-purple-600 text-lg font-medium mb-2 uppercase tracking-wide'>About</h1> {/* Added uppercase and tracking */}
-          <h2 className='text-4xl sm:text-5xl lg:text-6xl font-medium mb-4 leading-tight text-gray-900'>The Story of <span className='text-purple-700'>Roriri Soft</span></h2> {/* Increased font size and weight */}
+          <h2 className='text-4xl sm:text-4xl lg:text-5xl font-medium mb-4 leading-tight text-gray-900'>The Story of <span className='text-purple-700'>Roriri Soft</span></h2> {/* Increased font size and weight */}
           <p className='text-lg sm:text-xl text-gray-600 mb-8 max-w-md'>A Growing Company with Clear Vision, dedicated to innovative solutions and client success.</p> {/* Adjusted text color and max-width */}
 
           {/* Image Placeholder */}
