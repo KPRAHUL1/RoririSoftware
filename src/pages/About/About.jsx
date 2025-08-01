@@ -4,6 +4,8 @@ import banner from "../../assets/about/image.png"
 import TextType from '../../components/ui/TextType/TypeWriter';
 import WeBelieveInSection from './components/WeBeliveSection';
 import FounderProfileSection from './components/FounderPage';
+import {team1,team2,team3,garden} from '../../assets/teams/team.js'
+import { office1,office2 } from '../../assets/landscap/landscape.js';
 const solutions = [
   {
     title: "Solutions made Simple",
@@ -106,7 +108,7 @@ const About = () => {
                 <div className="container mx-auto px-4 flex flex-col items-center justify-center text-center max-w-screen-xl">
                     <p className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600 mb-4 rounded-lg">We are</p>
                     <Motion.h1
-                        className="text-4xl md:text-6xl font-extrabold leading-tight mb-8 text-gray-900 rounded-lg"
+                        className="text-4xl md:text-6xl font-medium leading-tight mb-8 text-gray-900 rounded-lg"
                         initial={{ opacity: 0, y: -50 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
@@ -117,13 +119,13 @@ const About = () => {
                     {/* Images from the "We are" section */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
                         <Motion.img
-                            src="https://placehold.co/600x400/E0E7FF/312E81?text=Team+Image+1"
+                            src={team1}
                             alt="Team Collaboration"
                             className="w-full rounded-xl shadow-lg object-cover h-64 md:h-80"
                             initial={{ opacity: 0, x: -50 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.8, delay: 0.4 }}
-                            onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/600x400/E0E7FF/312E81?text=Team+Image+1'; }}
+                           
                         />
                         <Motion.img
                             src="https://placehold.co/600x400/B8B8F0/312E81?text=Team+Image+2"
@@ -138,7 +140,7 @@ const About = () => {
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8 w-full">
                         <Motion.img
-                            src="https://placehold.co/400x300/E0E7FF/312E81?text=Office+Life+1"
+                            src={office1}
                             alt="Office Life 1"
                             className="w-full rounded-xl shadow-lg object-cover h-64"
                             initial={{ opacity: 0, y: 50 }}
@@ -147,7 +149,7 @@ const About = () => {
                             onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/400x300/E0E7FF/312E81?text=Office+Life+1'; }}
                         />
                         <Motion.img
-                            src="https://placehold.co/400x300/B8B8F0/312E81?text=Office+Life+2"
+                            src={office2}
                             alt="Office Life 2"
                             className="w-full rounded-xl shadow-lg object-cover h-64"
                             initial={{ opacity: 0, y: 50 }}
@@ -177,7 +179,7 @@ const About = () => {
                 variants={sectionVariants}
             >
                 <div className="container mx-auto text-center">
-                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 leading-tight rounded-lg">Our Culture</h2>
+                    <h2 className="text-3xl md:text-4xl font-medium text-gray-900 mb-12 leading-tight rounded-lg">Our Culture</h2>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                         {/* Work life Balance Card */}
@@ -189,7 +191,7 @@ const About = () => {
                             viewport={{ once: true, amount: 0.2 }}
                             transition={{ delay: 0.1 }}
                         >
-                            <img src="https://placehold.co/400x250/E0E7FF/312E81?text=Work+Life+Balance" alt="Work life Balance" className="w-full h-48 object-cover rounded-lg mb-4" onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/400x250/E0E7FF/312E81?text=Work+Life+Balance'; }} />
+                            <img src={team2} alt="Work life Balance" className="w-full h-48 object-cover rounded-lg mb-4" onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/400x250/E0E7FF/312E81?text=Work+Life+Balance'; }} />
                             <h3 className="text-xl font-semibold text-gray-900 rounded-lg">Work life Balance</h3>
                         </Motion.div>
 
@@ -202,7 +204,7 @@ const About = () => {
                             viewport={{ once: true, amount: 0.2 }}
                             transition={{ delay: 0.2 }}
                         >
-                            <img src="https://placehold.co/400x250/B8B8F0/312E81?text=Culture+Image+1" alt="Culture Image 1" className="w-full h-48 object-cover rounded-lg mb-4" onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/400x250/B8B8F0/312E81?text=Culture+Image+1'; }} />
+                            <img src={team3} alt="Culture Image 1" className="w-full h-48 object-cover rounded-lg mb-4" onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/400x250/B8B8F0/312E81?text=Culture+Image+1'; }} />
                             <h3 className="text-xl font-semibold text-gray-900 rounded-lg">Team Activities</h3>
                         </Motion.div>
 
@@ -215,13 +217,13 @@ const About = () => {
                             viewport={{ once: true, amount: 0.2 }}
                             transition={{ delay: 0.3 }}
                         >
-                            <img src="https://placehold.co/400x250/E0E7FF/312E81?text=Culture+Image+2" alt="Culture Image 2" className="w-full h-48 object-cover rounded-lg mb-4" onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/400x250/E0E7FF/312E81?text=Culture+Image+2'; }} />
+                            <img src={garden} alt="Culture Image 2" className="w-full h-48 object-cover rounded-lg mb-4" onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/400x250/E0E7FF/312E81?text=Culture+Image+2'; }} />
                             <h3 className="text-xl font-semibold text-gray-900 rounded-lg">Relaxation Zones</h3>
                         </Motion.div>
 
                         {/* Life at #roriri section */}
                         <div className="lg:col-span-3 flex flex-col items-center justify-center py-8">
-                            <h3 className="text-3xl font-bold text-gray-900 mb-8 rounded-lg text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">Life at #roriri</h3>
+                            <h3 className="text-3xl font-medium text-gray-900 mb-8 rounded-lg text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">Life at #roriri</h3>
                             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
                                 <Motion.img
                                     src="https://placehold.co/400x300/B8B8F0/312E81?text=Life+at+Roriri+1"
