@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion as Motion } from 'framer-motion';
+import { erp1, erp2, erp3 } from '../../../assets/services/service';
 
 // Main App Component
 const ERPSolutions = () => {
@@ -33,7 +34,7 @@ const ERPSolutions = () => {
                 variants={sectionVariants}
             >
                 <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between max-w-screen-xl">
-                    <div className="md:w-1/2 text-center md:text-left mb-10 md:mb-0">
+                    <div className="md:w-1/2  text-center md:text-left mb-10 md:mb-0">
                         <Motion.h1
                             className="text-4xl md:text-6xl font-extrabold leading-tight mb-4 rounded-lg"
                             initial={{ opacity: 0, x: -50 }}
@@ -50,21 +51,19 @@ const ERPSolutions = () => {
                         >
                             Running a business involves managing a lot – finance, inventory, HR, sales, and more. That's where our Enterprise Resource Planning (ERP) solutions come in. We simplify the chaos by bringing everything into one system, so you can focus on growing your business.
                         </Motion.p>
-                        <Motion.button
-                            className="bg-white text-purple-700 font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-gray-100 transition duration-300 flex items-center justify-center mx-auto md:mx-0"
+                        <Motion.a
+                            className="bg-gradient-to-r flex items-center justify-center from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white py-3 px-8 rounded-full text-lg font-semibold shadow-lg transition-colors duration-300 "
                             whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                        >
-                            Get Start
-                            <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path></svg>
-                        </Motion.button>
+                            whileTap={{ scale: 0.95 }} href={'#contact'}
+                        >      Get Start <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path></svg>
+                        </Motion.a>
                     </div>
                     <div className="md:w-1/2 flex justify-center md:justify-end relative">
                         {/* Placeholder for the ERP illustration image */}
                         <Motion.img
-                            src="https://placehold.co/600x400/6D28D9/FFFFFF?text=ERP+Illustration"
+                            src={erp1}
                             alt="ERP Illustration"
-                            className="w-full max-w-md md:max-w-lg rounded-xl shadow-2xl"
+                            className="w-full max-w-md md:max-w-lg rounded-xl "
                             initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
                             animate={{ opacity: 1, scale: 1, rotate: 0 }}
                             transition={{ duration: 0.8, delay: 0.6 }}
@@ -86,7 +85,7 @@ const ERPSolutions = () => {
                     <div className="md:w-1/2 mb-10 md:mb-0 relative">
                         {/* Placeholder for the team image */}
                         <Motion.img
-                            src="https://placehold.co/500x350/E0E7FF/312E81?text=Team+Working"
+                            src={erp2}
                             alt="Team Working"
                             className="w-full rounded-2xl shadow-xl transform -rotate-3"
                             initial={{ opacity: 0, rotate: -10, x: -50 }}
@@ -96,7 +95,7 @@ const ERPSolutions = () => {
                         />
                         {/* Placeholder for the code snippet image */}
                         <Motion.img
-                            src="https://placehold.co/300x200/B8B8F0/312E81?text=Code+Snippet"
+                            src={erp3}
                             alt="Code Snippet"
                             className="absolute bottom-0 right-0 w-2/3 md:w-1/2 rounded-2xl shadow-2xl transform rotate-6 -translate-x-4 translate-y-4 md:translate-x-8 md:translate-y-8"
                             initial={{ opacity: 0, rotate: 10, x: 50 }}
@@ -366,7 +365,7 @@ const ERPSolutions = () => {
                 viewport={{ once: true, amount: 0.3 }}
                 variants={sectionVariants}
             >
-                <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between">
+                <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between" id='contact'>
                     <div className="lg:w-1/2 text-center lg:text-left mb-10 lg:mb-0">
                         <p className="text-sm text-gray-600 uppercase tracking-wider mb-2 rounded-lg">Contact Us</p>
                         <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight rounded-lg">Get in touch with us today</h2>

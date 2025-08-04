@@ -35,8 +35,8 @@ const TimelinePage = () => {
   const timelineItems = [
      {
       number: '01',
-      title: 'Support & Maintenance',
-      description: "ALO Infotech's team is accessible 24/7 for post-launch support, ensuring optimal performance and user satisfaction through continuous monitoring and updates.",
+      title: 'Strategy & Planning',
+      description: "At Roriri Software Solutions, we conduct thorough research and planning, collaborating closely to turn your vision into reality.",
       illustration: (
         <div className="relative w-full h-64 bg-gradient-to-br from-green-50 to-emerald-100 rounded-2xl p-6 overflow-hidden">
           {/* Support desk setup */}
@@ -79,8 +79,8 @@ const TimelinePage = () => {
     },
      {
       number: '02',
-      title: 'Support & Maintenance',
-      description: "ALO Infotech's team is accessible 24/7 for post-launch support, ensuring optimal performance and user satisfaction through continuous monitoring and updates.",
+      title: 'Design & Development',
+      description: "We create innovative, user-centric mobile apps that drive growth, enhance engagement, and exceed user expectations for customer satisfaction.",
       illustration: (
         <div className="relative w-full h-64 bg-gradient-to-br from-green-50 to-emerald-100 rounded-2xl p-6 overflow-hidden">
           {/* Support desk setup */}
@@ -123,8 +123,8 @@ const TimelinePage = () => {
     },
      {
       number: '03',
-      title: 'Support & Maintenance',
-      description: "ALO Infotech's team is accessible 24/7 for post-launch support, ensuring optimal performance and user satisfaction through continuous monitoring and updates.",
+      title: 'Testing',
+      description: "We maintain high quality standards, ensuring thorough testing for bug-free, seamless, and flawless mobile app experiences before delivery.",
       illustration: (
         <div className="relative w-full h-64 bg-gradient-to-br from-green-50 to-emerald-100 rounded-2xl p-6 overflow-hidden">
           {/* Support desk setup */}
@@ -167,8 +167,8 @@ const TimelinePage = () => {
     },
      {
       number: '04',
-      title: 'Support & Maintenance',
-      description: "ALO Infotech's team is accessible 24/7 for post-launch support, ensuring optimal performance and user satisfaction through continuous monitoring and updates.",
+      title: 'Launch',
+      description: "After thorough testing, we confidently launch your app, meeting specifications, and provide an installation guide for easy deployment.",
       illustration: (
         <div className="relative w-full h-64 bg-gradient-to-br from-green-50 to-emerald-100 rounded-2xl p-6 overflow-hidden">
           {/* Support desk setup */}
@@ -212,7 +212,7 @@ const TimelinePage = () => {
     {
       number: '05',
       title: 'User Adoption',
-      description: 'After a successful app launch, ALO Infotech concentrates on user adoption, using strategic marketing, training, and support to integrate the app seamlessly and ensure ongoing success.',
+      description: 'Post-launch, we drive user adoption with targeted marketing, training, and ongoing support to ensure smooth integration and success.',
       illustration: (
         <div className="relative w-full h-64 bg-gradient-to-br from-blue-50 to-indigo-100 rounded-2xl p-6 overflow-hidden">
           {/* Phone mockup */}
@@ -254,7 +254,7 @@ const TimelinePage = () => {
     {
       number: '06',
       title: 'Support & Maintenance',
-      description: "ALO Infotech's team is accessible 24/7 for post-launch support, ensuring optimal performance and user satisfaction through continuous monitoring and updates.",
+      description: "Roriri Software Solutions offers 24/7 support, ensuring smooth app performance with regular updates and assistance.",
       illustration: (
         <div className="relative w-full h-64 bg-gradient-to-br from-green-50 to-emerald-100 rounded-2xl p-6 overflow-hidden">
           {/* Support desk setup */}

@@ -4,8 +4,10 @@ import banner from "../../assets/about/image.png"
 import TextType from '../../components/ui/TextType/TypeWriter';
 import WeBelieveInSection from './components/WeBeliveSection';
 import FounderProfileSection from './components/FounderPage';
-import {team1,team2,team3,garden} from '../../assets/teams/team.js'
-import { office1,office2 } from '../../assets/landscap/landscape.js';
+import {team1,team2,team3,garden, team4} from '../../assets/teams/team.js'
+import { games, land1, office1,office2 } from '../../assets/landscap/landscape.js';
+import { officeimg } from '../../assets/office/office.js';
+import garden1 from '../../assets/roriri/Garden.jpg'
 const solutions = [
   {
     title: "Solutions made Simple",
@@ -67,6 +69,65 @@ const About = () => {
         </Motion.div>
       </div>
       <WeBelieveInSection/>
+        <Motion.section
+                initial={{ opacity: 0, y: -50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1.2, ease: 'easeOut' }}
+                viewport={{ once: true, amount: 0.3 }}
+                className="bg-white rounded-xl shadow-xl overflow-hidden max-w-6xl mx-auto mt-10"
+            >
+                <div className="grid grid-cols-1 md:grid-cols-2">
+                    {/* Left: Images */}
+                    <div className="p-4 flex flex-col gap-4">
+                        <img
+                            src={garden1}
+                            alt="Farm view 1"
+                            className="rounded-lg object-cover h-64 w-full"
+                            onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/600x400/D1D5DB/1F2937?text=Farm+View+1'; }}
+                        />
+                        <img
+                            src={land1}
+                            alt="Farm view 2"
+                            className="rounded-lg object-cover h-64 w-full"
+                            onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/600x400/E5E7EB/1F2937?text=Farm+View+2'; }}
+                        />
+                    </div>
+
+                    {/* Right: Text Content */}
+                    <div className="p-8 flex flex-col justify-center">
+                        <Motion.h1
+                            initial={{ opacity: 0, x: 50 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ delay: 0.3, duration: 1 }}
+                            viewport={{ once: true, amount: 0.3 }}
+                            className="text-2xl font-normal text-green-700 mb-4"
+                        >
+                            South India's First Farm-Based IT Company
+                        </Motion.h1>
+                        <Motion.p
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
+                            transition={{ delay: 0.6, duration: 1 }}
+                            viewport={{ once: true, amount: 0.3 }}
+                            className="text-gray-700 text-5xl font-medium mb-6"
+                        >
+                            A Harmony of Technology and Nature
+                        </Motion.p>
+                        <Motion.p
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
+                            transition={{ delay: 0.8, duration: 1 }}
+                            viewport={{ once: true, amount: 0.3 }}
+                            className="text-gray-600"
+                        >
+                            Nestled within 8 acres of lush greenery, surrounded by a thriving ecosystem of coconut trees and the scenic beauty of the Western Ghats, our company stands as a unique blend of innovation and nature.
+                            <br /><br />
+                            As South India’s first farm-based IT company, we take pride in fostering sustainable practices while driving technological excellence.
+                        </Motion.p>
+ 
+                    </div>
+                </div>
+            </Motion.section>
        <section className="py-5 md:py-10 bg-roriri-dark px-4">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-12">
         <Motion.div
@@ -128,7 +189,7 @@ const About = () => {
                            
                         />
                         <Motion.img
-                            src="https://placehold.co/600x400/B8B8F0/312E81?text=Team+Image+2"
+                            src={team4}
                             alt="Team Meeting"
                             className="w-full rounded-xl shadow-lg object-cover h-64 md:h-80"
                             initial={{ opacity: 0, x: 50 }}
@@ -158,7 +219,7 @@ const About = () => {
                             onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/400x300/B8B8F0/312E81?text=Office+Life+2'; }}
                         />
                         <Motion.img
-                            src="https://placehold.co/400x300/E0E7FF/312E81?text=Office+Life+3"
+                            src={officeimg}
                             alt="Office Life 3"
                             className="w-full rounded-xl shadow-lg object-cover h-64"
                             initial={{ opacity: 0, y: 50 }}
@@ -276,14 +337,14 @@ const About = () => {
                                     onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/400x300/B8B8F0/312E81?text=Life+at+Roriri+5'; }}
                                 />
                                 <Motion.img
-                                    src="https://placehold.co/400x300/E0E7FF/312E81?text=Life+at+Roriri+6"
+                                    src={games}
                                     alt="Life at Roriri 6"
                                     className="w-full rounded-xl shadow-lg object-cover h-64"
                                     initial={{ opacity: 0, y: 50 }}
                                     whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true, amount: 0.2 }}
                                     transition={{ delay: 0.6 }}
-                                    onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/400x300/E0E7FF/312E81?text=Life+at+Roriri+6'; }}
+                                    
                                 />
                             </div>
                         </div>

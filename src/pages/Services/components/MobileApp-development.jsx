@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import TimelinePage from './Timeline';
+import { useNavigate } from 'react-router-dom';
 
 const MobileAppDevelopmentPage = () => {
+  const navigate = useNavigate();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -38,7 +40,7 @@ const MobileAppDevelopmentPage = () => {
     {
       type: 'android',
       title: 'Android Mobile App Development:',
-      description: `ALO Infotech excels in Android mobile app development, creating dynamic and user-friendly applications tailored to the Android platform. Our team leverages the latest technologies and follows best practices to design and develop innovative Android apps that cater to diverse business needs. From conceptualization to deployment, we ensure a seamless development process, incorporating engaging UI/UX designs, robust functionalities, and optimal performance. Our Android app development services encompass a wide range of industries, providing scalable and feature-rich solutions that resonate with the specific requirements of our clients.`,
+      description: `Roriri Soft Tech excels in Android mobile app development, creating dynamic and user-friendly applications tailored to the Android platform. Our team leverages the latest technologies and follows best practices to design and develop innovative Android apps that cater to diverse business needs. From conceptualization to deployment, we ensure a seamless development process, incorporating engaging UI/UX designs, robust functionalities, and optimal performance. Our Android app development services encompass a wide range of industries, providing scalable and feature-rich solutions that resonate with the specific requirements of our clients.`,
       phoneContent: (
         <div className="relative w-64 h-[500px] bg-white rounded-[2.5rem] shadow-2xl overflow-hidden">
           {/* Phone frame */}
@@ -88,7 +90,7 @@ const MobileAppDevelopmentPage = () => {
     {
       type: 'ios',
       title: 'iOS Mobile App Development:',
-      description: `In the realm of iOS mobile app development, ALO Infotech stands out as a proficient and experienced provider. Our dedicated team specializes in crafting high-quality iOS applications that align with the design principles and standards set by Apple. We employ cutting-edge tools and technologies to build visually appealing and functionally superior iOS apps. Whether it's for iPhones, iPads, or other Apple devices, our development process prioritizes user experience, performance optimization, and adherence to Apple's guidelines. ALO Infotech ensures that iOS apps developed meet the highest standards of quality, delivering a seamless and intuitive experience for end-users.`,
+      description: `In the realm of iOS mobile app development, Roriri Soft Tech stands out as a proficient and experienced provider. Our dedicated team specializes in crafting high-quality iOS applications that align with the design principles and standards set by Apple. We employ cutting-edge tools and technologies to build visually appealing and functionally superior iOS apps. Whether it's for iPhones, iPads, or other Apple devices, our development process prioritizes user experience, performance optimization, and adherence to Apple's guidelines. Roriri Soft Tech ensures that iOS apps developed meet the highest standards of quality, delivering a seamless and intuitive experience for end-users.`,
       phoneContent: (
         <div className="relative w-64 h-[500px]">
           {/* Circular background */}
@@ -245,11 +247,11 @@ const MobileAppDevelopmentPage = () => {
             Innovative <span className="text-blue-600">Mobile Apps</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-8 leading-relaxed">
-            Welcome to ALO Infotech, your go-to destination for unparalleled mobile app development 
-            services in Nagercoil. As a dynamic software company, we specialize in transforming your 
+            Welcome to Roriri Soft Tech, your go-to destination for unparalleled mobile app development 
+            services in Kalakad. As a dynamic software company, we specialize in transforming your 
             ideas and plans into innovative applications that resonate with the latest industry trends.
           </p>
-          <button className="bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 shadow-lg hover:shadow-blue-500/25">
+          <button onClick={()=>navigate('/contact')} className="bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 shadow-lg hover:shadow-blue-500/25">
             Book a free consulting
           </button>
         </div>

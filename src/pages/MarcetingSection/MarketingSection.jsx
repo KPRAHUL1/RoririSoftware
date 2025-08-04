@@ -1,34 +1,47 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import {motion as Motion, useMotionValue} from 'framer-motion';
+import { client1, client2, client3, client4, client5 } from '../../assets/clients/clients';
 
 const originalTestimonials = [
   {
     id: 1,
-    quote: "I feel like I've learned as much from X as I did completing my masters. It's the first thing I read every morning.",
-    author: "Jenn F.",
-    role: "Marketing Director @ Square",
-    avatar: "https://via.placeholder.com/60/FF5733/FFFFFF?text=J",
+    quote: "The digital marketing services greatly boosted our conversion rates, with excellent follow-up and customer support.",
+    author: "Plots To You",
+     star: "⭐⭐⭐⭐",
+    starvalue:"4.0",
+    avatar: client1,
   },
   {
     id: 2,
-    quote: "What I'm sad this... X is truly a game-changer for understanding market trends.",
-    author: "Alex G.",
-    role: "@ Meta",
-    avatar: "https://via.placeholder.com/60/33FF57/FFFFFF?text=A",
+    quote: "Roriri's tailored ERP solution transformed us completely. Grateful for the team's outstanding support and dedication throughout..",
+    author: "Connect Training Institute",
+    star: "⭐⭐⭐⭐⭐",
+    starvalue:"5.0",
+    avatar: client2,
   },
   {
     id: 3,
-    quote: "...free. If X would be plan to after X. The insights are invaluable!",
-    author: "Chris P.",
-    role: "Lead @ Google",
-    avatar: "https://via.placeholder.com/60/3357FF/FFFFFF?text=C",
+    quote: "Roriri ERP has reduced my workload and improved overall efficiency with just a few clicks. Thank you, Roriri ERP Team!",
+    author: "Jeno Study Center",
+    star: "⭐⭐⭐⭐⭐",
+    starvalue:"5.0",
+    avatar:client3,
   },
   {
     id: 4,
-    quote: "Never thought I'd find such practical advice in one place. Highly recommend!",
-    author: "Sarah K.",
-    role: "Startup Founder",
-    avatar: "https://via.placeholder.com/60/FFFF33/333333?text=S",
+    quote: "The customized ERP has greatly improved our services, boosting revenue and efficiency. We truly appreciate the impact.",
+    author: "Dilton IT Hub",
+     star: "⭐⭐⭐⭐",
+    starvalue:"4.0",
+    avatar: client4,
+  },
+    {
+    id: 5,
+    quote: "The web applications have streamlined our operations, reduced workload, and significantly improved overall efficiency",
+    author: "SD Tiles",
+     star: "⭐⭐⭐⭐⭐",
+    starvalue:"5.0",
+    avatar: client5,
   },
 ];
 
@@ -215,7 +228,7 @@ const MarketingSection = () => {
                   "{testimonial.quote}"
                 </p>
                 <p className="text-sm font-semibold text-gray-700">{testimonial.author}</p>
-                <p className="text-xs text-gray-500">{testimonial.role}</p>
+                <p className="text-xs text-gray-500">{testimonial.star} {testimonial.starvalue}</p>
               </Motion.div>
             ))}
           </Motion.div>

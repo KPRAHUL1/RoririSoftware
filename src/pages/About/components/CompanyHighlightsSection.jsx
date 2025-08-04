@@ -2,17 +2,19 @@ import React from 'react';
 import { motion as Motion } from 'framer-motion';
 import Slider from 'react-slick'; 
 
-import founder1 from '../../../assets/founderimage/002.png';
+import founder4 from '../../../assets/founderimage/002.png';
 
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { founder2, founder3, founder1 } from '../../../assets/founderimage/founder';
 
 
 const mdPhotos = [
-  { id: 1, src: founder1, alt: 'MD Photo 1' },
-  { id: 2, src: founder1, alt: 'MD Photo 2' },
-  { id: 3, src: founder1, alt: 'MD Photo 3' },
+  { id: 1, src: founder1},
+  { id: 2, src: founder2},
+  { id: 3, src: founder3 },
+  { id: 3, src: founder4 },
 ];
 
 const youtubeVideoId = 'xUWa2NKyBaA';
@@ -107,16 +109,13 @@ const CompanyHighlightsSection = () => {
               <div className="relative w-full h-64 flex  items-center m-5 justify-center px-2"> 
                 <img
                   src={photo.src}
-                  alt={photo.alt}
+                  alt={photo.id}
                   className="w-full h-full object-cover rounded-xl shadow-lg"
                   onError={(e) => {
                     console.error("Image failed to load:", photo.src, e);
                     e.target.src = 'https://via.placeholder.com/400x300?text=Image+Not+Found';
                   }}
                 />
-                <div className="absolute inset-0  rounded-xl flex items-end p-4">
-                  <p className="text-white text-md font-semibold">{photo.alt}</p>
-                </div>
               </div>
             </div>
           ))}

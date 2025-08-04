@@ -1,5 +1,7 @@
 import team1 from './521999372_2646702562388360_6850879023004015989_n.jpg'
 import team2 from './523144275_1649745612383019_2867651194558083146_n copy.jpg'
 import team3 from './523113218_1405684977178297_9198232796072250543_n.jpg'
+import team4 from './1751526554860.jpg'
+import team5 from './1752667171371.jpg'
 import garden from './523492990_749352067480063_7317863159014860791_n.jpg'
-export {team1,team2,team3,garden};
+export {team1,team2,team3,garden,team4,team5};
