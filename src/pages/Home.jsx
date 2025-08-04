@@ -66,11 +66,11 @@ const Home = () => {
     </div>
     <div className='flex flex-col-reverse md:flex-row bg-gray-50'>  
       
-      <div className="relative   left-0 w-[300px] h-[300px] sm:w-[250px] sm:h-[250px] md:w-[600px] md:h-[600px] flex items-center justify-center">
+      <div className="relative hidden lg:block  left-0 w-[300px] h-[300px] sm:w-[250px] sm:h-[250px] md:w-[600px] md:h-[600px] flex items-center justify-center">
         <img
           src="hero1.897db1b8.png"
           alt="Hand"
-          className="absolute lg:w-full lg:h-full  object-contain z-10 lg:mt-70 mt-32 md:mt-72"
+          className="absolute lg:w-full lg:h-full  object-contain z-10 lg:mt-44 xl:mt-72"
         />
         <Motion.img
           src="hero2.a3ba59f7.png"

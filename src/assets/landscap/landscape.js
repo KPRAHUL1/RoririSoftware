@@ -9,6 +9,7 @@ import land9 from './524144382_1001636521920195_29927176431986097_n.jpg';
 import land10 from './524699834_1053117550291780_8763971556988911119_n.jpg';
 import office1 from './524706727_1270386018005767_334287679490403700_n.jpg'
 import office2 from './525719767_1272175520916121_1221651008246338994_n.jpg'
+import games from './524144382_1001636521920195_29927176431986097_n.jpg'
 import land11 from './image.png';
 
-export {land1,land10,land2,land3,land4,land5,land6,land7,land9,land11,office1,office2}
+export {land1,land10,land2,land3,land4,land5,land6,land7,land9,land11,office1,office2,games}
