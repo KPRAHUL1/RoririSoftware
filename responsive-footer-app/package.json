@@ -1,0 +1,35 @@
+{
+  "name": "responsive-footer-app",
+  "version": "1.0.0",
+  "description": "A React application featuring a responsive footer component with a professional layout and styling.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "keywords": [
+    "react",
+    "footer",
+    "responsive",
+    "flexbox"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "4.0.3",
+    "lucide-react": "^0.1.0"
+  },
+  "devDependencies": {},
+  "homepage": "https://github.com/yourusername/responsive-footer-app",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/responsive-footer-app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/responsive-footer-app/issues"
+  }
+}
