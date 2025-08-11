@@ -234,9 +234,6 @@ const About = () => {
             {/* Our Culture Section */}
             <Motion.section
                 className="py-16 md:py-24 bg-gray-100 rounded-lg shadow-md mx-auto my-12 max-w-screen-xl px-4"
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.3 }}
                 variants={sectionVariants}
             >
                 <div className="container mx-auto text-center">
@@ -284,10 +281,10 @@ const About = () => {
 
                         {/* Life at #roriri section */}
                         <div className="lg:col-span-3 flex flex-col items-center justify-center py-8">
-                            <h3 className="text-3xl font-medium text-gray-900 mb-8 rounded-lg text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">Life at #roriri</h3>
+                            <h3 className="text-3xl font-medium  mb-8 rounded-lg text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">Life at #roriri</h3>
                             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
                                 <Motion.img
-                                    src="https://placehold.co/400x300/B8B8F0/312E81?text=Life+at+Roriri+1"
+                                    src={officeimg}
                                     alt="Life at Roriri 1"
                                     className="w-full rounded-xl shadow-lg object-cover h-64"
                                     initial={{ opacity: 0, y: 50 }}
@@ -297,7 +294,7 @@ const About = () => {
                                     onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/400x300/B8B8F0/312E81?text=Life+at+Roriri+1'; }}
                                 />
                                 <Motion.img
-                                    src="https://placehold.co/400x300/E0E7FF/312E81?text=Life+at+Roriri+2"
+                                    src={officeimg}
                                     alt="Life at Roriri 2"
                                     className="w-full rounded-xl shadow-lg object-cover h-64"
                                     initial={{ opacity: 0, y: 50 }}
@@ -307,7 +304,7 @@ const About = () => {
                                     onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/400x300/E0E7FF/312E81?text=Life+at+Roriri+2'; }}
                                 />
                                 <Motion.img
-                                    src="https://placehold.co/400x300/B8B8F0/312E81?text=Life+at+Roriri+3"
+                                    src={officeimg}
                                     alt="Life at Roriri 3"
                                     className="w-full rounded-xl shadow-lg object-cover h-64"
                                     initial={{ opacity: 0, y: 50 }}
@@ -317,7 +314,7 @@ const About = () => {
                                     onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/400x300/B8B8F0/312E81?text=Life+at+Roriri+3'; }}
                                 />
                                 <Motion.img
-                                    src="https://placehold.co/400x300/E0E7FF/312E81?text=Life+at+Roriri+4"
+                                    src={officeimg}
                                     alt="Life at Roriri 4"
                                     className="w-full rounded-xl shadow-lg object-cover h-64"
                                     initial={{ opacity: 0, y: 50 }}
