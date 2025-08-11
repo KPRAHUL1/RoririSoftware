@@ -10,7 +10,7 @@ import { officeimg } from '../../assets/office/office.js';
 import garden1 from '../../assets/roriri/Garden.jpg'
 const solutions = [
   {
-    title: "Solutions made Simple",
+    title: "Solution made Simple",
     description: "At RoririSoft, we specialize in transforming complex challenges into elegant, user-friendly software solutions. Our expertise spans across various domains, ensuring that we deliver products that are not just functional but also intuitive and scalable. We believe in simplifying technology to empower businesses and individuals.",
   },
 ];
@@ -128,7 +128,7 @@ const About = () => {
                     </div>
                 </div>
             </Motion.section>
-       <section className="py-5 md:py-10 bg-roriri-dark px-4">
+       <section className="py-5 md:py-10  px-4">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-12">
         <Motion.div
           variants={containerVariants}
@@ -138,7 +138,7 @@ const About = () => {
           className="lg:w-1/2"
         >
           {solutions.map((solution, index) => (
-            <Motion.div key={index} variants={itemVariants} className="mb-8 p-6 rounded-lg">
+            <Motion.div key={index} variants={itemVariants} className="mb-8 p-3 rounded-lg">
               <h2 className="text-4xl md:text-5xl font-medium  mb-6 leading-tight">
                <TextType  text={[solution.title,'A tale of tech bri lliance and growth']}/>
               </h2>
