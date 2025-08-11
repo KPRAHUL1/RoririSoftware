@@ -1,5 +1,13 @@
 import React from 'react';
 import { motion as Motion } from 'framer-motion';
+import {react1} from '../../../assets/services/service';
+import {angular1} from '../../../assets/services/service';
+import {flutter1} from '../../../assets/services/service';
+import {ui1} from '../../../assets/services/service';
+import {node1} from '../../../assets/services/service';
+import {dataanalyt1} from '../../../assets/services/service';
+import {testing1} from '../../../assets/services/service';
+import {java1} from '../../../assets/services/service';
 
 // Main App Component for IT Consulting Page
 const IT_Consulting = () => {
@@ -53,7 +61,7 @@ const IT_Consulting = () => {
                         At ALO Infotech, our IT consulting services offer invaluable support in navigating dynamic tech environments. Efficient IT consulting Solutions tailored to your needs. From CV Screening to onboarding, we find the right fit for your team. Streamline your hiring process with our expertise.
                     </Motion.p>
                     <Motion.button
-                        className="bg-blue-500 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-blue-600 transition duration-300"
+                        className="cursor-pointer bg-blue-500 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-blue-600 transition duration-300"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                     >
@@ -86,13 +94,13 @@ const IT_Consulting = () => {
                             viewport={{ once: true, amount: 0.2 }}
                             transition={{ delay: 0.1 }}
                         >
-                            <img src="https://placehold.co/100x100/E0E7FF/312E81?text=React" alt="React Developer" className="absolute top-4 right-4 w-20 h-20 opacity-20 group-hover:opacity-100 transition-opacity duration-300" onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/100x100/E0E7FF/312E81?text=React'; }} />
+                            <img src={react1} alt="React Developer" className=" rounded-2xl absolute top-4 right-4 w-20 h-20 opacity-20 group-hover:opacity-100 transition-opacity duration-300" onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/100x100/E0E7FF/312E81?text=React'; }} />
                             <h3 className="text-xl font-semibold text-gray-900 mb-3 rounded-lg">React Developer</h3>
                             <p className="text-gray-700 mb-6 rounded-lg">
                                 At ALO Infotech, we are providing the best ReactJS Developer for your IT needs. Need a React Developer? Look no further. We train to provide the best and most perfect React developer for you. With expertise tailored to your needs, our React developers ensure seamless integration and top-notch performance. Partner with ALO Infotech for skilled React developers tailored to your needs.
                             </p>
                             <Motion.button
-                                className="inline-flex items-center text-blue-600 font-semibold hover:text-blue-800 transition duration-300"
+                                className="cursor-pointer inline-flex items-center text-blue-600 font-semibold hover:text-blue-800 transition duration-300"
                                 whileHover={{ x: 5 }}
                             >
                                 Get Quote
@@ -109,14 +117,14 @@ const IT_Consulting = () => {
                             viewport={{ once: true, amount: 0.2 }}
                             transition={{ delay: 0.2 }}
                         >
-                            <img src="https://placehold.co/100x100/E0E7FF/312E81?text=Angular" alt="Angular Developer" className="absolute top-4 right-4 w-20 h-20 opacity-20 group-hover:opacity-100 transition-opacity duration-300" onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/100x100/E0E7FF/312E81?text=Angular'; }} />
+                            <img src={angular1} alt="Angular Developer" className="rounded-2xl absolute top-4 right-4 w-20 h-20 opacity-20 group-hover:opacity-100 transition-opacity duration-300" onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/100x100/E0E7FF/312E81?text=Angular'; }} />
                             <h3 className="text-xl font-semibold text-gray-900 mb-3 rounded-lg">Angular Developer</h3>
                             <p className="text-gray-700 mb-6 rounded-lg">
                                 {/* Placeholder description */}
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                             </p>
                             <Motion.button
-                                className="inline-flex items-center text-blue-600 font-semibold hover:text-blue-800 transition duration-300"
+                                className=" cursor-pointer inline-flex items-center text-blue-600 font-semibold hover:text-blue-800 transition duration-300"
                                 whileHover={{ x: 5 }}
                             >
                                 Get Quote
@@ -133,14 +141,14 @@ const IT_Consulting = () => {
                             viewport={{ once: true, amount: 0.2 }}
                             transition={{ delay: 0.3 }}
                         >
-                            <img src="https://placehold.co/100x100/E0E7FF/312E81?text=Flutter" alt="Flutter Developer" className="absolute top-4 right-4 w-20 h-20 opacity-20 group-hover:opacity-100 transition-opacity duration-300" onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/100x100/E0E7FF/312E81?text=Flutter'; }} />
+                            <img src={flutter1} alt="Flutter Developer" className="rounded-2xl absolute top-4 right-4 w-20 h-20 opacity-20 group-hover:opacity-100 transition-opacity duration-300" onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/100x100/E0E7FF/312E81?text=Flutter'; }} />
                             <h3 className="text-xl font-semibold text-gray-900 mb-3 rounded-lg">Flutter Developer</h3>
                             <p className="text-gray-700 mb-6 rounded-lg">
                                 {/* Placeholder description */}
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                             </p>
                             <Motion.button
-                                className="inline-flex items-center text-blue-600 font-semibold hover:text-blue-800 transition duration-300"
+                                className="cursor-pointer inline-flex items-center text-blue-600 font-semibold hover:text-blue-800 transition duration-300"
                                 whileHover={{ x: 5 }}
                             >
                                 Get Quote
@@ -157,14 +165,14 @@ const IT_Consulting = () => {
                             viewport={{ once: true, amount: 0.2 }}
                             transition={{ delay: 0.4 }}
                         >
-                            <img src="https://placehold.co/100x100/E0E7FF/312E81?text=UI/UX" alt="UI/UX Designer" className="absolute top-4 right-4 w-20 h-20 opacity-20 group-hover:opacity-100 transition-opacity duration-300" onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/100x100/E0E7FF/312E81?text=UI/UX'; }} />
+                            <img src={ui1} alt="UI/UX Designer" className="rounded-2xl absolute top-4 right-4 w-20 h-20 opacity-20 group-hover:opacity-100 transition-opacity duration-300" onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/100x100/E0E7FF/312E81?text=UI/UX'; }} />
                             <h3 className="text-xl font-semibold text-gray-900 mb-3 rounded-lg">UI/UX Designer</h3>
                             <p className="text-gray-700 mb-6 rounded-lg">
                                 {/* Placeholder description */}
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                             </p>
                             <Motion.button
-                                className="inline-flex items-center text-blue-600 font-semibold hover:text-blue-800 transition duration-300"
+                                className="cursor-pointer inline-flex items-center text-blue-600 font-semibold hover:text-blue-800 transition duration-300"
                                 whileHover={{ x: 5 }}
                             >
                                 Get Quote
@@ -181,14 +189,14 @@ const IT_Consulting = () => {
                             viewport={{ once: true, amount: 0.2 }}
                             transition={{ delay: 0.5 }}
                         >
-                            <img src="https://placehold.co/100x100/E0E7FF/312E81?text=NodeJS" alt="Node JS Developer" className="absolute top-4 right-4 w-20 h-20 opacity-20 group-hover:opacity-100 transition-opacity duration-300" onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/100x100/E0E7FF/312E81?text=NodeJS'; }} />
+                            <img src={node1} alt="Node JS Developer" className="rounded-2xl absolute top-4 right-4 w-20 h-20 opacity-20 group-hover:opacity-100 transition-opacity duration-300" onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/100x100/E0E7FF/312E81?text=NodeJS'; }} />
                             <h3 className="text-xl font-semibold text-gray-900 mb-3 rounded-lg">Node JS Developer</h3>
                             <p className="text-gray-700 mb-6 rounded-lg">
                                 {/* Placeholder description */}
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                             </p>
                             <Motion.button
-                                className="inline-flex items-center text-blue-600 font-semibold hover:text-blue-800 transition duration-300"
+                                className="cursor-pointer inline-flex items-center text-blue-600 font-semibold hover:text-blue-800 transition duration-300"
                                 whileHover={{ x: 5 }}
                             >
                                 Get Quote
@@ -205,14 +213,14 @@ const IT_Consulting = () => {
                             viewport={{ once: true, amount: 0.2 }}
                             transition={{ delay: 0.6 }}
                         >
-                            <img src="https://placehold.co/100x100/E0E7FF/312E81?text=Data" alt="Data Analyst" className="absolute top-4 right-4 w-20 h-20 opacity-20 group-hover:opacity-100 transition-opacity duration-300" onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/100x100/E0E7FF/312E81?text=Data'; }} />
+                            <img src={dataanalyt1} alt="Data Analyst" className="rounded-2xl absolute top-4 right-4 w-20 h-20 opacity-20 group-hover:opacity-100 transition-opacity duration-300" onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/100x100/E0E7FF/312E81?text=Data'; }} />
                             <h3 className="text-xl font-semibold text-gray-900 mb-3 rounded-lg">Data Analyst</h3>
                             <p className="text-gray-700 mb-6 rounded-lg">
                                 {/* Placeholder description */}
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                             </p>
                             <Motion.button
-                                className="inline-flex items-center text-blue-600 font-semibold hover:text-blue-800 transition duration-300"
+                                className="cursor-pointer inline-flex items-center text-blue-600 font-semibold hover:text-blue-800 transition duration-300"
                                 whileHover={{ x: 5 }}
                             >
                                 Get Quote
@@ -229,14 +237,14 @@ const IT_Consulting = () => {
                             viewport={{ once: true, amount: 0.2 }}
                             transition={{ delay: 0.7 }}
                         >
-                            <img src="https://placehold.co/100x100/E0E7FF/312E81?text=Tester" alt="Software Tester" className="absolute top-4 right-4 w-20 h-20 opacity-20 group-hover:opacity-100 transition-opacity duration-300" onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/100x100/E0E7FF/312E81?text=Tester'; }} />
+                            <img src={testing1} alt="Software Tester" className="rounded-2xl absolute top-4 right-4 w-20 h-20 opacity-20 group-hover:opacity-100 transition-opacity duration-300" onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/100x100/E0E7FF/312E81?text=Tester'; }} />
                             <h3 className="text-xl font-semibold text-gray-900 mb-3 rounded-lg">Software Tester</h3>
                             <p className="text-gray-700 mb-6 rounded-lg">
                                 {/* Placeholder description */}
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                             </p>
                             <Motion.button
-                                className="inline-flex items-center text-blue-600 font-semibold hover:text-blue-800 transition duration-300"
+                                className="cursor-pointer inline-flex items-center text-blue-600 font-semibold hover:text-blue-800 transition duration-300"
                                 whileHover={{ x: 5 }}
                             >
                                 Get Quote
@@ -253,14 +261,14 @@ const IT_Consulting = () => {
                             viewport={{ once: true, amount: 0.2 }}
                             transition={{ delay: 0.8 }}
                         >
-                            <img src="https://placehold.co/100x100/E0E7FF/312E81?text=Java" alt="Java Developer" className="absolute top-4 right-4 w-20 h-20 opacity-20 group-hover:opacity-100 transition-opacity duration-300" onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/100x100/E0E7FF/312E81?text=Java'; }} />
+                            <img src={java1} alt="Java Developer" className="rounded-2xl absolute top-4 right-4 w-20 h-20 opacity-20 group-hover:opacity-100 transition-opacity duration-300" onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/100x100/E0E7FF/312E81?text=Java'; }} />
                             <h3 className="text-xl font-semibold text-gray-900 mb-3 rounded-lg">Java Developer</h3>
                             <p className="text-gray-700 mb-6 rounded-lg">
                                 {/* Placeholder description */}
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                             </p>
                             <Motion.button
-                                className="inline-flex items-center text-blue-600 font-semibold hover:text-blue-800 transition duration-300"
+                                className="cursor-pointer inline-flex items-center text-blue-600 font-semibold hover:text-blue-800 transition duration-300"
                                 whileHover={{ x: 5 }}
                             >
                                 Get Quote
@@ -288,7 +296,7 @@ const IT_Consulting = () => {
                     </div>
                     <div className="md:w-1/3 flex justify-center md:justify-end">
                         <Motion.button
-                            className="bg-white text-blue-800 font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-gray-100 transition duration-300"
+                            className="cursor-pointer bg-white text-blue-800 font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-gray-100 transition duration-300"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                         >

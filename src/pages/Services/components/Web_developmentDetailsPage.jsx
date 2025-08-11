@@ -1,5 +1,14 @@
 import React from 'react';
 import { motion as Motion} from 'framer-motion';
+import { development1 } from '../../../assets/services/service';
+import { development2 } from '../../../assets/services/service';
+import { development3 } from '../../../assets/services/service';
+import { development4 } from '../../../assets/services/service';
+import { static1 } from '../../../assets/services/service';
+import { dynamic2 } from '../../../assets/services/service';
+import { ec1 } from '../../../assets/services/service';
+import { multi1 } from '../../../assets/services/service';
+
 
 // Main App Component for Web Development Page
 const WebDevelopment = () => {
@@ -57,7 +66,7 @@ const WebDevelopment = () => {
                             At Roriri Software Solutions, we redefine the standards of website development. As trendsetters and game changers in the industry, we specialize in crafting innovative and customized websites tailored to meet your business needs. Our approach combines cutting-edge technology, creativity, and strategic thinking to deliver websites that don't just look great but also drive results.
                         </Motion.p>
                         <Motion.button
-                            className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:from-purple-700 hover:to-indigo-700 transition duration-300 flex items-center justify-center mx-auto md:mx-0"
+                            className="cursor-pointer bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:from-purple-700 hover:to-indigo-700 transition duration-300 flex items-center justify-center mx-auto md:mx-0"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                         >
@@ -68,7 +77,7 @@ const WebDevelopment = () => {
                     <div className="md:w-1/2 flex justify-center md:justify-end relative">
                         {/* Placeholder for the laptop images */}
                         <Motion.img
-                            src="https://placehold.co/500x350/E0E7FF/312E81?text=Website+Mockup+1"
+                            src={development1}
                             alt="Website Mockup 1"
                             className="w-full max-w-md md:max-w-lg rounded-xl shadow-2xl transform rotate-3 hover:rotate-0 transition duration-500"
                             initial={{ opacity: 0, x: 50, rotate: 10 }}
@@ -77,7 +86,7 @@ const WebDevelopment = () => {
                             onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/500x350/E0E7FF/312E81?text=Website+Mockup+1'; }}
                         />
                         <Motion.img
-                            src="https://placehold.co/400x280/B8B8F0/312E81?text=Website+Mockup+2"
+                            src={development4}
                             alt="Website Mockup 2"
                             className="absolute bottom-0 left-0 w-2/3 md:w-1/2 rounded-xl shadow-2xl transform -rotate-6 hover:rotate-0 transition duration-500 translate-x-4 translate-y-4 md:-translate-x-8 md:translate-y-8"
                             initial={{ opacity: 0, x: -50, rotate: -10 }}
@@ -101,7 +110,7 @@ const WebDevelopment = () => {
                     <div className="md:w-1/2 mb-10 md:mb-0 relative">
                         {/* Placeholder for images */}
                         <Motion.img
-                            src="https://placehold.co/500x300/E0E7FF/312E81?text=Web+Dev+Image+1"
+                            src={development3}
                             alt="Web Development Service"
                             className="w-full rounded-2xl shadow-xl transform rotate-2"
                             initial={{ opacity: 0, x: -50 }}
@@ -110,7 +119,7 @@ const WebDevelopment = () => {
                             onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/500x300/E0E7FF/312E81?text=Web+Dev+Image+1'; }}
                         />
                         <Motion.img
-                            src="https://placehold.co/400x250/B8B8F0/312E81?text=Web+Dev+Image+2"
+                            src={development2}
                             alt="Web Development Service Detail"
                             className="absolute bottom-0 right-0 w-2/3 md:w-1/2 rounded-2xl shadow-2xl transform -rotate-3 translate-x-4 translate-y-4 md:translate-x-8 md:translate-y-8"
                             initial={{ opacity: 0, x: 50 }}
@@ -184,7 +193,7 @@ const WebDevelopment = () => {
                         </div>
                         <div className="md:w-1/2 flex justify-center md:justify-end">
                             <Motion.img
-                                src="https://placehold.co/600x400/E0E7FF/312E81?text=Static+Website"
+                                src={static1}
                                 alt="Static Website Example"
                                 className="w-full max-w-md rounded-xl shadow-2xl transform hover:scale-105 transition duration-500"
                                 initial={{ opacity: 0, x: 50 }}
@@ -218,7 +227,7 @@ const WebDevelopment = () => {
                         </div>
                         <div className="md:w-1/2 flex justify-center md:justify-start">
                             <Motion.img
-                                src="https://placehold.co/600x400/E0E7FF/312E81?text=Dynamic+Website"
+                                src={dynamic2}
                                 alt="Dynamic Website Example"
                                 className="w-full max-w-md rounded-xl shadow-2xl transform hover:scale-105 transition duration-500"
                                 initial={{ opacity: 0, x: -50 }}
@@ -251,7 +260,7 @@ const WebDevelopment = () => {
                         </div>
                         <div className="md:w-1/2 flex justify-center md:justify-end">
                             <Motion.img
-                                src="https://placehold.co/600x400/E0E7FF/312E81?text=Ecommerce+Website"
+                                src={ec1}
                                 alt="E-Commerce Website Example"
                                 className="w-full max-w-md rounded-xl shadow-2xl transform hover:scale-105 transition duration-500"
                                 initial={{ opacity: 0, x: 50 }}
@@ -284,7 +293,7 @@ const WebDevelopment = () => {
                         </div>
                         <div className="md:w-1/2 flex justify-center md:justify-start">
                             <Motion.img
-                                src="https://placehold.co/600x400/E0E7FF/312E81?text=Multimedia+Website"
+                                src={multi1}
                                 alt="Multimedia Website Example"
                                 className="w-full max-w-md rounded-xl shadow-2xl transform hover:scale-105 transition duration-500"
                                 initial={{ opacity: 0, x: -50 }}
@@ -299,66 +308,74 @@ const WebDevelopment = () => {
             </Motion.section>
 
             {/* Our Process Section */}
-            <Motion.section
-                className="py-16 md:py-24 bg-gray-900 text-white rounded-lg shadow-md mx-auto my-12 max-w-screen-xl px-4"
+          <Motion.section
+    className="py-16 md:py-24 bg-white text-black rounded-lg shadow-md mx-auto my-12 max-w-screen-xl px-4"
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true, amount: 0.3 }}
+    variants={sectionVariants}
+>
+    <div className="container mx-auto text-center">
+        <h2 className="text-3xl md:text-4xl font-bold mb-12 leading-tight text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
+            Our Process
+        </h2>
+
+        <div className="relative flex flex-col items-center">
+            {/* Vertical line */}
+            <Motion.div
+                className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-purple-500 to-indigo-500 rounded-full z-0"
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, amount: 0.3 }}
-                variants={sectionVariants}
-            >
-                <div className="container mx-auto text-center">
-                    <h2 className="text-3xl md:text-4xl font-bold mb-12 leading-tight rounded-lg text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">Our Process</h2>
+                viewport={{ once: true, amount: 0.5 }}
+                variants={processLineVariants}
+            ></Motion.div>
 
-                    <div className="relative flex flex-col items-center">
-                        {/* Vertical line for timeline - now animated */}
+            {[
+                { title: "Strategy", description: "At Roriri Software Solutions, we understand your goals, plan strategically, and ensure successful project execution." },
+                { title: "Design", description: "Roriri Software Solutions designs intuitive, visually appealing websites ensuring seamless experiences aligned with your brand." },
+                { title: "Development", description: "This stage transforms designs into functional websites, enhancing user experience and ensuring seamless functionality and performance." },
+                { title: "Testing", description: "After development, testing ensures bug fixes, smooth usability, and compatibility across platforms and screen sizes." },
+                { title: "Deployment", description: "After testing and approval, the website is deployed live, becoming accessible for users to explore." },
+                { title: "Maintenance", description: "After launch, ongoing maintenance ensures issue resolution, updates, and enhanced functionality for optimal performance." }
+            ].map((item, index) => (
+                <Motion.div
+                    key={index}
+                    className={`flex flex-col md:flex-row items-center w-full my-6 md:my-8 z-10 ${index % 2 === 0 ? '' : 'md:flex-row-reverse'}`}
+                    variants={cardVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.2 }}
+                    transition={{ delay: index * 0.15 + 0.5 }}
+                >
+                    {/* Card */}
+                    <div className={`w-full md:w-1/2 ${index % 2 === 0 ? 'md:pr-12' : 'md:pl-12'} text-center md:text-left`}>
                         <Motion.div
-                            className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-purple-500 to-indigo-500 rounded-full z-0"
-                            initial="hidden"
-                            whileInView="visible"
-                            viewport={{ once: true, amount: 0.5 }}
-                            variants={processLineVariants}
-                        ></Motion.div>
-
-                        {/* Timeline Items */}
-                        {[
-                            { title: "Strategy", description: "At Roriri Software Solutions, we understand your goals, plan strategically, and ensure successful project execution." },
-                            { title: "Design", description: "Roriri Software Solutions designs intuitive, visually appealing websites ensuring seamless experiences aligned with your brand." },
-                            { title: "Development", description: "This stage transforms designs into functional websites, enhancing user experience and ensuring seamless functionality and performance." },
-                            { title: "Testing", description: "After development, testing ensures bug fixes, smooth usability, and compatibility across platforms and screen sizes." },
-                            { title: "Deployment", description: "After testing and approval, the website is deployed live, becoming accessible for users to explore." },
-                            { title: "Maintenance", description: "After launch, ongoing maintenance ensures issue resolution, updates, and enhanced functionality for optimal performance." }
-                        ].map((item, index) => (
-                            <Motion.div
-                                key={index}
-                                className={`flex items-center w-full my-6 md:my-8 z-10 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}
-                                variants={cardVariants}
-                                initial="hidden"
-                                whileInView="visible"
-                                viewport={{ once: true, amount: 0.2 }}
-                                transition={{ delay: index * 0.15 + 0.5 }} 
-                            >
-                                <div className={`w-full md:w-1/2 ${index % 2 === 0 ? 'md:pr-12' : 'md:pl-12'} text-center md:text-left`}>
-                                    <Motion.div
-                                        className="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1 border border-purple-700"
-                                        whileHover={{ scale: 1.02 }}
-                                    >
-                                        <h3 className="text-xl font-semibold text-white mb-2 rounded-lg">{item.title}</h3>
-                                        <p className="text-gray-300 rounded-lg">{item.description}</p>
-                                    </Motion.div>
-                                </div>
-                                <div className="hidden md:flex w-1/12 justify-center">
-                                    <div className="w-6 h-6 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full shadow-md flex items-center justify-center">
-                                        <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path></svg>
-                                    </div>
-                                </div>
-                                <div className={`w-full md:w-1/2 ${index % 2 === 0 ? 'md:pl-12' : 'md:pr-12'} md:text-right`}>
-                                    
-                                </div>
-                            </Motion.div>
-                        ))}
+                            className="bg-white text-black p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1 border border-gray-200"
+                            whileHover={{ scale: 1.02 }}
+                        >
+                            <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
+                            <p className="text-gray-700">{item.description}</p>
+                        </Motion.div>
                     </div>
-                </div>
-            </Motion.section>
+
+                    {/* Timeline Dot */}
+                    <div className="hidden md:flex w-1/12 justify-center">
+                        <div className="w-6 h-6 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full shadow-md flex items-center justify-center">
+                            <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
+                            </svg>
+                        </div>
+                    </div>
+
+                    {/* Empty Spacer for layout */}
+                    <div className={`w-full md:w-1/2 ${index % 2 === 0 ? 'md:pl-12' : 'md:pr-12'} md:text-right`}>
+                    </div>
+                </Motion.div>
+            ))}
+        </div>
+    </div>
+</Motion.section>
+
 
             {/* Why Choose Roriri Section */}
             <Motion.section

@@ -107,7 +107,7 @@ const Product = () => {
                   <Motion.button onClick={()=>navigate('/contact')}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="mt-6 px-6 py-3 bg-purple-600 text-white font-semibold rounded-full shadow-md hover:bg-purple-700 transition-colors duration-300 self-start"
+                    className="cursor-pointer mt-6 px-6 py-3 bg-purple-600 text-white font-semibold rounded-full shadow-md hover:bg-purple-700 transition-colors duration-300 self-start"
                   >
                     Learn More
                   </Motion.button>

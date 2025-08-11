@@ -38,7 +38,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center pb-8 border-b border-gray-700 mb-8 gap-4">
           <div className="flex items-center gap-3">
             <img src={logo} alt="Roriri Tech" className="h-10 rounded-md" />
-            <span className="text-xl font-bold tracking-wide">Roriri Software Solutions</span>
+            {/* <span className="text-xl font-bold tracking-wide">Roriri Software Solutions</span> */}
           </div>
           <a href="mailto:hr@roririsoft.com" className="text-base md:text-lg flex items-center gap-2 hover:text-blue-400 transition">
             <Mail className="w-5 h-5" /> hr@roririsoft.com
