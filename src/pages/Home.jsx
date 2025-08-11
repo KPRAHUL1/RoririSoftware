@@ -27,7 +27,7 @@ const Home = () => {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -50 }}
                         transition={{ duration: 0.5, ease: "easeOut" }}
-                        className="relative bg-gradient-to-r from-purple-700 to-indigo-700 text-white p-3 md:p-4 text-center text-sm md:text-base flex items-center justify-center space-x-4 rounded-b-lg shadow-lg z-10"
+                        className="relative bg-gradient-to-r from-purple-700 to-indigo-700 text-white p-3 md:p-4 mt-5 text-center text-sm md:text-base flex items-center justify-center space-x-4 rounded-b-lg shadow-lg z-30"
                     >
                         <a
                             href="https://www.linkedin.com/company/roririsoft/" // Replace with actual LinkedIn/Instagram/Registration link
@@ -90,7 +90,7 @@ const Home = () => {
       <div className='flex flex-col  justify-center p-5 z-10'>
        <h1 className='text-6xl '>Innovation at the Core of</h1>
        <TextType className='text-[#f8acff] z-50'
-  text={["Every Solution.", "Evaluate Your Business.", "Paving A Way ToSuccess."]}
+  text={["Every Solution.", "Evaluate Your Business.", "Paving A Way To Success."]}
   typingSpeed={75}
   pauseDuration={1500}
   showCursor={true}
