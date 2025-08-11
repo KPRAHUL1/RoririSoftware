@@ -43,7 +43,7 @@ const About = () => {
   return (
 <>
   <section className="  bg-cover bg-center " >
-      <div className=" inset-0  bg-opacity-60 flex items-center justify-center ">
+      <div className=" inset-0  bg-opacity-60 flex items-center mt-3 md:mt-0 justify-center ">
         <img src={banner} alt="" />
         <Motion.div
           initial={{ y: 50, opacity: 0 }}
@@ -140,7 +140,7 @@ const About = () => {
           {solutions.map((solution, index) => (
             <Motion.div key={index} variants={itemVariants} className="mb-8 p-3 rounded-lg">
               <h2 className="text-4xl md:text-5xl font-medium  mb-6 leading-tight">
-               <TextType  text={[solution.title,'A tale of tech bri lliance and growth']}/>
+               <p>A tale of tech bri lliance and growth</p>
               </h2>
               <p className="text-lg md:text-xl text-gray-500 leading-relaxed">
                 {solution.description}
