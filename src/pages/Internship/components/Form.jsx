@@ -1,6 +1,24 @@
-import React from 'react';
+import { useRef } from 'react';
+import emailjs from "@emailjs/browser";import React from 'react';
 
 const InternshipRegistrationForm = () => {
+  const form = useRef();
+    
+        const sendEmail = (e) => {
+            e.preventDefault();
+            emailjs.sendForm(
+                'service_56cjqno',
+                'template_vtlhv9j',
+                form.current,
+                'cA6QaDp7Pj9_tpHXR'
+            )
+                .then((result) => {
+                    alert("Message sent successfully!");
+                }, (error) => {
+                    alert("Failed to send message.");
+                    console.error(error.text);
+                });
+              };
   return (
     <div className="min-h-screen  flex items-center lg:p-10 p-5 justify-center font-sans mb-5" >
       <div className=" w-full flex flex-col lg:flex-row  rounded-xl  overflow-hidden lg:p-5">
@@ -88,8 +106,8 @@ const InternshipRegistrationForm = () => {
 
             <div>
               <button
-                type="submit"
-                className="w-full sm:w-auto px-8 py-4 bg-green-600 text-white font-bold rounded-full shadow-md hover:bg-green-700 transition duration-300 flex items-center justify-center space-x-2"
+                type="submit" ref={form} onClick={sendEmail}
+                className="cursor-pointer w-full sm:w-auto px-8 py-4 bg-green-600 text-white font-bold rounded-full shadow-md hover:bg-green-700 transition duration-300 flex items-center justify-center space-x-2"
               >
                 <span>Submit</span>
               </button>

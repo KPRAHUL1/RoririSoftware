@@ -1,8 +1,28 @@
 import React from 'react';
+import { useRef } from 'react';
+import emailjs from "@emailjs/browser";
 import { motion as Motion } from 'framer-motion';
 import { Facebook, Instagram, Linkedin, Youtube, Send } from 'lucide-react'; // Social icons and send icon
 
 const ContactUsPage = () => {
+  const form = useRef();
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+        emailjs.sendForm(
+            'service_56cjqno',
+            'template_vtlhv9j',
+            form.current,
+            'cA6QaDp7Pj9_tpHXR'
+        )
+            .then((result) => {
+                alert("Message sent successfully!");
+            }, (error) => {
+                alert("Failed to send message.");
+                console.error(error.text);
+            });
+          };
+  
   // Animation variants for Framer Motion
   const containerVariants = {
     hidden: { opacity: 0, y: 50 }, // Start slightly below and invisible
@@ -128,8 +148,8 @@ const ContactUsPage = () => {
                 className="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-purple-500 focus:border-purple-500 sm:text-sm transition duration-150 ease-in-out bg-white resize-none"
               ></textarea>
             </div>
-            <button
-              type="submit"
+            <button 
+              type="submit" ref={form} onClick={sendEmail}
               className="w-full flex items-center justify-center py-3 px-6 border border-transparent rounded-md shadow-sm text-lg font-medium text-white bg-gradient-to-r from-purple-600 to-indigo-700 hover:from-purple-700 hover:to-indigo-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 transition duration-150 ease-in-out"
             >
               Send Message <Send size={20} className="ml-2" />

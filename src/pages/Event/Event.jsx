@@ -239,7 +239,7 @@ const App = () => {
                             Empowering innovation with hackathons, tech talks, client appreciation events, product launches, webinars, team-building activities, and workshops.
                         </Motion.p>
                         <Motion.button
-                            className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:from-purple-700 hover:to-indigo-700 transition duration-300 flex items-center justify-center mx-auto md:mx-0"
+                            className="cursor-pointer bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:from-purple-700 hover:to-indigo-700 transition duration-300 flex items-center justify-center mx-auto md:mx-0"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                         >

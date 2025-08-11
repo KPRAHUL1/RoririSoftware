@@ -1,8 +1,27 @@
 // src/components/JobApplicationForm.jsx
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useRef } from 'react';
+import emailjs from "@emailjs/browser";
 
 const JobApplicationForm = ({ isOpen, onClose, jobTitle = '', allJobTitles = [] }) => {
+   const form = useRef();
+      
+          const sendEmail = (e) => {
+              e.preventDefault();
+              emailjs.sendForm(
+                  'service_56cjqno',
+                  'template_vtlhv9j',
+                  form.current,
+                  'cA6QaDp7Pj9_tpHXR'
+              )
+                  .then((result) => {
+                      alert("Message sent successfully!");
+                  }, (error) => {
+                      alert("Failed to send message.");
+                      console.error(error.text);
+                  });
+                };
   const [formData, setFormData] = useState({
     resume: null,
     fullName: '',
@@ -294,16 +313,16 @@ const JobApplicationForm = ({ isOpen, onClose, jobTitle = '', allJobTitles = [] 
                     onClick={onClose}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="px-6 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors"
+                    className="cursor-pointer px-6 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors"
                   >
                     CLOSE
                   </motion.button>
                   <motion.button
-                    type="submit"
+                    type="submit" ref={form} onClick={sendEmail}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                     disabled={isSubmitting}
-                    className="px-6 py-2 bg-gradient-to-r from-purple-600 to-indigo-700 text-white font-semibold rounded-lg shadow-md hover:shadow-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+                    className="cursor-pointer px-6 py-2 bg-gradient-to-r from-purple-600 to-indigo-700 text-white font-semibold rounded-lg shadow-md hover:shadow-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
                   >
                     {isSubmitting ? (
                       <svg className="animate-spin h-5 w-5 mr-3 text-white" viewBox="0 0 24 24">

@@ -60,7 +60,7 @@ const Career = () => {
           transition={{ delay: 1.6, duration: 0.5, type: "spring", stiffness: 150 }}
           whileHover={{ scale: 1.05, boxShadow: "0px 8px 15px rgba(0, 0, 0, 0.2)" }}
           whileTap={{ scale: 0.95 }}
-          className="bg-gradient-to-r from-purple-500 to-indigo-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out flex items-center justify-center space-x-2"
+          className="cursor-pointer bg-gradient-to-r from-purple-500 to-indigo-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out flex items-center justify-center space-x-2"
          
         >
           <span>Explore JOB Openings</span>
