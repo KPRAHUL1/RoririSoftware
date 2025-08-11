@@ -1,6 +1,7 @@
 import React from 'react';
 
 const WeBelieveInSection = () => {
+  const url = "https://www.youtube.com/embed/xUWa2NKyBaA?autoplay=1&mute=1&loop=1&playlist=xUWa2NKyBaA&controls=1";
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -28,7 +29,7 @@ const WeBelieveInSection = () => {
             {/* Replaced <img> with <video> tag */}
              <div className="relative" style={{ paddingBottom: '56.25%', height: 0 }}> {/* 16:9 Aspect Ratio */}
               <iframe
-                 src="https://www.youtube.com/embed/xUWa2NKyBaA?autoplay=1&mute=1&loop=1&playlist=xUWa2NKyBaA&controls=1"  // Placeholder YouTube video ID
+                 src={url}
                 title="YouTube video player"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
