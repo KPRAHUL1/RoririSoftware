@@ -7,6 +7,7 @@ import internship from "../../assets/internship/image.png"
 import CircularGallery from '../../components/ui/CircularGallary/CircularGallary';
 import InternshipProgramsPage from './components/InternShipProgramPage';
 import WhatSetsUsApartPage from './components/SetupPage';
+import Certification from './components/Certifiaction';
 const Internship = () => {
 
   return (
@@ -110,6 +111,7 @@ const Internship = () => {
         </div>
       </div>
     </div>
+    <Certification/>
      <div className="min-h-screen bg-black text-white flex flex-col items-center py-3 justify-center px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div className="flex flex-col justify-center text-center md:text-left">
