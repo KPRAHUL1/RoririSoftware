@@ -95,7 +95,7 @@ useEffect(() => {
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 text-gray-100 font-sans p-4 flex items-center justify-center">
       <div className="relative w-full max-w-7xl mx-auto py-12 px-4 md:px-8">
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 animate-pulse">
+          <h1 className="text-4xl md:text-6xl font-medium mb-4 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 animate-pulse">
             Certificate Gallery
           </h1>
           <p className="text-gray-400 text-lg">Showcasing achievements and accomplishments</p>
@@ -115,7 +115,7 @@ useEffect(() => {
           </button>
 
           {/* Cards Display */}
-          <div className="flex justify-center items-stretch gap-8 overflow-hidden lg:px-16 md:px-20">
+          <div className="flex justify-center items-stretch gap-5 overflow-hidden lg:px-16 md:px-20">
             {displayedCards.map((card, index) => (
               <div
                 key={`${card.id}-${startIndex}`}
@@ -128,7 +128,7 @@ useEffect(() => {
                   {/* Glowing border effect */}
                   
                   <div className="relative p-6 h-full flex flex-col">
-                    <div className="flex-grow flex items-center justify-center bg-white/5 rounded-xl p-4 mb-4">
+                    <div className="flex-grow flex items-center justify-center bg-white/5 rounded-xl mb-4">
                       <img
                         src={card.certificateUrl}
                         alt={`Certificate ${card.id}`}

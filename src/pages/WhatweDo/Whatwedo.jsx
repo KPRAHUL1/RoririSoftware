@@ -68,9 +68,8 @@ const Whatwedo = () => {
             <div onClick={()=>navigate(`/services/${service?.path}`)}
               key={service.id}
               className={`
-                relative bg-white rounded-xl shadow-lg p-6 group cursor-target
+                relative bg-white rounded-xl shadow-lg p-6 group cursor-target border-2 border-purple-600
                 hover:shadow-xl transition-all duration-300 ease-in-out
-                ${service.id === 2 ? 'border-2 border-purple-600' : 'border border-gray-200'}
               `}
             >
               <div className="flex justify-between items-start mb-4">
