@@ -1,7 +1,7 @@
 import React from 'react'
-import contact from "../../assets/whatwedo/17.3dc54da2.svg"
 import { Handshake, Headset, HelpCircle } from 'lucide-react';
 import ContactUsPage from './components/ContactUsPage';
+import {motion } from 'framer-motion'
 
 const Contact = () => {
      const enquiryTypes = [
@@ -36,19 +36,50 @@ const Contact = () => {
   return (
   <>
   <div>
-    <div className='flex flex-col '>
-         <div className="relative">
-  <img src={contact} alt="Contact" className="w-full  object-cover" />
+         <section className="bg-gradient-to-br  flex items-center justify-center px-6">
+      <div className="container mx-auto flex flex-col-reverse md:flex-row items-center gap-8 md:gap-8">
+          <motion.div
+          className="flex-1 flex justify-center"
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          <iframe
+            src="https://lottie.host/embed/7ff9ab2c-e6ac-41e8-974d-d771c553840a/nhogeVgt7r.lottie"
+            className="w-[250px] sm:w-[350px] md:w-[450px] h-[250px] sm:h-[350px] md:h-[450px]"
+            title="Hero Animation"
+          ></iframe>
+        </motion.div>
+        {/* Text Section */}
+        <motion.div
+          className="flex-1 text-center md:text-left"
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-medium drop-shadow-lg leading-tight">
+            What can we help you with?
+          </h1>
+          <p className="mt-4 sm:mt-6 text-base sm:text-lgmax-w-lg">
+            Reach out to explore endless possibilities with{" "}
+            <span className="text-blue-400 font-semibold">
+              Roriri Software Solutions!
+            </span>
+          </p>
 
-  <div className="absolute xl:top-50 xl:left-30 top-5 sm:top-10  p-2  text-center ">
-    <h1 className="text-lg sm:text-xl md:text-5xl font-bold text-white drop-shadow-md">
-      What can we help you with?
-    </h1>
-    <p className="mt-4 md:text-lg text-sm  text-white/90 drop-shadow-sm">
-      Reach out to explore endless possibilities with Roriri Software Solutions!
-    </p>
-  </div>
-</div>
+          <motion.button
+            className="mt-6 px-6 py-3 bg-blue-400 text-white font-semibold rounded-full shadow-lg hover:bg-blue-300 transition"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Get in Touch
+          </motion.button>
+        </motion.div>
+
+        {/* Animation Section */}
+      
+      </div>
+    </section>
 <div className=" top-7/12 left-25  flex items-center justify-center  px-4 sm:px-6  font-inter">
       <div className="max-w-7xl mx-auto w-full bg-white rounded-3xl  p-8 sm:p-12 relative overflow-hidden">
         <div className="absolute top-6 left-8 w-3 h-3 rounded-full bg-red-300 opacity-70 blur-sm"></div>
@@ -83,8 +114,6 @@ const Contact = () => {
        
     </div>
 <ContactUsPage/>
-       
-  </div>
    <div className=" bg-white  text-gray-900 font-inter py-8 px-4 sm:px-6  flex flex-col items-center">
       <div className="max-w-4xl mx-auto text-center mb-12">
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
