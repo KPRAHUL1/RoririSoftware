@@ -95,7 +95,7 @@ const Products = () => {
               <Motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="mt-6 px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-500 text-white font-semibold rounded-full shadow-md hover:opacity-90 transition duration-300 self-start"
+                className="cursor-pointer mt-6 px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-500 text-white font-semibold rounded-full shadow-md hover:opacity-90 transition duration-300 self-start"
               >
                 Learn More
               </Motion.button>

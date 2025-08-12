@@ -38,7 +38,7 @@ const Internship = () => {
           As the first in Tamil Nadu, we offer a unique dashboard to track student tasks, progress, and performance.
         </p>
         <div className="flex justify-center lg:justify-start">
-          <button className="bg-blue-500 cursor-target hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-md shadow-md transition-colors duration-300 flex items-center gap-2">
+          <button className="cursor-pointer bg-blue-500 cursor-target hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-md shadow-md transition-colors duration-300 flex items-center gap-2">
             Register Now
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -105,7 +105,7 @@ const Internship = () => {
             developers, hands-on experience, and exposure to a collaborative environment
             designed to enhance your technical and professional skills.
           </p>
-          <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 ease-in-out self-center md:self-start">
+          <button className="cursor-pointer bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 ease-in-out self-center md:self-start">
             Register Now →
           </button>
         </div>

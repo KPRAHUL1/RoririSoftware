@@ -1,9 +1,28 @@
 import React from 'react';
+import { useRef } from 'react';
+import emailjs from "@emailjs/browser";
 import { motion as Motion } from 'framer-motion';
 import { erp1, erp2, erp3 } from '../../../assets/services/service';
 
 // Main App Component
 const ERPSolutions = () => {
+    const form = useRef();
+    
+        const sendEmail = (e) => {
+            e.preventDefault();
+            emailjs.sendForm(
+                'service_56cjqno',
+                'template_vtlhv9j',
+                form.current,
+                'cA6QaDp7Pj9_tpHXR'
+            )
+                .then((result) => {
+                    alert("Message sent successfully!");
+                }, (error) => {
+                    alert("Failed to send message.");
+                    console.error(error.text);
+                });
+              };
     // Animation variants for sections
     const sectionVariants = {
         hidden: { opacity: 0, y: 50 },
@@ -474,7 +493,8 @@ const ERPSolutions = () => {
                             ></Motion.textarea>
                             <Motion.button
                                 type="submit"
-                                className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold py-4 rounded-lg shadow-md hover:from-purple-700 hover:to-indigo-700 transition duration-300 flex items-center justify-center"
+                                ref={form} onClick={sendEmail}
+                                className="cursor-pointer w-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold py-4 rounded-lg shadow-md hover:from-purple-700 hover:to-indigo-700 transition duration-300 flex items-center justify-center"
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}
                             >
