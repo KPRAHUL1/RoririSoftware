@@ -1,29 +1,16 @@
 import React from 'react';
 import { motion as Motion } from 'framer-motion';
-import {react1} from '../../../assets/services/service';
-import {angular1} from '../../../assets/services/service';
-import {flutter1} from '../../../assets/services/service';
-import {ui1} from '../../../assets/services/service';
-import {node1} from '../../../assets/services/service';
-import {dataanalyt1} from '../../../assets/services/service';
-import {testing1} from '../../../assets/services/service';
-import {java1} from '../../../assets/services/service';
+import {java1,dataanalyt1,testing1, node1,ui1,flutter1,angular1,react1 } from '../../../assets/services/service';
 
-// Main App Component for IT Consulting Page
 const IT_Consulting = () => {
-    // Animation variants for sections
     const sectionVariants = {
         hidden: { opacity: 0, y: 50 },
         visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
     };
-
-    // Animation variants for cards/items
     const cardVariants = {
         hidden: { opacity: 0, scale: 0.9 },
         visible: { opacity: 1, scale: 1, transition: { duration: 0.5, ease: "easeOut" } }
     };
-
-    // Animation variants for process steps
     const processStepVariants = {
         hidden: { opacity: 0, x: -20 },
         visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut" } }
@@ -39,7 +26,6 @@ const IT_Consulting = () => {
                 variants={sectionVariants}
             >
                 <div className="absolute inset-0 z-0">
-                    {/* Placeholder for background image */}
                     <img src="https://placehold.co/1920x1080/1A202C/FFFFFF?text=IT+Consulting+Background" alt="IT Consulting Background" className="w-full h-full object-cover opacity-30" onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/1920x1080/1A202C/FFFFFF?text=IT+Consulting+Background'; }} />
                 </div>
                 <div className="container mx-auto px-4 flex flex-col items-center justify-center text-center relative z-10">
@@ -58,7 +44,7 @@ const IT_Consulting = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.4 }}
                     >
-                        At ALO Infotech, our IT consulting services offer invaluable support in navigating dynamic tech environments. Efficient IT consulting Solutions tailored to your needs. From CV Screening to onboarding, we find the right fit for your team. Streamline your hiring process with our expertise.
+                        At Roriri Software Solutions, our IT consulting services offer invaluable support in navigating dynamic tech environments. Efficient IT consulting Solutions tailored to your needs. From CV Screening to onboarding, we find the right fit for your team. Streamline your hiring process with our expertise.
                     </Motion.p>
                     <Motion.button
                         className="cursor-pointer bg-blue-500 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-blue-600 transition duration-300"
@@ -69,8 +55,6 @@ const IT_Consulting = () => {
                     </Motion.button>
                 </div>
             </Motion.section>
-
-            {/* IT Consulting Services We Offer Section */}
             <Motion.section
                 className="py-16 md:py-24 bg-white rounded-lg shadow-md mx-auto my-12 max-w-screen-xl px-4"
                 initial="hidden"
@@ -81,11 +65,10 @@ const IT_Consulting = () => {
                 <div className="container mx-auto text-center">
                     <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 leading-tight rounded-lg">IT Consulting services that we offer</h2>
                     <p className="text-gray-700 text-lg mb-12 max-w-4xl mx-auto rounded-lg">
-                        Hire our skilled programmers at ALO Infotech to outsource your projects. With growing business needs, screening applicants becomes challenging. We provide committed experts to manage your business, ensuring high-quality results within deadlines. Achieve strategic goals with our technical expertise, data-driven scope, and project management skills.
+                        Hire our skilled programmers at Roriri Software Solutions to outsource your projects. With growing business needs, screening applicants becomes challenging. We provide committed experts to manage your business, ensuring high-quality results within deadlines. Achieve strategic goals with our technical expertise, data-driven scope, and project management skills.
                     </p>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {/* Service Card: React Developer */}
                         <Motion.div
                             className="bg-gray-100 p-8 rounded-xl shadow-lg text-left relative overflow-hidden group border border-gray-200"
                             variants={cardVariants}
@@ -97,7 +80,7 @@ const IT_Consulting = () => {
                             <img src={react1} alt="React Developer" className=" rounded-2xl absolute top-4 right-4 w-20 h-20 opacity-20 group-hover:opacity-100 transition-opacity duration-300" onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/100x100/E0E7FF/312E81?text=React'; }} />
                             <h3 className="text-xl font-semibold text-gray-900 mb-3 rounded-lg">React Developer</h3>
                             <p className="text-gray-700 mb-6 rounded-lg">
-                                At ALO Infotech, we are providing the best ReactJS Developer for your IT needs. Need a React Developer? Look no further. We train to provide the best and most perfect React developer for you. With expertise tailored to your needs, our React developers ensure seamless integration and top-notch performance. Partner with ALO Infotech for skilled React developers tailored to your needs.
+                                At Roriri Software Solutions, we are providing the best ReactJS Developer for your IT needs. Need a React Developer? Look no further. We train to provide the best and most perfect React developer for you. With expertise tailored to your needs, our React developers ensure seamless integration and top-notch performance. Partner with Roriri Software Solutions for skilled React developers tailored to your needs.
                             </p>
                             <Motion.button
                                 className="cursor-pointer inline-flex items-center text-blue-600 font-semibold hover:text-blue-800 transition duration-300"
@@ -107,8 +90,6 @@ const IT_Consulting = () => {
                                 <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                             </Motion.button>
                         </Motion.div>
-
-                        {/* Service Card: Angular Developer */}
                         <Motion.div
                             className="bg-gray-100 p-8 rounded-xl shadow-lg text-left relative overflow-hidden group border border-gray-200"
                             variants={cardVariants}
@@ -120,7 +101,6 @@ const IT_Consulting = () => {
                             <img src={angular1} alt="Angular Developer" className="rounded-2xl absolute top-4 right-4 w-20 h-20 opacity-20 group-hover:opacity-100 transition-opacity duration-300" onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/100x100/E0E7FF/312E81?text=Angular'; }} />
                             <h3 className="text-xl font-semibold text-gray-900 mb-3 rounded-lg">Angular Developer</h3>
                             <p className="text-gray-700 mb-6 rounded-lg">
-                                {/* Placeholder description */}
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                             </p>
                             <Motion.button
@@ -131,8 +111,6 @@ const IT_Consulting = () => {
                                 <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                             </Motion.button>
                         </Motion.div>
-
-                        {/* Service Card: Flutter Developer */}
                         <Motion.div
                             className="bg-gray-100 p-8 rounded-xl shadow-lg text-left relative overflow-hidden group border border-gray-200"
                             variants={cardVariants}
@@ -144,7 +122,6 @@ const IT_Consulting = () => {
                             <img src={flutter1} alt="Flutter Developer" className="rounded-2xl absolute top-4 right-4 w-20 h-20 opacity-20 group-hover:opacity-100 transition-opacity duration-300" onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/100x100/E0E7FF/312E81?text=Flutter'; }} />
                             <h3 className="text-xl font-semibold text-gray-900 mb-3 rounded-lg">Flutter Developer</h3>
                             <p className="text-gray-700 mb-6 rounded-lg">
-                                {/* Placeholder description */}
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                             </p>
                             <Motion.button
@@ -155,8 +132,6 @@ const IT_Consulting = () => {
                                 <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                             </Motion.button>
                         </Motion.div>
-
-                        {/* Service Card: UI/UX Designer */}
                         <Motion.div
                             className="bg-gray-100 p-8 rounded-xl shadow-lg text-left relative overflow-hidden group border border-gray-200"
                             variants={cardVariants}
@@ -168,7 +143,6 @@ const IT_Consulting = () => {
                             <img src={ui1} alt="UI/UX Designer" className="rounded-2xl absolute top-4 right-4 w-20 h-20 opacity-20 group-hover:opacity-100 transition-opacity duration-300" onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/100x100/E0E7FF/312E81?text=UI/UX'; }} />
                             <h3 className="text-xl font-semibold text-gray-900 mb-3 rounded-lg">UI/UX Designer</h3>
                             <p className="text-gray-700 mb-6 rounded-lg">
-                                {/* Placeholder description */}
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                             </p>
                             <Motion.button
@@ -179,8 +153,6 @@ const IT_Consulting = () => {
                                 <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                             </Motion.button>
                         </Motion.div>
-
-                        {/* Service Card: Node JS Developer */}
                         <Motion.div
                             className="bg-gray-100 p-8 rounded-xl shadow-lg text-left relative overflow-hidden group border border-gray-200"
                             variants={cardVariants}
@@ -192,7 +164,6 @@ const IT_Consulting = () => {
                             <img src={node1} alt="Node JS Developer" className="rounded-2xl absolute top-4 right-4 w-20 h-20 opacity-20 group-hover:opacity-100 transition-opacity duration-300" onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/100x100/E0E7FF/312E81?text=NodeJS'; }} />
                             <h3 className="text-xl font-semibold text-gray-900 mb-3 rounded-lg">Node JS Developer</h3>
                             <p className="text-gray-700 mb-6 rounded-lg">
-                                {/* Placeholder description */}
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                             </p>
                             <Motion.button
@@ -203,8 +174,6 @@ const IT_Consulting = () => {
                                 <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                             </Motion.button>
                         </Motion.div>
-
-                        {/* Service Card: Data Analyst */}
                         <Motion.div
                             className="bg-gray-100 p-8 rounded-xl shadow-lg text-left relative overflow-hidden group border border-gray-200"
                             variants={cardVariants}
@@ -216,7 +185,6 @@ const IT_Consulting = () => {
                             <img src={dataanalyt1} alt="Data Analyst" className="rounded-2xl absolute top-4 right-4 w-20 h-20 opacity-20 group-hover:opacity-100 transition-opacity duration-300" onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/100x100/E0E7FF/312E81?text=Data'; }} />
                             <h3 className="text-xl font-semibold text-gray-900 mb-3 rounded-lg">Data Analyst</h3>
                             <p className="text-gray-700 mb-6 rounded-lg">
-                                {/* Placeholder description */}
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                             </p>
                             <Motion.button
@@ -227,8 +195,6 @@ const IT_Consulting = () => {
                                 <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                             </Motion.button>
                         </Motion.div>
-
-                        {/* Service Card: Software Tester */}
                         <Motion.div
                             className="bg-gray-100 p-8 rounded-xl shadow-lg text-left relative overflow-hidden group border border-gray-200"
                             variants={cardVariants}
@@ -240,7 +206,6 @@ const IT_Consulting = () => {
                             <img src={testing1} alt="Software Tester" className="rounded-2xl absolute top-4 right-4 w-20 h-20 opacity-20 group-hover:opacity-100 transition-opacity duration-300" onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/100x100/E0E7FF/312E81?text=Tester'; }} />
                             <h3 className="text-xl font-semibold text-gray-900 mb-3 rounded-lg">Software Tester</h3>
                             <p className="text-gray-700 mb-6 rounded-lg">
-                                {/* Placeholder description */}
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                             </p>
                             <Motion.button
@@ -289,7 +254,7 @@ const IT_Consulting = () => {
             >
                 <div className="container mx-auto flex flex-col md:flex-row items-center justify-between text-center md:text-left">
                     <div className="md:w-2/3 mb-8 md:mb-0">
-                        <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-4 rounded-lg">Struggling with IT intricacies? ALO Infotech offers clarity and ease.</h2>
+                        <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-4 rounded-lg">Struggling with IT intricacies? Roriri Software Solutions offers clarity and ease.</h2>
                         <p className="text-lg md:text-xl opacity-90 rounded-lg">
                             Connect with us to simplify your journey.
                         </p>
@@ -317,7 +282,10 @@ const IT_Consulting = () => {
                 <div className="container mx-auto text-center">
                     <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 leading-tight rounded-lg">Our IT Consulting process</h2>
                     <p className="text-gray-700 text-lg mb-12 max-w-4xl mx-auto rounded-lg">
-                        Our IT Consulting process at ALO Infotech involves a meticulous approach tailored to your needs. We begin by thoroughly assessing your requirements and challenges. Leveraging our expertise, we craft customized solutions to optimize your IT infrastructure. Our team, renowned for providing IT consulting services, will resource the best developers for your organization.
+                        Our IT Consulting process at Roriri Software Solutions involves a meticulous approach tailored to your needs.
+                         We begin by thoroughly assessing your requirements and challenges. Leveraging our expertise,
+                          we craft customized solutions to optimize your IT infrastructure. Our team, renowned for providing IT consulting services,
+                           will resource the best developers for your organization.
                     </p>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
