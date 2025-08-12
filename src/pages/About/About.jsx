@@ -140,7 +140,7 @@ const About = () => {
           {solutions.map((solution, index) => (
             <Motion.div key={index} variants={itemVariants} className="mb-8 p-3 rounded-lg">
               <h2 className="text-4xl md:text-5xl font-medium  mb-6 leading-tight">
-               <p>A tale of tech bri lliance and growth</p>
+               <p>A tale of tech brilliance and growth</p>
               </h2>
               <p className="text-lg md:text-xl text-gray-500 leading-relaxed">
                 {solution.description}
@@ -149,7 +149,6 @@ const About = () => {
           ))}
         </Motion.div>
         <Motion.div
-          initial={{ x: 100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true, amount: 0.3 }}

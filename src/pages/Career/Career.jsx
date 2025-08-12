@@ -30,7 +30,7 @@ const Career = () => {
             transition={{ delay: 0.4, duration: 0.6, type: "spring", stiffness: 100 }}
             className="inline-block text-indigo-800 italic ml-5"
           >
-            RORIRI'an
+            𝐑𝐎𝐑𝐈𝐑𝐈'𝐚𝐧
           </motion.span>
         </h1>
 

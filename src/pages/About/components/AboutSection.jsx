@@ -79,7 +79,7 @@ const AboutSection = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className='flex flex-col items-center md:items-start md:w-1/2 p-4 text-center md:text-left'
         >
-          <h1 className='text-purple-600 text-lg font-medium mb-2 uppercase tracking-wide'>About</h1> {/* Added uppercase and tracking */}
+          <h1 className='text-purple-600 text-lg font-medium mb-2  tracking-wide'>AboutUs</h1> {/* Added uppercase and tracking */}
           <h2 className='text-4xl sm:text-4xl lg:text-5xl font-medium mb-4 leading-tight text-gray-900'>The Story of <span className='text-purple-700'>Roriri Soft</span></h2> {/* Increased font size and weight */}
           <p className='text-lg sm:text-xl text-gray-600 mb-8 max-w-md'>A Growing Company with Clear Vision, dedicated to innovative solutions and client success.</p> {/* Adjusted text color and max-width */}
 
@@ -102,7 +102,7 @@ const AboutSection = () => {
         </Motion.div>
 
         {/* Right Section - Cards (Now designed for a more pronounced "scroll-into-view" effect) */}
-       <div className="flex flex-col md:w-1/2 p-4 md:mt-40 space-y-8 max-h-[85vh] md:max-h-[90vh] overflow-y-auto hide-scrollbar pr-2">{/* Increased max-h, added pr-2 for scrollbar room */}
+       <div className="flex flex-col md:w-1/2 p-4 md:mt-40 space-y-8 max-h-[85vh] md:max-h-[80vh] overflow-y-auto hide-scrollbar pr-2">{/* Increased max-h, added pr-2 for scrollbar room */}
           {cardData.map((card) => (
             <Motion.div
               key={card.id}

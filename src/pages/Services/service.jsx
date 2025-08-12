@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion'; // Import motion for animations
 import { ChevronDown, ChevronUp, ExternalLink } from 'lucide-react'; // Icons for accordion and external link
 import { useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
+import { team1 } from '../../assets/lottiefiles/lettie';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 // Dummy Navigation Component (Approximated from images)
 
@@ -132,26 +134,42 @@ const ServicesPage = () => {
     <div className="min-h-screen bg-white text-gray-800">
       {/* Navbar */}
 
-      {/* Hero Section */}
-      <section className="relative bg-white py-32 px-4 sm:px-6 lg:px-8 flex items-center justify-center pt-28">
-        <div className="absolute top-1/2 left-0 transform -translate-y-1/2 w-40 h-40 bg-green-200 rounded-full opacity-60 z-0"></div>
-        <div className="max-w-7xl mx-auto text-center relative z-10">
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-tight mb-4 text-gray-900">
-            Our Services
-          </h1>
-          <p className="text-lg sm:text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-            Leave us a little info, and we'll be in touch.
-          </p>
-          <button
-            onClick={() => navigate('/contact')} // Navigate to contact page
-            className="bg-black text-white px-8 py-3 rounded-lg hover:bg-gray-800 transition duration-300 text-lg font-medium"
-          >
-            Contact Us
-          </button>
-        </div>
-      </section>
+  {/* Hero Section */}
+<section className="bg-white py-12 sm:py-16 lg:py-20 h-screen">
+    <div className="flex flex-col lg:flex-row items-center justify-center gap-8 ">
+      {/* Animation Container */}
+        <DotLottieReact
+          className="w-64 h-48 sm:w-80 sm:h-60 lg:w-96 lg:h-64 xl:w-[28rem] xl:h-72"
+          src={team1}
+          loop
+          autoplay
+        />
+      
+      {/* Text Content */}
+      <div>
 
-      {/* Dynamic Service Sections */}
+      
+      <div className="flex flex-col gap-5 mb-3 ">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-gray-900 leading-tight max-w-2xl">
+          Our Services
+        </h1>
+        
+        <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-xl leading-relaxed">
+          Leave us a little info, and we'll be in touch.
+        </p>
+        
+       
+      </div>
+       <button
+          onClick={() => navigate('/contact')}
+          className="inline-block bg-black text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg hover:bg-gray-800 transition duration-300 text-base sm:text-lg font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+        >
+          Contact Us
+        </button>
+      </div>
+    </div>
+</section>
+
       {servicesData.map((service, index) => (
         <motion.section
           key={service.id}
@@ -204,7 +222,7 @@ const ServicesPage = () => {
       <section className="bg-gray-900 text-white py-16 px-4 sm:px-6 lg:px-8 text-center">
         <div className="max-w-4xl mx-auto">
           <p className="text-sm font-semibold text-gray-400 uppercase mb-2">Let's Collaborate</p>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-medium leading-tight mb-6">
             Send us an email.
           </h2>
           <p className="text-lg sm:text-xl text-gray-500 mb-8">
@@ -219,10 +237,6 @@ const ServicesPage = () => {
           </button>
         </div>
       </section>
-
-      {/* Back to top & Follow Us (from original image, simplified) */}
-      {/* These elements are typically part of a global layout or footer,
-          and are removed from here to keep the service page content focused. */}
     </div>
   );
 };
