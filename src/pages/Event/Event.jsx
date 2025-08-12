@@ -4,7 +4,6 @@ import * as THREE from 'three';
 
 // Main App Component for Events Page
 const App = () => {
-    const [showWorkshopAd, setShowWorkshopAd] = useState(true);
     const [activeCategory, setActiveCategory] = useState('All'); // Initial state for all categories
 
     // Animation variants for sections
@@ -182,35 +181,7 @@ const App = () => {
 
     return (
         <div className="font-inter antialiased bg-gray-50">
-            <AnimatePresence>
-                {showWorkshopAd && (
-                    <Motion.div
-                        initial={{ opacity: 0, y: -50 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -50 }}
-                        transition={{ duration: 0.5, ease: "easeOut" }}
-                        className="relative bg-gradient-to-r from-purple-700 to-indigo-700 text-white p-3 md:p-4 text-center text-sm md:text-base flex items-center justify-center space-x-4 rounded-b-lg shadow-lg z-10"
-                    >
-                        <a
-                            href="https://www.linkedin.com/company/roririsoft/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex-grow flex items-center justify-center hover:underline cursor-pointer"
-                        >
-                            🎉 Don't miss our "Future IT Professionals Workshop"! Click here to register!
-                        </a>
-                        <Motion.button
-                            onClick={() => setShowWorkshopAd(false)}
-                            className="p-1 rounded-full hover:bg-white hover:bg-opacity-20 transition-colors duration-200"
-                            whileHover={{ scale: 1.1 }}
-                            whileTap={{ scale: 0.9 }}
-                            aria-label="Dismiss advertisement"
-                        >
-                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-                        </Motion.button>
-                    </Motion.div>
-                )}
-            </AnimatePresence>
+          
 
             <Motion.section
                 className="relative bg-gray-900 text-white py-16 md:py-24 overflow-hidden rounded-b-lg shadow-lg"
@@ -302,8 +273,6 @@ const App = () => {
 
             <Motion.section
                 className="py-16 md:py-24 bg-gray-100 rounded-lg shadow-md mx-auto my-12 max-w-screen-xl px-4"
-                initial="hidden"
-                whileInView="visible"
                 viewport={{ once: true, amount: 0.3 }}
                 variants={sectionVariants}
             >
