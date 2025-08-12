@@ -1,14 +1,17 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
-import {motion as Motion, useMotionValue} from 'framer-motion';
+import { motion as Motion, useMotionValue } from 'framer-motion';
 import { client1, client2, client3, client4, client5 } from '../../assets/clients/clients';
+import { MailCheck, CircleUserRound, MapPin, Loader2, Send } from "lucide-react";
+
+import emailjs from "@emailjs/browser";
 
 const originalTestimonials = [
   {
     id: 1,
     quote: "The digital marketing services greatly boosted our conversion rates, with excellent follow-up and customer support.",
     author: "Plots To You",
-     star: "⭐⭐⭐⭐",
-    starvalue:"4.0",
+    star: "⭐⭐⭐⭐",
+    starvalue: "4.0",
     avatar: client1,
   },
   {
@@ -16,7 +19,7 @@ const originalTestimonials = [
     quote: "Roriri's tailored ERP solution transformed us completely. Grateful for the team's outstanding support and dedication throughout..",
     author: "Connect Training Institute",
     star: "⭐⭐⭐⭐⭐",
-    starvalue:"5.0",
+    starvalue: "5.0",
     avatar: client2,
   },
   {
@@ -24,38 +27,119 @@ const originalTestimonials = [
     quote: "Roriri ERP has reduced my workload and improved overall efficiency with just a few clicks. Thank you, Roriri ERP Team!",
     author: "Jeno Study Center",
     star: "⭐⭐⭐⭐⭐",
-    starvalue:"5.0",
-    avatar:client3,
+    starvalue: "5.0",
+    avatar: client3,
   },
   {
     id: 4,
     quote: "The customized ERP has greatly improved our services, boosting revenue and efficiency. We truly appreciate the impact.",
     author: "Dilton IT Hub",
-     star: "⭐⭐⭐⭐",
-    starvalue:"4.0",
+    star: "⭐⭐⭐⭐",
+    starvalue: "4.0",
     avatar: client4,
   },
-    {
+  {
     id: 5,
     quote: "The web applications have streamlined our operations, reduced workload, and significantly improved overall efficiency",
     author: "SD Tiles",
-     star: "⭐⭐⭐⭐⭐",
-    starvalue:"5.0",
+    star: "⭐⭐⭐⭐⭐",
+    starvalue: "5.0",
     avatar: client5,
   },
 ];
 
 const MarketingSection = () => {
-  const buffer = 2; 
+  const buffer = 2;
   const testimonials = [
     ...originalTestimonials.slice(-buffer),
     ...originalTestimonials,
     ...originalTestimonials.slice(0, buffer),
   ];
+  const [formData, setFormData] = useState({
+    email: '',
+
+  });
+  const [errors, setErrors] = useState({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
+
+  const validateForm = () => {
+    const newErrors = {};
+
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email is required';
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      newErrors.email = 'Invalid email address';
+    }
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+
+    if (errors[name]) {
+      setErrors(prev => ({ ...prev, [name]: '' }));
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!validateForm()) return;
+
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    try {
+      // Method 1: Web3Forms (most reliable for local testing)
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          access_key: "YOUR_ACCESS_KEY_HERE", // Get free key from web3forms.com
+
+          email: formData.email,
+           from_name: formData.name,
+
+          to: "k.mano75005@gmail.com"
+        })
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setSubmitStatus('success');
+        setFormData({ email: '' });
+      } else {
+        throw new Error(result.message || 'Failed to send message');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+
+      // Fallback: Use mailto as backup
+      
+      const body = encodeURIComponent(
+
+        `Email: ${formData.email}\n`
+
+      );
+
+      window.open(`mailto:k.mano75005@gmail.com?subject=${subject}&body=${body}`, '_blank');
+      setSubmitStatus('fallback');
+      setFormData({ email: '' });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   const [currentIndex, setCurrentIndex] = useState(buffer);
   const carouselRef = useRef(null);
-  const x = useMotionValue(0); 
+  const x = useMotionValue(0);
 
   const [cardUnitWidth, setCardUnitWidth] = useState(350);
   const [carouselWidth, setCarouselWidth] = useState(0);
@@ -162,7 +246,7 @@ const MarketingSection = () => {
       });
     }, 2000);
 
-    return () => clearInterval(interval); 
+    return () => clearInterval(interval);
   }, [testimonials.length, buffer]);
 
 
@@ -177,16 +261,57 @@ const MarketingSection = () => {
           <p className="text-base sm:text-lg text-gray-700 mb-8 max-w-lg lg:max-w-none mx-auto lg:mx-0">
             ...but we're going to help. We send out weekly break downs of exactly what's working and what's not for the largest companies in the world. It's free.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-3 max-w-md mx-auto lg:mx-0">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="flex-1 p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800"
-            />
-            <button className="bg-blue-600 cursor-target hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-md shadow-md transition-colors duration-300">
-              Join newsletter
+          <div>
+          {/* Status Messages */}
+            {submitStatus === 'success' && (
+              <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-xl">
+                ✅ Message sent successfully! I'll get back to you soon.
+              </div>
+            )}
+
+            {submitStatus === 'error' && (
+              <div className="mb-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded-xl">
+                ❌ Failed to send message. Please try again or contact me directly.
+              </div>
+            )}
+          <div className="space-y-6">
+            <div className="grid md:grid-cols-2 gap-4">
+            <div>
+              
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="Enter your email"
+                disabled={isSubmitting}
+                className={` w-60 px-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors disabled:opacity-50 ${errors.email ? 'border-red-500' : 'border-gray-300'
+                  }`}
+              />
+              {errors.email && (
+                <p className="mt-1 text-sm text-red-500">{errors.email}</p>
+              )}
+            </div>
+            <button
+              onClick={handleSubmit}
+              disabled={isSubmitting}
+              className=" w-50 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold py-3 px-6 rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-200 flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              {isSubmitting ? (
+                <>
+                  <Loader2 size={20} className="animate-spin" />
+                  <span>Sending...</span>
+                </>
+              ) : (
+                <>
+                  <Send size={20} />
+                  <span>Join NewsLetter</span>
+                </>
+              )}
             </button>
+            </div>
           </div>
+        </div>
         </div>
 
         <div className="flex-1 relative overflow-hidden flex items-center justify-center p-4 sm:p-8 lg:p-12 min-h-[350px] lg:min-h-0">
@@ -198,21 +323,21 @@ const MarketingSection = () => {
             dragConstraints={constraints}
             onDragEnd={handleDragEnd}
             animate={{
-                x: getTargetX() 
+              x: getTargetX()
             }}
             transition={{
-                type: "spring",
-                stiffness: 300,
-                damping: 30
+              type: "spring",
+              stiffness: 300,
+              damping: 30
             }}
           >
             {testimonials.map((testimonial, index) => (
               <Motion.div
-                key={`${testimonial.id}-${index}`} 
+                key={`${testimonial.id}-${index}`}
                 className="card-item flex-shrink-0 w-[90%] max-w-[350px] md:w-[350px] mx-2 p-6 bg-white rounded-xl shadow-lg flex flex-col items-center text-center border border-gray-100"
                 variants={{
-                    active: { opacity: 1, scale: 1 },
-                    inactive: { opacity: 0.7, scale: 0.9 },
+                  active: { opacity: 1, scale: 1 },
+                  inactive: { opacity: 0.7, scale: 0.9 },
                 }}
                 animate={index >= buffer && index < testimonials.length - buffer && index === currentIndex ? "active" : "inactive"}
                 transition={{ duration: 0.5 }}
@@ -236,9 +361,8 @@ const MarketingSection = () => {
             {originalTestimonials.map((_, index) => (
               <button
                 key={index}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  currentIndex === index + buffer ? 'bg-blue-600' : 'bg-gray-300 hover:bg-gray-400'
-                }`}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${currentIndex === index + buffer ? 'bg-blue-600' : 'bg-gray-300 hover:bg-gray-400'
+                  }`}
                 onClick={() => setCurrentIndex(index + buffer)}
                 aria-label={`Go to slide ${index + 1}`}
               ></button>

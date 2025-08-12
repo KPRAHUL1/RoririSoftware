@@ -1,28 +1,114 @@
 import React from 'react';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import emailjs from "@emailjs/browser";
 import { motion as Motion } from 'framer-motion';
 import { erp1, erp2, erp3 } from '../../../assets/services/service';
+import { facebook, instagram, linkedin, youtube } from '../../../assets/icons/icon';
+import LogoWeb from '../../../assets/logo/LogoWeb.png'; // Importing the logo image
+import { MailCheck, CircleUserRound, MapPin, Loader2, Send } from "lucide-react";
 
 // Main App Component
 const ERPSolutions = () => {
-    const form = useRef();
-    
-        const sendEmail = (e) => {
-            e.preventDefault();
-            emailjs.sendForm(
-                'service_56cjqno',
-                'template_vtlhv9j',
-                form.current,
-                'cA6QaDp7Pj9_tpHXR'
-            )
-                .then((result) => {
-                    alert("Message sent successfully!");
-                }, (error) => {
-                    alert("Failed to send message.");
-                    console.error(error.text);
-                });
-              };
+    const [formData, setFormData] = useState({
+        name: '',
+        phone: '',
+        email: '',
+        subject: '',
+        message: ''
+    });
+    const [errors, setErrors] = useState({});
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitStatus, setSubmitStatus] = useState(null);
+
+    const validateForm = () => {
+        const newErrors = {};
+
+        if (!formData.name.trim()) {
+            newErrors.name = 'Full name is required';
+        }
+
+        if (!formData.email.trim()) {
+            newErrors.email = 'Email is required';
+        } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+            newErrors.email = 'Invalid email address';
+        }
+
+        if (!formData.subject.trim()) {
+            newErrors.subject = 'Subject is required';
+        }
+
+        if (!formData.message.trim()) {
+            newErrors.message = 'Message is required';
+        }
+
+        setErrors(newErrors);
+        return Object.keys(newErrors).length === 0;
+    };
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({ ...prev, [name]: value }));
+
+        if (errors[name]) {
+            setErrors(prev => ({ ...prev, [name]: '' }));
+        }
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        if (!validateForm()) return;
+
+        setIsSubmitting(true);
+        setSubmitStatus(null);
+
+        try {
+            // Method 1: Web3Forms (most reliable for local testing)
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    access_key: "YOUR_ACCESS_KEY_HERE", // Get free key from web3forms.com
+                    name: formData.name,
+                    phone: formData.phone,
+                    email: formData.email,
+                    subject: formData.subject,
+                    message: formData.message,
+                    from_name: formData.name,
+                    to: "k.mano75005@gmail.com"
+                })
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+                setSubmitStatus('success');
+                setFormData({ name: '', phone: '', email: '', subject: '', message: '' });
+            } else {
+                throw new Error(result.message || 'Failed to send message');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+
+            // Fallback: Use mailto as backup
+            const subject = encodeURIComponent(formData.subject);
+            const body = encodeURIComponent(
+                `Name: ${formData.name}\n` +
+                `Email: ${formData.email}\n` +
+                `Phone: ${formData.phone || 'Not provided'}\n\n` +
+                `Message:\n${formData.message}`
+            );
+
+            window.open(`mailto:k.mano75005@gmail.com?subject=${subject}&body=${body}`, '_blank');
+            setSubmitStatus('fallback');
+            setFormData({ name: '', phone: '', email: '', subject: '', message: '' });
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
     // Animation variants for sections
     const sectionVariants = {
         hidden: { opacity: 0, y: 50 },
@@ -38,7 +124,7 @@ const ERPSolutions = () => {
         hidden: { opacity: 0, x: -20 },
         visible: { opacity: 1, x: 0, transition: { duration: 0.4, ease: "easeOut" } }
     };
-      const lineVariants = {
+    const lineVariants = {
         hidden: { height: 0 },
         visible: { height: "100%", transition: { duration: 1.5, ease: "easeInOut" } }
     };
@@ -317,7 +403,7 @@ const ERPSolutions = () => {
             </Motion.section>
 
             {/* What We Do in ERP Section */}
-             <Motion.section
+            <Motion.section
                 className="py-16 md:py-24 bg-gray-100 rounded-lg shadow-md mx-auto my-12 max-w-screen-xl px-4"
                 initial="hidden"
                 whileInView="visible"
@@ -370,14 +456,14 @@ const ERPSolutions = () => {
                                     </div>
                                 </div>
                                 <div className={`w-full md:w-1/2 ${index % 2 === 0 ? 'md:pl-12' : 'md:pr-12'} md:text-right`}>
-                                  
+
                                 </div>
                             </Motion.div>
                         ))}
                     </div>
                 </div>
             </Motion.section>
-             <Motion.section
+            <Motion.section
                 className="py-16 md:py-24 bg-white rounded-lg shadow-md mx-auto my-12 max-w-screen-xl px-4"
                 initial="hidden"
                 whileInView="visible"
@@ -392,117 +478,155 @@ const ERPSolutions = () => {
                             Reach out to explore endless possibilities with Roriri Software Solutions!
                         </p>
                         <div className="flex items-center justify-center lg:justify-start mb-8">
-                            <img src="https://placehold.co/40x40/FFFFFF/000000?text=Logo" alt="Roriri Logo" className="h-10 w-10 mr-3 rounded-lg" onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/40x40/FFFFFF/000000?text=Logo'; }} />
-                            <span className="text-2xl font-semibold text-gray-900 rounded-lg">Roriri Software Solutions</span>
+                            <img src={LogoWeb} alt="Roriri Logo" className="h-15 w-40 mr-3 rounded-lg" onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/40x40/FFFFFF/000000?text=Logo'; }} />
+
                         </div>
                         <h3 className="text-xl font-semibold text-gray-900 mb-4 rounded-lg">Follow Us:</h3>
-                        <div className="flex justify-center lg:justify-start space-x-4">
-                            <Motion.a
-                                href="#"
-                                className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white shadow-lg hover:bg-blue-700 transition duration-300"
-                                whileHover={{ scale: 1.1, rotate: 5 }}
-                                whileTap={{ scale: 0.9 }}
+                        <Motion.div className="flex justify-center lg:justify-start space-x-4">
+                            <a href="#" target="_blank" rel="noopener noreferrer" className="h-12 w-12 p-1 rounded-full text-white hover:scale-110 transition-transform duration-200">
+                                <img src={facebook} />
+                            </a>
+                            <a href="#" target="_blank" rel="noopener noreferrer" className="h-12 w-12 p-1 rounded-full text-white hover:scale-110 transition-transform duration-200">
+                                <img src={instagram} />
+                            </a>
+                            <a href="#" target="_blank" rel="noopener noreferrer" className="h-12 w-12 p-1 rounded-full text-white hover:scale-110 transition-transform duration-200">
+                                <img src={linkedin} />
+                            </a>
+                            <a href="#" target="_blank" rel="noopener noreferrer" className="h-12 w-12 p-1 rounded-full text-white hover:scale-110 transition-transform duration-200">
+                                <img src={youtube} />
+                            </a>
+                        </Motion.div>
+                    </div>
+                    <div className="bg-white rounded-3xl shadow-xl p-8">
+                        <h2 className="text-2xl font-bold text-gray-800 mb-6">Send Message</h2>
+
+                        {/* Status Messages */}
+                        {submitStatus === 'success' && (
+                            <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-xl">
+                                ✅ Message sent successfully! I'll get back to you soon.
+                            </div>
+                        )}
+
+                        {submitStatus === 'error' && (
+                            <div className="mb-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded-xl">
+                                ❌ Failed to send message. Please try again or contact me directly.
+                            </div>
+                        )}
+                        <div className="space-y-6">
+                            <div className="grid md:grid-cols-2 gap-4">
+                                <div>
+                                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                                        Full Name *
+                                    </label>
+                                    <input
+                                        type="text"
+                                        name="name"
+                                        value={formData.name}
+                                        onChange={handleChange}
+                                        placeholder="Enter your name"
+                                        disabled={isSubmitting}
+                                        className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors disabled:opacity-50 ${errors.name ? 'border-red-500' : 'border-gray-300'
+                                            }`}
+                                    />
+                                    {errors.name && (
+                                        <p className="mt-1 text-sm text-red-500">{errors.name}</p>
+                                    )}
+                                </div>
+                                <div>
+                                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                                        Phone Number *
+                                    </label>
+                                    <input
+                                        type="number"
+                                        name="phone"
+                                        value={formData.phone}
+                                        onChange={handleChange}
+                                        placeholder="Enter your pnone number"
+                                        disabled={isSubmitting}
+                                        className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors disabled:opacity-50 ${errors.phone ? 'border-red-500' : 'border-gray-300'
+                                            }`}
+                                    />
+                                    {errors.phone && (
+                                        <p className="mt-1 text-sm text-red-500">{errors.phone}</p>
+                                    )}
+                                </div>
+
+                                <div>
+                                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                                        Email Address *
+                                    </label>
+                                    <input
+                                        type="email"
+                                        name="email"
+                                        value={formData.email}
+                                        onChange={handleChange}
+                                        placeholder="Enter your email"
+                                        disabled={isSubmitting}
+                                        className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors disabled:opacity-50 ${errors.email ? 'border-red-500' : 'border-gray-300'
+                                            }`}
+                                    />
+                                    {errors.email && (
+                                        <p className="mt-1 text-sm text-red-500">{errors.email}</p>
+                                    )}
+                                </div>
+                            </div>
+                            <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-2">
+                                    Subject *
+                                </label>
+                                <input
+                                    type="text"
+                                    name="subject"
+                                    value={formData.subject}
+                                    onChange={handleChange}
+                                    placeholder="Enter your name"
+                                    disabled={isSubmitting}
+                                    className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors disabled:opacity-50 ${errors.subject ? 'border-red-500' : 'border-gray-300'
+                                        }`}
+                                />
+                                {errors.subject && (
+                                    <p className="mt-1 text-sm text-red-500">{errors.subject}</p>
+                                )}
+                            </div>
+
+                            <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-2">
+                                    Your Message *
+                                </label>
+                                <textarea
+                                    name="message"
+                                    value={formData.message}
+                                    onChange={handleChange}
+                                    placeholder="Write your message here..."
+                                    rows="5"
+                                    disabled={isSubmitting}
+                                    className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors resize-vertical disabled:opacity-50 ${errors.message ? 'border-red-500' : 'border-gray-300'
+                                        }`}
+                                />
+                                {errors.message && (
+                                    <p className="mt-1 text-sm text-red-500">{errors.message}</p>
+                                )}
+                            </div>
+
+                            <button
+                                onClick={handleSubmit}
+                                disabled={isSubmitting}
+                                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold py-3 px-6 rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-200 flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
                             >
-                                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fillRule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33V22H12c5.523 0 10-4.477 10-10z" clipRule="evenodd" /></svg>
-                            </Motion.a>
-                            <Motion.a
-                                href="#"
-                                className="w-12 h-12 bg-pink-600 rounded-full flex items-center justify-center text-white shadow-lg hover:bg-pink-700 transition duration-300"
-                                whileHover={{ scale: 1.1, rotate: 5 }}
-                                whileTap={{ scale: 0.9 }}
-                            >
-                                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fillRule="evenodd" d="M12 0C8.74 0 8.333.014 7.053.072 5.775.132 4.92 0 4.204.286c-.718.286-1.228.78-1.738 1.291S.78 3.486.504 4.204C.228 4.92.132 5.775.072 7.053.014 8.333 0 8.74 0 12s.014 3.667.072 4.947c.06 1.277.156 2.132.432 2.849.286.718.78 1.228 1.291 1.738s1.011.995 1.738 1.291c.718.286 1.573.382 2.849.432C8.333 23.986 8.74 24 12 24s3.667-.014 4.947-.072c1.277-.06 2.132-.156 2.849-.432.718-.286 1.228-.78 1.738-1.291s.995-1.011 1.291-1.738c.286-.718.382-1.573.432-2.849.06-1.277.072-1.684.072-4.947s-.014-3.667-.072-4.947c-.06-1.277-.156-2.132-.432-2.849-.286-.718-.78-1.228-1.291-1.738S20.514.78 19.797.504C19.08 0 18.225.132 16.947.072 15.667.014 15.26 0 12 0zm0 2.16c3.2 0 3.58.01 4.85.071 1.17.055 1.8.196 2.22.35.42.154.72.365.93.575.21.21.42.51.575.93.154.42.295 1.05.35 2.22.06 1.27.07 1.65.07 4.85s-.01 3.58-.071 4.85c-.055 1.17-.196 1.8-.35 2.22-.154.42-.365.72-.575.93-.21.21-.51.42-.93.575-.42.154-1.05.295-2.22.35-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.071c-1.17-.055-1.8-.196-2.22-.35-.42-.154-.72-.365-.93-.575-.21-.21-.42-.51-.575-.93-.154-.42-.295-1.05-.35-2.22C2.16 15.67 2.15 15.29 2.15 12s.01-3.58.071-4.85c.055-1.17.196-1.8.35-2.22.154-.42.365-.72.575-.93.21-.21.51-.42.93-.575.42-.154 1.05-.295 2.22-.35C8.33 2.16 8.71 2.15 12 2.15zm0 3.65c-3.48 0-6.3 2.82-6.3 6.3s2.82 6.3 6.3 6.3 6.3-2.82 6.3-6.3-2.82-6.3-6.3-6.3zm0 10.3c-2.26 0-4.1-1.84-4.1-4.1s1.84-4.1 4.1-4.1 4.1 1.84 4.1 4.1-1.84 4.1-4.1 4.1zm5.5-9.3c-.66 0-1.2-.54-1.2-1.2s.54-1.2 1.2-1.2 1.2.54 1.2 1.2-.54 1.2-1.2 1.2z" clipRule="evenodd" /></svg>
-                            </Motion.a>
-                            <Motion.a
-                                href="#"
-                                className="w-12 h-12 bg-blue-400 rounded-full flex items-center justify-center text-white shadow-lg hover:bg-blue-500 transition duration-300"
-                                whileHover={{ scale: 1.1, rotate: 5 }}
-                                whileTap={{ scale: 0.9 }}
-                            >
-                                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.611 10.27v-1.1h-2.735v1.1h2.735zM19.611 13.73v-1.1h-2.735v1.1h2.735zM19.611 17.19v-1.1h-2.735v1.1h2.735zM19.611 20.65v-1.1h-2.735v1.1h2.735zM19.611 6.81v-1.1h-2.735v1.1h2.735zM19.611 3.35v-1.1h-2.735v1.1h2.735zM16.151 10.27v-1.1h-2.735v1.1h2.735zM16.151 13.73v-1.1h-2.735v1.1h2.735zM16.151 17.19v-1.1h-2.735v1.1h2.735zM16.151 20.65v-1.1h-2.735v1.1h2.735zM16.151 6.81v-1.1h-2.735v1.1h2.735zM16.151 3.35v-1.1h-2.735v1.1h2.735zM12.691 10.27v-1.1h-2.735v1.1h2.735zM12.691 13.73v-1.1h-2.735v1.1h2.735zM12.691 17.19v-1.1h-2.735v1.1h2.735zM12.691 20.65v-1.1h-2.735v1.1h2.735zM12.691 6.81v-1.1h-2.735v1.1h2.735zM12.691 3.35v-1.1h-2.735v1.1h2.735zM9.231 10.27v-1.1h-2.735v1.1h2.735zM9.231 13.73v-1.1h-2.735v1.1h2.735zM9.231 17.19v-1.1h-2.735v1.1h2.735zM9.231 20.65v-1.1h-2.735v1.1h2.735zM9.231 6.81v-1.1h-2.735v1.1h2.735zM9.231 3.35v-1.1h-2.735v1.1h2.735zM5.771 10.27v-1.1h-2.735v1.1h2.735zM5.771 13.73v-1.1h-2.735v1.1h2.735zM5.771 17.19v-1.1h-2.735v1.1h2.735zM5.771 20.65v-1.1h-2.735v1.1h2.735zM5.771 6.81v-1.1h-2.735v1.1h2.735zM5.771 3.35v-1.1h-2.735v1.1h2.735z" /></svg>
-                            </Motion.a>
-                            <Motion.a
-                                href="#"
-                                className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center text-white shadow-lg hover:bg-red-700 transition duration-300"
-                                whileHover={{ scale: 1.1, rotate: 5 }}
-                                whileTap={{ scale: 0.9 }}
-                            >
-                                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.612 5.33C19.462 4.673 18.93 4.14 18.273 3.99C16.74 3.633 12 3.633 12 3.633S7.26 3.633 5.727 3.99C5.07 4.14 4.538 4.673 4.388 5.33C4.031 6.86 4.031 12 4.031 12S4.031 17.14 4.388 18.67C4.538 19.33 5.07 19.86 5.727 20.01C7.26 20.367 12 20.367 12 20.367S16.74 20.367 18.273 20.01C18.93 19.86 19.462 19.33 19.612 18.67C19.969 17.14 19.969 12 19.969 12S19.969 6.86 19.612 5.33ZM9.99 15.39V8.61L15.39 12L9.99 15.39Z" /></svg>
-                            </Motion.a>
+                                {isSubmitting ? (
+                                    <>
+                                        <Loader2 size={20} className="animate-spin" />
+                                        <span>Sending...</span>
+                                    </>
+                                ) : (
+                                    <>
+                                        <Send size={20} />
+                                        <span>Send Message</span>
+                                    </>
+                                )}
+                            </button>
                         </div>
                     </div>
-                    <Motion.div
-                        className="lg:w-1/2 bg-gray-100 p-8 rounded-xl shadow-lg w-full max-w-md lg:max-w-none"
-                        initial={{ opacity: 0, x: 50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true, amount: 0.3 }}
-                        transition={{ duration: 0.8, ease: "easeOut" }}
-                    >
-                        <form className="space-y-6">
-                            <Motion.input
-                                type="text"
-                                placeholder="Full Name"
-                                className="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 transition duration-200"
-                                variants={inputVariants}
-                                initial="hidden"
-                                whileInView="visible"
-                                viewport={{ once: true, amount: 0.1 }}
-                                transition={{ delay: 0.1 }}
-                            />
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <Motion.input
-                                    type="tel"
-                                    placeholder="Phone"
-                                    className="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 transition duration-200"
-                                    variants={inputVariants}
-                                    initial="hidden"
-                                    whileInView="visible"
-                                    viewport={{ once: true, amount: 0.1 }}
-                                    transition={{ delay: 0.2 }}
-                                />
-                                <Motion.input
-                                    type="email"
-                                    placeholder="Email"
-                                    className="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 transition duration-200"
-                                    variants={inputVariants}
-                                    initial="hidden"
-                                    whileInView="visible"
-                                    viewport={{ once: true, amount: 0.1 }}
-                                    transition={{ delay: 0.3 }}
-                                />
-                            </div>
-                            <Motion.input
-                                type="text"
-                                placeholder="Subjects"
-                                className="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 transition duration-200"
-                                variants={inputVariants}
-                                initial="hidden"
-                                whileInView="visible"
-                                viewport={{ once: true, amount: 0.1 }}
-                                transition={{ delay: 0.4 }}
-                            />
-                            <Motion.textarea
-                                placeholder="Message"
-                                rows="5"
-                                className="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 transition duration-200 resize-y"
-                                variants={inputVariants}
-                                initial="hidden"
-                                whileInView="visible"
-                                viewport={{ once: true, amount: 0.1 }}
-                                transition={{ delay: 0.5 }}
-                            ></Motion.textarea>
-                            <Motion.button
-                                type="submit"
-                                ref={form} onClick={sendEmail}
-                                className="cursor-pointer w-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold py-4 rounded-lg shadow-md hover:from-purple-700 hover:to-indigo-700 transition duration-300 flex items-center justify-center"
-                                whileHover={{ scale: 1.02 }}
-                                whileTap={{ scale: 0.98 }}
-                            >
-                                Send Message
-                                <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-                            </Motion.button>
-                        </form>
-                    </Motion.div>
                 </div>
             </Motion.section>
         </div>

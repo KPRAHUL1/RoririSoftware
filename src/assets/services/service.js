@@ -1,6 +1,6 @@
 import erp1 from './erp/7201951.webp';
-import erp2 from './erp/download.jpg';
-import erp3 from './erp/1.webp';
+import erp2 from './erp/erp2.jpg';
+import erp3 from './erp/erp3.jpg';
 import development1 from'./development/development1.jpg';
 import development2 from'./development/development2.jpg';
 import development3 from'./development/development3.jpg';
