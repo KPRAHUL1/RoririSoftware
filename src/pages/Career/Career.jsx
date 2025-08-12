@@ -15,12 +15,12 @@ const Career = () => {
       >
          <iframe src="https://lottie.host/embed/61a72e2e-67db-4441-83e7-13ff833a4663/UZaKn8T5Dg.lottie" className='h-full w-full md:h-[400px] md:w-[400px]'></iframe>
       <div className="flex flex-col">
-                 <h1 className="text-5xl md:text-6xl font-medium text-purple-700 mb-4 tracking-tight leading-tight">
+                 <h1 className="text-5xl  md:text-6xl font-medium text-purple-700 mb-4 tracking-tight leading-tight">
           <motion.span
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.5 }}
-            className="inline-block mr-2"
+            className="inline-block mr-2 "
           >
             Become a
           </motion.span>
@@ -28,7 +28,7 @@ const Career = () => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.4, duration: 0.6, type: "spring", stiffness: 100 }}
-            className="inline-block text-indigo-800"
+            className="inline-block text-indigo-800 italic ml-5"
           >
             RORIRI'an
           </motion.span>

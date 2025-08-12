@@ -159,12 +159,12 @@ const Navbar = () => {
             Let's Talk
           </a>
         </div>
-        <button
+        <div
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           className=" text-gray-700 hover:text-blue-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
         >
           <AnimatedHamburgerButton />
-        </button>
+        </div>
       </div>
 
       <AnimatePresence>

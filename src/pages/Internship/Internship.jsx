@@ -14,10 +14,10 @@ const Internship = () => {
   
     <div className='flex flex-col'>
  
-      <div className="flex flex-col md:flex-row items-center gap-3   ">
+      <div className="flex flex-col md:flex-row items-center justify-evenly gap-3   ">
         <div className="flex items-center w-fit">
       <iframe
-  src="https://lottie.host/embed/0ca277e9-edcb-4d84-9658-acb2a601682a/WKanSlAvri.lottie"
+       src="https://lottie.host/embed/3d9dbb97-e54d-4286-afdf-c75b08e9bd12/AIkZadJ9Q4.lottie"
   className="w-full max-w-[500px] h-[300px] sm:h-[350px] md:h-[400px] lg:h-[600px] lg:w-[600px] object-cover rounded-xl mx-auto"
 />
 
@@ -28,7 +28,7 @@ const Internship = () => {
         <h1 className="text-3xl sm:text-4xl lg:text-6xl font-medium text-gray-900 leading-tight mb-4">
           Elevate your Career With our <br />
         <TextType textColors={'#ffffff'}
-           text={['Intern ship Program.','Work Shop Program.','Skill Develop Program.']} className='text-blue-500' />
+           text={['Intern ship Program.','Work Shop Program.','Skill Develop Program.']} className='text-green-500' />
 
 
          
@@ -37,18 +37,9 @@ const Internship = () => {
           As the first in Tamil Nadu, we offer a unique dashboard to track student tasks, progress, and performance.
         </p>
         <div className="flex justify-center lg:justify-start">
-          <button className="cursor-pointer bg-blue-500 cursor-target hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-md shadow-md transition-colors duration-300 flex items-center gap-2">
+          <button className="cursor-pointer bg-green-500 cursor-target hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-md shadow-md transition-colors duration-300 flex items-center gap-2">
             Register Now
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={2}
-              stroke="currentColor"
-              className="w-5 h-5"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-            </svg>
+        
           </button>
         </div>
       </div>
@@ -60,7 +51,7 @@ const Internship = () => {
         <h2 className="text-xl sm:text-1xl font-semibold text-gray-500  text-center">
         Recognized By
       </h2>
-          <span className="text-blue-600 font-bold text-3xl">Start Up India</span>
+          <span className="text-green-600 font-bold text-3xl">Start Up India</span>
       </div>
         <div className="flex flex-col items-center">
           <img
@@ -77,7 +68,7 @@ const Internship = () => {
     <WhatSetsUsApartPage/>
       <InternshipProgramsPage/>
        <div style={{ height: '600px', position: 'relative' }} className=''>
-        <h1 className='text-center text-black text-5xl font-normal '>Intern <span className='text-blue-400'>To</span> Our Employees</h1>
+        <h1 className='text-center text-black text-5xl font-normal '>Intern <span className='text-green-400'>To</span> Our Employees</h1>
   <CircularGallery bend={3} textColor="black" borderRadius={0.05} scrollEase={0.02}/>
     </div>
    
@@ -92,7 +83,7 @@ const Internship = () => {
           />       
         </div>
         <div className="flex flex-col justify-center text-center md:text-left p-4">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-normal leading-tight mb-4 text-blue-600">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-normal leading-tight mb-4 text-green-600">
             Project <span className="text-gray-800">Internship</span>
           </h1>
           <p className="text-lg sm:text-xl text-gray-700 mb-6">
@@ -104,8 +95,8 @@ const Internship = () => {
             developers, hands-on experience, and exposure to a collaborative environment
             designed to enhance your technical and professional skills.
           </p>
-          <button className="cursor-pointer bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 ease-in-out self-center md:self-start">
-            Register Now →
+          <button className="cursor-pointer bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 ease-in-out self-center md:self-start">
+            Register Now 
           </button>
         </div>
       </div>
@@ -115,7 +106,7 @@ const Internship = () => {
         <div className="flex flex-col justify-center text-center md:text-left">
           <h1 className="text-lg font-normal text-gray-500 leading-tight mb-4">
             Our Valid <br />
-            <span className="text-blue-500 text-5xl">Internship</span> <br />
+            <span className="text-green-500 text-5xl">Internship</span> <br />
            <span className='text-5xl text-white'> Certifications
             </span>
           </h1>
@@ -135,7 +126,7 @@ const Internship = () => {
         </div>
 
         <div className="flex justify-center items-center">
-          <div className=" p-4 rounded-lg shadow-2xl border-4 bg-white border-blue-400">
+          <div className=" p-4 rounded-lg shadow-2xl border-4 bg-white border-green-400">
             <img
               src={certificate}
               alt="Internship Completion Certificate Sample"

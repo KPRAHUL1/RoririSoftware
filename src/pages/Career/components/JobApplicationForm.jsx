@@ -1,39 +1,125 @@
 // src/components/JobApplicationForm.jsx
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef} from 'react';
 import emailjs from "@emailjs/browser";
+import { MailCheck, CircleUserRound, MapPin, Loader2, Send } from "lucide-react";
+
 
 const JobApplicationForm = ({ isOpen, onClose, jobTitle = '', allJobTitles = [] }) => {
-   const form = useRef();
-      
-          const sendEmail = (e) => {
-              e.preventDefault();
-              emailjs.sendForm(
-                  'service_56cjqno',
-                  'template_vtlhv9j',
-                  form.current,
-                  'cA6QaDp7Pj9_tpHXR'
-              )
-                  .then((result) => {
-                      alert("Message sent successfully!");
-                  }, (error) => {
-                      alert("Failed to send message.");
-                      console.error(error.text);
-                  });
-                };
+  const [submissionSuccess, setSubmissionSuccess] = useState(false);
+
   const [formData, setFormData] = useState({
-    resume: null,
-    fullName: '',
+    name: '',
+    phone: '',
     email: '',
-    phoneNumber: '',
     applyingFor: jobTitle, // Pre-select if provided, otherwise default
     currentLocation: '',
     experience: '',
+
   });
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submissionSuccess, setSubmissionSuccess] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
+
+  const validateForm = () => {
+    const newErrors = {};
+
+    if (!formData.name.trim()) {
+      newErrors.name = 'Full name is required';
+    }
+
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email is required';
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      newErrors.email = 'Invalid email address';
+    }
+
+    if (!jobTitle.applyingFor.trim()) {
+      newErrors.applyingFor = 'jobTitle is required';
+    }
+    if (!formData.currentLocation.trim()) {
+      newErrors.currentLocation = 'currentLocation is required';
+    }
+
+    if (!formData.experience.trim()) {
+      newErrors.experience = 'experience is required';
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+
+    if (errors[name]) {
+      setErrors(prev => ({ ...prev, [name]: '' }));
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!validateForm()) return;
+
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    try {
+      // Method 1: Web3Forms (most reliable for local testing)
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          access_key: "YOUR_ACCESS_KEY_HERE", // Get free key from web3forms.com
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email,
+          applyingFor: jobTitle,
+          currentLocation: formData.currentLocation,
+          experience: formData.experience,
+
+          from_name: formData.name,
+          to: "k.mano75005@gmail.com"
+        })
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setSubmitStatus('success');
+        setFormData({ name: '', phone: '', email: '', applyingFor: jobTitle, currentLocation: '', experience: '' });
+      } else {
+        throw new Error(result.message || 'Failed to send message');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+
+      // Fallback: Use mailto as backup
+      const subject = encodeURIComponent(formData.subject);
+      const body = encodeURIComponent(
+        `Name: ${formData.name}\n` +
+        `Email: ${formData.email}\n` +
+        `Phone: ${formData.phone || 'Not provided'}\n\n` +
+        `Applingfor:${jobTitle}\n` +
+        `CurrentLocation:\n${formData.currentLocation}` +
+        `Experience: ${formData.experience}\n`
+      );
+
+      window.open(`mailto:k.mano75005@gmail.com?subject=${subject}&body=${body}`, '_blank');
+      setSubmitStatus('fallback');
+      setFormData({ name: '', phone: '', email: '', applyingFor: jobTitle, currentLocation: '', experience: '' });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+
 
   useEffect(() => {
     // Reset form data when the modal opens or a new jobTitle is passed
@@ -54,16 +140,16 @@ const JobApplicationForm = ({ isOpen, onClose, jobTitle = '', allJobTitles = [] 
     }
   }, [isOpen, jobTitle]);
 
-  const handleChange = (e) => {
-    const { name, value, files } = e.target;
-    if (name === 'resume') {
-      setFormData({ ...formData, [name]: files[0] });
-    } else {
-      setFormData({ ...formData, [name]: value });
-    }
-    // Clear error for the field being changed
-    setErrors(prev => ({ ...prev, [name]: '' }));
-  };
+  // const handleChange = (e) => {
+  //   const { name, value, files } = e.target;
+  //   if (name === 'resume') {
+  //     setFormData({ ...formData, [name]: files[0] });
+  //   } else {
+  //     setFormData({ ...formData, [name]: value });
+  //   }
+  //   // Clear error for the field being changed
+  //   setErrors(prev => ({ ...prev, [name]: '' }));
+  // };
 
   const validate = () => {
     let newErrors = {};
@@ -90,30 +176,30 @@ const JobApplicationForm = ({ isOpen, onClose, jobTitle = '', allJobTitles = [] 
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (!validate()) {
-      return;
-    }
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   if (!validate()) {
+  //     return;
+  //   }
 
-    setIsSubmitting(true);
-    // In a real application, you would send this formData to your backend API
-    console.log('Form Data Submitted:', formData);
+  //   setIsSubmitting(true);
+  //   // In a real application, you would send this formData to your backend API
+  //   console.log('Form Data Submitted:', formData);
 
-    try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      setSubmissionSuccess(true);
-      // You might clear the form here or handle navigation etc.
-      // setTimeout(() => onClose(), 2000); // Close after showing success
-    } catch (error) {
-      console.error('Submission error:', error);
-      alert('Failed to submit application. Please try again.');
-      setSubmissionSuccess(false);
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+  //   try {
+  //     // Simulate API call
+  //     await new Promise(resolve => setTimeout(resolve, 1500));
+  //     setSubmissionSuccess(true);
+  //     // You might clear the form here or handle navigation etc.
+  //     // setTimeout(() => onClose(), 2000); // Close after showing success
+  //   } catch (error) {
+  //     console.error('Submission error:', error);
+  //     alert('Failed to submit application. Please try again.');
+  //     setSubmissionSuccess(false);
+  //   } finally {
+  //     setIsSubmitting(false);
+  //   }
+  // };
 
   const modalVariants = {
     hidden: { opacity: 0, scale: 0.9, y: -50 },
@@ -169,9 +255,10 @@ const JobApplicationForm = ({ isOpen, onClose, jobTitle = '', allJobTitles = [] 
                 </button>
               </motion.div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-5">
-                {/* Upload Resume */}
-                <div>
+
+
+              <div className="bg-white rounded-3xl shadow-xl p-8">
+                                  <div>
                   <label htmlFor="resume" className="block text-gray-700 text-sm font-semibold mb-2">
                     Upload Resume
                   </label>
@@ -191,9 +278,7 @@ const JobApplicationForm = ({ isOpen, onClose, jobTitle = '', allJobTitles = [] 
                   <p className="mt-1 text-xs text-gray-500">Supported formats: PDF, DOC, DOCX</p>
                   {errors.resume && <p className="text-red-500 text-xs mt-1">{errors.resume}</p>}
                 </div>
-
-                {/* Full Name */}
-                <div>
+                {/* <div>
                   <label htmlFor="fullName" className="block text-gray-700 text-sm font-semibold mb-2">
                     Full Name
                   </label>
@@ -207,134 +292,154 @@ const JobApplicationForm = ({ isOpen, onClose, jobTitle = '', allJobTitles = [] 
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
                   />
                   {errors.fullName && <p className="text-red-500 text-xs mt-1">{errors.fullName}</p>}
-                </div>
+                </div> */}
+                {/* Status Messages */}
+                {submitStatus === 'success' && (
+                  <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-xl">
+                    ✅ Message sent successfully! I'll get back to you soon.
+                  </div>
+                )}
 
-                {/* Email Address */}
-                <div>
-                  <label htmlFor="email" className="block text-gray-700 text-sm font-semibold mb-2">
-                    Email Address
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    placeholder="Enter your email address"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
-                  />
-                  {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
-                </div>
+                {submitStatus === 'error' && (
+                  <div className="mb-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded-xl">
+                    ❌ Failed to send message. Please try again or contact me directly.
+                  </div>
+                )}
+                <div className="space-y-6">
+                  <div>
+                    <div>
+                      <label className=" mt-5 block text-sm font-medium text-gray-700 mb-2">
+                        Full Name 
+                      </label>
+                      <input
+                        type="text"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        placeholder="Enter your name"
+                        disabled={isSubmitting}
+                        className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors disabled:opacity-50 ${errors.name ? 'border-red-500' : 'border-gray-300'
+                          }`}
+                      />
+                      {errors.name && (
+                        <p className="mt-1 text-sm text-red-500">{errors.name}</p>
+                      )}
+                    </div>
+                    <div>
+                      <label className=" mt-5 block text-sm font-medium text-gray-700 mb-2">
+                        Phone Number 
+                      </label>
+                      <input
+                        type="number"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        placeholder="Enter your phone number"
+                        disabled={isSubmitting}
+                        className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors disabled:opacity-50 ${errors.phone ? 'border-red-500' : 'border-gray-300'
+                          }`}
+                      />
+                      {errors.phone && (
+                        <p className="mt-1 text-sm text-red-500">{errors.phone}</p>
+                      )}
+                    </div>
 
-                {/* Phone Number */}
-                <div>
-                  <label htmlFor="phoneNumber" className="block text-gray-700 text-sm font-semibold mb-2">
-                    Phone Number
-                  </label>
-                  <input
-                    type="tel" // Use tel for phone numbers
-                    id="phoneNumber"
-                    name="phoneNumber"
-                    value={formData.phoneNumber}
-                    onChange={handleChange}
-                    placeholder="Enter your phone number"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
-                  />
-                  {errors.phoneNumber && <p className="text-red-500 text-xs mt-1">{errors.phoneNumber}</p>}
-                </div>
-
-                {/* Applying For (Dropdown) */}
-                <div>
-                  <label htmlFor="applyingFor" className="block text-gray-700 text-sm font-semibold mb-2">
-                    Applying For
-                  </label>
-                  <select
-                    id="applyingFor"
-                    name="applyingFor"
-                    value={formData.applyingFor}
-                    onChange={handleChange}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all bg-white appearance-none pr-8"
-                  >
-                    {/* If allJobTitles are provided, map them */}
-                    {allJobTitles.length > 0 ? (
-                      allJobTitles.map(job => (
-                        <option key={job.id} value={job.title}>
-                          {job.title}
-                        </option>
-                      ))
-                    ) : (
-                      // Fallback if no specific job titles are passed
-                      <option value={jobTitle || ""}>
-                         {jobTitle || "Select a job role"}
-                      </option>
+                    <div>
+                      <label className="mt-5 block text-sm font-medium text-gray-700 mb-2">
+                        Email Address 
+                      </label>
+                      <input
+                        type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        placeholder="Enter your email"
+                        disabled={isSubmitting}
+                        className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors disabled:opacity-50 ${errors.email ? 'border-red-500' : 'border-gray-300'
+                          }`}
+                      />
+                      {errors.email && (
+                        <p className="mt-1 text-sm text-red-500">{errors.email}</p>
+                      )}
+                    </div>
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Applying JopTitle
+                    </label>
+                    <input
+                      type="text"
+                      name="applying"
+                      value={jobTitle.applyingFor}
+                      onChange={handleChange}
+                      placeholder="Enter your Jop"
+                      disabled={isSubmitting}
+                      className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors disabled:opacity-50 ${errors.subject ? 'border-red-500' : 'border-gray-300'
+                        }`}
+                    />
+                    {errors.applyingFor && (
+                      <p className="mt-1 text-sm text-red-500">{errors.applyingFor}</p>
                     )}
-                  </select>
-                  {errors.applyingFor && <p className="text-red-500 text-xs mt-1">{errors.applyingFor}</p>}
-                </div>
+                  </div>
 
-                {/* Current Location */}
-                <div>
-                  <label htmlFor="currentLocation" className="block text-gray-700 text-sm font-semibold mb-2">
-                    Current Location
-                  </label>
-                  <input
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Current Location
+                    </label>
+                    <input
                     type="text"
-                    id="currentLocation"
-                    name="currentLocation"
-                    value={formData.currentLocation}
-                    onChange={handleChange}
-                    placeholder="Enter your current location"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
-                  />
-                  {errors.currentLocation && <p className="text-red-500 text-xs mt-1">{errors.currentLocation}</p>}
-                </div>
+                      name="currentLocation"
+                      value={formData.currentLocation}
+                      onChange={handleChange}
+                      placeholder="Enter Your Location"
+                      rows="5"
+                      disabled={isSubmitting}
+                      className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors resize-vertical disabled:opacity-50 ${errors.message ? 'border-red-500' : 'border-gray-300'
+                        }`}
+                    />
+                    {errors.currentLocation && (
+                      <p className="mt-1 text-sm text-red-500">{errors.currentLocation}</p>
+                    )}
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Experience
+                    </label>
+                    <input
+                    type="text"
+                      name="experience"
+                      value={formData.experience}
+                      onChange={handleChange}
+                      placeholder="Enter Your Experience"
+                      rows="5"
+                      disabled={isSubmitting}
+                      className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors resize-vertical disabled:opacity-50 ${errors.message ? 'border-red-500' : 'border-gray-300'
+                        }`}
+                    />
+                    {errors.experience && (
+                      <p className="mt-1 text-sm text-red-500">{errors.experience}</p>
+                    )}
+                  </div>
 
-                {/* Experience */}
-                <div>
-                  <label htmlFor="experience" className="block text-gray-700 text-sm font-semibold mb-2">
-                    Experience (in years)
-                  </label>
-                  <input
-                    type="number"
-                    id="experience"
-                    name="experience"
-                    value={formData.experience}
-                    onChange={handleChange}
-                    placeholder="0"
-                    min="0"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
-                  />
-                  {errors.experience && <p className="text-red-500 text-xs mt-1">{errors.experience}</p>}
-                </div>
-
-                <div className="flex justify-end space-x-4 mt-6">
-                  <motion.button
-                    type="button"
-                    onClick={onClose}
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    className="cursor-pointer px-6 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors"
-                  >
-                    CLOSE
-                  </motion.button>
-                  <motion.button
-                    type="submit" ref={form} onClick={sendEmail}
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
+                  <button
+                    onClick={handleSubmit}
                     disabled={isSubmitting}
-                    className="cursor-pointer px-6 py-2 bg-gradient-to-r from-purple-600 to-indigo-700 text-white font-semibold rounded-lg shadow-md hover:shadow-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+                    className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold py-3 px-6 rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-200 flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {isSubmitting ? (
-                      <svg className="animate-spin h-5 w-5 mr-3 text-white" viewBox="0 0 24 24">
-                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                      </svg>
+                      <>
+                        <Loader2 size={20} className="animate-spin" />
+                        <span>Sending...</span>
+                      </>
                     ) : (
-                      'SUBMIT APPLICATION'
+                      <>
+                        <Send size={20} />
+                        <span>Submit</span>
+                      </>
                     )}
-                  </motion.button>
+                  </button>
                 </div>
-              </form>
+              </div>
             )}
           </motion.div>
         </motion.div>
