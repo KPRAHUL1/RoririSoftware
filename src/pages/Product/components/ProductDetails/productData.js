@@ -1,6 +1,6 @@
 import { product1, product2, product3 } from "../../../../assets/product/product";
 
-// productData.js
+
 const products = [
   {
     id: 1,

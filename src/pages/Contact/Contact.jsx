@@ -54,7 +54,7 @@ const Contact = () => {
           autoplay
         />
         </motion.div>
-        {/* Text Section */}
+        
         <motion.div
           className="flex-1 text-center md:text-left mt-10"
           initial={{ opacity: 0, x: -50 }}
@@ -72,7 +72,7 @@ const Contact = () => {
           </p>
 
           <motion.button
-            className="mt-6 px-6 py-3 bg-blue-400 text-white font-semibold rounded-full shadow-lg hover:bg-blue-300 transition"
+            className="mt-6 px-6 py-3 cursor-pointer bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-full shadow-lg hover:bg-blue-300 transition"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -80,7 +80,7 @@ const Contact = () => {
           </motion.button>
         </motion.div>
 
-        {/* Animation Section */}
+       
       
       </div>
     </section>
@@ -104,7 +104,7 @@ const Contact = () => {
               </p>
               <a
                 href={item.buttonLink}
-                className="inline-block bg-blue-600 text-white font-semibold py-2.5 px-6 rounded-lg shadow-md hover:bg-blue-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+                className="inline-block bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold py-2.5 px-6 rounded-lg shadow-md hover:bg-blue-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
               >
                 {item.buttonText}
               </a>

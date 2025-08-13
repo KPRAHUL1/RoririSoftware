@@ -11,7 +11,6 @@ const ProductDetails = () => {
   const [selectedImage, setSelectedImage] = useState(product ? product.imageUrl : '');
   const [activeTab, setActiveTab] = useState('overview');
 
-  // Now handle the not found case AFTER hooks are declared
   if (!product) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center text-center">
@@ -32,12 +31,10 @@ const ProductDetails = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Top bar */}
-
-      {/* Content */}
+     
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Left side images */}
+          
           <div className="space-y-4">
             <div className="rounded-2xl overflow-hidden shadow-lg">
               <img src={selectedImage} alt={product.name} className="w-full h-96 object-cover" />
@@ -57,7 +54,6 @@ const ProductDetails = () => {
             </div>
           </div>
 
-          {/* Right side details */}
           <div className="space-y-6">
             <div>
               <div className="flex items-center justify-between mb-4">
@@ -88,7 +84,6 @@ const ProductDetails = () => {
               </div>
             </div>
 
-            {/* Contact box */}
             <div className="bg-gradient-to-r from-purple-50 to-pink-50 p-6 rounded-xl border border-purple-200">
               <h3 className="text-lg font-semibold text-gray-900 mb-2">Interested in this solution?</h3>
               <p className="text-gray-600 mb-4">
@@ -112,7 +107,7 @@ const ProductDetails = () => {
           </div>
         </div>
 
-        {/* Tabs */}
+       
         <div className="mt-16">
           <div className="border-b border-gray-200 flex space-x-8">
             {['overview', 'features', 'specifications'].map((tab) => (

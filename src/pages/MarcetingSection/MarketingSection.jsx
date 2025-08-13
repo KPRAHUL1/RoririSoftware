@@ -93,7 +93,7 @@ const MarketingSection = () => {
     setSubmitStatus(null);
 
     try {
-      // Method 1: Web3Forms (most reliable for local testing)
+      
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: {
@@ -101,12 +101,12 @@ const MarketingSection = () => {
           'Accept': 'application/json'
         },
         body: JSON.stringify({
-          access_key: "4e4152de-dfb3-4ca7-b5b3-674c3e432ff1", // Get free key from web3forms.com
+          access_key: "510e84f9-6c6a-4bf5-85fb-8a6bba4b6b45", 
 
           email: formData.email,
            from_name: formData.name,
 
-          to: "k.mano75005@gmail.com"
+          to: "roririsoftpvtltd@gmail.com"
         })
       });
 
@@ -121,7 +121,7 @@ const MarketingSection = () => {
     } catch (error) {
       console.error('Error:', error);
 
-      // Fallback: Use mailto as backup
+      
       
       const body = encodeURIComponent(
 
@@ -129,7 +129,7 @@ const MarketingSection = () => {
 
       );
 
-      window.open(`mailto:k.mano75005@gmail.com?subject=${subject}&body=${body}`, '_blank');
+      window.open(`mailto:roririsoftpvtltd@gmail.com?subject=${subject}&body=${body}`, '_blank');
       setSubmitStatus('fallback');
       setFormData({ email: '' });
     } finally {
@@ -262,7 +262,6 @@ const MarketingSection = () => {
             ...but we're going to help. We send out weekly break downs of exactly what's working and what's not for the largest companies in the world. It's free.
           </p>
           <div>
-          {/* Status Messages */}
             {submitStatus === 'success' && (
               <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-xl">
                 ✅ Message sent successfully! I'll get back to you soon.

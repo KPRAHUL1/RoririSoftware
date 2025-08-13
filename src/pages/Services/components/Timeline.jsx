@@ -27,7 +27,7 @@ const TimelinePage = () => {
     };
 
     window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Initial check
+    handleScroll(); 
     
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -39,10 +39,10 @@ const TimelinePage = () => {
       description: "At Roriri Software Solutions, we conduct thorough research and planning, collaborating closely to turn your vision into reality.",
       illustration: (
         <div className="relative w-full h-64 bg-gradient-to-br from-green-50 to-emerald-100 rounded-2xl p-6 overflow-hidden">
-          {/* Support desk setup */}
+          
           <div className="absolute left-6 bottom-6">
             <div className="w-24 h-16 bg-gray-200 rounded-lg shadow-lg">
-              {/* Monitor */}
+              
               <div className="w-20 h-12 bg-gray-900 rounded mx-auto mt-1">
                 <div className="w-full h-full bg-green-400 rounded p-2">
                   <div className="w-full h-2 bg-green-600 rounded mb-1"></div>
@@ -50,18 +50,18 @@ const TimelinePage = () => {
                   <div className="w-1/2 h-1 bg-green-600 rounded"></div>
                 </div>
               </div>
-              {/* Base */}
+              
               <div className="w-8 h-2 bg-gray-300 rounded mx-auto"></div>
             </div>
           </div>
           
-          {/* Person at desk */}
+          
           <div className="absolute left-8 bottom-20">
             <div className="w-6 h-6 bg-orange-300 rounded-full"></div>
             <div className="w-4 h-8 bg-blue-600 rounded mx-auto mt-1"></div>
           </div>
           
-          {/* Gear icons */}
+          
           <div className="absolute top-6 right-6 space-y-2">
             {[...Array(3)].map((_, i) => (
               <div key={i} className="w-8 h-8 border-4 border-gray-400 rounded-full relative animate-spin" style={{ animationDuration: `${3 + i}s` }}>
@@ -70,7 +70,7 @@ const TimelinePage = () => {
             ))}
           </div>
           
-          {/* 24/7 badge */}
+          
           <div className="absolute top-4 left-4 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold">
             24/7
           </div>
@@ -83,10 +83,10 @@ const TimelinePage = () => {
       description: "We create innovative, user-centric mobile apps that drive growth, enhance engagement, and exceed user expectations for customer satisfaction.",
       illustration: (
         <div className="relative w-full h-64 bg-gradient-to-br from-green-50 to-emerald-100 rounded-2xl p-6 overflow-hidden">
-          {/* Support desk setup */}
+         
           <div className="absolute left-6 bottom-6">
             <div className="w-24 h-16 bg-gray-200 rounded-lg shadow-lg">
-              {/* Monitor */}
+              
               <div className="w-20 h-12 bg-gray-900 rounded mx-auto mt-1">
                 <div className="w-full h-full bg-green-400 rounded p-2">
                   <div className="w-full h-2 bg-green-600 rounded mb-1"></div>
@@ -94,18 +94,18 @@ const TimelinePage = () => {
                   <div className="w-1/2 h-1 bg-green-600 rounded"></div>
                 </div>
               </div>
-              {/* Base */}
+              
               <div className="w-8 h-2 bg-gray-300 rounded mx-auto"></div>
             </div>
           </div>
           
-          {/* Person at desk */}
+         
           <div className="absolute left-8 bottom-20">
             <div className="w-6 h-6 bg-orange-300 rounded-full"></div>
             <div className="w-4 h-8 bg-blue-600 rounded mx-auto mt-1"></div>
           </div>
           
-          {/* Gear icons */}
+         
           <div className="absolute top-6 right-6 space-y-2">
             {[...Array(3)].map((_, i) => (
               <div key={i} className="w-8 h-8 border-4 border-gray-400 rounded-full relative animate-spin" style={{ animationDuration: `${3 + i}s` }}>
@@ -114,7 +114,7 @@ const TimelinePage = () => {
             ))}
           </div>
           
-          {/* 24/7 badge */}
+          
           <div className="absolute top-4 left-4 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold">
             24/7
           </div>
@@ -127,10 +127,10 @@ const TimelinePage = () => {
       description: "We maintain high quality standards, ensuring thorough testing for bug-free, seamless, and flawless mobile app experiences before delivery.",
       illustration: (
         <div className="relative w-full h-64 bg-gradient-to-br from-green-50 to-emerald-100 rounded-2xl p-6 overflow-hidden">
-          {/* Support desk setup */}
+         
           <div className="absolute left-6 bottom-6">
             <div className="w-24 h-16 bg-gray-200 rounded-lg shadow-lg">
-              {/* Monitor */}
+             
               <div className="w-20 h-12 bg-gray-900 rounded mx-auto mt-1">
                 <div className="w-full h-full bg-green-400 rounded p-2">
                   <div className="w-full h-2 bg-green-600 rounded mb-1"></div>
@@ -138,18 +138,18 @@ const TimelinePage = () => {
                   <div className="w-1/2 h-1 bg-green-600 rounded"></div>
                 </div>
               </div>
-              {/* Base */}
+             
               <div className="w-8 h-2 bg-gray-300 rounded mx-auto"></div>
             </div>
           </div>
           
-          {/* Person at desk */}
+          
           <div className="absolute left-8 bottom-20">
             <div className="w-6 h-6 bg-orange-300 rounded-full"></div>
             <div className="w-4 h-8 bg-blue-600 rounded mx-auto mt-1"></div>
           </div>
           
-          {/* Gear icons */}
+          
           <div className="absolute top-6 right-6 space-y-2">
             {[...Array(3)].map((_, i) => (
               <div key={i} className="w-8 h-8 border-4 border-gray-400 rounded-full relative animate-spin" style={{ animationDuration: `${3 + i}s` }}>
@@ -158,7 +158,7 @@ const TimelinePage = () => {
             ))}
           </div>
           
-          {/* 24/7 badge */}
+         
           <div className="absolute top-4 left-4 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold">
             24/7
           </div>
@@ -171,10 +171,10 @@ const TimelinePage = () => {
       description: "After thorough testing, we confidently launch your app, meeting specifications, and provide an installation guide for easy deployment.",
       illustration: (
         <div className="relative w-full h-64 bg-gradient-to-br from-green-50 to-emerald-100 rounded-2xl p-6 overflow-hidden">
-          {/* Support desk setup */}
+          
           <div className="absolute left-6 bottom-6">
             <div className="w-24 h-16 bg-gray-200 rounded-lg shadow-lg">
-              {/* Monitor */}
+            
               <div className="w-20 h-12 bg-gray-900 rounded mx-auto mt-1">
                 <div className="w-full h-full bg-green-400 rounded p-2">
                   <div className="w-full h-2 bg-green-600 rounded mb-1"></div>
@@ -182,18 +182,18 @@ const TimelinePage = () => {
                   <div className="w-1/2 h-1 bg-green-600 rounded"></div>
                 </div>
               </div>
-              {/* Base */}
+             
               <div className="w-8 h-2 bg-gray-300 rounded mx-auto"></div>
             </div>
           </div>
           
-          {/* Person at desk */}
+         
           <div className="absolute left-8 bottom-20">
             <div className="w-6 h-6 bg-orange-300 rounded-full"></div>
             <div className="w-4 h-8 bg-blue-600 rounded mx-auto mt-1"></div>
           </div>
           
-          {/* Gear icons */}
+          
           <div className="absolute top-6 right-6 space-y-2">
             {[...Array(3)].map((_, i) => (
               <div key={i} className="w-8 h-8 border-4 border-gray-400 rounded-full relative animate-spin" style={{ animationDuration: `${3 + i}s` }}>
@@ -202,7 +202,7 @@ const TimelinePage = () => {
             ))}
           </div>
           
-          {/* 24/7 badge */}
+         
           <div className="absolute top-4 left-4 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold">
             24/7
           </div>
@@ -215,7 +215,7 @@ const TimelinePage = () => {
       description: 'Post-launch, we drive user adoption with targeted marketing, training, and ongoing support to ensure smooth integration and success.',
       illustration: (
         <div className="relative w-full h-64 bg-gradient-to-br from-blue-50 to-indigo-100 rounded-2xl p-6 overflow-hidden">
-          {/* Phone mockup */}
+         
           <div className="absolute right-4 top-4 w-24 h-40 bg-gray-900 rounded-lg shadow-xl transform rotate-12 hover:rotate-6 transition-transform duration-500">
             <div className="w-full h-full bg-gray-800 rounded-lg p-2">
               <div className="w-full h-2 bg-gray-700 rounded mb-2"></div>
@@ -230,22 +230,22 @@ const TimelinePage = () => {
             </div>
           </div>
           
-          {/* Character illustration */}
+         
           <div className="absolute left-6 bottom-4">
             <div className="w-20 h-24 relative">
-              {/* Person */}
+              
               <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2">
                 <div className="w-8 h-8 bg-orange-300 rounded-full mb-1"></div>
                 <div className="w-6 h-12 bg-blue-600 rounded-lg mx-auto"></div>
                 <div className="w-8 h-6 bg-gray-700 rounded-b-lg -mt-1"></div>
               </div>
               
-              {/* Phone in hand */}
+              
               <div className="absolute bottom-8 right-2 w-3 h-5 bg-gray-800 rounded transform rotate-12"></div>
             </div>
           </div>
           
-          {/* Decorative elements */}
+          
           <div className="absolute top-6 left-6 w-8 h-8 bg-blue-200 rounded-full animate-pulse"></div>
           <div className="absolute bottom-16 right-16 w-6 h-6 bg-indigo-200 rounded-full animate-bounce"></div>
         </div>
@@ -257,10 +257,10 @@ const TimelinePage = () => {
       description: "Roriri Software Solutions offers 24/7 support, ensuring smooth app performance with regular updates and assistance.",
       illustration: (
         <div className="relative w-full h-64 bg-gradient-to-br from-green-50 to-emerald-100 rounded-2xl p-6 overflow-hidden">
-          {/* Support desk setup */}
+      
           <div className="absolute left-6 bottom-6">
             <div className="w-24 h-16 bg-gray-200 rounded-lg shadow-lg">
-              {/* Monitor */}
+              
               <div className="w-20 h-12 bg-gray-900 rounded mx-auto mt-1">
                 <div className="w-full h-full bg-green-400 rounded p-2">
                   <div className="w-full h-2 bg-green-600 rounded mb-1"></div>
@@ -268,18 +268,18 @@ const TimelinePage = () => {
                   <div className="w-1/2 h-1 bg-green-600 rounded"></div>
                 </div>
               </div>
-              {/* Base */}
+             
               <div className="w-8 h-2 bg-gray-300 rounded mx-auto"></div>
             </div>
           </div>
           
-          {/* Person at desk */}
+          
           <div className="absolute left-8 bottom-20">
             <div className="w-6 h-6 bg-orange-300 rounded-full"></div>
             <div className="w-4 h-8 bg-blue-600 rounded mx-auto mt-1"></div>
           </div>
           
-          {/* Gear icons */}
+         
           <div className="absolute top-6 right-6 space-y-2">
             {[...Array(3)].map((_, i) => (
               <div key={i} className="w-8 h-8 border-4 border-gray-400 rounded-full relative animate-spin" style={{ animationDuration: `${3 + i}s` }}>
@@ -288,7 +288,7 @@ const TimelinePage = () => {
             ))}
           </div>
           
-          {/* 24/7 badge */}
+         
           <div className="absolute top-4 left-4 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold">
             24/7
           </div>
@@ -300,7 +300,7 @@ const TimelinePage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50 relative overflow-hidden">
         <h1 className='text-3xl text-blue-700 text-center'>Our Process</h1>
-      {/* Background decorative elements */}
+      
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 right-20 w-32 h-32 bg-gradient-to-br from-blue-200 to-indigo-300 rounded-full opacity-20 animate-pulse"></div>
         <div className="absolute bottom-40 left-20 w-24 h-24 bg-gradient-to-br from-green-200 to-emerald-300 rounded-full opacity-30 animate-bounce" style={{ animationDuration: '4s' }}></div>
@@ -308,12 +308,10 @@ const TimelinePage = () => {
       </div>
 
       <div className="container mx-auto px-6 py-20 relative z-10">
-        {/* Timeline container */}
+        
         <div className="max-w-6xl mx-auto" ref={timelineRef}>
-          {/* Vertical timeline line */}
+         
           <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-blue-200 via-indigo-300 to-green-300 h-full opacity-30"></div>
-          
-          {/* Animated progress line */}
           <div 
             className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-blue-500 to-green-500 transition-all duration-300 ease-out"
             style={{ height: `${scrollProgress * 100}%` }}
@@ -330,25 +328,19 @@ const TimelinePage = () => {
                 }`}
                 style={{ transitionDelay: `${index * 200}ms` }}
               >
-                {/* Timeline number circle */}
                 <div className="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 top-1/2 z-20">
                   <div className={`w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 shadow-lg flex items-center justify-center text-white font-bold text-xl transition-all duration-500 ${
                     visibleItems.has(index) ? 'scale-100 rotate-0' : 'scale-75 rotate-45'
                   }`}>
                     {item.number}
                   </div>
-                  
-                  {/* Pulsing ring effect */}
                   <div className={`absolute inset-0 rounded-full bg-blue-400 animate-ping opacity-20 ${
                     visibleItems.has(index) ? 'block' : 'hidden'
                   }`}></div>
                 </div>
-
-                {/* Content card - alternating sides */}
                 <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${
                   index % 2 === 0 ? 'lg:text-right' : ''
                 }`}>
-                  {/* Text content */}
                   <div className={`space-y-6 ${
                     index % 2 === 0 ? 'lg:order-1' : 'lg:order-2'
                   } ${
@@ -363,8 +355,6 @@ const TimelinePage = () => {
                         {item.description}
                       </p>
                     </div>
-
-                    {/* Action button */}
                     <div className={`transition-all duration-700 delay-300 ${
                       visibleItems.has(index) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                     }`}>
@@ -375,8 +365,6 @@ const TimelinePage = () => {
                       </button>
                     </div>
                   </div>
-
-                  {/* Illustration */}
                   <div className={`${
                     index % 2 === 0 ? 'lg:order-2' : 'lg:order-1'
                   } transition-all duration-1000 delay-200 ${
@@ -385,7 +373,6 @@ const TimelinePage = () => {
                       : 'opacity-0 scale-95 rotate-3'
                   }`}>
                     <div className="group relative">
-                      {/* Hover glow effect */}
                       <div className="absolute -inset-4 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-3xl opacity-0 group-hover:opacity-20 blur-xl transition-all duration-500"></div>
                       
                       <div className="relative transform group-hover:scale-105 transition-transform duration-500">
@@ -394,8 +381,6 @@ const TimelinePage = () => {
                     </div>
                   </div>
                 </div>
-
-                {/* Connecting line to next item */}
                 {index < timelineItems.length - 1 && (
                   <div className="absolute left-1/2 bottom-0 transform -translate-x-1/2 translate-y-16">
                     <div className={`w-8 h-8 border-2 border-gray-300 rounded-full bg-white transition-all duration-500 ${

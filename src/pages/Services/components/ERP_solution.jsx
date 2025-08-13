@@ -69,14 +69,14 @@ const ERPSolutions = () => {
                     'Accept': 'application/json'
                 },
                 body: JSON.stringify({
-                    access_key: "4e4152de-dfb3-4ca7-b5b3-674c3e432ff1", 
+                    access_key: "510e84f9-6c6a-4bf5-85fb-8a6bba4b6b45", 
                     name: formData.name,
                     phone: formData.phone,
                     email: formData.email,
                     subject: formData.subject,
                     message: formData.message,
                     from_name: formData.name,
-                    to: "k.mano75005@gmail.com"
+                    to: "roririsoftpvtltd@gmail.com"
                 })
             });
 
@@ -99,7 +99,7 @@ const ERPSolutions = () => {
                 `Message:\n${formData.message}`
             );
 
-            window.open(`mailto:k.mano75005@gmail.com?subject=${subject}&body=${body}`, '_blank');
+            window.open(`mailto:roririsoftpvtltd@gmail.com?subject=${subject}&body=${body}`, '_blank');
             setSubmitStatus('fallback');
             setFormData({ name: '', phone: '', email: '', subject: '', message: '' });
         } finally {

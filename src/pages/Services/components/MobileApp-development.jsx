@@ -19,7 +19,6 @@ const MobileAppDevelopmentPage = () => {
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
-  // Auto-slide functionality
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % 2);
@@ -43,10 +42,10 @@ const MobileAppDevelopmentPage = () => {
       description: `Roriri Soft Tech excels in Android mobile app development, creating dynamic and user-friendly applications tailored to the Android platform. Our team leverages the latest technologies and follows best practices to design and develop innovative Android apps that cater to diverse business needs. From conceptualization to deployment, we ensure a seamless development process, incorporating engaging UI/UX designs, robust functionalities, and optimal performance. Our Android app development services encompass a wide range of industries, providing scalable and feature-rich solutions that resonate with the specific requirements of our clients.`,
       phoneContent: (
         <div className="relative w-64 h-[500px] bg-white rounded-[2.5rem] shadow-2xl overflow-hidden">
-          {/* Phone frame */}
+          
           <div className="absolute inset-0 bg-gradient-to-b from-gray-900 to-black rounded-[2.5rem] p-2">
             <div className="w-full h-full bg-white rounded-[2rem] overflow-hidden relative">
-              {/* Status bar */}
+              
               <div className="flex justify-between items-center px-6 py-3 bg-white">
                 <span className="text-black font-semibold">9:41</span>
                 <div className="flex items-center space-x-1">
@@ -54,17 +53,17 @@ const MobileAppDevelopmentPage = () => {
                 </div>
               </div>
               
-              {/* Main content */}
+              
               <div className="px-6 py-4 h-full bg-gradient-to-br from-gray-50 to-white relative">
-                {/* Circular background */}
+                
                 <div className="absolute top-20 right-10 w-48 h-48 bg-gradient-to-br from-gray-800 to-black rounded-full"></div>
                 
-                {/* Profile image */}
+                
                 <div className="absolute top-32 right-16 w-32 h-32 rounded-full overflow-hidden bg-gray-200">
                   <div className="w-full h-full bg-gradient-to-b from-orange-300 to-orange-400"></div>
                 </div>
                 
-                {/* Text content */}
+              
                 <div className="relative z-10 mt-8">
                   <h1 className="text-2xl font-bold text-black leading-tight mb-4">
                     Define<br />
@@ -74,7 +73,7 @@ const MobileAppDevelopmentPage = () => {
                   </h1>
                 </div>
                 
-                {/* Get Started button */}
+                
                 <div className="absolute bottom-20 left-6 right-6">
                   <button className="w-full bg-black text-white py-4 rounded-xl font-semibold flex items-center justify-center">
                     Get Started
@@ -93,13 +92,13 @@ const MobileAppDevelopmentPage = () => {
       description: `In the realm of iOS mobile app development, Roriri Soft Tech stands out as a proficient and experienced provider. Our dedicated team specializes in crafting high-quality iOS applications that align with the design principles and standards set by Apple. We employ cutting-edge tools and technologies to build visually appealing and functionally superior iOS apps. Whether it's for iPhones, iPads, or other Apple devices, our development process prioritizes user experience, performance optimization, and adherence to Apple's guidelines. Roriri Soft Tech ensures that iOS apps developed meet the highest standards of quality, delivering a seamless and intuitive experience for end-users.`,
       phoneContent: (
         <div className="relative w-64 h-[500px]">
-          {/* Circular background */}
+          
           <div className="absolute top-10 left-5 w-56 h-56 bg-gradient-to-br from-teal-300 via-blue-400 to-purple-500 rounded-full opacity-80"></div>
           
-          {/* Phone mockup */}
+         
           <div className="relative z-10 w-full h-full bg-black rounded-[2.5rem] shadow-2xl overflow-hidden p-2">
             <div className="w-full h-full bg-gray-900 rounded-[2rem] overflow-hidden">
-              {/* Status bar */}
+             
               <div className="flex justify-between items-center px-4 py-3 text-white">
                 <div className="flex items-center space-x-2">
                   <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
@@ -114,7 +113,7 @@ const MobileAppDevelopmentPage = () => {
                 </div>
               </div>
 
-              {/* Top menu icons */}
+              
               <div className="grid grid-cols-4 gap-4 px-6 py-4">
                 {['Deposit', 'Referral', 'Gold Trading', 'Margin'].map((item) => (
                   <div key={item} className="text-center">
@@ -149,7 +148,7 @@ const MobileAppDevelopmentPage = () => {
                   <span className="text-gray-400">→</span>
                 </div>
 
-                {/* Credit/Debit Card */}
+               
                 <div className="flex items-center justify-between py-3 border-b border-gray-100">
                   <div className="flex items-center space-x-3">
                     <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
@@ -162,11 +161,11 @@ const MobileAppDevelopmentPage = () => {
                   <span className="text-gray-400">→</span>
                 </div>
 
-                {/* Recent Coin section */}
+                
                 <div className="mt-6">
                   <h3 className="font-semibold text-gray-900 mb-4">Recent Coin</h3>
                   
-                  {/* Coin prices */}
+                 
                   <div className="space-y-3">
                     {[
                       { symbol: 'BTC/BUSD', price: '40,058.83', change: '+1.2%', color: 'text-green-500' },
@@ -193,7 +192,7 @@ const MobileAppDevelopmentPage = () => {
                   </div>
                 </div>
 
-                {/* Bottom navigation */}
+               
                 <div className="absolute bottom-0 left-0 right-0 bg-gray-900 px-6 py-3">
                   <div className="flex justify-around">
                     {['Home', 'Markets', 'Trade', 'Futures', 'Wallet'].map((item) => (
@@ -218,13 +217,13 @@ const MobileAppDevelopmentPage = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50 relative overflow-hidden">
-      {/* Interactive background */}
+      
       <div 
         className="absolute inset-0 transition-all duration-300 ease-out"
         style={backgroundStyle}
       />
       
-      {/* Floating decorative elements */}
+      
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 right-20 w-32 h-32 bg-gradient-to-br from-pink-200 to-red-300 rounded-full opacity-20 animate-pulse"></div>
         <div className="absolute bottom-40 left-20 w-24 h-24 bg-gradient-to-br from-blue-200 to-cyan-300 rounded-full opacity-30 animate-bounce" style={{ animationDuration: '4s' }}></div>
@@ -232,9 +231,7 @@ const MobileAppDevelopmentPage = () => {
         <div className="absolute top-1/2 right-1/4 w-20 h-20 bg-gradient-to-br from-cyan-200 to-blue-300 rounded-full opacity-20 animate-pulse" style={{ animationDelay: '1s' }}></div>
       </div>
 
-      {/* Navigation */}
-
-      {/* Hero Section */}
+     
       <div className="relative z-10 text-center py-20 px-6">
         <div 
           className={`transition-all duration-1000 ease-out ${
@@ -257,7 +254,6 @@ const MobileAppDevelopmentPage = () => {
         </div>
       </div>
 
-      {/* Specialization Section */}
       <div className="relative z-10 py-16 px-6">
         <div 
           className={`text-center mb-16 transition-all duration-1000 delay-300 ease-out ${
@@ -266,12 +262,10 @@ const MobileAppDevelopmentPage = () => {
         >
           <h2 className="text-4xl md:text-5xl font-bold text-blue-600 mb-8">Our Specialization</h2>
           
-          {/* Specialization cards */}
     
         </div>
       </div>
 
-      {/* Carousel Section */}
       <div className="relative z-10 py-20 px-6 bg-white/50 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto">
           <div className="relative overflow-hidden rounded-3xl bg-white shadow-2xl">
@@ -282,7 +276,7 @@ const MobileAppDevelopmentPage = () => {
               {slides.map((slide, index) => (
                 <div key={index} className="w-full flex-shrink-0">
                   <div className="grid lg:grid-cols-2 gap-16 items-center p-12">
-                    {/* Content */}
+                    
                     <div className={`space-y-6 ${slide.type === 'ios' ? 'lg:order-2' : ''}`}>
                       <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
                         {slide.title}
@@ -297,7 +291,7 @@ const MobileAppDevelopmentPage = () => {
                       </div>
                     </div>
 
-                    {/* Phone mockup */}
+                    
                     <div className={`flex justify-center ${slide.type === 'ios' ? 'lg:order-1' : ''}`}>
                       <div className="transform hover:scale-105 transition-transform duration-500">
                         {slide.phoneContent}
@@ -309,7 +303,7 @@ const MobileAppDevelopmentPage = () => {
             </div>
           </div>
 
-          {/* Carousel controls */}
+         
           <div className="flex justify-center mt-8 space-x-4">
             {slides.map((_, index) => (
               <button
@@ -324,7 +318,7 @@ const MobileAppDevelopmentPage = () => {
             ))}
           </div>
 
-          {/* Navigation arrows */}
+          
           <button
             onClick={() => setCurrentSlide(currentSlide === 0 ? 1 : 0)}
             className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-gray-50 transition-colors duration-200"
@@ -340,7 +334,7 @@ const MobileAppDevelopmentPage = () => {
         </div>
       </div>
 
-      {/* WhatsApp floating button */}
+      
    
       <TimelinePage/>
             <div className="flex flex-wrap justify-center gap-4 max-w-6xl mx-auto">

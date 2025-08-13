@@ -32,9 +32,9 @@ const FounderSection = () => {
           viewport={{ once: true, amount: 0.3 }}
           className="md:w-1/2 flex justify-center md:justify-end"
         >
-          {/* Founder's image */}
+         
           <img
-            src={founder} // Replace with actual image path
+            src={founder} 
             alt="Mr. Ragupathi R"
             className="rounded-xl  w-full max-w-xs md:max-w-sm lg:max-w-md"
           />

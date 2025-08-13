@@ -2,23 +2,19 @@ import React, { useEffect, useRef, useState } from 'react';
 import {motion as Motion, AnimatePresence } from 'framer-motion';
 import * as THREE from 'three';
 
-// Main App Component for Events Page
 const App = () => {
-    const [activeCategory, setActiveCategory] = useState('All'); // Initial state for all categories
+    const [activeCategory, setActiveCategory] = useState('All'); 
 
-    // Animation variants for sections
     const sectionVariants = {
         hidden: { opacity: 0, y: 50 },
         visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
     };
 
-    // Animation variants for cards/items
     const cardVariants = {
         hidden: { opacity: 0, scale: 0.9 },
         visible: { opacity: 1, scale: 1, transition: { duration: 0.5, ease: "easeOut" } }
     };
 
-    // Three.js Canvas Component
     const ThreeCanvas = () => {
         const mountRef = useRef(null);
 
@@ -173,8 +169,8 @@ const App = () => {
     ];
 
     const eventCategories = [
-        "All", // Add an 'All' category to show all events
-        ...new Set(pastEvents.map(event => event.category)) // Dynamically get unique categories
+        "All", 
+        ...new Set(pastEvents.map(event => event.category)) 
     ];
 
     const filteredEvents = activeCategory === 'All' ? pastEvents : pastEvents.filter(event => event.category === activeCategory);
@@ -302,7 +298,7 @@ const App = () => {
                             {filteredEvents.length > 0 ? (
                                 filteredEvents.map((event, index) => (
                                     <Motion.div
-                                        key={event.title} // Use a unique key for each item for AnimatePresence
+                                        key={event.title} 
                                         initial={{ opacity: 0, y: 20 }}
                                         animate={{ opacity: 1, y: 0 }}
                                         exit={{ opacity: 0, y: -20 }}
@@ -374,7 +370,7 @@ const App = () => {
                     <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 leading-tight rounded-lg">Event Gallery</h2>
 
                     <div className="flex flex-wrap justify-center gap-4 mb-12">
-                        {eventCategories.slice(1).map((category) => ( // Use slice(1) to exclude 'All' from the gallery categories
+                        {eventCategories.slice(1).map((category) => ( 
                             <Motion.button
                                 key={category}
                                 className={`py-2 px-6 rounded-full font-semibold transition duration-300 ${
@@ -392,7 +388,7 @@ const App = () => {
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {/* The gallery images will also be filtered based on the active category now */}
+                        
                         <AnimatePresence mode="wait">
                             {filteredEvents.length > 0 ? (
                                 filteredEvents.map((event, index) => (
