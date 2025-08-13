@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import {Link} from 'react-router-dom'
-// --- Job Card Component (Helper within the file) ---
+
 const JobCard = ({ job, animationDelay }) => {
   return (
     <motion.div
@@ -11,7 +11,7 @@ const JobCard = ({ job, animationDelay }) => {
       transition={{ duration: 0.6, delay: animationDelay }}
       whileHover={{
         boxShadow: "0px 10px 20px rgba(0, 0, 0, 0.1)",
-        y: -5 // Slight lift on hover
+        y: -5 
       }}
     >
       <h3 className="text-xl md:text-2xl font-semibold text-gray-800 mb-3 leading-tight">
@@ -37,8 +37,8 @@ const JobCard = ({ job, animationDelay }) => {
         {job.description}
       </p>
 <motion.a
-  href={`/jobs/${job.id}`} // Dynamically link to the job description page
-  whileHover={{ scale: 1.05, y: -2, boxShadow: "0px 8px 15px rgba(0, 0, 0, 0.2)" }} // Enhanced animation
+  href={`/jobs/${job.id}`} 
+  whileHover={{ scale: 1.05, y: -2, boxShadow: "0px 8px 15px rgba(0, 0, 0, 0.2)" }} 
   whileTap={{ scale: 0.95 }}
   className="mt-auto bg-gradient-to-r from-purple-600 to-indigo-700 text-white font-semibold py-2 px-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-200 flex items-center justify-center space-x-2"
 >
@@ -62,7 +62,7 @@ const JobCard = ({ job, animationDelay }) => {
   );
 };
 
-// --- Main Job Openings Section Component ---
+
 const JobOpeningsSection = () => {
   const jobPostings = [
     {
@@ -114,7 +114,7 @@ const JobOpeningsSection = () => {
   };
 
   return (
-    <div className="bg-white-50 py-16 px-4"> {/* Using light gray background as per screenshot */}
+    <div className="bg-white-50 py-16 px-4"> 
       <div className="container mx-auto">
         <motion.h2
           className="text-3xl md:text-4xl font-medium text-gray-800 mb-12 text-center md:text-left"
@@ -128,9 +128,9 @@ const JobOpeningsSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {jobPostings.map((job, index) => (
             <JobCard
-              key={job.title + index} // Using index as part of key if titles can be duplicated for unique keys
+              key={job.title + index} 
               job={job}
-              animationDelay={0.4 + index * 0.1} // Staggered animation for each card
+              animationDelay={0.4 + index * 0.1} 
             />
           ))}
         </div>

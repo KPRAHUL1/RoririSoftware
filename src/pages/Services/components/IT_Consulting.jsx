@@ -47,7 +47,7 @@ const IT_Consulting = () => {
                         At Roriri Software Solutions, our IT consulting services offer invaluable support in navigating dynamic tech environments. Efficient IT consulting Solutions tailored to your needs. From CV Screening to onboarding, we find the right fit for your team. Streamline your hiring process with our expertise.
                     </Motion.p>
                     <Motion.button
-                        className="cursor-pointer bg-blue-500 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-blue-600 transition duration-300"
+                        className="cursor-pointer bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-blue-600 transition duration-300"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                     >

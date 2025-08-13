@@ -16,7 +16,7 @@ const CallToAction = () => {
         <div className="flex-shrink-0">
           <a
             href="/contact"
-            className="inline-block bg-gradient-to-r cursor-target from-blue-500 to-blue-700 text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:from-blue-600 hover:to-blue-800 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+            className="inline-block bg-gradient-to-r from-blue-700 to-purple-700 text-white font-semibold py-3 px-8 rounded-lg shadow-lg hover:from-blue-600 hover:to-blue-800 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
           >
             Contact Us
           </a>

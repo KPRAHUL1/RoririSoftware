@@ -12,7 +12,7 @@ const FounderProfileSection = () => {
             <p className='text-3xl '>The visionary force behind RORIRI Soft Tech</p>
         </div>
       <div className="flex flex-col lg:flex-row items-center gap-10 max-w-7xl w-full">
-        {/* Left: Image */}
+        
         <div className="flex justify-center md:justify-end">
           <div className="w-72 h-80 sm:w-full sm:h-full lg:w-96 lg:h-full   border-gray-200">
             <img
@@ -27,7 +27,6 @@ const FounderProfileSection = () => {
           </div>
         </div>
 
-        {/* Right: Content */}
         <div className="flex flex-col w-full text-center md:text-left">
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-2">
             MR. Ragupathi R

@@ -34,7 +34,6 @@ const About = () => {
         visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
     };
 
-    // Animation variants for cards/items
     const cardVariants = {
         hidden: { opacity: 0, scale: 0.9 },
         visible: { opacity: 1, scale: 1, transition: { duration: 0.5, ease: "easeOut" } }
@@ -77,7 +76,7 @@ const About = () => {
                 className="bg-white rounded-xl shadow-xl overflow-hidden max-w-6xl mx-auto mt-10"
             >
                 <div className="grid grid-cols-1 md:grid-cols-2">
-                    {/* Left: Images */}
+                    
                     <div className="p-4 flex flex-col gap-4">
                         <img
                             src={garden1}
@@ -93,7 +92,7 @@ const About = () => {
                         />
                     </div>
 
-                    {/* Right: Text Content */}
+                    
                     <div className="p-8 flex flex-col justify-center">
                         <Motion.h1
                             initial={{ opacity: 0, x: 50 }}
@@ -176,7 +175,6 @@ const About = () => {
                         A team balanced, fuels in creativity and drives unstoppable success
                     </Motion.h1>
 
-                    {/* Images from the "We are" section */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
                         <Motion.img
                             src={team1}
@@ -230,7 +228,6 @@ const About = () => {
                 </div>
             </Motion.section>
 
-            {/* Our Culture Section */}
             <Motion.section
                 className="py-16 md:py-24 bg-gray-100 rounded-lg shadow-md mx-auto my-12 max-w-screen-xl px-4"
                 variants={sectionVariants}
@@ -239,7 +236,7 @@ const About = () => {
                     <h2 className="text-3xl md:text-4xl font-medium text-gray-900 mb-12 leading-tight rounded-lg">Our Culture</h2>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {/* Work life Balance Card */}
+                      
                         <Motion.div
                             className="bg-white p-6 rounded-xl shadow-lg text-left"
                             variants={cardVariants}
@@ -252,7 +249,6 @@ const About = () => {
                             <h3 className="text-xl font-semibold text-gray-900 rounded-lg">Work life Balance</h3>
                         </Motion.div>
 
-                        {/* Placeholder Card 1 */}
                         <Motion.div
                             className="bg-white p-6 rounded-xl shadow-lg text-left"
                             variants={cardVariants}
@@ -265,7 +261,6 @@ const About = () => {
                             <h3 className="text-xl font-semibold text-gray-900 rounded-lg">Team Activities</h3>
                         </Motion.div>
 
-                        {/* Placeholder Card 2 */}
                         <Motion.div
                             className="bg-white p-6 rounded-xl shadow-lg text-left"
                             variants={cardVariants}
@@ -278,7 +273,6 @@ const About = () => {
                             <h3 className="text-xl font-semibold text-gray-900 rounded-lg">Relaxation Zones</h3>
                         </Motion.div>
 
-                        {/* Life at #roriri section */}
                         <div className="lg:col-span-3 flex flex-col items-center justify-center py-8">
                             <h3 className="text-3xl font-medium  mb-8 rounded-lg text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">Life at #roriri</h3>
                             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full">

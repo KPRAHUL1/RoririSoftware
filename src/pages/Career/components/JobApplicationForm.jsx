@@ -34,9 +34,9 @@ const JobApplicationForm = ({ isOpen, onClose, jobTitle = '', allJobTitles = [] 
       newErrors.email = 'Invalid email address';
     }
 
-    if (!jobTitle.applyingFor.trim()) {
-      newErrors.applyingFor = 'jobTitle is required';
-    }
+    if (!formData.applyingFor.trim()) {
+  newErrors.applyingFor = 'Job title is required';
+}
     if (!formData.currentLocation.trim()) {
       newErrors.currentLocation = 'currentLocation is required';
     }
@@ -321,8 +321,8 @@ const JobApplicationForm = ({ isOpen, onClose, jobTitle = '', allJobTitles = [] 
                     </label>
                     <input
                       type="text"
-                      name="applying"
-                      value={jobTitle.applyingFor}
+                      name="applyingFor"
+                      value={formData.applyingFor}
                       onChange={handleChange}
                       placeholder="Enter your Jop"
                       disabled={isSubmitting}
