@@ -1,4 +1,3 @@
-// src/components/JobApplicationForm.jsx
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useRef} from 'react';
@@ -13,7 +12,7 @@ const JobApplicationForm = ({ isOpen, onClose, jobTitle = '', allJobTitles = [] 
     name: '',
     phone: '',
     email: '',
-    applyingFor: jobTitle, // Pre-select if provided, otherwise default
+    applyingFor: jobTitle,
     currentLocation: '',
     experience: '',
 
@@ -68,7 +67,7 @@ const JobApplicationForm = ({ isOpen, onClose, jobTitle = '', allJobTitles = [] 
     setSubmitStatus(null);
 
     try {
-      // Method 1: Web3Forms (most reliable for local testing)
+      
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: {
@@ -76,7 +75,7 @@ const JobApplicationForm = ({ isOpen, onClose, jobTitle = '', allJobTitles = [] 
           'Accept': 'application/json'
         },
         body: JSON.stringify({
-          access_key: "YOUR_ACCESS_KEY_HERE", // Get free key from web3forms.com
+          access_key: "4e4152de-dfb3-4ca7-b5b3-674c3e432ff1", 
           name: formData.name,
           phone: formData.phone,
           email: formData.email,
@@ -100,7 +99,7 @@ const JobApplicationForm = ({ isOpen, onClose, jobTitle = '', allJobTitles = [] 
     } catch (error) {
       console.error('Error:', error);
 
-      // Fallback: Use mailto as backup
+      
       const subject = encodeURIComponent(formData.subject);
       const body = encodeURIComponent(
         `Name: ${formData.name}\n` +
@@ -122,12 +121,12 @@ const JobApplicationForm = ({ isOpen, onClose, jobTitle = '', allJobTitles = [] 
 
 
   useEffect(() => {
-    // Reset form data when the modal opens or a new jobTitle is passed
+    
     if (isOpen) {
       setFormData(prev => ({
         ...prev,
         applyingFor: jobTitle,
-        resume: null, // Clear file input
+        resume: null, 
         fullName: '',
         email: '',
         phoneNumber: '',
@@ -140,16 +139,7 @@ const JobApplicationForm = ({ isOpen, onClose, jobTitle = '', allJobTitles = [] 
     }
   }, [isOpen, jobTitle]);
 
-  // const handleChange = (e) => {
-  //   const { name, value, files } = e.target;
-  //   if (name === 'resume') {
-  //     setFormData({ ...formData, [name]: files[0] });
-  //   } else {
-  //     setFormData({ ...formData, [name]: value });
-  //   }
-  //   // Clear error for the field being changed
-  //   setErrors(prev => ({ ...prev, [name]: '' }));
-  // };
+
 
   const validate = () => {
     let newErrors = {};
@@ -161,7 +151,7 @@ const JobApplicationForm = ({ isOpen, onClose, jobTitle = '', allJobTitles = [] 
     }
     if (!formData.phoneNumber.trim()) {
       newErrors.phoneNumber = 'Phone Number is required';
-    } else if (!/^\d{10}$/.test(formData.phoneNumber)) { // Basic 10 digit number validation
+    } else if (!/^\d{10}$/.test(formData.phoneNumber)) { 
       newErrors.phoneNumber = 'Phone number is invalid (10 digits required)';
     }
     if (!formData.resume) newErrors.resume = 'Resume is required';
@@ -176,30 +166,7 @@ const JobApplicationForm = ({ isOpen, onClose, jobTitle = '', allJobTitles = [] 
     return Object.keys(newErrors).length === 0;
   };
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   if (!validate()) {
-  //     return;
-  //   }
-
-  //   setIsSubmitting(true);
-  //   // In a real application, you would send this formData to your backend API
-  //   console.log('Form Data Submitted:', formData);
-
-  //   try {
-  //     // Simulate API call
-  //     await new Promise(resolve => setTimeout(resolve, 1500));
-  //     setSubmissionSuccess(true);
-  //     // You might clear the form here or handle navigation etc.
-  //     // setTimeout(() => onClose(), 2000); // Close after showing success
-  //   } catch (error) {
-  //     console.error('Submission error:', error);
-  //     alert('Failed to submit application. Please try again.');
-  //     setSubmissionSuccess(false);
-  //   } finally {
-  //     setIsSubmitting(false);
-  //   }
-  // };
+  
 
   const modalVariants = {
     hidden: { opacity: 0, scale: 0.9, y: -50 },
@@ -278,22 +245,7 @@ const JobApplicationForm = ({ isOpen, onClose, jobTitle = '', allJobTitles = [] 
                   <p className="mt-1 text-xs text-gray-500">Supported formats: PDF, DOC, DOCX</p>
                   {errors.resume && <p className="text-red-500 text-xs mt-1">{errors.resume}</p>}
                 </div>
-                {/* <div>
-                  <label htmlFor="fullName" className="block text-gray-700 text-sm font-semibold mb-2">
-                    Full Name
-                  </label>
-                  <input
-                    type="text"
-                    id="fullName"
-                    name="fullName"
-                    value={formData.fullName}
-                    onChange={handleChange}
-                    placeholder="Enter your full name"
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
-                  />
-                  {errors.fullName && <p className="text-red-500 text-xs mt-1">{errors.fullName}</p>}
-                </div> */}
-                {/* Status Messages */}
+               
                 {submitStatus === 'success' && (
                   <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-xl">
                     ✅ Message sent successfully! I'll get back to you soon.
@@ -424,7 +376,7 @@ const JobApplicationForm = ({ isOpen, onClose, jobTitle = '', allJobTitles = [] 
                   <button
                     onClick={handleSubmit}
                     disabled={isSubmitting}
-                    className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold py-3 px-6 rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-200 flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full cursor-pointer bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold py-3 px-6 rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-200 flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {isSubmitting ? (
                       <>
@@ -434,7 +386,7 @@ const JobApplicationForm = ({ isOpen, onClose, jobTitle = '', allJobTitles = [] 
                     ) : (
                       <>
                         <Send size={20} />
-                        <span>Submit</span>
+                        <span>Apply</span>
                       </>
                     )}
                   </button>
