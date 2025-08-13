@@ -45,12 +45,12 @@ const Whatwedo = () => {
       </div>
 
       <div className="relative max-w-7xl mx-auto">
-        <div className="text-center md:text-left mb-12">
+        <div className="text-center   mb-12">
           <h2 className="text-purple-600 text-lg font-semibold uppercase tracking-wide">
             What we do?
           </h2>
-          <h1 className="mt-2 text-xl sm:text-xl lg:text-6xl font-medium leading-tight text-gray-900">
-            Innovative Solutions for <br className="hidden sm:inline" /> 
+          <h1 className="mt-2 text-xl flex flex-col items-center sm:text-xl lg:text-6xl font-medium  text-gray-900">
+            Innovative Solutions for <br className="hidden " /> 
             <RotatingText
   texts={['Business Success & Growth', 'Digital Excellence', 'Future-Proof Your Business']}
   mainClassName="px-2 sm:px-2 md:px-3   overflow-hidden py-0.5 sm:py-1 md:py-2  rounded-lg "

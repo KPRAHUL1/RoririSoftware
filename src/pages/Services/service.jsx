@@ -135,8 +135,8 @@ const ServicesPage = () => {
       {/* Navbar */}
 
   {/* Hero Section */}
-<section className="bg-white py-12 sm:py-16 lg:py-20 h-screen">
-    <div className="flex flex-col lg:flex-row items-center justify-center gap-8 ">
+<section className="bg-white py-12 sm:py-16 lg:py-20 ">
+    <div className="flex flex-col md:flex-row items-center justify-center gap-5 lg:gap-30 ">
       {/* Animation Container */}
         <DotLottieReact
           className="w-64 h-48 sm:w-80 sm:h-60 lg:w-96 lg:h-64 xl:w-[28rem] xl:h-72"

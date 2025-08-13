@@ -1,6 +1,5 @@
 import React from 'react';
-import { useRef, useState } from 'react';
-import emailjs from "@emailjs/browser";
+import { useState } from 'react';
 import { motion as Motion } from 'framer-motion';
 import { erp1, erp2, erp3 } from '../../../assets/services/service';
 import { facebook, instagram, linkedin, youtube } from '../../../assets/icons/icon';
@@ -114,10 +113,6 @@ const ERPSolutions = () => {
     const cardVariants = {
         hidden: { opacity: 0, scale: 0.9 },
         visible: { opacity: 1, scale: 1, transition: { duration: 0.5, ease: "easeOut" } }
-    };
-    const inputVariants = {
-        hidden: { opacity: 0, x: -20 },
-        visible: { opacity: 1, x: 0, transition: { duration: 0.4, ease: "easeOut" } }
     };
     const lineVariants = {
         hidden: { height: 0 },
@@ -387,66 +382,85 @@ const ERPSolutions = () => {
             </Motion.section>
 
            
-            <Motion.section
-                className="py-16 md:py-24 bg-gray-100 rounded-lg shadow-md mx-auto my-12 max-w-screen-xl px-4"
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.3 }}
-                variants={sectionVariants}
+          <Motion.section
+  className="py-16 md:py-24 bg-gray-100 rounded-lg shadow-md mx-auto my-12 max-w-screen-xl px-4"
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.3 }}
+  variants={sectionVariants}
+>
+  <div className="container mx-auto text-center">
+    <p className="text-sm text-gray-600 uppercase tracking-wider mb-2">
+      What We Do in ERP
+    </p>
+    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 leading-tight">
+      Our Progress
+    </h2>
+
+    <div className="relative flex flex-col items-center">
+      {/* Vertical line */}
+      <Motion.div
+        className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-purple-500 to-indigo-500 rounded-full z-0"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.5 }}
+        variants={lineVariants}
+      />
+
+      {[
+        { title: "ERP Consulting and Strategy", description: "Analyze your operations to define the best-fit ERP strategy." },
+        { title: "Custom ERP Development", description: "Build modular, scalable systems to suit your workflows." },
+        { title: "Integration and Migration", description: "Ensure seamless data flow across existing tools and systems." },
+        { title: "Cloud and On-Premise Deployment", description: "Flexible hosting options tailored to your security and budget needs." },
+        { title: "Ongoing Support and Upgrades", description: "Keep your ERP systems updated and optimized for peak performance." }
+      ].map((item, index) => (
+        <Motion.div
+          key={index}
+          className={`flex flex-col md:flex-row items-center w-full my-6 md:my-8 z-10 ${
+            index % 2 !== 0 ? "md:flex-row-reverse" : ""
+          }`}
+          variants={cardVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ delay: index * 0.15 + 0.5 }}
+        >
+          {/* Content box */}
+          <div className={`w-full md:w-1/2 ${index % 2 === 0 ? "md:pr-12" : "md:pl-12"} text-center md:text-left`}>
+            <Motion.div
+              className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1"
+              whileHover={{ scale: 1.02 }}
             >
-                <div className="container mx-auto text-center">
-                    <p className="text-sm text-gray-600 uppercase tracking-wider mb-2 rounded-lg">What We Do in ERP</p>
-                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 leading-tight rounded-lg">Our Progress</h2>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">{item.title}</h3>
+              <p className="text-gray-700">{item.description}</p>
+            </Motion.div>
+          </div>
 
-                    <div className="relative flex flex-col items-center">
-                       
-                        <Motion.div
-                            className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-purple-500 to-indigo-500 rounded-full z-0"
-                            initial="hidden"
-                            whileInView="visible"
-                            viewport={{ once: true, amount: 0.5 }}
-                            variants={lineVariants}
-                        ></Motion.div>
+          {/* Middle icon */}
+          <div className="flex md:w-1/12 justify-center my-4 md:my-0">
+            <div className="w-6 h-6 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full shadow-md flex items-center justify-center">
+              <svg
+                className="w-4 h-4 text-white"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            </div>
+          </div>
 
-                        
-                        {[
-                            { title: "ERP Consulting and Strategy", description: "Analyze your operations to define the best-fit ERP strategy." },
-                            { title: "Custom ERP Development", description: "Build modular, scalable systems to suit your workflows." },
-                            { title: "Integration and Migration", description: "Ensure seamless data flow across existing tools and systems." },
-                            { title: "Cloud and On-Premise Deployment", description: "Flexible hosting options tailored to your security and budget needs." },
-                            { title: "Ongoing Support and Upgrades", description: "Keep your ERP systems updated and optimized for peak performance." }
-                        ].map((item, index) => (
-                            <Motion.div
-                                key={index}
-                                className={`flex items-center w-full my-6 md:my-8 z-10 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}
-                                variants={cardVariants}
-                                initial="hidden"
-                                whileInView="visible"
-                                viewport={{ once: true, amount: 0.2 }}
-                                transition={{ delay: index * 0.15 + 0.5 }}
-                            >
-                                <div className={`w-full md:w-1/2 ${index % 2 === 0 ? 'md:pr-12' : 'md:pl-12'} text-center md:text-left`}>
-                                    <Motion.div
-                                        className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1"
-                                        whileHover={{ scale: 1.02 }}
-                                    >
-                                        <h3 className="text-xl font-semibold text-gray-900 mb-2 rounded-lg">{item.title}</h3>
-                                        <p className="text-gray-700 rounded-lg">{item.description}</p>
-                                    </Motion.div>
-                                </div>
-                                <div className="hidden md:flex w-1/12 justify-center">
-                                    <div className="w-6 h-6 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full shadow-md flex items-center justify-center">
-                                        <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path></svg>
-                                    </div>
-                                </div>
-                                <div className={`w-full md:w-1/2 ${index % 2 === 0 ? 'md:pl-12' : 'md:pr-12'} md:text-right`}>
+          {/* Empty space for alignment (desktop only) */}
+          <div className={`hidden md:block w-full md:w-1/2 ${index % 2 === 0 ? "md:pl-12" : "md:pr-12"}`} />
+        </Motion.div>
+      ))}
+    </div>
+  </div>
+</Motion.section>
 
-                                </div>
-                            </Motion.div>
-                        ))}
-                    </div>
-                </div>
-            </Motion.section>
             <Motion.section
                 className="py-16 md:py-24 bg-white rounded-lg shadow-md mx-auto my-12 max-w-screen-xl px-4"
                 initial="hidden"

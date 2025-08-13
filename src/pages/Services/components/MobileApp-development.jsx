@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import TimelinePage from './Timeline';
+import Marquee from "react-fast-marquee";
 import { useNavigate } from 'react-router-dom';
-
+import { Briefcase, ShoppingBag, GraduationCap, PiggyBank, Users, Heart } from "lucide-react";
 const MobileAppDevelopmentPage = () => {
   const navigate = useNavigate();
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -26,14 +27,14 @@ const MobileAppDevelopmentPage = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const specializations = [
-    { name: 'Lifestyle', color: 'from-pink-400 to-purple-500' },
-    { name: 'Finance', color: 'from-orange-400 to-red-500' },
-    { name: 'Education', color: 'from-cyan-400 to-blue-500' },
-    { name: 'Social Network', color: 'from-purple-400 to-pink-500' },
-    { name: 'E-Commerce', color: 'from-blue-500 to-purple-600' },
-    { name: 'Business', color: 'from-gray-600 to-gray-800' }
-  ];
+const specializations = [
+  { name: "Lifestyle", color: "from-pink-400 to-purple-500", icon: Heart },
+  { name: "Finance", color: "from-orange-400 to-red-500", icon: PiggyBank },
+  { name: "Education", color: "from-cyan-400 to-blue-500", icon: GraduationCap },
+  { name: "Social Network", color: "from-purple-400 to-pink-500", icon: Users },
+  { name: "E-Commerce", color: "from-blue-500 to-purple-600", icon: ShoppingBag },
+  { name: "Business", color: "from-gray-600 to-gray-800", icon: Briefcase },
+];
 
   const slides = [
     {
@@ -337,25 +338,24 @@ const MobileAppDevelopmentPage = () => {
       
    
       <TimelinePage/>
-            <div className="flex flex-wrap justify-center gap-4 max-w-6xl mx-auto">
-            {specializations.map((spec, index) => (
-              <div
-                key={spec.name}
-                className={`group cursor-pointer transition-all duration-500 delay-${index * 100} ${
-                  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-                }`}
-              >
-                <div className={`bg-gradient-to-r ${spec.color} text-white px-8 py-4 rounded-2xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-2`}>
-                  <div className="flex items-center space-x-3">
-                    <div className="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
-                      <span className="text-white text-sm">💎</span>
-                    </div>
-                    <span>{spec.name}</span>
-                  </div>
-                </div>
+            <div className="w-full bg-gray-100 py-10">
+      <Marquee gradient={false} speed={50} pauseOnHover>
+        {specializations.map((spec) => {
+          const Icon = spec.icon;
+          return (
+            <div
+              key={spec.name}
+              className={`bg-gradient-to-r ${spec.color} text-white px-8 py-4 rounded-2xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 m-3 flex items-center space-x-3`}
+            >
+              <div className="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
+                <Icon className="text-white w-5 h-5" />
               </div>
-            ))}
-          </div>
+              <span>{spec.name}</span>
+            </div>
+          );
+        })}
+      </Marquee>
+    </div>
     </div>
   );
 };
