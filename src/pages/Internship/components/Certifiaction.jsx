@@ -92,10 +92,10 @@ useEffect(() => {
   });
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 text-gray-100 font-sans p-4 flex items-center justify-center">
+    <div className="min-h-screen bg-green-200  font-sans p-4 flex items-center justify-center">
       <div className="relative w-full max-w-7xl mx-auto py-12 px-4 md:px-8">
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-6xl font-medium mb-4 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 animate-pulse">
+          <h1 className="text-4xl md:text-6xl font-medium mb-4 ">
             Certificate Gallery
           </h1>
           <p className="text-gray-400 text-lg">Showcasing achievements and accomplishments</p>
@@ -106,7 +106,7 @@ useEffect(() => {
           {/* Previous Button */}
           <button
             onClick={handlePrev}
-            className="absolute left-0 top-1/2 -translate-y-1/2 p-4 bg-white/10 backdrop-blur-md text-gray-100 rounded-full shadow-xl hover:bg-white/20 transition-all duration-300 z-10 hidden md:block hover:scale-110"
+            className="absolute left-0 top-1/2 -translate-y-1/2 p-4 bg-white backdrop-blur-md text-black rounded-full shadow-xl hover:bg-white/20 transition-all duration-300 z-10 hidden md:block hover:scale-110"
             aria-label="Previous"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -148,7 +148,7 @@ useEffect(() => {
           {/* Next Button */}
           <button
             onClick={handleNext}
-            className="absolute right-0 top-1/2 -translate-y-1/2 p-4 bg-white/10 backdrop-blur-md text-gray-100 rounded-full shadow-xl hover:bg-white/20 transition-all duration-300 z-10 hidden md:block hover:scale-110"
+            className="absolute right-0 top-1/2 -translate-y-1/2 p-4 bg-white backdrop-blur-md text-black rounded-full shadow-xl hover:bg-white/20 transition-all duration-300 z-10 hidden md:block hover:scale-110"
             aria-label="Next"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -161,28 +161,6 @@ useEffect(() => {
         <div className="flex justify-center items-center mt-12 space-x-6">
           {/* Play/Pause Button */}
 
-
-          {/* Mobile Navigation */}
-          <div className="flex md:hidden space-x-3">
-            <button
-              onClick={handlePrev}
-              className="p-3 bg-white/10 backdrop-blur-md text-gray-100 rounded-full shadow-lg hover:bg-white/20 transition-all duration-300"
-              aria-label="Previous"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="m15 18-6-6 6-6"/>
-              </svg>
-            </button>
-            <button
-              onClick={handleNext}
-              className="p-3 bg-white/10 backdrop-blur-md text-gray-100 rounded-full shadow-lg hover:bg-white/20 transition-all duration-300"
-              aria-label="Next"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="m9 18 6-6-6-6"/>
-              </svg>
-            </button>
-          </div>
         </div>
       </div>
 

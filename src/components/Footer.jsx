@@ -6,7 +6,7 @@ const Footer = () => {
   const linksData = [
     { name: 'Home', href: '/' },
     { name: 'About Us', href: '/about' },
-    { name: 'Careers', href: '/career' },
+    { name: 'Careers', href: '/careers' },
     { name: 'Privacy Policy', href: '/privacy-policy' },
     { name: 'Terms and Condition', href: '/terms-and-condition' },
     { name: 'Refund Policy', href: '#' },
@@ -19,14 +19,14 @@ const Footer = () => {
   ];
 
   const servicesData = [
-    { name: 'Mobile app development', href: '/mobile-app-development' },
-    { name: 'Website development', href: '/web-development' },
+    { name: 'Mobile app development', href: '/services/mobile-app-development' },
+    { name: 'Website development', href: '/services/web-app-development' },
     { name: 'All Products & Trials', href: '/products' },
-    { name: 'IT consulting', href: '/it-consulting' },
+    { name: 'IT consulting', href: '/services/it-consulting' },
   ];
 
   const productData = [
-    { name: 'ERP Solutions ', href: '/erp-solutions' },
+    { name: 'ERP Solutions ', href: '/services/erp-solutions' },
     { name: 'Roriri Attedence App', href: '/products' },
     { name: 'Nexemy', href: '/products' },
   ];

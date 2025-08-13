@@ -20,6 +20,7 @@ import JobApplicationForm from "./pages/Career/components/JobApplicationForm";
 import ServicesPage from "./pages/Services/service";
 import TermsAndConditions from "./pages/TermsCondition/TermsCondition";
 import PrivacyPolicy from "./pages/PrivacyPolicy/PrivacyPolicy";
+import ProductDetails from "./pages/Product/components/ProductDetails/ProductDetails";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -49,6 +50,7 @@ const App = () => {
           <Route path="/internship" element={<Internship />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/products" element={<Product/>}/>
+          <Route path="/products/:id" element={<ProductDetails />} />
            <Route path="/events" element={<EventPage/>}/>
            <Route path="/terms-and-condition" element={<TermsAndConditions/>}/>
            <Route path="/privacy-policy" element={<PrivacyPolicy/>}/>
