@@ -4,10 +4,9 @@ import emailjs from "@emailjs/browser";
 import { motion as Motion } from 'framer-motion';
 import { erp1, erp2, erp3 } from '../../../assets/services/service';
 import { facebook, instagram, linkedin, youtube } from '../../../assets/icons/icon';
-import LogoWeb from '../../../assets/logo/LogoWeb.png'; // Importing the logo image
+import LogoWeb from '../../../assets/logo/LogoWeb.png'; 
 import { MailCheck, CircleUserRound, MapPin, Loader2, Send } from "lucide-react";
 
-// Main App Component
 const ERPSolutions = () => {
     const [formData, setFormData] = useState({
         name: '',
@@ -63,7 +62,6 @@ const ERPSolutions = () => {
         setSubmitStatus(null);
 
         try {
-            // Method 1: Web3Forms (most reliable for local testing)
             const response = await fetch('https://api.web3forms.com/submit', {
                 method: 'POST',
                 headers: {
@@ -71,7 +69,7 @@ const ERPSolutions = () => {
                     'Accept': 'application/json'
                 },
                 body: JSON.stringify({
-                    access_key: "YOUR_ACCESS_KEY_HERE", // Get free key from web3forms.com
+                    access_key: "4e4152de-dfb3-4ca7-b5b3-674c3e432ff1", 
                     name: formData.name,
                     phone: formData.phone,
                     email: formData.email,
@@ -93,7 +91,6 @@ const ERPSolutions = () => {
         } catch (error) {
             console.error('Error:', error);
 
-            // Fallback: Use mailto as backup
             const subject = encodeURIComponent(formData.subject);
             const body = encodeURIComponent(
                 `Name: ${formData.name}\n` +
@@ -109,13 +106,11 @@ const ERPSolutions = () => {
             setIsSubmitting(false);
         }
     };
-    // Animation variants for sections
     const sectionVariants = {
         hidden: { opacity: 0, y: 50 },
         visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
     };
 
-    // Animation variants for cards/items
     const cardVariants = {
         hidden: { opacity: 0, scale: 0.9 },
         visible: { opacity: 1, scale: 1, transition: { duration: 0.5, ease: "easeOut" } }
@@ -164,7 +159,6 @@ const ERPSolutions = () => {
                         </Motion.a>
                     </div>
                     <div className="md:w-1/2 flex justify-center md:justify-end relative">
-                        {/* Placeholder for the ERP illustration image */}
                         <Motion.img
                             src={erp1}
                             alt="ERP Illustration"
@@ -178,7 +172,6 @@ const ERPSolutions = () => {
                 </div>
             </Motion.section>
 
-            {/* Seamless Integration Section */}
             <Motion.section
                 className="py-16 md:py-24 bg-white rounded-lg shadow-md mx-auto my-12 max-w-screen-xl px-4"
                 initial="hidden"
@@ -188,7 +181,6 @@ const ERPSolutions = () => {
             >
                 <div className="container mx-auto flex flex-col md:flex-row items-center justify-between">
                     <div className="md:w-1/2 mb-10 md:mb-0 relative">
-                        {/* Placeholder for the team image */}
                         <Motion.img
                             src={erp2}
                             alt="Team Working"
@@ -198,7 +190,6 @@ const ERPSolutions = () => {
                             transition={{ duration: 0.8, delay: 0.2 }}
                             onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/500x350/E0E7FF/312E81?text=Team+Working'; }}
                         />
-                        {/* Placeholder for the code snippet image */}
                         <Motion.img
                             src={erp3}
                             alt="Code Snippet"
@@ -242,7 +233,6 @@ const ERPSolutions = () => {
                 </div>
             </Motion.section>
 
-            {/* How ERP Transforms Section */}
             <Motion.section
                 className="py-16 md:py-24 bg-gray-100 rounded-lg shadow-md mx-auto my-12 max-w-screen-xl px-4"
                 initial="hidden"
@@ -303,7 +293,6 @@ const ERPSolutions = () => {
                 </div>
             </Motion.section>
 
-            {/* Why Your Business Needs ERP Section */}
             <Motion.section
                 className="py-16 md:py-24 bg-white rounded-lg shadow-md mx-auto my-12 max-w-screen-xl px-4"
                 initial="hidden"
@@ -319,7 +308,7 @@ const ERPSolutions = () => {
                     </p>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {/* Centralized Control Card */}
+                        
                         <Motion.div
                             className="bg-gray-50 p-8 rounded-xl shadow-lg text-left relative overflow-hidden group"
                             variants={cardVariants}
@@ -335,7 +324,6 @@ const ERPSolutions = () => {
                             </p>
                         </Motion.div>
 
-                        {/* Save Time and Eliminate Errors Card */}
                         <Motion.div
                             className="bg-gray-50 p-8 rounded-xl shadow-lg text-left relative overflow-hidden group"
                             variants={cardVariants}
@@ -350,8 +338,6 @@ const ERPSolutions = () => {
                                 Automate repetitive processes, reduce manual entry, and eliminate costly errors. Free up your team to focus on strategic growth while ensuring operational accuracy.
                             </p>
                         </Motion.div>
-
-                        {/* Make Smarter Decisions Card */}
                         <Motion.div
                             className="bg-gray-50 p-8 rounded-xl shadow-lg text-left relative overflow-hidden group"
                             variants={cardVariants}
@@ -367,7 +353,6 @@ const ERPSolutions = () => {
                             </p>
                         </Motion.div>
 
-                        {/* Scale Seamlessly Card */}
                         <Motion.div
                             className="bg-gray-50 p-8 rounded-xl shadow-lg text-left relative overflow-hidden group col-span-1 md:col-span-1 lg:col-span-1"
                             variants={cardVariants}
@@ -383,7 +368,6 @@ const ERPSolutions = () => {
                             </p>
                         </Motion.div>
 
-                        {/* Boost Team Collaboration Card (adjusting layout for 2-column or 3-column) */}
                         <Motion.div
                             className="bg-gray-50 p-8 rounded-xl shadow-lg text-left relative overflow-hidden group col-span-1 md:col-span-1 lg:col-span-1"
                             variants={cardVariants}
@@ -402,7 +386,7 @@ const ERPSolutions = () => {
                 </div>
             </Motion.section>
 
-            {/* What We Do in ERP Section */}
+           
             <Motion.section
                 className="py-16 md:py-24 bg-gray-100 rounded-lg shadow-md mx-auto my-12 max-w-screen-xl px-4"
                 initial="hidden"
@@ -415,7 +399,7 @@ const ERPSolutions = () => {
                     <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 leading-tight rounded-lg">Our Progress</h2>
 
                     <div className="relative flex flex-col items-center">
-                        {/* Vertical line for timeline - now animated */}
+                       
                         <Motion.div
                             className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-purple-500 to-indigo-500 rounded-full z-0"
                             initial="hidden"
@@ -424,7 +408,7 @@ const ERPSolutions = () => {
                             variants={lineVariants}
                         ></Motion.div>
 
-                        {/* Timeline Items */}
+                        
                         {[
                             { title: "ERP Consulting and Strategy", description: "Analyze your operations to define the best-fit ERP strategy." },
                             { title: "Custom ERP Development", description: "Build modular, scalable systems to suit your workflows." },
@@ -500,7 +484,7 @@ const ERPSolutions = () => {
                     <div className="bg-white rounded-3xl shadow-xl p-8">
                         <h2 className="text-2xl font-bold text-gray-800 mb-6">Send Message</h2>
 
-                        {/* Status Messages */}
+                       
                         {submitStatus === 'success' && (
                             <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-xl">
                                 ✅ Message sent successfully! I'll get back to you soon.
@@ -516,7 +500,7 @@ const ERPSolutions = () => {
                             <div className="grid md:grid-cols-2 gap-4">
                                 <div>
                                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                                        Full Name *
+                                        Full Name 
                                     </label>
                                     <input
                                         type="text"
@@ -534,14 +518,14 @@ const ERPSolutions = () => {
                                 </div>
                                 <div>
                                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                                        Phone Number *
+                                        Phone Number 
                                     </label>
                                     <input
                                         type="number"
                                         name="phone"
                                         value={formData.phone}
                                         onChange={handleChange}
-                                        placeholder="Enter your pnone number"
+                                        placeholder="Enter your phone number"
                                         disabled={isSubmitting}
                                         className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors disabled:opacity-50 ${errors.phone ? 'border-red-500' : 'border-gray-300'
                                             }`}
@@ -553,7 +537,7 @@ const ERPSolutions = () => {
 
                                 <div>
                                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                                        Email Address *
+                                        Email Address 
                                     </label>
                                     <input
                                         type="email"
@@ -572,14 +556,14 @@ const ERPSolutions = () => {
                             </div>
                             <div>
                                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                                    Subject *
+                                    Subject 
                                 </label>
                                 <input
                                     type="text"
                                     name="subject"
                                     value={formData.subject}
                                     onChange={handleChange}
-                                    placeholder="Enter your name"
+                                    placeholder="Enter your subject"
                                     disabled={isSubmitting}
                                     className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors disabled:opacity-50 ${errors.subject ? 'border-red-500' : 'border-gray-300'
                                         }`}
@@ -591,7 +575,7 @@ const ERPSolutions = () => {
 
                             <div>
                                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                                    Your Message *
+                                    Your Message 
                                 </label>
                                 <textarea
                                     name="message"

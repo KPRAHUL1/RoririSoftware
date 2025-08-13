@@ -70,7 +70,7 @@ const ContactUsPage = () => {
           'Accept': 'application/json'
         },
         body: JSON.stringify({
-          access_key: "YOUR_ACCESS_KEY_HERE", // Get free key from web3forms.com
+          access_key: "4e4152de-dfb3-4ca7-b5b3-674c3e432ff1", // Get free key from web3forms.com
           name: formData.name,
           phone: formData.phone,
           email: formData.email,

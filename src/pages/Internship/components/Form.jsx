@@ -79,7 +79,7 @@ const InternshipRegistrationForm = () => {
           'Accept': 'application/json'
         },
         body: JSON.stringify({
-          access_key: "YOUR_ACCESS_KEY_HERE", // Get free key from web3forms.com
+          access_key: "4e4152de-dfb3-4ca7-b5b3-674c3e432ff1", // Get free key from web3forms.com
           name: formData.name,
           phone: formData.phone,
           email: formData.email,
@@ -152,7 +152,7 @@ const InternshipRegistrationForm = () => {
           </div>
         </div>
 
-        <div className="bg-white rounded-3xl shadow-xl p-8">
+        <div className="bg-green-100 rounded-3xl shadow-xl p-8">
           <h2 className="text-2xl font-bold text-gray-800 mb-6">Send Message</h2>
 
           {/* Status Messages */}
@@ -170,7 +170,7 @@ const InternshipRegistrationForm = () => {
           <div className="space-y-6">
 
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm  font-medium text-gray-700 mb-2">
                 Full Name *
               </label>
               <input
@@ -180,7 +180,7 @@ const InternshipRegistrationForm = () => {
                 onChange={handleChange}
                 placeholder="Enter your name"
                 disabled={isSubmitting}
-                className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors disabled:opacity-50 ${errors.name ? 'border-red-500' : 'border-gray-300'
+                className={`w-full bg-white px-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors disabled:opacity-50 ${errors.name ? 'border-red-500' : 'border-gray-300'
                   }`}
               />
               {errors.name && (
@@ -199,7 +199,7 @@ const InternshipRegistrationForm = () => {
                   onChange={handleChange}
                   placeholder="Enter your pnone number"
                   disabled={isSubmitting}
-                  className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors disabled:opacity-50 ${errors.phone ? 'border-red-500' : 'border-gray-300'
+                  className={`w-full bg-white  px-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors disabled:opacity-50 ${errors.phone ? 'border-red-500' : 'border-gray-300'
                     }`}
                 />
                 {errors.phone && (
@@ -218,7 +218,7 @@ const InternshipRegistrationForm = () => {
                   onChange={handleChange}
                   placeholder="Enter your email"
                   disabled={isSubmitting}
-                  className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors disabled:opacity-50 ${errors.email ? 'border-red-500' : 'border-gray-300'
+                  className={`w-full bg-white  px-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors disabled:opacity-50 ${errors.email ? 'border-red-500' : 'border-gray-300'
                     }`}
                 />
                 {errors.email && (
@@ -237,7 +237,7 @@ const InternshipRegistrationForm = () => {
                   onChange={handleChange}
                   placeholder="Enter your program"
                   disabled={isSubmitting}
-                  className={` px-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors disabled:opacity-50 ${errors.subject ? 'border-red-500' : 'border-gray-300'
+                  className={`bg-white  px-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors disabled:opacity-50 ${errors.subject ? 'border-red-500' : 'border-gray-300'
                     }`}
                 />
                 {errors.program && (
@@ -255,7 +255,7 @@ const InternshipRegistrationForm = () => {
                   onChange={handleChange}
                   placeholder="Enter your qualification"
                   disabled={isSubmitting}
-                  className={` px-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors disabled:opacity-50 ${errors.subject ? 'border-red-500' : 'border-gray-300'
+                  className={`bg-white  px-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors disabled:opacity-50 ${errors.subject ? 'border-red-500' : 'border-gray-300'
                     }`}
                 />
                 {errors.qualification && (
@@ -273,7 +273,7 @@ const InternshipRegistrationForm = () => {
                   onChange={handleChange}
                   placeholder="Enter your College Name"
                   disabled={isSubmitting}
-                  className={` px-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors disabled:opacity-50 ${errors.subject ? 'border-red-500' : 'border-gray-300'
+                  className={`bg-white  px-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors disabled:opacity-50 ${errors.subject ? 'border-red-500' : 'border-gray-300'
                     }`}
                 />
                 {errors.college && (
@@ -291,7 +291,7 @@ const InternshipRegistrationForm = () => {
                   onChange={handleChange}
                   placeholder="Enter your year"
                   disabled={isSubmitting}
-                  className={` px-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors disabled:opacity-50 ${errors.subject ? 'border-red-500' : 'border-gray-300'
+                  className={`bg-white  px-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors disabled:opacity-50 ${errors.subject ? 'border-red-500' : 'border-gray-300'
                     }`}
                 />
                 {errors.year && (
@@ -310,7 +310,7 @@ const InternshipRegistrationForm = () => {
                 placeholder="Write your message here..."
                 rows="5"
                 disabled={isSubmitting}
-                className={`w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors resize-vertical disabled:opacity-50 ${errors.message ? 'border-red-500' : 'border-gray-300'
+                className={`w-full bg-white px-4 py-3 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors resize-vertical disabled:opacity-50 ${errors.message ? 'border-red-500' : 'border-gray-300'
                   }`}
               />
               {errors.message && (
@@ -321,7 +321,7 @@ const InternshipRegistrationForm = () => {
             <button
               onClick={handleSubmit}
               disabled={isSubmitting}
-              className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold py-3 px-6 rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-200 flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full bg-green-600 text-white font-semibold py-3 px-6 rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-200 flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isSubmitting ? (
                 <>
@@ -331,7 +331,7 @@ const InternshipRegistrationForm = () => {
               ) : (
                 <>
                   <Send size={20} />
-                  <span>Send Message</span>
+                  <span>Register Now</span>
                 </>
               )}
             </button>
