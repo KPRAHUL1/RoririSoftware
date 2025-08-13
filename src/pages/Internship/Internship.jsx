@@ -1,4 +1,3 @@
-import React from 'react'
 import InternshipRegistrationForm from './components/Form'
 import certificate from '../../assets/certificate/image.png'
 import TextType from '../../components/ui/TextType/TypeWriter';
@@ -8,6 +7,8 @@ import CircularGallery from '../../components/ui/CircularGallary/CircularGallary
 import InternshipProgramsPage from './components/InternShipProgramPage';
 import WhatSetsUsApartPage from './components/SetupPage';
 import Certification from './components/Certifiaction';
+import { contactlottie } from '../../assets/lottiefiles/lettie';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 const Internship = () => {
 
   return (
@@ -15,14 +16,15 @@ const Internship = () => {
   
     <div className='flex flex-col'>
  
-      <div className="flex flex-col md:flex-row items-center justify-center gap-3 px-8  ">
-        <div className="flex items-center w-fit">
-      <iframe
-       src="https://lottie.host/embed/3d9dbb97-e54d-4286-afdf-c75b08e9bd12/AIkZadJ9Q4.lottie"
-  className="w-full max-w-[500px] h-[300px] sm:h-[350px] md:h-[400px] lg:h-[600px] lg:w-[600px] object-cover rounded-xl mx-auto"
-/>
-
-</div>
+      <div className="flex flex-col lg:flex-row items-center justify-center gap-3 px-8  ">
+        <div className="flex items-center ">
+          <DotLottieReact
+            className=" sm:w-[400px]  sm:h-[400px]  lg:w-[500px] lg:h-[600px]"
+            src={contactlottie}
+            loop
+            autoplay
+          />
+        </div>
 
 
       <div className=" flex flex-col justify-center text-center px-3 lg:text-left">
@@ -38,10 +40,10 @@ const Internship = () => {
           As the first in Tamil Nadu, we offer a unique dashboard to track student tasks, progress, and performance.
         </p>
         <div className="flex justify-center lg:justify-start">
-          <button className="cursor-pointer bg-green-500 cursor-target hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-md shadow-md transition-colors duration-300 flex items-center gap-2">
+          <a href='#contact' className="cursor-pointer bg-green-500 cursor-target hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-md shadow-md transition-colors duration-300 flex items-center gap-2">
             Register Now
         
-          </button>
+          </a>
         </div>
       </div>
          
@@ -96,9 +98,9 @@ const Internship = () => {
             developers, hands-on experience, and exposure to a collaborative environment
             designed to enhance your technical and professional skills.
           </p>
-          <button className="cursor-pointer bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 ease-in-out self-center md:self-start">
-            Register Now 
-          </button>
+          <a href='#contact' className="cursor-pointer bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 ease-in-out self-center md:self-start">
+            Register Now
+          </a>
         </div>
       </div>
     </div>
@@ -139,7 +141,7 @@ const Internship = () => {
         </div>
       </div>
     </div>
-    <InternshipRegistrationForm/>
+    <InternshipRegistrationForm />
      </div>
     </>
   )
