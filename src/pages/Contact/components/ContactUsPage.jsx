@@ -1,9 +1,7 @@
-import React, { useRef,useState } from 'react';
-import emailjs from "@emailjs/browser";
+import React, {useState } from 'react';
 import { motion as Motion } from 'framer-motion';
 import { Facebook, Instagram, Linkedin, Youtube, Send } from 'lucide-react';
 import { facebook, instagram, linkedin, youtube } from '../../../assets/icons/icon';
-import { useForm } from 'react-hook-form';
 import { MailCheck, CircleUserRound, MapPin,  Loader2 } from "lucide-react";
 
 
@@ -120,10 +118,6 @@ const ContactUsPage = () => {
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } },
-  };
-  const formVariants = {
-    hidden: { opacity: 0, x: 50 },
-    visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: "easeOut" } },
   };
 
   return (

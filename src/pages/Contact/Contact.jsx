@@ -2,6 +2,8 @@ import React from 'react'
 import { Handshake, Headset, HelpCircle } from 'lucide-react';
 import ContactUsPage from './components/ContactUsPage';
 import {motion } from 'framer-motion'
+import { maillottie } from '../../assets/lottiefiles/lettie';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 const Contact = () => {
      const enquiryTypes = [
@@ -43,12 +45,14 @@ const Contact = () => {
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          <iframe
-            src="https://lottie.host/embed/7ff9ab2c-e6ac-41e8-974d-d771c553840a/nhogeVgt7r.lottie"
-            className="w-[250px] sm:w-[350px] md:w-[450px] h-[250px] sm:h-[350px] md:h-[450px]"
-            title="Hero Animation"
-          ></iframe>
+        > 
+        {/* className="w-[250px] sm:w-[350px] md:w-[450px] h-[250px] sm:h-[350px] md:h-[450px]" */}
+          <DotLottieReact
+          className="w-[250px] sm:w-[350px] md:w-[450px] h-[250px] sm:h-[350px] md:h-[450px]"
+          src={maillottie}
+          loop
+          autoplay
+        />
         </motion.div>
         
         <motion.div
@@ -82,8 +86,6 @@ const Contact = () => {
     </section>
 <div className=" top-7/12 left-25  flex items-center justify-center  px-4 sm:px-6  font-inter">
       <div className="max-w-7xl mx-auto w-full bg-white rounded-3xl  p-8 sm:p-12 relative overflow-hidden">
-        <div className="absolute top-6 left-8 w-3 h-3 rounded-full bg-red-300 opacity-70 blur-sm"></div>
-        <div className="absolute top-10 left-12 w-2 h-2 rounded-full bg-red-400 opacity-80 blur-sm"></div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {enquiryTypes.map((item, index) => (
