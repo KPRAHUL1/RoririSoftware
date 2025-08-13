@@ -2,6 +2,7 @@
 import React from 'react';
 import { motion as Motion } from 'framer-motion';
 import './About.css'
+import { Send } from 'lucide-react';
 const cardData = [
   {
     id: 1, 
@@ -94,7 +95,7 @@ const AboutSection = () => {
             whileTap={{ scale: 0.95 }}
             className='bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-full text-lg font-medium hover:bg-purple-700 transition-all duration-300 shadow-xl'
           >
-            Visit more →
+            Visit more
           </Motion.a>
         </Motion.div>
 

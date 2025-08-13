@@ -49,7 +49,6 @@ const Navbar = () => {
         { title: `Mobile Application`, path: "/services/mobile-app-development" },
         { title: "Web Development", path: "/services/web-app-development" },
         { title: "IT Consulting", path: "/services/it-consulting" },
-        { title: "Internship", path: "/services/internship" },
       ],
     },
     { title: "Internship", path: "/internship" },

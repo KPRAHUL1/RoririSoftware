@@ -9,7 +9,6 @@ const Footer = () => {
     { name: 'Careers', href: '/careers' },
     { name: 'Privacy Policy', href: '/privacy-policy' },
     { name: 'Terms and Condition', href: '/terms-and-condition' },
-    { name: 'Refund Policy', href: '#' },
     { name: 'Contact Us', href: '/contact' },
   ];
 
