@@ -189,7 +189,7 @@ const ContactUsPage = () => {
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Full Name
+                    Full Name 
                   </label>
                   <input
                     type="text"
@@ -207,7 +207,7 @@ const ContactUsPage = () => {
                 </div>
                                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Phone Number
+                    Phone Number 
                   </label>
                   <input
                     type="number"
@@ -226,7 +226,7 @@ const ContactUsPage = () => {
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Email Address
+                    Email Address 
                   </label>
                   <input
                     type="email"
@@ -245,7 +245,7 @@ const ContactUsPage = () => {
               </div>
                               <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Subject
+                    Subject 
                   </label>
                   <input
                     type="text"
@@ -264,7 +264,7 @@ const ContactUsPage = () => {
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Your Message
+                  Your Message 
                 </label>
                 <textarea
                   name="message"
