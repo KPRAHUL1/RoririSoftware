@@ -1,10 +1,9 @@
-// ProductsList.js
+
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Star } from 'lucide-react';
 import products  from './productData';
 import TextType from '../../../../components/ui/TextType/TypeWriter';
-// Mock components and data (assuming these are in a shared file or imported)
 import {motion as Motion } from 'framer-motion';
 
 
@@ -41,8 +40,6 @@ const ProductsList = () => {
                 className="group relative bg-white rounded-3xl shadow-xl overflow-hidden transform transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl flex flex-col md:flex-row cursor-pointer"
                 onClick={() => navigate(`/products/${product.id}`)}
               >
-                {/* Product Card Content (Image, details, rating, etc.) */}
-                {/* ... (This section remains the same as your original ProductsList) ... */}
                 <div className="md:w-1/2 flex-shrink-0 relative z-20">
                   <img src={product.imageUrl} alt={product.name} className="w-full h-64 md:h-full object-cover rounded-t-3xl md:rounded-l-3xl md:rounded-tr-none" />
                 </div>

@@ -62,7 +62,7 @@ const ContactUsPage = () => {
     setSubmitStatus(null);
 
     try {
-      // Method 1: Web3Forms (most reliable for local testing)
+      
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: {
@@ -70,14 +70,14 @@ const ContactUsPage = () => {
           'Accept': 'application/json'
         },
         body: JSON.stringify({
-          access_key: "4e4152de-dfb3-4ca7-b5b3-674c3e432ff1", // Get free key from web3forms.com
+          access_key: "510e84f9-6c6a-4bf5-85fb-8a6bba4b6b45", 
           name: formData.name,
           phone: formData.phone,
           email: formData.email,
           subject: formData.subject,
           message: formData.message,
           from_name: formData.name,
-          to: "k.mano75005@gmail.com"
+          to: "roririsoftpvtltd@gmail.com"
         })
       });
 
@@ -92,7 +92,7 @@ const ContactUsPage = () => {
     } catch (error) {
       console.error('Error:', error);
 
-      // Fallback: Use mailto as backup
+      
       const subject = encodeURIComponent(formData.subject);
       const body = encodeURIComponent(
         `Name: ${formData.name}\n` +
@@ -101,7 +101,7 @@ const ContactUsPage = () => {
         `Message:\n${formData.message}`
       );
 
-      window.open(`mailto:k.mano75005@gmail.com?subject=${subject}&body=${body}`, '_blank');
+      window.open(`mailto:roririsoftpvtltd@gmail.com?subject=${subject}&body=${body}`, '_blank');
       setSubmitStatus('fallback');
       setFormData({ name: '', phone: '', email: '', subject: '', message: '' });
     } finally {
@@ -109,7 +109,6 @@ const ContactUsPage = () => {
     }
   };
 
-  // Animation variants
   const containerVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: {
@@ -132,7 +131,6 @@ const ContactUsPage = () => {
       <div className="min-h-screen bg-white flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
 
-          {/* Left: Contact Info */}
           <Motion.div
             className="flex flex-col justify-center text-center lg:text-left p-4"
             variants={containerVariants}
@@ -169,11 +167,11 @@ const ContactUsPage = () => {
             </Motion.div>
           </Motion.div>
 
-          {/* Right: Form */}
+         
           <div className="bg-white rounded-3xl shadow-xl p-8">
             <h2 className="text-2xl font-bold text-gray-800 mb-6">Send Message</h2>
 
-            {/* Status Messages */}
+            
             {submitStatus === 'success' && (
               <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-xl">
                 ✅ Message sent successfully! I'll get back to you soon.

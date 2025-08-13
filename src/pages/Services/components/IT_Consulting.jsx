@@ -217,7 +217,7 @@ const IT_Consulting = () => {
                             </Motion.button>
                         </Motion.div>
 
-                        {/* Service Card: Java Developer */}
+                        
                         <Motion.div
                             className="bg-gray-100 p-8 rounded-xl shadow-lg text-left relative overflow-hidden group border border-gray-200"
                             variants={cardVariants}
@@ -229,7 +229,7 @@ const IT_Consulting = () => {
                             <img src={java1} alt="Java Developer" className="rounded-2xl absolute top-4 right-4 w-20 h-20 opacity-20 group-hover:opacity-100 transition-opacity duration-300" onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/100x100/E0E7FF/312E81?text=Java'; }} />
                             <h3 className="text-xl font-semibold text-gray-900 mb-3 rounded-lg">Java Developer</h3>
                             <p className="text-gray-700 mb-6 rounded-lg">
-                                {/* Placeholder description */}
+                                
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                             </p>
                             <Motion.button
@@ -244,7 +244,6 @@ const IT_Consulting = () => {
                 </div>
             </Motion.section>
 
-            {/* Call to Action Section */}
             <Motion.section
                 className="py-16 md:py-24 bg-blue-800 text-white rounded-lg shadow-md mx-auto my-12 max-w-screen-xl px-4"
                 initial="hidden"
@@ -271,7 +270,6 @@ const IT_Consulting = () => {
                 </div>
             </Motion.section>
 
-            {/* Our IT Consulting Process Section */}
             <Motion.section
                 className="py-16 md:py-24 bg-gray-100 rounded-lg shadow-md mx-auto my-12 max-w-screen-xl px-4"
                 initial="hidden"
@@ -289,7 +287,7 @@ const IT_Consulting = () => {
                     </p>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        {/* Process Step 1: CV Screening */}
+                   
                         <Motion.div
                             className="bg-white p-8 rounded-xl shadow-lg text-left relative overflow-hidden group border border-gray-200"
                             variants={processStepVariants}
@@ -305,7 +303,6 @@ const IT_Consulting = () => {
                             </p>
                         </Motion.div>
 
-                        {/* Process Step 2: Recruitment Process */}
                         <Motion.div
                             className="bg-white p-8 rounded-xl shadow-lg text-left relative overflow-hidden group border border-gray-200"
                             variants={processStepVariants}
@@ -321,7 +318,6 @@ const IT_Consulting = () => {
                             </p>
                         </Motion.div>
 
-                        {/* Process Step 3: Selection Process */}
                         <Motion.div
                             className="bg-white p-8 rounded-xl shadow-lg text-left relative overflow-hidden group border border-gray-200"
                             variants={processStepVariants}
@@ -337,7 +333,6 @@ const IT_Consulting = () => {
                             </p>
                         </Motion.div>
 
-                        {/* Process Step 4: Onboarding */}
                         <Motion.div
                             className="bg-white p-8 rounded-xl shadow-lg text-left relative overflow-hidden group border border-gray-200"
                             variants={processStepVariants}

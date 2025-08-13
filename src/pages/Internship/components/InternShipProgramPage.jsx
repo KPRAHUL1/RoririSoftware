@@ -1,7 +1,7 @@
 import React from 'react';
 
 const InternshipProgramsPage = () => {
-  // Dummy data for internship programs
+
   const programs = [
     {
       name: 'React Js Developer',
@@ -21,7 +21,7 @@ const InternshipProgramsPage = () => {
           <line x1="12" y1="8" x2="12" y2="8" />
           <path d="M16.24 7.76l-2.12 2.12M7.76 16.24l2.12-2.12M16.24 16.24l-2.12-2.12M7.76 7.76l2.12 2.12" />
         </svg>
-      ), // Placeholder icon
+      ), 
     },
     {
       name: 'Mobile App Developer',
@@ -39,7 +39,7 @@ const InternshipProgramsPage = () => {
           <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
           <line x1="12" y1="18" x2="12" y2="18" />
         </svg>
-      ), // Placeholder icon
+      ), 
     },
     {
       name: 'UI/UX Designer',
@@ -57,7 +57,7 @@ const InternshipProgramsPage = () => {
           <path d="M15 18l-6-6 6-6" />
           <path d="M6 12h12" />
         </svg>
-      ), // Placeholder icon
+      ), 
     },
     {
       name: 'Data Analyst',
@@ -75,7 +75,7 @@ const InternshipProgramsPage = () => {
           <path d="M3 3v18h18" />
           <path d="M18 17l-5-5-4 4-2-2" />
         </svg>
-      ), // Placeholder icon
+      ), 
     },
     {
       name: 'Digital Marketing',
@@ -92,7 +92,7 @@ const InternshipProgramsPage = () => {
         >
           <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
         </svg>
-      ), // Placeholder icon
+      ), 
     },
     {
       name: 'HR Management',
@@ -112,7 +112,7 @@ const InternshipProgramsPage = () => {
           <path d="M23 21v-2a4 4 0 00-3-3.87m-3-1.13a4 4 0 01-1 3.87" />
           <path d="M16 3.13a4 4 0 010 7.75" />
         </svg>
-      ), // Placeholder icon
+      ), 
     },
   ];
 

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 const Certification = () => {
-  // Simplified certificate data without personal information
+  
   const certificateData = [
     {
       id: 1,
@@ -34,7 +34,7 @@ const Certification = () => {
   const [isPlaying, setIsPlaying] = useState(true);
   const intervalRef = useRef(null);
 
-  // Auto-play functionality
+ 
 useEffect(() => {
   if (isPlaying) {
     intervalRef.current = setInterval(() => {
@@ -50,7 +50,7 @@ useEffect(() => {
 }, [isPlaying, certificateData.length, cardsToShow]);
 
 
-  // Handle manual navigation
+ 
 const handleNext = () => {
   setStartIndex((prevIndex) => 
     (prevIndex + cardsToShow) % certificateData.length
@@ -64,9 +64,7 @@ const handlePrev = () => {
 };
 
 
-  // Toggle auto-play
-
-  // Responsive cards display
+ 
 useEffect(() => {
   const handleResize = () => {
     if (window.innerWidth >= 1440) {
@@ -101,9 +99,9 @@ useEffect(() => {
           <p className="text-gray-400 text-lg">Showcasing achievements and accomplishments</p>
         </div>
 
-        {/* Carousel Container */}
+       
         <div className="relative">
-          {/* Previous Button */}
+         
           <button
             onClick={handlePrev}
             className="absolute left-0 top-1/2 -translate-y-1/2 p-4 bg-white backdrop-blur-md text-black rounded-full shadow-xl hover:bg-white/20 transition-all duration-300 z-10 hidden md:block hover:scale-110"
@@ -114,7 +112,7 @@ useEffect(() => {
             </svg>
           </button>
 
-          {/* Cards Display */}
+          
           <div className="flex justify-center items-stretch gap-5 overflow-hidden lg:px-16 md:px-20">
             {displayedCards.map((card, index) => (
               <div
@@ -125,7 +123,7 @@ useEffect(() => {
                 }}
               >
                
-                  {/* Glowing border effect */}
+                 
                   
                   <div className="relative p-6 h-full flex flex-col">
                     <div className="flex-grow flex items-center justify-center bg-white/5 rounded-xl mb-4">
@@ -145,7 +143,6 @@ useEffect(() => {
             ))}
           </div>
 
-          {/* Next Button */}
           <button
             onClick={handleNext}
             className="absolute right-0 top-1/2 -translate-y-1/2 p-4 bg-white backdrop-blur-md text-black rounded-full shadow-xl hover:bg-white/20 transition-all duration-300 z-10 hidden md:block hover:scale-110"
@@ -157,9 +154,8 @@ useEffect(() => {
           </button>
         </div>
 
-        {/* Control Panel */}
         <div className="flex justify-center items-center mt-12 space-x-6">
-          {/* Play/Pause Button */}
+        
 
         </div>
       </div>

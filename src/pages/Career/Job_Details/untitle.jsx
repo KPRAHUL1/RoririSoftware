@@ -1,30 +1,20 @@
-import { useParams, Link } from 'react-router-dom'; // Assuming you use React Router for dynamic routes
+import { useParams, Link } from 'react-router-dom'; 
 import { motion } from 'framer-motion';
 import jobData from './Job_Details/jobData';
 import JobApplicationForm from './components/JobApplicationForm';
- // Import your simulated job data
+ 
 
 const JobDescriptionPage = () => {
-  // In a real app, you'd use useParams() from react-router-dom to get the ID from the URL.
-  // For this example, we'll hardcode it to 'fullstack-developer' for demonstration.
   const { jobId } = useParams();
-//   const jobId = 'fullstack-developer'; // Hardcoded for demonstration, replace with useParams()
 
   const [job, setJob] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    // Simulate API call
     const fetchJobDetails = async () => {
       try {
         setLoading(true);
-        // In a real app, this would be:
-        // const response = await fetch(/api/jobs/${jobId});
-        // if (!response.ok) throw new Error('Job not found');
-        // const data = await response.json();
-
-        // Simulate fetching from local data based on ID
         const foundJob = jobData.find(j => j.id === jobId);
 
         if (!foundJob) {
@@ -39,7 +29,7 @@ const JobDescriptionPage = () => {
     };
 
     fetchJobDetails();
-  }, [jobId]); // Re-fetch if jobId changes
+  }, [jobId]); 
 
   if (loading) {
     return (
@@ -68,7 +58,7 @@ const JobDescriptionPage = () => {
     );
   }
 
-  // Animation variants for sections
+ 
   const sectionVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
@@ -76,11 +66,9 @@ const JobDescriptionPage = () => {
 
   return (
     <div className="bg-gray-50 min-h-screen">
-      {/* Navbar - assuming it's a separate component or global layout */}
-      {/* For this example, I'll just include a placeholder for context */}
       
       <div className="container mx-auto p-6 md:p-8 lg:p-12 flex flex-col lg:flex-row gap-8">
-        {/* Main Content Area */}
+       
         <div className="flex-1 bg-white rounded-xl shadow-lg p-6 md:p-8 lg:p-10">
           <motion.h1
             initial="hidden"
@@ -224,7 +212,7 @@ const JobDescriptionPage = () => {
           </motion.ul>
         </div>
 
-        {/* Sidebar Area */}
+        
         <div className="lg:w-96 flex-shrink-0">
           <motion.div
             initial={{ opacity: 0, x: 50 }}

@@ -1,4 +1,4 @@
-// src/components/JobDescriptionPage.jsx
+
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -10,7 +10,7 @@ const JobDescriptionPage = () => {
   const [job, setJob] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false); // NEW state
+  const [isModalOpen, setIsModalOpen] = useState(false); 
 
   useEffect(() => {
     const fetchJobDetails = async () => {
@@ -39,7 +39,7 @@ const JobDescriptionPage = () => {
 
   if (!job) return <div className="flex items-center justify-center min-h-screen text-gray-700">Job details could not be loaded.</div>;
 
-  // Modal animation variants
+  
   const backdropVariants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1 },
@@ -59,9 +59,9 @@ const JobDescriptionPage = () => {
   return (
     <div className="bg-gray-50 min-h-screen">
       <div className="container mx-auto p-6 md:p-8 lg:p-12 flex flex-col lg:flex-row gap-8">
-        {/* Job Details Section */}
+        
          <div className="container mx-auto p-6 md:p-8 lg:p-12 flex flex-col lg:flex-row gap-8">
-        {/* Main Content Area */}
+        
         <div className="flex-1 bg-white rounded-xl shadow-lg p-6 md:p-8 lg:p-10">
           <motion.h1
             initial="hidden"
@@ -205,10 +205,8 @@ const JobDescriptionPage = () => {
           </motion.ul>
         </div>
 
-        {/* Sidebar Area */}
       </div>
 
-        {/* Sidebar Section */}
         <div className="lg:w-96 flex-shrink-0">
           <motion.div
             initial={{ opacity: 0, x: 50 }}
@@ -235,7 +233,6 @@ const JobDescriptionPage = () => {
         </div>
       </div>
 
-      {/* MODAL */}
       <AnimatePresence>
   {isModalOpen && (
     <motion.div
@@ -246,7 +243,7 @@ const JobDescriptionPage = () => {
       exit="exit"
       onClick={() => setIsModalOpen(false)}
     >
-      {/* Animated Light Rays */}
+     
       <motion.div
         className="absolute inset-0 pointer-events-none"
         initial={{ opacity: 0 }}
@@ -275,7 +272,7 @@ const JobDescriptionPage = () => {
           Job Application Form
         </h2>
         <JobApplicationForm
-          isOpen={isModalOpen}   // FIXED
+          isOpen={isModalOpen}   
           onClose={() => setIsModalOpen(false)}
           jobTitle={job.title}
         />

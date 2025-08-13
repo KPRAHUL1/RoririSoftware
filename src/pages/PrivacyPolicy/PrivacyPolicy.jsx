@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-// Privacy Policy Component
 const PrivacyPolicy = () => {
   const sectionVariants = {
     hidden: { opacity: 0, y: 20 },

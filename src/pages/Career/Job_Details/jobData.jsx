@@ -152,18 +152,16 @@ const jobData = [
   {
     id: 'python-developer', 
     title: 'Python Developer', 
-    workplace: 'Office', // From Screenshot (5).png
-    location: 'Tirunelveli, Kalakad', // From Screenshot (5).png
-    jobType: 'Full time', // From Screenshot (5).png
-    experience: '2 Years+', // From Screenshot (5).png
-    // The following details are inferred from the snippet in the job card in Screenshot (5).png.
-    // In a real application, you'd get full details from a dedicated page/API.
+    workplace: 'Office', 
+    location: 'Tirunelveli, Kalakad', 
+    jobType: 'Full time', 
+    experience: '2 Years+', 
     roleDescription: `The Python Developer at Roriri Software Solutions will be responsible for developing and maintaining
       backend systems. This role requires proficiency in Python and experience with frameworks like Django or Flask,
       along with strong database management skills.`,
     qualifications: [
-      'Proficiency in Python and frameworks like Django or Flask.', // From Screenshot (5).png
-      'Experience with database systems (e.g., PostgreSQL, MySQL, or MongoDB).', // From Screenshot (5).png
+      'Proficiency in Python and frameworks like Django or Flask.', 
+      'Experience with database systems (e.g., PostgreSQL, MySQL, or MongoDB).', 
     ],
     skillsRequired: [
       'Python programming',
