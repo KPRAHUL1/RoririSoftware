@@ -1,6 +1,8 @@
 import React from 'react';
 import RotatingText from '../../components/ui/RotatingText/Rotating';
 import { useNavigate } from 'react-router-dom';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+import { lottie2 } from '../../assets/lottiefiles/lettie';
 const servicesData = [
   {
     id: 1,
@@ -31,15 +33,15 @@ const servicesData = [
 const Whatwedo = () => {
   const navigate = useNavigate();
   return (
-    <div className="min-h-screen flex lg:flex-row flex-col-reverse gap-5 bg-white text-gray-800 font-inter relative overflow-hidden py-16 px-4 sm:px-6 lg:px-8">
-      <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
-        <div className="absolute top-10 left-10 w-4 h-4 rounded-full bg-pink-300 opacity-50 blur-sm"></div>
-        <div className="absolute top-1/3 left-1/4 w-3 h-3 rounded-full bg-red-300 opacity-50 blur-sm"></div>
-        <div className="absolute top-1/2 right-1/4 w-5 h-5 rounded-full bg-purple-300 opacity-50 blur-sm"></div>
-        
-      </div>
+    <div className="min-h-screen flex xl:flex-row justify-evenly items-center flex-col-reverse gap-5 bg-white text-gray-800 font-inter  py-16 px-4 sm:px-6 lg:px-8">
+
       <div className=''>
-     <iframe src="https://lottie.host/embed/b9f88715-a4aa-4140-92fc-508617d211fd/oQXGninZOZ.lottie" className='h-full lg:w-[500px]'></iframe>
+    <DotLottieReact
+          className=" w-96 h-96 sm:w-[400px] p-3 sm:h-[400px] md:w-[500px] md:h-[500px] lg:w-[500px] lg:h-[600px]"
+          src={lottie2}
+          loop
+          autoplay
+        />
       </div>
 
       <div className="relative max-w-7xl mx-auto">

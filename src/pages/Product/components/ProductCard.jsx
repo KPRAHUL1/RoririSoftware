@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion as Motion } from 'framer-motion';
-import TextType from '../../../components/ui/TextType/TypeWriter';
+
 import { product1,product2,product3 } from '../../../assets/product/product';
 
 // Main App component
@@ -47,8 +47,8 @@ const Products = () => {
     <div className="text-2xl sm:text-3xl md:text-6xl font-semibold text-gray-800 flex flex-wrap justify-center items-center gap-2">
       <span>Exploring Excellence in</span>
       <TextType
-        text={[' every creation', ' concept to com pletion']}
-        className="bg-gradient-to-r from-blue-600 via-purple-500 to-pink-500 bg-clip-text text-transparent"
+        text={[' every creation', ' every solution']}
+        className="bg-gradient-to-r from-blue-600 via-purple-500 to-pink-500 bg-clip-text  text-transparent"
       />
     </div>
   </header>
