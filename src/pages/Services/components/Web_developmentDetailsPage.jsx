@@ -10,21 +10,17 @@ import { ec1 } from '../../../assets/services/service';
 import { multi1 } from '../../../assets/services/service';
 
 
-// Main App Component for Web Development Page
 const WebDevelopment = () => {
-    // Animation variants for sections
     const sectionVariants = {
         hidden: { opacity: 0, y: 50 },
         visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
     };
 
-    // Animation variants for cards/items
     const cardVariants = {
         hidden: { opacity: 0, scale: 0.9 },
         visible: { opacity: 1, scale: 1, transition: { duration: 0.5, ease: "easeOut" } }
     };
 
-    // Animation variants for the process timeline line
     const processLineVariants = {
         hidden: { height: 0 },
         visible: { height: "100%", transition: { duration: 1.5, ease: "easeInOut" } }
@@ -32,9 +28,7 @@ const WebDevelopment = () => {
 
     return (
         <div className="font-inter antialiased bg-gray-50">
-            {/* Header/Navigation (Placeholder - can be integrated from ERP page if needed) */}
 
-            {/* Hero Section for Web Applications */}
             <Motion.section
                 className="relative bg-gray-900 text-white py-16 md:py-24 overflow-hidden rounded-b-lg shadow-lg"
                 initial="hidden"
@@ -42,7 +36,6 @@ const WebDevelopment = () => {
                 variants={sectionVariants}
             >
                 <div className="absolute inset-0 z-0 opacity-20">
-                    {/* Background gradient shapes */}
                     <div className="absolute top-0 left-0 w-64 h-64 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
                     <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-500 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
                     <div className="absolute bottom-0 left-1/4 w-64 h-64 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
@@ -75,7 +68,6 @@ const WebDevelopment = () => {
                         </Motion.button>
                     </div>
                     <div className="md:w-1/2 flex justify-center md:justify-end relative">
-                        {/* Placeholder for the laptop images */}
                         <Motion.img
                             src={development1}
                             alt="Website Mockup 1"
@@ -97,8 +89,6 @@ const WebDevelopment = () => {
                     </div>
                 </div>
             </Motion.section>
-
-            {/* Roriri Website Development Services Section */}
             <Motion.section
                 className="py-16 md:py-24 bg-white rounded-lg shadow-md mx-auto my-12 max-w-screen-xl px-4"
                 initial="hidden"
@@ -108,7 +98,6 @@ const WebDevelopment = () => {
             >
                 <div className="container mx-auto flex flex-col md:flex-row items-center justify-between">
                     <div className="md:w-1/2 mb-10 md:mb-0 relative">
-                        {/* Placeholder for images */}
                         <Motion.img
                             src={development3}
                             alt="Web Development Service"
@@ -160,8 +149,6 @@ const WebDevelopment = () => {
                     </div>
                 </div>
             </Motion.section>
-
-            {/* Our Web Development Services Section */}
             <Motion.section
                 className="py-16 md:py-24 bg-gray-100 rounded-lg shadow-md mx-auto my-12 max-w-screen-xl px-4"
                 viewport={{ once: true, amount: 0.3 }}
@@ -170,7 +157,6 @@ const WebDevelopment = () => {
                 <div className="container mx-auto text-center">
                     <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 leading-tight rounded-lg text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">Our Web Development Services</h2>
 
-                    {/* Static and Informational Websites */}
                     <Motion.div
                         className="flex flex-col md:flex-row items-center justify-between mb-16 md:mb-24 bg-white p-8 rounded-xl shadow-lg"
                         variants={sectionVariants}
@@ -202,8 +188,6 @@ const WebDevelopment = () => {
                             />
                         </div>
                     </Motion.div>
-
-                    {/* Dynamic and Content-Driven Websites */}
                     <Motion.div
                         className="flex flex-col md:flex-row-reverse items-center justify-between mb-16 md:mb-24 bg-white p-8 rounded-xl shadow-lg"
                         variants={sectionVariants}
@@ -235,7 +219,6 @@ const WebDevelopment = () => {
                         </div>
                     </Motion.div>
 
-                    {/* E-Commerce and Interactive Websites */}
                     <Motion.div
                         className="flex flex-col md:flex-row items-center justify-between mb-16 md:mb-24 bg-white p-8 rounded-xl shadow-lg"
                         variants={sectionVariants}
@@ -267,7 +250,6 @@ const WebDevelopment = () => {
                         </div>
                     </Motion.div>
 
-                    {/* Multimedia & Campaign-Focused Websites */}
                     <Motion.div
                         className="flex flex-col md:flex-row-reverse items-center justify-between bg-white p-8 rounded-xl shadow-lg"
                         variants={sectionVariants}
@@ -300,8 +282,6 @@ const WebDevelopment = () => {
                     </Motion.div>
                 </div>
             </Motion.section>
-
-            {/* Our Process Section */}
           <Motion.section
     className="py-16 md:py-24 bg-white text-black rounded-lg shadow-md mx-auto my-12 max-w-screen-xl px-4"
     initial="hidden"
@@ -315,7 +295,7 @@ const WebDevelopment = () => {
         </h2>
 
         <div className="relative flex flex-col items-center">
-            {/* Vertical line */}
+            
             <Motion.div
                 className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-purple-500 to-indigo-500 rounded-full z-0"
                 initial="hidden"
@@ -341,7 +321,7 @@ const WebDevelopment = () => {
                     viewport={{ once: true, amount: 0.2 }}
                     transition={{ delay: index * 0.15 + 0.5 }}
                 >
-                    {/* Card */}
+                    
                     <div className={`w-full md:w-1/2 ${index % 2 === 0 ? 'md:pr-12' : 'md:pl-12'} text-center md:text-left`}>
                         <Motion.div
                             className="bg-white text-black p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1 border border-gray-200"
@@ -351,8 +331,6 @@ const WebDevelopment = () => {
                             <p className="text-gray-700">{item.description}</p>
                         </Motion.div>
                     </div>
-
-                    {/* Timeline Dot */}
                     <div className="hidden md:flex w-1/12 justify-center">
                         <div className="w-6 h-6 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full shadow-md flex items-center justify-center">
                             <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
@@ -361,7 +339,7 @@ const WebDevelopment = () => {
                         </div>
                     </div>
 
-                    {/* Empty Spacer for layout */}
+                    
                     <div className={`w-full md:w-1/2 ${index % 2 === 0 ? 'md:pl-12' : 'md:pr-12'} md:text-right`}>
                     </div>
                 </Motion.div>
@@ -369,9 +347,6 @@ const WebDevelopment = () => {
         </div>
     </div>
 </Motion.section>
-
-
-            {/* Why Choose Roriri Section */}
             <Motion.section
                 className="py-16 md:py-24 bg-white rounded-lg shadow-md mx-auto my-12 max-w-screen-xl px-4"
                 initial="hidden"
@@ -386,7 +361,7 @@ const WebDevelopment = () => {
                     </p>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {/* Innovative Solutions Card */}
+                       
                         <Motion.div
                             className="bg-gray-50 p-8 rounded-xl shadow-lg text-left relative overflow-hidden group"
                             variants={cardVariants}
@@ -401,8 +376,6 @@ const WebDevelopment = () => {
                                 We leverage the latest tools and technologies to create websites that stand out and keep you ahead of the competition.
                             </p>
                         </Motion.div>
-
-                        {/* Customized Design Card */}
                         <Motion.div
                             className="bg-gray-50 p-8 rounded-xl shadow-lg text-left relative overflow-hidden group"
                             variants={cardVariants}
@@ -417,8 +390,6 @@ const WebDevelopment = () => {
                                 Every business is unique, and so is every website we build. We ensure your website reflects your brand's identity and values.
                             </p>
                         </Motion.div>
-
-                        {/* User-Centric Approach Card */}
                         <Motion.div
                             className="bg-gray-50 p-8 rounded-xl shadow-lg text-left relative overflow-hidden group"
                             variants={cardVariants}
@@ -433,8 +404,6 @@ const WebDevelopment = () => {
                                 Our designs focus on delivering seamless user experiences, ensuring your customers stay engaged and satisfied.
                             </p>
                         </Motion.div>
-
-                        {/* Responsive and Scalable Card */}
                         <Motion.div
                             className="bg-gray-50 p-8 rounded-xl shadow-lg text-left relative overflow-hidden group col-span-1 md:col-span-1 lg:col-span-1"
                             variants={cardVariants}
@@ -449,8 +418,6 @@ const WebDevelopment = () => {
                                 We build websites that work perfectly across all devices and are scalable for your future growth.
                             </p>
                         </Motion.div>
-
-                        {/* SEO-Optimized Card */}
                         <Motion.div
                             className="bg-gray-50 p-8 rounded-xl shadow-lg text-left relative overflow-hidden group col-span-1 md:col-span-1 lg:col-span-1"
                             variants={cardVariants}

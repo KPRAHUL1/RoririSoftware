@@ -14,7 +14,7 @@ import AboutSection from './About/components/AboutSection';
 import CompanyHighlightsSection from './About/components/CompanyHighlightsSection';
 import Products from './Product/components/ProductDetails/ProductDetails';
 import ProductsList from './Product/components/ProductDetails/ProductList';
-// import Products from './Product/components/ProductCard';
+
 const Home = () => {
   const navigate = useNavigate();
   
@@ -89,7 +89,7 @@ const Home = () => {
     <>
     <Motion.div key={index}
   className="bg-white cursor-target shadow-lg rounded-2xl p-4 w-[200px] sm:w-[160px] md:w-[180px] flex flex-col items-center justify-center transition-transform hover:scale-[1.05] hover:shadow-xl border border-gray-100 dark:border-zinc-700"
-  initial={{ opacity: 0, y: -20 }} // Changed y from 20 to -20
+  initial={{ opacity: 0, y: -20 }} 
   animate={{ opacity: 1, y: 0 }}
   transition={{ duration: 0.6, ease: "easeOut" }}
   whileHover={{ scale: 1.05 }}

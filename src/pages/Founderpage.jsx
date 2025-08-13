@@ -1,5 +1,5 @@
 import React from 'react';
-import { Linkedin } from 'lucide-react'; // Assuming lucide-react for icons
+import { Linkedin } from 'lucide-react'; 
 import image from '../assets/image.png'
 import founder from '../assets/founderimage/image.png'
 const TestimonialPage = () => {
@@ -8,7 +8,7 @@ const TestimonialPage = () => {
       <div className=" mx-auto flex flex-col lg:flex-row items-center justify-center gap-12">
         <div className="flex-shrink-0">
           <img
-            src={founder} // Use the provided image file name
+            src={founder} 
             alt="Natarajan B"
             className="w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 object-cover rounded-lg"
             onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/384x384/E0E0E0/333333?text=Profile+Image"; }}
