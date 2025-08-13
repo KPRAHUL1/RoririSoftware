@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Star, Share2, Heart } from 'lucide-react';
 import products from './productData';
+import ContactSection from './ContactSection';
 
 const ProductDetails = () => {
    const { id } = useParams();
@@ -90,15 +91,15 @@ const ProductDetails = () => {
                 Get in touch with our team to discuss your requirements.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <button
-                  onClick={handleContactUs}
-                  className="flex-1 px-6 py-3 rounded-full font-semibold bg-gradient-to-r from-purple-600 to-pink-500 text-white"
+                <a
+                 href='#contact'
+                  className=" text-center cursor-pointer flex-1 px-6 py-3 rounded-full font-semibold bg-gradient-to-r from-purple-600 to-pink-500 text-white"
                 >
                   Get Quote & Demo
-                </button>
+                </a>
                 <button
                   onClick={handleContactUs} 
-                  className="flex-1 px-6 py-3 rounded-full font-semibold border-2 border-purple-600 text-purple-600 hover:bg-purple-50"
+                  className="cursor-pointer flex-1 px-6 py-3 rounded-full font-semibold border-2 border-purple-600 text-purple-600 hover:bg-purple-50"
                 >
                   Contact Sales
                 </button>
@@ -149,6 +150,9 @@ const ProductDetails = () => {
               </div>
             )}
           </div>
+        </div>
+        <div id='contact'>
+          <ContactSection/>
         </div>
       </div>
     </div>

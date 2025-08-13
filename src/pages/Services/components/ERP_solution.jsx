@@ -4,7 +4,7 @@ import emailjs from "@emailjs/browser";
 import { motion as Motion } from 'framer-motion';
 import { erp1, erp2, erp3 } from '../../../assets/services/service';
 import { facebook, instagram, linkedin, youtube } from '../../../assets/icons/icon';
-import LogoWeb from '../../../assets/logo/LogoWeb.png'; 
+import LogoWeb from '../../../assets/logo/LogoWeb.png';
 import { MailCheck, CircleUserRound, MapPin, Loader2, Send } from "lucide-react";
 
 const ERPSolutions = () => {
@@ -69,7 +69,7 @@ const ERPSolutions = () => {
                     'Accept': 'application/json'
                 },
                 body: JSON.stringify({
-                    access_key: "510e84f9-6c6a-4bf5-85fb-8a6bba4b6b45", 
+                    access_key: "510e84f9-6c6a-4bf5-85fb-8a6bba4b6b45",
                     name: formData.name,
                     phone: formData.phone,
                     email: formData.email,
@@ -134,7 +134,7 @@ const ERPSolutions = () => {
                 variants={sectionVariants}
             >
                 <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between max-w-screen-xl">
-                    <div className="md:w-1/2  text-center md:text-left mb-10 md:mb-0">
+                    <div className="md:w-1/2   mb-10 md:mb-0">
                         <Motion.h1
                             className="text-4xl md:text-6xl font-extrabold leading-tight mb-4 rounded-lg"
                             initial={{ opacity: 0, x: -50 }}
@@ -152,11 +152,28 @@ const ERPSolutions = () => {
                             Running a business involves managing a lot – finance, inventory, HR, sales, and more. That's where our Enterprise Resource Planning (ERP) solutions come in. We simplify the chaos by bringing everything into one system, so you can focus on growing your business.
                         </Motion.p>
                         <Motion.a
-                            className="bg-gradient-to-r flex items-center justify-center from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white py-3 px-8 rounded-full text-lg font-semibold shadow-lg transition-colors duration-300 "
+                            className=" bg-gradient-to-r  from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white py-3 px-8 rounded-full text-lg font-semibold shadow-lg transition-colors duration-300"
                             whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }} href={'#contact'}
-                        >      Get Start <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path></svg>
+                            whileTap={{ scale: 0.95 }}
+                            href={'#contact'}
+                        >
+                            Get Start
+                            {/* <svg
+                                className="ml-2 w-5 h-5"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth="2"
+                                    d="M9 5l7 7-7 7"
+                                ></path>
+                            </svg> */}
                         </Motion.a>
+
                     </div>
                     <div className="md:w-1/2 flex justify-center md:justify-end relative">
                         <Motion.img
@@ -308,7 +325,7 @@ const ERPSolutions = () => {
                     </p>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        
+
                         <Motion.div
                             className="bg-gray-50 p-8 rounded-xl shadow-lg text-left relative overflow-hidden group"
                             variants={cardVariants}
@@ -386,7 +403,7 @@ const ERPSolutions = () => {
                 </div>
             </Motion.section>
 
-           
+
             <Motion.section
                 className="py-16 md:py-24 bg-gray-100 rounded-lg shadow-md mx-auto my-12 max-w-screen-xl px-4"
                 initial="hidden"
@@ -399,7 +416,7 @@ const ERPSolutions = () => {
                     <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 leading-tight rounded-lg">Our Progress</h2>
 
                     <div className="relative flex flex-col items-center">
-                       
+
                         <Motion.div
                             className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-purple-500 to-indigo-500 rounded-full z-0"
                             initial="hidden"
@@ -408,7 +425,7 @@ const ERPSolutions = () => {
                             variants={lineVariants}
                         ></Motion.div>
 
-                        
+
                         {[
                             { title: "ERP Consulting and Strategy", description: "Analyze your operations to define the best-fit ERP strategy." },
                             { title: "Custom ERP Development", description: "Build modular, scalable systems to suit your workflows." },
@@ -484,7 +501,7 @@ const ERPSolutions = () => {
                     <div className="bg-white rounded-3xl shadow-xl p-8">
                         <h2 className="text-2xl font-bold text-gray-800 mb-6">Send Message</h2>
 
-                       
+
                         {submitStatus === 'success' && (
                             <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-xl">
                                 ✅ Message sent successfully! I'll get back to you soon.
@@ -500,7 +517,7 @@ const ERPSolutions = () => {
                             <div className="grid md:grid-cols-2 gap-4">
                                 <div>
                                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                                        Full Name 
+                                        Full Name
                                     </label>
                                     <input
                                         type="text"
@@ -518,7 +535,7 @@ const ERPSolutions = () => {
                                 </div>
                                 <div>
                                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                                        Phone Number 
+                                        Phone Number
                                     </label>
                                     <input
                                         type="number"
@@ -537,7 +554,7 @@ const ERPSolutions = () => {
 
                                 <div>
                                     <label className="block text-sm font-medium text-gray-700 mb-2">
-                                        Email Address 
+                                        Email Address
                                     </label>
                                     <input
                                         type="email"
@@ -556,7 +573,7 @@ const ERPSolutions = () => {
                             </div>
                             <div>
                                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                                    Subject 
+                                    Subject
                                 </label>
                                 <input
                                     type="text"
@@ -575,7 +592,7 @@ const ERPSolutions = () => {
 
                             <div>
                                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                                    Your Message 
+                                    Your Message
                                 </label>
                                 <textarea
                                     name="message"
