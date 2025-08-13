@@ -1,8 +1,8 @@
-// src/data/jobData.js
+
 
 const jobData = [
   {
-    id: 'fullstack-developer', // Unique ID for URL parameter
+    id: 'fullstack-developer', 
     title: 'Fullstack Developer',
     workplace: 'Office',
     location: 'Tirunelveli, Kalakad',
@@ -150,8 +150,8 @@ const jobData = [
     ],
   },
   {
-    id: 'python-developer', // New job ID
-    title: 'Python Developer', // From Screenshot (5).png
+    id: 'python-developer', 
+    title: 'Python Developer', 
     workplace: 'Office', // From Screenshot (5).png
     location: 'Tirunelveli, Kalakad', // From Screenshot (5).png
     jobType: 'Full time', // From Screenshot (5).png

@@ -82,7 +82,7 @@ const CardSwap = ({
   );
   const refs = useMemo(
     () => childArr.map(() => React.createRef()),
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+
     [childArr.length]
   );
 
@@ -188,7 +188,7 @@ const CardSwap = ({
       };
     }
     return () => clearInterval(intervalRef.current);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    
   }, [cardDistance, verticalDistance, delay, pauseOnHover, skewAmount, easing]);
 
   const rendered = childArr.map((child, i) =>

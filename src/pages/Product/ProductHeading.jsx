@@ -50,14 +50,7 @@ const RoririProductsPage = () => {
             and discover the transformative power of our innovative products and
             trial solutions.
           </motion.p>
-          <motion.div className="flex justify-center lg:justify-start space-x-4" variants={textItemVariants}>
-            <button className="cursor-pointer bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition duration-300 ease-in-out flex items-center">
-              View <span className="ml-2">↗</span>
-            </button>
-            <button className="cursor-pointer bg-purple-800 hover:bg-purple-900 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition duration-300 ease-in-out flex items-center">
-              Get Demo <span className="ml-2">↗</span>
-            </button>
-          </motion.div>
+         
         </motion.div>
 
         {/* Right Section: Stylized Illustration */}
