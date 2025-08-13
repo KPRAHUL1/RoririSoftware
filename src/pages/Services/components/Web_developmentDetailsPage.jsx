@@ -164,8 +164,6 @@ const WebDevelopment = () => {
             {/* Our Web Development Services Section */}
             <Motion.section
                 className="py-16 md:py-24 bg-gray-100 rounded-lg shadow-md mx-auto my-12 max-w-screen-xl px-4"
-                initial="hidden"
-                whileInView="visible"
                 viewport={{ once: true, amount: 0.3 }}
                 variants={sectionVariants}
             >
@@ -209,8 +207,6 @@ const WebDevelopment = () => {
                     <Motion.div
                         className="flex flex-col md:flex-row-reverse items-center justify-between mb-16 md:mb-24 bg-white p-8 rounded-xl shadow-lg"
                         variants={sectionVariants}
-                        initial="hidden"
-                        whileInView="visible"
                         viewport={{ once: true, amount: 0.3 }}
                     >
                         <div className="md:w-1/2 text-center md:text-left mb-8 md:mb-0 md:pl-12">
@@ -243,7 +239,6 @@ const WebDevelopment = () => {
                     <Motion.div
                         className="flex flex-col md:flex-row items-center justify-between mb-16 md:mb-24 bg-white p-8 rounded-xl shadow-lg"
                         variants={sectionVariants}
-                        initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true, amount: 0.3 }}
                     >
@@ -276,7 +271,6 @@ const WebDevelopment = () => {
                     <Motion.div
                         className="flex flex-col md:flex-row-reverse items-center justify-between bg-white p-8 rounded-xl shadow-lg"
                         variants={sectionVariants}
-                        initial="hidden"
                         whileInView="visible"
                         viewport={{ once: true, amount: 0.3 }}
                     >
