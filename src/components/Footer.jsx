@@ -6,7 +6,7 @@ const Footer = () => {
   const linksData = [
     { name: 'Home', href: '/' },
     { name: 'About Us', href: '/about' },
-    { name: 'Careers', href: '/career' },
+    { name: 'Careers', href: '/careers' },
     { name: 'Privacy Policy', href: '/privacy-policy' },
     { name: 'Terms and Condition', href: '/terms-and-condition' },
     { name: 'Refund Policy', href: '#' },

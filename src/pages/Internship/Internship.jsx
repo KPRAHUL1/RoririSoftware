@@ -15,7 +15,7 @@ const Internship = () => {
   
     <div className='flex flex-col'>
  
-      <div className="flex flex-col md:flex-row items-center justify-evenly gap-3   ">
+      <div className="flex flex-col md:flex-row items-center justify-center gap-3 px-8  ">
         <div className="flex items-center w-fit">
       <iframe
        src="https://lottie.host/embed/3d9dbb97-e54d-4286-afdf-c75b08e9bd12/AIkZadJ9Q4.lottie"

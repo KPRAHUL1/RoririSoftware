@@ -3,7 +3,6 @@ import TextType from '../components/ui/TextType/TypeWriter';
 import SplitText from '../components/ui/SplitText/splitText';
 import CountUp from '../components/ui/CountUp/CountUp';
 import TargetCursor from '../components/ui/TargetCursor/TargetCursor';
-import { ArrowRight } from 'lucide-react';
 import Marquees from '../components/ui/Marquee/Marquee';
 import ScrollVelocity from '../components/ui/ScrollVelocity/ScrollVelocity';
 import Whatwedo from './WhatweDo/Whatwedo';
@@ -13,7 +12,9 @@ import MarketingSection from './MarcetingSection/MarketingSection';
 import { Link, useNavigate } from 'react-router-dom';
 import AboutSection from './About/components/AboutSection';
 import CompanyHighlightsSection from './About/components/CompanyHighlightsSection';
-import Products from './Product/components/ProductCard';
+import Products from './Product/components/ProductDetails/ProductDetails';
+import ProductsList from './Product/components/ProductDetails/ProductList';
+// import Products from './Product/components/ProductCard';
 const Home = () => {
   const navigate = useNavigate();
   
@@ -34,18 +35,18 @@ const Home = () => {
       
       
     </div>
-    <div className='flex flex-col-reverse md:flex-row bg-gray-50'>  
+    <div className='flex flex-col-reverse md:flex-row justify-evenly gap-10 bg-gray-50'>  
       
       <div className="relative hidden lg:block  left-0 w-[300px] h-[300px] sm:w-[250px] sm:h-[250px] md:w-[600px] md:h-[600px] flex items-center justify-center">
         <img
           src="hero1.897db1b8.png"
           alt="Hand"
-          className="absolute lg:w-full lg:h-full  object-contain z-10 lg:mt-44 xl:mt-72"
+          className="absolute lg:w-full lg:h-full  object-contain z-10 lg:mt-44 xl:mt-40"
         />
         <Motion.img
           src="hero2.a3ba59f7.png"
           alt="Globe"
-          className="absolute xl:w-[40%] xl:h-[30%] h-36 w-36 object-contain z-10 xl:ml-28"
+          className="absolute xl:w-[40%] xl:h-[30%] h-36 w-36 object-contain z-10 xl:ml-16"
           style={{ top: '25%', left: '30%' }}
           initial={{ y: 0 }}
           animate={{ y: [0, -20, 0] }}
@@ -81,20 +82,8 @@ const Home = () => {
   rootMargin="-100px"
 />
 </div>
-<div className="flex flex-col sm:flex-row z-10 justify-center items-center gap-4 lg:gap-6 mt-10">
-   <div>
-      <TargetCursor 
-        spinDuration={2}
-        hideDefaultCursor={true}
-      />
-      <button className="cursor-target flex from-purple-500 px-3 py-2 
-      bg-gradient-to-r
-      text-white
-      rounded-lg
-    to-blue-500
-    hover:from-purple-600 // Keep this
-    hover:to-blue-600 " onClick={()=>navigate('/contact')}>Book a free Consulting <ArrowRight/></button>
-    </div>
+<div className="flex flex-col sm:flex-row z-10  items-center gap-4 lg:gap-6 mt-10">
+  
 {
   [{count:'100',name:'Projects'},{count:'60',name:'Employees'},{count:'7',name:'Years'}].map((item,index)=>(
     <>
@@ -120,10 +109,24 @@ const Home = () => {
     {item.name}
   </p>
 </Motion.div>
+
     </>
   ))
 }
 
+    </div>
+     <div className='mt-10'>
+      <TargetCursor 
+        spinDuration={2}
+        hideDefaultCursor={true}
+      />
+      <button className="cursor-target flex from-purple-500 px-3 py-2 
+      bg-gradient-to-r
+      text-white
+      rounded-lg
+    to-blue-500
+    hover:from-purple-600 // Keep this
+    hover:to-blue-600 " onClick={()=>navigate('/contact')}>Book a free Consulting</button>
     </div>
       </div>
     
@@ -137,7 +140,7 @@ texts={['RORIRI SOFT ★','TECHNOLOGIES ★']}
   velocity={100} 
   className="custom-scroll-text"
 />
-<Products/>
+<ProductsList/>
 
 <MarketingSection/>
 <TestimonialPage/>
