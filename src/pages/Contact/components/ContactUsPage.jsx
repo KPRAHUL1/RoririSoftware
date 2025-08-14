@@ -122,7 +122,7 @@ const ContactUsPage = () => {
 
   return (
     <>
-      <div className="min-h-screen bg-white flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+      <div className="min-h-screen bg-white flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8" id='contact'>
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
 
           <Motion.div
@@ -149,13 +149,13 @@ const ContactUsPage = () => {
               <a href="#" target="_blank" rel="noopener noreferrer" className="h-12 w-12 p-1 rounded-full hover:scale-110 transition-transform duration-200">
                 <img src={facebook} alt="Facebook" />
               </a>
-              <a href="#" target="_blank" rel="noopener noreferrer" className="h-12 w-12 p-1 rounded-full hover:scale-110 transition-transform duration-200">
+              <a href="https://www.instagram.com/roriri_it_park/" target="_blank" rel="noopener noreferrer" className="h-12 w-12 p-1 rounded-full hover:scale-110 transition-transform duration-200">
                 <img src={instagram} alt="Instagram" />
               </a>
-              <a href="#" target="_blank" rel="noopener noreferrer" className="h-12 w-12 p-1 rounded-full hover:scale-110 transition-transform duration-200">
+              <a href="https://www.linkedin.com/company/roriri-software-solutions-pvt-ltd/" target="_blank" rel="noopener noreferrer" className="h-12 w-12 p-1 rounded-full hover:scale-110 transition-transform duration-200">
                 <img src={linkedin} alt="LinkedIn" />
               </a>
-              <a href="#" target="_blank" rel="noopener noreferrer" className="h-12 w-12 p-1 rounded-full hover:scale-110 transition-transform duration-200">
+              <a href="https://www.youtube.com/@Roriri_soft" target="_blank" rel="noopener noreferrer" className="h-12 w-12 p-1 rounded-full hover:scale-110 transition-transform duration-200">
                 <img src={youtube} alt="YouTube" />
               </a>
             </Motion.div>

@@ -4,6 +4,7 @@ import ContactUsPage from './components/ContactUsPage';
 import { motion } from 'framer-motion'
 import { maillottie } from '../../assets/lottiefiles/lettie';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+import { Link } from 'react-router-dom';
 
 const Contact = () => {
   const enquiryTypes = [
@@ -12,7 +13,7 @@ const Contact = () => {
       title: 'Partner Enquiry',
       description: 'Interested in partnering? Explore partnership possibilities with us. Lets create synergies together for mutual success.',
       buttonText: 'Get In Touch',
-      buttonLink: '/contact-partner',
+      buttonLink: '/contact/partner',
       iconBgColor: 'bg-red-100',
       iconTextColor: 'text-red-500',
     },
@@ -21,7 +22,7 @@ const Contact = () => {
       title: 'Product Support',
       description: 'Lost in the digital wilderness? Fear not! Our support wizards have GPS for your tech jungle. Get started and find your way to smooth sailing!',
       buttonText: 'Get Started',
-      buttonLink: '/support',
+      buttonLink: '/contact/support',
       iconBgColor: 'bg-blue-100',
       iconTextColor: 'text-blue-500',
     },
@@ -30,11 +31,14 @@ const Contact = () => {
       title: 'Sales Enquiry',
       description: 'Curious about unleashing the sales magic? Lets turn questions into answers—Contact sales, let the wizardry begin!',
       buttonText: 'Contact Sales',
-      buttonLink: '/contact-sales',
+      buttonLink: '/contact/sales',
       iconBgColor: 'bg-purple-100',
       iconTextColor: 'text-purple-500',
     },
   ];
+  const handlePage = ()=>{
+    window.location.href = '#contact';
+  }
   return (
     <>
       <div id="contactpage">
@@ -72,7 +76,9 @@ const Contact = () => {
                   </span>
                 </p>
 
-                <motion.button
+                <motion.button 
+                
+                onClick={handlePage}
                   className="mt-6 px-6 py-3 cursor-pointer bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-full shadow-lg hover:bg-blue-300 transition"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -103,12 +109,12 @@ const Contact = () => {
                     <p className="text-gray-600 text-base mb-6 flex-grow">
                       {item.description}
                     </p>
-                    <a
-                      href={item.buttonLink}
-                      className="inline-block bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold py-2.5 px-6 rounded-lg shadow-md hover:bg-blue-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
-                    >
-                      {item.buttonText}
-                    </a>
+                    <Link
+              to={item.buttonLink}
+              className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-lg font-medium hover:from-blue-700 hover:to-purple-700 transition-all"
+            >
+              {item.buttonText}
+            </Link>
                   </div>
                 ))}
               </div>

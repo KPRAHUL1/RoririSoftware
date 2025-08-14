@@ -26,8 +26,8 @@ const Footer = () => {
 
   const productData = [
     { name: 'ERP Solutions ', href: '/services/erp-solutions' },
-    { name: 'Roriri Attedence App', href: '/products' },
-    { name: 'Nexemy', href: '/products' },
+    { name: 'Roriri Attedence App', href: '/products/2' },
+    { name: 'Nexemy', href: '/products/1' },
   ];
 
   return (
