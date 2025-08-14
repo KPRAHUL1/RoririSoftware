@@ -39,42 +39,42 @@ const itemVariants = {
 
 const CompanyHighlightsSection = () => {
 
-  const mdCarouselSettings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3, 
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    arrows: false, 
-    responsive: [
-      {
-        breakpoint: 1024, 
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1,
-          infinite: true,
-          dots: true
-        }
-      },
-      {
-        breakpoint: 768, 
-        settings: {
-          slidesToShow: 2, 
-          slidesToScroll: 1,
-          initialSlide: 2
-        }
-      },
-      {
-        breakpoint: 640, 
-        settings: {
-          slidesToShow: 1, 
-          slidesToScroll: 1
-        }
-      }
-    ]
-  };
+  // const mdCarouselSettings = {
+  //   dots: true,
+  //   infinite: true,
+  //   speed: 500,
+  //   slidesToShow: 3, 
+  //   slidesToScroll: 1,
+  //   autoplay: true,
+  //   autoplaySpeed: 3000,
+  //   arrows: false, 
+  //   responsive: [
+  //     {
+  //       breakpoint: 1024, 
+  //       settings: {
+  //         slidesToShow: 3,
+  //         slidesToScroll: 1,
+  //         infinite: true,
+  //         dots: true
+  //       }
+  //     },
+  //     {
+  //       breakpoint: 768, 
+  //       settings: {
+  //         slidesToShow: 2, 
+  //         slidesToScroll: 1,
+  //         initialSlide: 2
+  //       }
+  //     },
+  //     {
+  //       breakpoint: 640, 
+  //       settings: {
+  //         slidesToShow: 1, 
+  //         slidesToScroll: 1
+  //       }
+  //     }
+  //   ]
+  // };
 
   return (
     <Motion.section
@@ -98,30 +98,6 @@ const CompanyHighlightsSection = () => {
             allowFullScreen
           ></iframe>
         </div>
-      </Motion.div>
-
- 
-      <Motion.div variants={itemVariants} className='max-w-4xl mx-auto'>
-        <h3 className='text-3xl font-medium text-center text-purple-700 mb-8'>Meet Our Leader</h3>
-        <Slider {...mdCarouselSettings}>
-          {mdPhotos.map((photo) => (
-            <div key={photo.id} className='mr-5'>
-              <div className="relative w-full h-64 flex  items-center m-5 justify-center px-2"> 
-                <img
-                  src={photo.src}
-                  alt={photo.id}
-                  className="w-full h-full object-cover rounded-xl shadow-lg"
-                  onError={(e) => {
-                    console.error("Image failed to load:", photo.src, e);
-                    e.target.src = 'https://via.placeholder.com/400x300?text=Image+Not+Found';
-                  }}
-                />
-              </div>
-            </div>
-          ))}
-        </Slider>
-
-
       </Motion.div>
     </Motion.section>
   );
