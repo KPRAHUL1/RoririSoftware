@@ -8,6 +8,8 @@ import {team1,team2,team3,garden, team4} from '../../assets/teams/team.js'
 import { games, land1, office1,office2 } from '../../assets/landscap/landscape.js';
 import { officeimg } from '../../assets/office/office.js';
 import garden1 from '../../assets/roriri/Garden.jpg'
+import { saleslottie } from '../../assets/lottiefiles/lettie.js';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 const solutions = [
   {
     title: "Solution made Simple",
@@ -56,7 +58,8 @@ const About = () => {
           <p className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-8 hidden md:block">
            In a world of constant evolution, Roriri Soft is your steadfast partner, guiding you through tech transformations 
           </p>
-          <Motion.button
+          <Motion.a
+          href='#about'
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="bg-gradient-to-r  to-blue-500
@@ -64,7 +67,7 @@ const About = () => {
     hover:to-blue-600 hover:bg-opacity-80 transition-opacity text-white py-3 px-8 rounded-full text-lg font-semibold shadow-lg"
           >
             Learn More
-          </Motion.button>
+          </Motion.a>
         </Motion.div>
       </div>
       <WeBelieveInSection/>
@@ -151,9 +154,15 @@ const About = () => {
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true, amount: 0.3 }}
-          className="lg:w-1/2 flex justify-center lg:justify-end"
+          className=" flex justify-center lg:justify-end"
         >
-         <iframe src="https://lottie.host/embed/668d66da-99b3-4368-8748-64b9f2ee3960/XHC896Aftd.lottie"  className="h-full  w-full lg:h-[600px]"></iframe>
+        <DotLottieReact
+          className=" sm:w-[400px] p-3 sm:h-[400px] md:w-[500px] md:h-[500px] lg:w-[500px] lg:h-[600px]"
+          src={saleslottie}
+          loop
+          autoplay
+        />
+        
         </Motion.div>
       </div>
     </section>
