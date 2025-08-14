@@ -126,7 +126,7 @@ const EnquiryForm = () => {
           </Motion.h2>
           <Motion.div className="flex justify-center lg:justify-start space-x-4" variants={itemVariants}>
             {[facebook, instagram, linkedin, youtube].map((icon, i) => (
-              <a key={i} href="#" target="_blank" rel="noopener noreferrer"
+              <a key={i} href=" " target="_blank" rel="noopener noreferrer"
                 className="h-12 w-12 p-1 rounded-full hover:scale-110 transition-transform duration-200">
                 <img src={icon} alt="social" />
               </a>

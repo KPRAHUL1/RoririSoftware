@@ -92,10 +92,8 @@ useEffect(() => {
       <div className="relative w-full max-w-7xl mx-auto py-12 px-4 md:px-8">
         <div className="text-center mb-12">
           <h1
-  className="text-4xl md:text-6xl font-medium mb-4 
-    bg-gradient-to-r from-purple-500 to-blue-500 
-    bg-clip-text text-transparent 
-    hover:from-purple-600 hover:to-blue-600"
+  className="text-4xl md:text-6xl font-medium mb-4  text-green-500
+    "
 >
   Certificate Gallery
 </h1>

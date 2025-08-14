@@ -70,10 +70,10 @@ const Internship = () => {
    
     <WhatSetsUsApartPage/>
       <InternshipProgramsPage/>
-       <div style={{ height: '600px', position: 'relative' }} className=''>
+       {/* <div style={{ height: '600px', position: 'relative' }} className=''>
         <h1 className='text-center text-black text-5xl font-normal '>Intern <span className='text-green-400'>To</span> Our Employees</h1>
   <CircularGallery bend={3} textColor="black" borderRadius={0.05} scrollEase={0.02} />
-    </div>
+    </div> */}
    
     <div className="min-h-screen bg-white flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
