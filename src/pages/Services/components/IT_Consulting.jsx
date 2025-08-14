@@ -39,7 +39,7 @@ const IT_Consulting = () => {
                 <div className="container mx-auto px-4 flex flex-col items-center justify-center text-center relative z-10">
                     <p className="text-sm text-gray-400 uppercase tracking-wider mb-2 rounded-lg">IT Consulting</p>
                     <Motion.h1
-                        className="text-4xl md:text-6xl font-extrabold leading-tight mb-6 rounded-lg"
+                        className="text-4xl md:text-6xl font-medium leading-tight mb-6 rounded-lg"
                         initial={{ opacity: 0, y: -50 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
@@ -52,7 +52,7 @@ const IT_Consulting = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.4 }}
                     >
-                        At Roriri Software Solutions, our IT consulting services offer invaluable support in navigating dynamic tech environments. Efficient IT consulting Solutions tailored to your needs. From CV Screening to onboarding, we find the right fit for your team. Streamline your hiring process with our expertise.
+                        At Roriri Software Solutions, our IT consulting services offer invaluable support in navigating dynamic tech environments. Efficient IT consulting Solutions tailored to your needs.
                     </Motion.p>
                     <Motion.a href="#servicescontact"
                         className="cursor-pointer bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-blue-600 transition duration-300"
@@ -71,7 +71,7 @@ const IT_Consulting = () => {
                 <div className="container mx-auto text-center">
                     <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 leading-tight rounded-lg">IT Consulting services that we offer</h2>
                     <p className="text-gray-700 text-lg mb-12 max-w-4xl mx-auto rounded-lg">
-                        Hire our skilled programmers at Roriri Software Solutions to outsource your projects. With growing business needs, screening applicants becomes challenging. We provide committed experts to manage your business, ensuring high-quality results within deadlines. Achieve strategic goals with our technical expertise, data-driven scope, and project management skills.
+                        Hire our skilled programmers at Roriri Software Solutions to outsource your projects. With growing business needs, screening applicants becomes challenging.
                     </p>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -253,9 +253,9 @@ const IT_Consulting = () => {
                 viewport={{ once: true, amount: 0.3 }}
                 variants={sectionVariants}
             >
-                <div className="container mx-auto flex flex-col md:flex-row items-center justify-between text-center md:text-left">
+                <div className="container mx-auto flex flex-col md:flex-row items-center justify-evenly text-center md:text-left">
                     <div className="md:w-2/3 mb-8 md:mb-0">
-                        <h2 className="text-3xl md:text-4xl font-bold leading-tight mb-4 rounded-lg">Struggling with IT intricacies? Roriri Software Solutions offers clarity and ease.</h2>
+                        <h2 className="text-3xl md:text-4xl font-medium leading-tight mb-4 rounded-lg">Struggling with IT intricacies? Roriri Software Solutions offers clarity and ease.</h2>
                         <p className="text-lg md:text-xl opacity-90 rounded-lg">
                             Connect with us to simplify your journey.
                         </p>
@@ -283,9 +283,7 @@ const IT_Consulting = () => {
                     <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 leading-tight rounded-lg">Our IT Consulting process</h2>
                     <p className="text-gray-700 text-lg mb-12 max-w-4xl mx-auto rounded-lg">
                         Our IT Consulting process at Roriri Software Solutions involves a meticulous approach tailored to your needs.
-                        We begin by thoroughly assessing your requirements and challenges. Leveraging our expertise,
-                        we craft customized solutions to optimize your IT infrastructure. Our team, renowned for providing IT consulting services,
-                        will resource the best developers for your organization.
+                        We begin by thoroughly assessing your requirements and challenges. 
                     </p>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

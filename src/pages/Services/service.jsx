@@ -4,6 +4,7 @@ import { ChevronDown, ChevronUp, ExternalLink } from 'lucide-react';
 import { useNavigate } from 'react-router-dom'; 
 import { team1 } from '../../assets/lottiefiles/lettie';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+import { brand, development1, erp1, intern, mobile } from '../../assets/services/service';
 
 
 
@@ -35,24 +36,13 @@ const ServiceAccordionItem = ({ title, description, initiallyOpen = false }) => 
 const ServicesPage = () => {
   const navigate = useNavigate();
   const servicesData = [
-    {
-      id: 'branding',
-      path:'/services/it-consulting',
-      title: 'Branding & Graphic Works',
-      description: 'We develop strategic brand identities through research-based design and cohesive visual systems.',
-      imageSrc: 'izhtech.com_service (1).jpg', 
-      accordionItems: [
-        { title: 'Business Card Design', description: 'A memorable business card is a powerful networking tool. We design cards that leave a lasting impression.', initiallyOpen: true },
-        { title: 'Letterhead Design', description: 'Professional letterhead design for your business correspondence, enhancing your brand\'s credibility.' },
-        { title: 'Social Media Graphics', description: 'Engaging social media graphics tailored to your brand, designed to capture attention and boost engagement.' },
-      ],
-    },
+    
     {
       id: 'mobile-dev',
       path:'/services/mobile-app-development',
       title: 'Mobile App Development',
       description: 'We focus on seamless mobile experiences for effective customer connection, building innovative and user-friendly applications.',
-      imageSrc: 'izhtech.com_service (2).jpg', 
+      imageSrc: mobile, 
       accordionItems: [
         { title: 'UI/UX Design', description: 'Crafting intuitive and engaging user interfaces and experiences for mobile applications.', initiallyOpen: true },
         { title: 'iOS App Development', description: 'Building high-performance and feature-rich applications for Apple\'s iOS ecosystem.' },
@@ -65,7 +55,7 @@ const ServicesPage = () => {
       title: 'Web Development',
       path:'/services/web-app-development',
       description: 'Crafting responsive, high-performance, and secure web applications tailored to your business needs.',
-      imageSrc: 'https://placehold.co/600x400/D1E7DD/000000?text=Web+Development', 
+      imageSrc: development1, 
       accordionItems: [
         { title: 'Frontend Development', description: 'Building engaging and interactive user interfaces using modern frameworks like React, Angular, and Vue.js.', initiallyOpen: true },
         { title: 'Backend Development', description: 'Developing robust and scalable server-side logic and APIs with Node.js, Python, Java, and more.' },
@@ -78,7 +68,7 @@ const ServicesPage = () => {
       title: 'ERP Solutions',
       path:'/services/erp-solutions',
       description: 'Streamlining your business operations with custom Enterprise Resource Planning (ERP) systems for enhanced efficiency and productivity.',
-      imageSrc: 'https://placehold.co/600x400/D1E7DD/000000?text=ERP+Solutions',
+      imageSrc: erp1,
       accordionItems: [
         { title: 'Custom ERP Development', description: 'Tailored ERP solutions designed to fit your specific business processes and requirements.', initiallyOpen: true },
         { title: 'ERP Integration Services', description: 'Seamless integration of ERP systems with existing software and third-party applications.' },
@@ -90,12 +80,24 @@ const ServicesPage = () => {
       title: 'InternShip',
       path:'/services/internship',
       description: 'Boosting your online presence and driving growth with data-driven digital marketing strategies.',
-      imageSrc: 'https://placehold.co/600x400/D1E7DD/000000?text=Digital+Marketing', 
+      imageSrc: intern, 
       accordionItems: [
         { title: 'Search Engine Optimization (SEO)', description: 'Improving your website\'s visibility on search engines to attract more organic traffic.', initiallyOpen: true },
         { title: 'Social Media Marketing (SMM)', description: 'Engaging your audience and building brand awareness across various social media platforms.' },
         { title: 'Content Marketing', description: 'Creating valuable and relevant content to attract, engage, and retain a clearly defined audience.' },
         { title: 'Pay-Per-Click (PPC) Advertising', description: 'Managing effective paid advertising campaigns to generate immediate leads and sales.' },
+      ],
+    },
+    {
+      id: 'branding',
+      path:'/services/it-consulting',
+      title: 'Branding & Graphic Works',
+      description: 'We develop strategic brand identities through research-based design and cohesive visual systems.',
+      imageSrc: brand, 
+      accordionItems: [
+        { title: 'Business Card Design', description: 'A memorable business card is a powerful networking tool. We design cards that leave a lasting impression.', initiallyOpen: true },
+        { title: 'Letterhead Design', description: 'Professional letterhead design for your business correspondence, enhancing your brand\'s credibility.' },
+        { title: 'Social Media Graphics', description: 'Engaging social media graphics tailored to your brand, designed to capture attention and boost engagement.' },
       ],
     },
   ];
@@ -127,17 +129,9 @@ const ServicesPage = () => {
   return (
     <div className="min-h-screen bg-white text-gray-800">
      
-<section className="bg-white py-12 sm:py-16 lg:py-20 h-screen">
-    <div className="flex flex-col lg:flex-row items-center justify-center gap-8 ">
-     
-        <DotLottieReact
-          className="w-64 h-48 sm:w-80 sm:h-60 lg:w-96 lg:h-64 xl:w-[28rem] xl:h-72"
-          src={team1}
-          loop
-          autoplay
-        />
-    
-      <div>
+<section className="bg-white py-12 sm:py-16 lg:py-20">
+    <div className="flex flex-col md:flex-row items-center justify-center gap-8 ">
+        <div>
 
       
       <div className="flex flex-col gap-5 mb-3 ">
@@ -153,11 +147,19 @@ const ServicesPage = () => {
       </div>
        <button
           onClick={() => navigate('/contact')}
-          className="inline-block bg-black text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg hover:bg-gray-800 transition duration-300 text-base sm:text-lg font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+          className="inline-block bg-gradient-to-r from-purple-700 to-indigo-700 text-white px-4 sm:px-6 py-3 sm:py-3 rounded-lg hover:bg-gray-800 transition duration-300 text-base sm:text-lg font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
         >
           Contact Us
         </button>
       </div>
+        <DotLottieReact
+          className=" sm:w-80 sm:h-60 lg:w-96 lg:h-64 xl:w-[28rem] xl:h-80"
+          src={team1}
+          loop
+          autoplay
+        />
+    
+   
     </div>
 </section>
 

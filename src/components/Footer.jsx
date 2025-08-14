@@ -38,7 +38,7 @@ const Footer = () => {
           <div className="flex items-center gap-3">
             <img src={logo} alt="Roriri Tech" className="h-10 rounded-md" />
           </div>
-          <a href="mailto:hr@roririsoft.com" className="text-base md:text-lg flex items-center gap-2 hover:text-blue-400 transition">
+          <a href="https://mail.google.com/mail/?view=cm&to=hr@roririsoft.com" className="text-base md:text-lg flex items-center gap-2 hover:text-blue-400 transition">
             <Mail className="w-5 h-5" /> hr@roririsoft.com
           </a>
         </div>
@@ -50,7 +50,7 @@ const Footer = () => {
     <p className="flex items-center mb-2">
       <Phone className="w-4 h-4 mr-2" /> (+91) 7338941579
     </p>
-    <a href="mailto:contact@roririsoft.com" className="block hover:text-blue-400 transition mb-2">
+    <a href="https://mail.google.com/mail/?view=cm&to=contact@roririsoft.com" className="block hover:text-blue-400 transition mb-2">
       contact@roririsoft.com
     </a>
     <p className="text-sm mb-2">

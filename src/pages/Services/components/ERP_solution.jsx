@@ -131,7 +131,7 @@ const ERPSolutions = () => {
                 <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between max-w-screen-xl">
                     <div className="md:w-1/2   mb-10 md:mb-0">
                         <Motion.h1
-                            className="text-4xl md:text-6xl font-extrabold leading-tight mb-4 rounded-lg"
+                            className="text-4xl md:text-6xl font-medium leading-tight mb-4 rounded-lg"
                             initial={{ opacity: 0, x: -50 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.8, delay: 0.2 }}
@@ -476,7 +476,7 @@ const ERPSolutions = () => {
   </div>
 </Motion.section>
             <Motion.section
-                className="py-16 md:py-24 bg-white rounded-lg shadow-md mx-auto my-12 max-w-screen-xl px-4"
+                className="py-16 md:py-24 bg-gray-50 rounded-lg mx-auto my-12 max-w-screen-xl px-4"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.3 }}
