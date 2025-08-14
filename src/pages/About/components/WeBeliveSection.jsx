@@ -1,9 +1,8 @@
 import React from 'react';
-
+import { video2} from '../../../assets/office/office'
 const WeBelieveInSection = () => {
-  const url = "https://www.youtube.com/embed/xUWa2NKyBaA?autoplay=1&mute=1";
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gray-50 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8" id='about'>
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
        
         <div className="flex flex-col justify-center text-center md:text-left p-4 relative">
@@ -27,14 +26,16 @@ const WeBelieveInSection = () => {
           <div className="relative w-full max-w-lg rounded-lg overflow-hidden shadow-xl">
             
              <div className="relative" style={{ paddingBottom: '56.25%', height: 0 }}> 
-              <iframe
-                 src={url}
-                title="YouTube video player"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-                className="absolute top-0 left-0 w-full h-full rounded-lg object-cover"
-              ></iframe>
+              <video
+  src={video2}
+  controls
+  autoPlay
+  muted
+  loop
+  className="absolute top-0 left-0 w-full h-full rounded-lg object-cover"
+>
+  Your browser does not support the video tag.
+</video>
             </div>
             
             <svg
