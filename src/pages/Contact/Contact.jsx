@@ -35,6 +35,9 @@ const Contact = () => {
       iconTextColor: 'text-purple-500',
     },
   ];
+  const handlePage = ()=>{
+    window.location.href = '#contact';
+  }
   return (
     <>
       <div id="contactpage">
@@ -72,7 +75,9 @@ const Contact = () => {
                   </span>
                 </p>
 
-                <motion.button
+                <motion.button 
+                
+                onClick={handlePage}
                   className="mt-6 px-6 py-3 cursor-pointer bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-full shadow-lg hover:bg-blue-300 transition"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
