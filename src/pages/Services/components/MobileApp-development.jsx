@@ -285,11 +285,11 @@ const specializations = [
                       <p className="text-lg text-gray-600 leading-relaxed">
                         {slide.description}
                       </p>
-                      <div className="pt-6">
+                      {/* <div className="pt-6">
                         <button className="cursor-pointer bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-105">
                           Learn More
                         </button>
-                      </div>
+                      </div> */}
                     </div>
 
                     

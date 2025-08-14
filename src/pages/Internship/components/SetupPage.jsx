@@ -50,6 +50,10 @@ const WhatSetsUsApartPage = () => {
     },
   ];
 
+  const handleRegister = () => {
+    window.location.href = '#contact';
+  };
+
   return (
     <div className="min-h-screen bg-white flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8">
       <Motion.div
@@ -71,7 +75,7 @@ const WhatSetsUsApartPage = () => {
             Our 1-week Foundational Program equips internship students with key skills and
             confidence to thrive in real-world projects.
           </p>
-          <Motion.button
+          <Motion.button onClick={handleRegister}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="cursor-pointer bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 ease-in-out self-center md:self-start"

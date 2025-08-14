@@ -358,11 +358,11 @@ const TimelinePage = () => {
                     <div className={`transition-all duration-700 delay-300 ${
                       visibleItems.has(index) ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                     }`}>
-                      <button className=" cursor-pointer group relative overflow-hidden bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1">
+                      {/* <button className=" cursor-pointer group relative overflow-hidden bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1">
                         <span className="relative z-10">Learn More</span>
                         <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                         <span className="inline-block ml-2 group-hover:translate-x-1 transition-transform duration-200">→</span>
-                      </button>
+                      </button> */}
                     </div>
                   </div>
                   <div className={`${
