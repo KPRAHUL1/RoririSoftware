@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion as Motion } from 'framer-motion';
-import {java1,dataanalyt1,testing1, node1,ui1,flutter1,angular1,react1 } from '../../../assets/services/service';
+import { java1, dataanalyt1, testing1, node1, ui1, flutter1, angular1, react1 } from '../../../assets/services/service';
 
 const IT_Consulting = () => {
     const sectionVariants = {
@@ -77,17 +77,16 @@ const IT_Consulting = () => {
                             viewport={{ once: true, amount: 0.2 }}
                             transition={{ delay: 0.1 }}
                         >
-                            <img src={react1} alt="React Developer" className=" rounded-2xl absolute top-4 right-4 w-20 h-20 opacity-20 group-hover:opacity-100 transition-opacity duration-300" onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/100x100/E0E7FF/312E81?text=React'; }} />
+                            <img src={react1} alt="React Developer" className=" rounded-2xl absolute top-4 right-4 w-15 h-15 opacity-55" onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/100x100/E0E7FF/312E81?text=React'; }} />
                             <h3 className="text-xl font-semibold text-gray-900 mb-3 rounded-lg">React Developer</h3>
                             <p className="text-gray-700 mb-6 rounded-lg">
-                                At Roriri Software Solutions, we are providing the best ReactJS Developer for your IT needs. Need a React Developer? Look no further. We train to provide the best and most perfect React developer for you. With expertise tailored to your needs, our React developers ensure seamless integration and top-notch performance. Partner with Roriri Software Solutions for skilled React developers tailored to your needs.
+                                At Roriri Software Solutions, we are providing the best ReactJS Developer for your IT needs. Need a React Developer? Look no further. We train to provide the best and most perfect React developer for you.
                             </p>
                             <Motion.button
-                                className="cursor-pointer inline-flex items-center text-blue-600 font-semibold hover:text-blue-800 transition duration-300"
+                                className="cursor-pointer inline-flex items-center bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent font-semibold hover:text-blue-800 transition duration-300"
                                 whileHover={{ x: 5 }}
                             >
-                                Get Quote
-                                <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                                Get Quot
                             </Motion.button>
                         </Motion.div>
                         <Motion.div
@@ -98,11 +97,10 @@ const IT_Consulting = () => {
                             viewport={{ once: true, amount: 0.2 }}
                             transition={{ delay: 0.2 }}
                         >
-                            <img src={angular1} alt="Angular Developer" className="rounded-2xl absolute top-4 right-4 w-20 h-20 opacity-20 group-hover:opacity-100 transition-opacity duration-300" onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/100x100/E0E7FF/312E81?text=Angular'; }} />
+                            <img src={angular1} alt="Angular Developer" className="rounded-2xl absolute top-4 right-4 w-15 h-15 opacity-55" onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/100x100/E0E7FF/312E81?text=Angular'; }} />
                             <h3 className="text-xl font-semibold text-gray-900 mb-3 rounded-lg">Angular Developer</h3>
                             <p className="text-gray-700 mb-6 rounded-lg">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            </p>
+                                Transform your business with Roriri Software Solutions' expert Angular developers. Our skilled professionals create dynamic, scalable web applications using Angular's powerful framework.    </p>
                             <Motion.button
                                 className=" cursor-pointer inline-flex items-center text-blue-600 font-semibold hover:text-blue-800 transition duration-300"
                                 whileHover={{ x: 5 }}
@@ -119,11 +117,10 @@ const IT_Consulting = () => {
                             viewport={{ once: true, amount: 0.2 }}
                             transition={{ delay: 0.3 }}
                         >
-                            <img src={flutter1} alt="Flutter Developer" className="rounded-2xl absolute top-4 right-4 w-20 h-20 opacity-20 group-hover:opacity-100 transition-opacity duration-300" onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/100x100/E0E7FF/312E81?text=Flutter'; }} />
+                            <img src={flutter1} alt="Flutter Developer" className="rounded-2xl absolute top-4 right-4 w-15 h-15 opacity-55" onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/100x100/E0E7FF/312E81?text=Flutter'; }} />
                             <h3 className="text-xl font-semibold text-gray-900 mb-3 rounded-lg">Flutter Developer</h3>
                             <p className="text-gray-700 mb-6 rounded-lg">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            </p>
+                                Roriri Software Solutions brings you cutting-edge mobile app development with our expert Flutter developers. Build beautiful, natively compiled applications for mobile, web, and desktop from a single codebase.           </p>
                             <Motion.button
                                 className="cursor-pointer inline-flex items-center text-blue-600 font-semibold hover:text-blue-800 transition duration-300"
                                 whileHover={{ x: 5 }}
@@ -140,11 +137,11 @@ const IT_Consulting = () => {
                             viewport={{ once: true, amount: 0.2 }}
                             transition={{ delay: 0.4 }}
                         >
-                            <img src={ui1} alt="UI/UX Designer" className="rounded-2xl absolute top-4 right-4 w-20 h-20 opacity-20 group-hover:opacity-100 transition-opacity duration-300" onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/100x100/E0E7FF/312E81?text=UI/UX'; }} />
+                            <img src={ui1} alt="UI/UX Designer" className="rounded-2xl absolute top-4 right-4 w-15 h-15 opacity-55" onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/100x100/E0E7FF/312E81?text=UI/UX'; }} />
                             <h3 className="text-xl font-semibold text-gray-900 mb-3 rounded-lg">UI/UX Designer</h3>
                             <p className="text-gray-700 mb-6 rounded-lg">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            </p>
+                                At Roriri Software Solutions, our creative UI/UX designers craft exceptional digital experiences that captivate users and drive engagement. We combine aesthetic excellence with user-centered design principles to create intuitive interfaces. 
+                             </p>
                             <Motion.button
                                 className="cursor-pointer inline-flex items-center text-blue-600 font-semibold hover:text-blue-800 transition duration-300"
                                 whileHover={{ x: 5 }}
@@ -161,11 +158,10 @@ const IT_Consulting = () => {
                             viewport={{ once: true, amount: 0.2 }}
                             transition={{ delay: 0.5 }}
                         >
-                            <img src={node1} alt="Node JS Developer" className="rounded-2xl absolute top-4 right-4 w-20 h-20 opacity-20 group-hover:opacity-100 transition-opacity duration-300" onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/100x100/E0E7FF/312E81?text=NodeJS'; }} />
+                            <img src={node1} alt="Node JS Developer" className="rounded-2xl absolute top-4 right-4 w-15 h-15 opacity-55 " onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/100x100/E0E7FF/312E81?text=NodeJS'; }} />
                             <h3 className="text-xl font-semibold text-gray-900 mb-3 rounded-lg">Node JS Developer</h3>
                             <p className="text-gray-700 mb-6 rounded-lg">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            </p>
+                                Roriri Software Solutions offers expert Node.js developers who build scalable, high-performance server-side applications. Our Node.js specialists leverage JavaScript's power to create efficient APIs, real-time applications, and microservices architectures.         </p>
                             <Motion.button
                                 className="cursor-pointer inline-flex items-center text-blue-600 font-semibold hover:text-blue-800 transition duration-300"
                                 whileHover={{ x: 5 }}
@@ -182,10 +178,10 @@ const IT_Consulting = () => {
                             viewport={{ once: true, amount: 0.2 }}
                             transition={{ delay: 0.6 }}
                         >
-                            <img src={dataanalyt1} alt="Data Analyst" className="rounded-2xl absolute top-4 right-4 w-20 h-20 opacity-20 group-hover:opacity-100 transition-opacity duration-300" onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/100x100/E0E7FF/312E81?text=Data'; }} />
+                            <img src={dataanalyt1} alt="Data Analyst" className="rounded-2xl absolute top-4 right-4 w-15 h-15 opacity-55" onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/100x100/E0E7FF/312E81?text=Data'; }} />
                             <h3 className="text-xl font-semibold text-gray-900 mb-3 rounded-lg">Data Analyst</h3>
                             <p className="text-gray-700 mb-6 rounded-lg">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                Unlock the power of your data with Roriri Software Solutions' expert data analysts. Our professionals transform raw data into actionable insights that drive strategic business decisions. Using advanced analytics tools and statistical methods. 
                             </p>
                             <Motion.button
                                 className="cursor-pointer inline-flex items-center text-blue-600 font-semibold hover:text-blue-800 transition duration-300"
@@ -203,11 +199,11 @@ const IT_Consulting = () => {
                             viewport={{ once: true, amount: 0.2 }}
                             transition={{ delay: 0.7 }}
                         >
-                            <img src={testing1} alt="Software Tester" className="rounded-2xl absolute top-4 right-4 w-20 h-20 opacity-20 group-hover:opacity-100 transition-opacity duration-300" onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/100x100/E0E7FF/312E81?text=Tester'; }} />
+                            <img src={testing1} alt="Software Tester" className="rounded-2xl absolute top-4 right-4 w-15 h-15 opacity-55" onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/100x100/E0E7FF/312E81?text=Tester'; }} />
                             <h3 className="text-xl font-semibold text-gray-900 mb-3 rounded-lg">Software Tester</h3>
                             <p className="text-gray-700 mb-6 rounded-lg">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            </p>
+                         Ensure flawless software quality with Roriri Software Solutions' dedicated testing professionals. Our experienced software testers employ comprehensive testing methodologies including manual, automated, and performance testing to identify and eliminate bugs before deployment. 
+                         </p>
                             <Motion.button
                                 className="cursor-pointer inline-flex items-center text-blue-600 font-semibold hover:text-blue-800 transition duration-300"
                                 whileHover={{ x: 5 }}
@@ -217,7 +213,7 @@ const IT_Consulting = () => {
                             </Motion.button>
                         </Motion.div>
 
-                        
+
                         <Motion.div
                             className="bg-gray-100 p-8 rounded-xl shadow-lg text-left relative overflow-hidden group border border-gray-200"
                             variants={cardVariants}
@@ -226,12 +222,12 @@ const IT_Consulting = () => {
                             viewport={{ once: true, amount: 0.2 }}
                             transition={{ delay: 0.8 }}
                         >
-                            <img src={java1} alt="Java Developer" className="rounded-2xl absolute top-4 right-4 w-20 h-20 opacity-20 group-hover:opacity-100 transition-opacity duration-300" onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/100x100/E0E7FF/312E81?text=Java'; }} />
+                            <img src={java1} alt="Java Developer" className="rounded-2xl absolute top-4 right-4 w-15 h-15  opacity-55 " onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/100x100/E0E7FF/312E81?text=Java'; }} />
                             <h3 className="text-xl font-semibold text-gray-900 mb-3 rounded-lg">Java Developer</h3>
                             <p className="text-gray-700 mb-6 rounded-lg">
-                                
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            </p>
+
+                             Roriri Software Solutions provides enterprise-grade Java development services with our seasoned Java developers. Our experts build robust, scalable applications using Java's powerful ecosystem, including Spring Framework, microservices architecture, and cloud-native solutions.
+                             </p>
                             <Motion.button
                                 className="cursor-pointer inline-flex items-center text-blue-600 font-semibold hover:text-blue-800 transition duration-300"
                                 whileHover={{ x: 5 }}
@@ -281,13 +277,13 @@ const IT_Consulting = () => {
                     <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 leading-tight rounded-lg">Our IT Consulting process</h2>
                     <p className="text-gray-700 text-lg mb-12 max-w-4xl mx-auto rounded-lg">
                         Our IT Consulting process at Roriri Software Solutions involves a meticulous approach tailored to your needs.
-                         We begin by thoroughly assessing your requirements and challenges. Leveraging our expertise,
-                          we craft customized solutions to optimize your IT infrastructure. Our team, renowned for providing IT consulting services,
-                           will resource the best developers for your organization.
+                        We begin by thoroughly assessing your requirements and challenges. Leveraging our expertise,
+                        we craft customized solutions to optimize your IT infrastructure. Our team, renowned for providing IT consulting services,
+                        will resource the best developers for your organization.
                     </p>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                   
+
                         <Motion.div
                             className="bg-white p-8 rounded-xl shadow-lg text-left relative overflow-hidden group border border-gray-200"
                             variants={processStepVariants}
