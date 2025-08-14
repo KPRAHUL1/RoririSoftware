@@ -1,5 +1,4 @@
-import { useRef, useState } from 'react';
-import emailjs from "@emailjs/browser"; import React from 'react';
+import { useState } from 'react';
 import { facebook, instagram, linkedin, youtube } from '../../../assets/icons/icon';
 import { MailCheck, CircleUserRound, MapPin, Loader2, Send } from "lucide-react";
 
@@ -125,7 +124,7 @@ const InternshipRegistrationForm = () => {
     }
   };
   return (
-    <div className="min-h-screen  flex items-center lg:p-10 p-5 justify-center font-sans mb-5" >
+    <div className="min-h-screen  flex items-center lg:p-10 p-5 justify-center font-sans mb-5" id='contact'>
       <div className=" w-full flex flex-col lg:flex-row  rounded-xl  overflow-hidden lg:p-5">
         <div className="lg:w-1/2 p-8 sm:p-12 flex flex-col justify-center ">
           <h2 className="text-green-600 text-lg font-semibold mb-2">Contact Us</h2>
@@ -171,7 +170,7 @@ const InternshipRegistrationForm = () => {
 
             <div>
               <label className="block text-sm  font-medium text-gray-700 mb-2">
-                Full Name *
+                Full Name
               </label>
               <input
                 type="text"
@@ -209,7 +208,7 @@ const InternshipRegistrationForm = () => {
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Email Address *
+                  Email Address
                 </label>
                 <input
                   type="email"
@@ -228,7 +227,7 @@ const InternshipRegistrationForm = () => {
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Program *
+                  Program
                 </label>
                 <input
                   type="text"
@@ -246,7 +245,7 @@ const InternshipRegistrationForm = () => {
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Qualification *
+                  Qualification
                 </label>
                 <input
                   type="text"
@@ -264,7 +263,7 @@ const InternshipRegistrationForm = () => {
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  College Name *
+                  College Name
                 </label>
                 <input
                   type="text"
@@ -282,7 +281,7 @@ const InternshipRegistrationForm = () => {
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Year *
+                  Year
                 </label>
                 <input
                   type="number"
@@ -301,7 +300,7 @@ const InternshipRegistrationForm = () => {
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                Your Message *
+                Your Message
               </label>
               <textarea
                 name="message"

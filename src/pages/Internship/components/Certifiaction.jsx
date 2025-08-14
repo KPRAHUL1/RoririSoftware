@@ -1,31 +1,29 @@
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect, useRef } from 'react';
+import { certificate1 ,certificate4,certificate6,certificate7,certificate8 } from '../../../assets/internship/internship';
 
 const Certification = () => {
   
   const certificateData = [
     {
       id: 1,
-      certificateUrl: 'https://placehold.co/400x300/a3e635/1f2937?text=Certificate+1'
-    },
-    {
-      id: 2,
-      certificateUrl: 'https://placehold.co/400x300/fde68a/1f2937?text=Certificate+2'
-    },
-    {
-      id: 3,
-      certificateUrl: 'https://placehold.co/400x300/fca5a5/1f2937?text=Certificate+3'
+      certificateUrl: certificate1
     },
     {
       id: 4,
-      certificateUrl: 'https://placehold.co/400x300/93c5fd/1f2937?text=Certificate+4'
-    },
-    {
-      id: 5,
-      certificateUrl: 'https://placehold.co/400x300/d8b4fe/1f2937?text=Certificate+5'
+      certificateUrl: certificate4
     },
     {
       id: 6,
-      certificateUrl: 'https://placehold.co/400x300/f9a8d4/1f2937?text=Certificate+6'
+      certificateUrl: certificate6
+    },
+    {
+      id: 7,
+      certificateUrl: certificate7
+    },
+    {
+      id: 8,
+      certificateUrl: certificate8
     },
   ];
 
@@ -68,7 +66,7 @@ const handlePrev = () => {
 useEffect(() => {
   const handleResize = () => {
     if (window.innerWidth >= 1440) {
-      setCardsToShow(4);
+      setCardsToShow(3);
     } else if (window.innerWidth >= 1024) {
       setCardsToShow(3);
     } else if (window.innerWidth >= 768) {
@@ -90,12 +88,18 @@ useEffect(() => {
   });
 
   return (
-    <div className="min-h-screen bg-green-200  font-sans p-4 flex items-center justify-center">
+    <div className=" font-sans p-4 flex items-center justify-center">
       <div className="relative w-full max-w-7xl mx-auto py-12 px-4 md:px-8">
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-6xl font-medium mb-4 ">
-            Certificate Gallery
-          </h1>
+          <h1
+  className="text-4xl md:text-6xl font-medium mb-4 
+    bg-gradient-to-r from-purple-500 to-blue-500 
+    bg-clip-text text-transparent 
+    hover:from-purple-600 hover:to-blue-600"
+>
+  Certificate Gallery
+</h1>
+
           <p className="text-gray-400 text-lg">Showcasing achievements and accomplishments</p>
         </div>
 
@@ -113,35 +117,33 @@ useEffect(() => {
           </button>
 
           
-          <div className="flex justify-center items-stretch gap-5 overflow-hidden lg:px-16 md:px-20">
-            {displayedCards.map((card, index) => (
-              <div
-                key={`${card.id}-${startIndex}`}
-                className="flex-shrink-0 w-full md:w-[calc(50%-16px)] lg:w-[calc(33.333%-21px)] transition-all duration-700 transform-gpu"
-                style={{
-                  animation: `slideIn 0.7s ease-out ${index * 0.1}s both`
-                }}
-              >
-               
-                 
-                  
-                  <div className="relative p-6 h-full flex flex-col">
-                    <div className="flex-grow flex items-center justify-center bg-white/5 rounded-xl mb-4">
-                      <img
-                        src={card.certificateUrl}
-                        alt={`Certificate ${card.id}`}
-                        className="w-full h-auto max-h-64 object-contain rounded-lg shadow-lg transition-transform duration-300 group-hover:scale-105"
-                        onError={(e) => {
-                          e.target.onerror = null;
-                          e.target.src = 'https://placehold.co/400x300/6b7280/d1d5db?text=Certificate';
-                        }}
-                      />
-                    </div>
-                    
-                </div>
-              </div>
-            ))}
-          </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4 lg:px-16 md:px-20">
+  {displayedCards.map((card, index) => (
+    <div
+      key={`${card.id}-${startIndex}`}
+      className="transition-all duration-700 transform-gpu"
+      style={{
+        animation: `slideIn 0.7s ease-out ${index * 0.1}s both`
+      }}
+    >
+      <div className="relative p-4 flex flex-col bg-white/5 rounded-xl shadow-md">
+        {/* Fixed aspect ratio container */}
+        <div className="w-full aspect-[4/3] overflow-hidden rounded-lg">
+          <img
+            src={card.certificateUrl}
+            alt={`Certificate ${card.id}`}
+            className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+            onError={(e) => {
+              e.target.onerror = null;
+              e.target.src = 'https://placehold.co/400x300/6b7280/d1d5db?text=Certificate';
+            }}
+          />
+        </div>
+      </div>
+    </div>
+  ))}
+</div>
+
 
           <button
             onClick={handleNext}
