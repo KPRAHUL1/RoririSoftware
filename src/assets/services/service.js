@@ -17,6 +17,7 @@ import node1 from './Itconsulting/node1.png';
 import dataanalyt1 from './Itconsulting/dataanalyt1.png';
 import testing1 from './Itconsulting/testing1.png';
 import java1 from './Itconsulting/java1.png';
+import itcon from './Itconsulting/itcon.jpg'
 export {erp1,erp2,erp3, development1, development2, development3, development4,
-static1,dynamic2,ec1,multi1, react1,angular1,flutter1,ui1,node1,dataanalyt1,testing1,java1
+static1,dynamic2,ec1,multi1, react1,angular1,flutter1,ui1,node1,dataanalyt1,testing1,java1,itcon
 };
