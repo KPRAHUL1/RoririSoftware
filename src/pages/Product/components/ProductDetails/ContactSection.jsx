@@ -40,7 +40,7 @@ const ContactSection = ({ productName }) => {
 
   if (isSubmitted) {
     return (
-      <div className="bg-white rounded-2xl shadow-xl p-8 text-center">
+      <div className="italic bg-white rounded-2xl shadow-xl p-8 text-center">
         <CheckCircle className="h-16 w-16 text-green-500 mx-auto mb-4" />
         <h3 className="text-2xl font-bold text-gray-900 mb-2">Thank You!</h3>
         <p className="text-gray-600 mb-4">

@@ -37,7 +37,7 @@ const Products = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 font-inter text-center text-gray-900">
+    <div className="italic min-h-screen bg-gray-50 font-inter text-center text-gray-900">
       
        <header className=" py-12 px-4">
     <h1 className="text-4xl sm:text-5xl font-medium mb-4 text-purple-500">Our Products</h1>

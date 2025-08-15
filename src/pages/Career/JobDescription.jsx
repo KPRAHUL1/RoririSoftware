@@ -28,7 +28,7 @@ const JobDescriptionPage = () => {
     fetchJobDetails();
   }, [jobId]);
 
-  if (loading) return <div className="flex items-center justify-center min-h-screen text-gray-700">Loading job details...</div>;
+  if (loading) return <div className="flex items-center justify-center min-h-screen italic  text-gray-700">Loading job details...</div>;
 
   if (error) return (
     <div className="flex flex-col items-center justify-center min-h-screen text-red-600">

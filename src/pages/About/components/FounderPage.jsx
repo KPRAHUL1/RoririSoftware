@@ -6,7 +6,7 @@ const FounderProfileSection = () => {
   return (
   <> 
   
-    <div className="min-h-screen bg-white flex-col flex gap-10 py-12 px-4 sm:px-6 lg:px-16">
+    <div className="italic  min-h-screen bg-white flex-col flex gap-10 py-12 px-4 sm:px-6 lg:px-16">
         <div className='text-start flex flex-col gap-5 pl-5'>
             <h1 className='text-6xl font-medium text-blue-800'>Founder</h1>
             <p className='text-3xl '>The visionary force behind RORIRI Soft Tech</p>

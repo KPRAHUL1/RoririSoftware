@@ -78,7 +78,7 @@ const CompanyHighlightsSection = () => {
 
   return (
     <Motion.section
-      className='py-20 px-4 bg-white'
+      className='py-20 px-4 bg-white italic'
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}

@@ -16,7 +16,7 @@ const ProductsList = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 font-inter text-center text-gray-900">
+    <div className="min-h-screen italic bg-gray-50 font-inter text-center text-gray-900">
          <header className=" py-12 px-4">
     <h1 className="text-4xl sm:text-5xl font-medium mb-4 text-purple-500">Our Products</h1>
     <div className="text-2xl sm:text-3xl md:text-6xl font-semibold text-gray-800 flex flex-wrap justify-center items-center gap-2">

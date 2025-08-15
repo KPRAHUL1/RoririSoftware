@@ -105,7 +105,7 @@ function ServicesContact(){
     };
 return (
 <Motion.section id="servicescontact"
-                className="py-16 md:py-24 bg-gray-50 rounded-lg  mx-auto my-12 max-w-screen-xl px-4"
+                className="py-16 italic  md:py-24 bg-gray-50 rounded-lg  mx-auto my-12 max-w-screen-xl px-4"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.3 }}

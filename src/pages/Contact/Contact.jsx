@@ -43,7 +43,7 @@ const Contact = () => {
     <>
       <div id="contactpage">
         <div>
-          <section className="bg-gradient-to-br  flex items-center justify-center px-6">
+          <section className="italic bg-gradient-to-br  flex items-center justify-center px-6">
             <div className="container mx-auto flex flex-col-reverse md:flex-row items-center gap-8 md:gap-8">
               <motion.div
                 className="flex-1 flex justify-center"
