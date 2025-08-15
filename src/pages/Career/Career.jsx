@@ -14,12 +14,7 @@ const Career = () => {
         transition={{ duration: 0.8 }}
         className=" z-10 flex flex-col md:flex-row gap-5 h-screen items-center"
       >
-         <DotLottieReact
-          className=" w-96 h-96 sm:w-[400px] p-3 sm:h-[400px] md:w-[500px] md:h-[500px] lg:w-[500px] lg:h-[600px]"
-          src={job}
-          loop
-          autoplay
-        />
+        
       <div className="flex flex-col">
                  <h1 className="text-5xl  md:text-6xl font-medium text-purple-700 mb-4 tracking-tight leading-tight">
           <motion.span
@@ -73,7 +68,12 @@ const Career = () => {
         </motion.button>
         </a>
         </div> 
-
+ <DotLottieReact
+          className=" w-96 h-96 sm:w-[400px] p-3 sm:h-[400px] md:w-[500px] md:h-[500px] lg:w-[500px] lg:h-[600px]"
+          src={job}
+          loop
+          autoplay
+        />
       </motion.div>
        <div style={{position:'relative',top:'40px'
        }}>

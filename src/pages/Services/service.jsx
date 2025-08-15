@@ -127,7 +127,7 @@ const ServicesPage = () => {
 
 
   return (
-    <div className="min-h-screen bg-white text-gray-800">
+    <div className="min-h-screen italic  bg-white text-gray-800">
      
 <section className="bg-white py-12 sm:py-16 lg:py-20">
     <div className="flex flex-col md:flex-row items-center justify-center gap-8 ">
@@ -212,7 +212,7 @@ const ServicesPage = () => {
 
 
       
-      <section className="bg-gray-900 text-white py-16 px-4 sm:px-6 lg:px-8 text-center">
+      <section className="bg-gray-900 italic  text-white py-16 px-4 sm:px-6 lg:px-8 text-center">
         <div className="max-w-4xl mx-auto">
           <p className="text-sm font-semibold text-gray-400 uppercase mb-2">Let's Collaborate</p>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-medium leading-tight mb-6">

@@ -55,7 +55,7 @@ const WhatSetsUsApartPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8">
+    <div className="italic min-h-screen bg-white flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8">
       <Motion.div
         className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
         initial="hidden"

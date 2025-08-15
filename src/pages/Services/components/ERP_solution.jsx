@@ -120,7 +120,7 @@ const ERPSolutions = () => {
     };
 
     return (
-        <div className="font-inter antialiased bg-gray-50">
+        <div className="font-inter italic  antialiased bg-gray-50">
             {/* Hero Section */}
             <Motion.section
                 className="relative bg-gradient-to-r from-purple-800 to-indigo-900 text-white py-16 md:py-24 overflow-hidden rounded-b-lg shadow-lg"

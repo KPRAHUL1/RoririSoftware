@@ -217,7 +217,7 @@ const specializations = [
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50 relative overflow-hidden">
+    <div className="min-h-screen italic  bg-gradient-to-br from-gray-50 via-white to-blue-50 relative overflow-hidden">
       
       <div 
         className="absolute inset-0 transition-all duration-300 ease-out"

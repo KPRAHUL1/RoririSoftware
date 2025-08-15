@@ -2,7 +2,7 @@ import React from 'react';
 import { video2} from '../../../assets/office/office'
 const WeBelieveInSection = () => {
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8" id='about'>
+    <div className="italic min-h-screen bg-gray-50 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8" id='about'>
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
        
         <div className="flex flex-col justify-center text-center md:text-left p-4 relative">

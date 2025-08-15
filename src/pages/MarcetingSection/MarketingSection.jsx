@@ -251,7 +251,7 @@ const MarketingSection = () => {
 
 
   return (
-    <div className="min-h-screen bg-white flex items-center justify-center p-4 sm:p-8">
+    <div className="min-h-screen bg-white flex items-center justify-center p-4 sm:p-8 italic">
       <div className="flex flex-col lg:flex-row max-w-7xl mx-auto bg-white rounded-lg shadow-xl overflow-hidden w-full">
 
         <div className="flex-1 p-8 sm:p-12 lg:p-16 flex flex-col justify-center text-center lg:text-left">

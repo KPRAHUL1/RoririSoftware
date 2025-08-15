@@ -41,8 +41,8 @@ const RoririProductsPage = () => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}
         >
-          <motion.h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-tight mb-4" variants={textItemVariants}>
-            RORIRI <br /> Products
+          <motion.h1 className="text-5xl italic sm:text-6xl lg:text-7xl font-medium leading-tight mb-4" variants={textItemVariants}>
+            𝐑𝐎𝐑𝐈𝐑𝐈 Products
           </motion.h1>
           <motion.p className="text-lg sm:text-xl text-gray-300 mb-8 max-w-prose" variants={textItemVariants}>
             Partner with us to enhance your business through our diverse services

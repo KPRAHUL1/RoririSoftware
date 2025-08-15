@@ -88,7 +88,7 @@ useEffect(() => {
   });
 
   return (
-    <div className=" font-sans p-4 flex items-center justify-center">
+    <div className="italic  font-sans p-4 flex items-center justify-center">
       <div className="relative w-full max-w-7xl mx-auto py-12 px-4 md:px-8">
         <div className="text-center mb-12">
           <h1

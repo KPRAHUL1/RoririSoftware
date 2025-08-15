@@ -43,7 +43,7 @@ const About = () => {
 
   return (
     <>
-      <section className="  bg-cover bg-center " >
+      <section className=" italic  bg-cover bg-center " >
         <div className=" inset-0  bg-opacity-60 flex items-center mt-3 md:mt-0 justify-center ">
           <img src={banner} alt="" />
           <Motion.div

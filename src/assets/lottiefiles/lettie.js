@@ -4,4 +4,5 @@ import maillottie from './mail.lottie';
 import contactlottie from './Contact Us (1).lottie';
 import saleslottie from './sales growth.lottie'
 import job from './search for employee.lottie'
-export { team1, lottie2, maillottie, contactlottie, saleslottie, job }
+import events from './Olympic games 2021_Victory players.lottie'
+export { team1, lottie2, maillottie, contactlottie, saleslottie, job, events }

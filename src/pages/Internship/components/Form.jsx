@@ -124,7 +124,7 @@ const InternshipRegistrationForm = () => {
     }
   };
   return (
-    <div className="min-h-screen  flex items-center lg:p-10 p-5 justify-center font-sans mb-5" id='contact'>
+    <div className="italic min-h-screen  flex items-center lg:p-10 p-5 justify-center font-sans mb-5" id='contact'>
       <div className=" w-full flex flex-col lg:flex-row  rounded-xl  overflow-hidden lg:p-5">
         <div className="lg:w-1/2 p-8 sm:p-12 flex flex-col justify-center ">
           <h2 className="text-green-600 text-lg font-semibold mb-2">Contact Us</h2>

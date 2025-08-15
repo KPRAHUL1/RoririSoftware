@@ -6,9 +6,9 @@ const TermsAndConditions = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen italic  bg-gray-100 flex flex-col items-center py-12 px-4 sm:px-6 lg:px-8">
       <motion.h1
-        className="text-4xl font-extrabold text-gray-900 mb-8 text-center"
+        className="text-4xl font-medium text-gray-900 mb-8 text-center"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
@@ -32,7 +32,7 @@ const TermsAndConditions = () => {
           animate="visible"
           variants={sectionVariants}
         >
-          <h2 className="text-2xl font-semibold text-gray-800 mb-4">1. Use of Website</h2>
+          <h2 className="text-2xl font-medium text-gray-800 mb-4">1. Use of Website</h2>
           <p className="text-gray-600">
             You agree to use our website and services solely for lawful purposes and in compliance with these terms and conditions.
           </p>

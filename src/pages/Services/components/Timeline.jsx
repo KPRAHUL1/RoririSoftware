@@ -298,7 +298,7 @@ const TimelinePage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50 relative overflow-hidden">
+    <div className="min-h-screen italic  bg-gradient-to-br from-gray-50 via-white to-blue-50 relative overflow-hidden">
         <h1 className='text-3xl text-blue-700 text-center'>Our Process</h1>
       
       <div className="absolute inset-0 overflow-hidden pointer-events-none">

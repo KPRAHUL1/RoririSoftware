@@ -1,11 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import {Link} from 'react-router-dom'
 
 const JobCard = ({ job, animationDelay }) => {
   return (
     <motion.div
-      className="bg-white rounded-xl shadow-lg p-6 md:p-8 border border-gray-200 flex flex-col items-start text-left"
+      className="bg-white italic  rounded-xl shadow-lg p-6 md:p-8 border border-gray-200 flex flex-col items-start text-left"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: animationDelay }}

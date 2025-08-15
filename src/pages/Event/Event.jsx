@@ -1,9 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react';
 import {motion as Motion, AnimatePresence } from 'framer-motion';
 import * as THREE from 'three';
+import { events } from '../../assets/lottiefiles/lettie';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+import { useNavigate } from 'react-router-dom';
 
 const App = () => {
     const [activeCategory, setActiveCategory] = useState('All'); 
+    const navigate = useNavigate();
 
     const sectionVariants = {
         hidden: { opacity: 0, y: 50 },
@@ -180,7 +184,7 @@ const App = () => {
           
 
             <Motion.section
-                className="relative bg-gray-900 text-white py-16 md:py-24 overflow-hidden rounded-b-lg shadow-lg"
+                className="relative bg-gray-900 text-white mt-5 md:mt-0  overflow-hidden rounded-b-lg shadow-lg"
                 initial="hidden"
                 animate="visible"
                 variants={sectionVariants}
@@ -190,7 +194,7 @@ const App = () => {
                 <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between max-w-screen-xl relative z-10">
                     <div className="md:w-1/2 text-center md:text-left mb-10 md:mb-0">
                         <Motion.h1
-                            className="text-4xl md:text-6xl font-extrabold leading-tight mb-4 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 rounded-lg"
+                            className="text-4xl md:text-6xl font-medium leading-tight mb-4 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 rounded-lg"
                             initial={{ opacity: 0, x: -50 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.8, delay: 0.2 }}
@@ -198,14 +202,14 @@ const App = () => {
                             Roriri Events
                         </Motion.h1>
                         <Motion.p
-                            className="text-lg md:text-xl mb-8 opacity-90 rounded-lg"
+                            className="text-md md:text-lg mb-8 opacity-90 rounded-lg"
                             initial={{ opacity: 0, x: -50 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.8, delay: 0.4 }}
                         >
                             Empowering innovation with hackathons, tech talks, client appreciation events, product launches, webinars, team-building activities, and workshops.
                         </Motion.p>
-                        <Motion.button
+                        <Motion.button onClick={() => navigate('/contact')}
                             className="cursor-pointer bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:from-purple-700 hover:to-indigo-700 transition duration-300 flex items-center justify-center mx-auto md:mx-0"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
@@ -215,15 +219,12 @@ const App = () => {
                         </Motion.button>
                     </div>
                     <div className="md:w-1/2 flex justify-center md:justify-end relative">
-                        <Motion.img
-                            src="https://placehold.co/600x400/6D28D9/FFFFFF?text=Events+Illustration"
-                            alt="Events Illustration"
-                            className="w-full max-w-md md:max-w-lg rounded-xl shadow-2xl"
-                            initial={{ opacity: 0, scale: 0.8, rotate: 10 }}
-                            animate={{ opacity: 1, scale: 1, rotate: 0 }}
-                            transition={{ duration: 0.8, delay: 0.6 }}
-                            onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/600x400/6D28D9/FFFFFF?text=Events+Illustration'; }}
-                        />
+                        <DotLottieReact
+            className=" sm:w-[400px]  sm:h-[400px]  lg:w-[500px] lg:h-[600px]"
+            src={events}
+            loop
+            autoplay
+          />
                     </div>
                 </div>
             </Motion.section>

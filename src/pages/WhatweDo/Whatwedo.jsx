@@ -33,7 +33,7 @@ const servicesData = [
 const Whatwedo = () => {
   const navigate = useNavigate();
   return (
-    <div className="min-h-screen flex xl:flex-row justify-evenly items-center flex-col-reverse gap-5 bg-white text-gray-800 font-inter  py-16 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen italic flex xl:flex-row justify-evenly items-center flex-col-reverse gap-5 bg-white text-gray-800 font-inter  py-16 px-4 sm:px-6 lg:px-8">
 
       <div className=''>
     <DotLottieReact

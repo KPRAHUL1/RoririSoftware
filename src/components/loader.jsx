@@ -60,7 +60,7 @@ const Loader = ({
   if (!isVisible && fadeClass === "opacity-0") return null;
 
   return (
-    <div className={`fixed inset-0 z-50 flex flex-col items-center justify-center bg-gradient-to-br from-slate-50 to-blue-50 transition-opacity duration-500 ${fadeClass}`}>
+    <div className={`fixed italic inset-0 z-50 flex flex-col items-center justify-center bg-gradient-to-br from-slate-50 to-blue-50 transition-opacity duration-500 ${fadeClass}`}>
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
