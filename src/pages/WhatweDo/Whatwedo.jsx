@@ -34,17 +34,7 @@ const Whatwedo = () => {
   const navigate = useNavigate();
   return (
     <div className="min-h-screen italic flex xl:flex-row justify-evenly items-center flex-col-reverse gap-5 bg-white text-gray-800 font-inter  py-16 px-4 sm:px-6 lg:px-8">
-
-      <div className=''>
-    <DotLottieReact
-          className=" w-96 h-96 sm:w-[400px] p-3 sm:h-[400px] md:w-[500px] md:h-[500px] lg:w-[500px] lg:h-[600px]"
-          src={lottie2}
-          loop
-          autoplay
-        />
-      </div>
-
-      <div className="relative max-w-7xl mx-auto">
+      <div className="italic relative max-w-7xl mx-auto">
         <div className="text-center   mb-12">
           <h2 className="text-purple-600 text-lg font-semibold uppercase tracking-wide">
             What we do?
@@ -99,6 +89,14 @@ const Whatwedo = () => {
             </div>
           ))}
         </div>
+      </div> 
+      <div className=''>
+    <DotLottieReact
+          className=" w-96 h-96 sm:w-[400px] p-3 sm:h-[400px] md:w-[500px] md:h-[500px] lg:w-[500px] lg:h-[600px]"
+          src={lottie2}
+          loop
+          autoplay
+        />
       </div>
     </div>
   );

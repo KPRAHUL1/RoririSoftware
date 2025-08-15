@@ -91,7 +91,7 @@ const Contact = () => {
 
             </div>
           </section>
-          <div className=" top-7/12 left-25  flex items-center justify-center  px-4 sm:px-6  font-inter">
+          <div className="italic top-7/12 left-25  flex items-center justify-center  px-4 sm:px-6  font-inter">
             <div className="max-w-7xl mx-auto w-full bg-white rounded-3xl  p-8 sm:p-12 relative overflow-hidden">
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -123,7 +123,7 @@ const Contact = () => {
 
         </div>
         <ContactUsPage />
-        <div className=" bg-white  text-gray-900 font-inter py-8 px-4 sm:px-6  flex flex-col items-center">
+        <div className=" bg-white italic  text-gray-900 font-inter py-8 px-4 sm:px-6  flex flex-col items-center">
           <div className="max-w-4xl mx-auto text-center mb-12">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
               Lost? Don't worry, we're not <br />
