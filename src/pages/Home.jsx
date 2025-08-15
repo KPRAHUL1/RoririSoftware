@@ -12,7 +12,6 @@ import MarketingSection from './MarcetingSection/MarketingSection';
 import { Link, useNavigate } from 'react-router-dom';
 import AboutSection from './About/components/AboutSection';
 import CompanyHighlightsSection from './About/components/CompanyHighlightsSection';
-import Products from './Product/components/ProductDetails/ProductDetails';
 import ProductsList from './Product/components/ProductDetails/ProductList';
 
 const Home = () => {

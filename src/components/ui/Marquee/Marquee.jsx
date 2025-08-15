@@ -17,7 +17,7 @@ const Marquees = () => {
   ];
 
   return (
-    <div className="w-full py-6 ">
+    <div className="w-full italic py-6 ">
       <Marquee pauseOnHover speed={60}>
         {tech.map((item, index) => (
           <div
