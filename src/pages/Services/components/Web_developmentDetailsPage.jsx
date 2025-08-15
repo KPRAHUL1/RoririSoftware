@@ -8,9 +8,16 @@ import { static1 } from '../../../assets/services/service';
 import { dynamic2 } from '../../../assets/services/service';
 import { ec1 } from '../../../assets/services/service';
 import { multi1 } from '../../../assets/services/service';
+import { useNavigate } from 'react-router-dom';
+import ServicesContact from './ServicesContact';
 
 
 const WebDevelopment = () => {
+    const navigate=useNavigate();
+    const gocontact = () =>
+    {
+        navigate("/contact")
+    }
     const sectionVariants = {
         hidden: { opacity: 0, y: 50 },
         visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
@@ -58,14 +65,14 @@ const WebDevelopment = () => {
                         >
                             At Roriri Software Solutions, we redefine the standards of website development. As trendsetters and game changers in the industry, we specialize in crafting innovative and customized websites tailored to meet your business needs. Our approach combines cutting-edge technology, creativity, and strategic thinking to deliver websites that don't just look great but also drive results.
                         </Motion.p>
-                        <Motion.button
-                            className="cursor-pointer bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:from-purple-700 hover:to-indigo-700 transition duration-300 flex items-center justify-center mx-auto md:mx-0"
+                        <Motion.a href="#servicescontact"
+                            className=" w-50 cursor-pointer bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:from-purple-700 hover:to-indigo-700 transition duration-300 flex items-center justify-center mx-auto md:mx-0"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                         >
                             Get In Touch
                             <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path></svg>
-                        </Motion.button>
+                        </Motion.a>
                     </div>
                     <div className="md:w-1/2 flex justify-center md:justify-end relative">
                         <Motion.img
@@ -435,6 +442,7 @@ const WebDevelopment = () => {
                     </div>
                 </div>
             </Motion.section>
+            <ServicesContact/>
 
             
         </div>

@@ -150,7 +150,7 @@ const ERPSolutions = () => {
                             className=" bg-gradient-to-r  from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white py-3 px-8 rounded-full text-lg font-semibold shadow-lg transition-colors duration-300"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            href={'#start'}
+                            href={'#contact'}
                         >
                             Get Start
                             {/* <svg
@@ -475,7 +475,7 @@ const ERPSolutions = () => {
     </div>
   </div>
 </Motion.section>
-            <Motion.section
+            <Motion.section id="contact"
                 className="py-16 md:py-24 bg-gray-50 rounded-lg mx-auto my-12 max-w-screen-xl px-4"
                 initial="hidden"
                 whileInView="visible"
