@@ -2,7 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import FeatureCard from './components/FeatureCard'
 import JobOpeningsSection from './components/JobOpeningsSection';
-import JobApplicationForm from './components/JobApplicationForm';
+import { job } from '../../assets/lottiefiles/lettie';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 const Career = () => {
   return (
     <div className="min-h-screen bg-white flex flex-col items-center justify-center p-4 overflow-hidden">
@@ -13,7 +14,12 @@ const Career = () => {
         transition={{ duration: 0.8 }}
         className=" z-10 flex flex-col md:flex-row gap-5 h-screen items-center"
       >
-         <iframe src="https://lottie.host/embed/61a72e2e-67db-4441-83e7-13ff833a4663/UZaKn8T5Dg.lottie" className='h-full w-full md:h-[400px] md:w-[400px]'></iframe>
+         <DotLottieReact
+          className=" w-96 h-96 sm:w-[400px] p-3 sm:h-[400px] md:w-[500px] md:h-[500px] lg:w-[500px] lg:h-[600px]"
+          src={job}
+          loop
+          autoplay
+        />
       <div className="flex flex-col">
                  <h1 className="text-5xl  md:text-6xl font-medium text-purple-700 mb-4 tracking-tight leading-tight">
           <motion.span
