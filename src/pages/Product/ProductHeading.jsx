@@ -1,5 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { shopping } from '../../assets/lottiefiles/lettie';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 const RoririProductsPage = () => {
   const textContainerVariants = {
@@ -59,8 +61,12 @@ const RoririProductsPage = () => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}
         >
-          <iframe  onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/600x400/cccccc/333333?text=Image+Unavailable"; }} className="w-full md:h-[500px] h-full" src="https://lottie.host/embed/2e757309-7fa3-43fc-b4d3-91cb3a949e03/KNDvImeYpL.lottie"></iframe>
-          
+           <DotLottieReact
+          className=" w-96 h-96 sm:w-[400px] p-3 sm:h-[400px] md:w-[500px] md:h-[500px] lg:w-[500px] lg:h-[600px]"
+          src={shopping}
+          loop
+          autoplay
+        />
         </motion.div>
       </div>
 
