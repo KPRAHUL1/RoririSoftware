@@ -46,21 +46,6 @@ const Contact = () => {
           <section className="italic bg-gradient-to-br  flex items-center justify-center px-6">
             <div className="container mx-auto flex flex-col-reverse md:flex-row items-center gap-8 md:gap-8">
               <motion.div
-                className="flex-1 flex justify-center"
-                initial={{ opacity: 0, x: 50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-              >
-                {/* className="w-[250px] sm:w-[350px] md:w-[450px] h-[250px] sm:h-[350px] md:h-[450px]" */}
-                <DotLottieReact
-                  className="w-[250px] sm:w-[350px] md:w-[450px] h-[250px] sm:h-[350px] md:h-[450px]"
-                  src={maillottie}
-                  loop
-                  autoplay
-                />
-              </motion.div>
-
-              <motion.div
                 className="flex-1 text-center md:text-left mt-10"
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -86,7 +71,20 @@ const Contact = () => {
                   Get in Touch
                 </motion.button>
               </motion.div>
-
+  <motion.div
+                className="flex-1 flex justify-center"
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              >
+                {/* className="w-[250px] sm:w-[350px] md:w-[450px] h-[250px] sm:h-[350px] md:h-[450px]" */}
+                <DotLottieReact
+                  className="w-[250px] sm:w-[350px] md:w-[450px] h-[250px] sm:h-[350px] md:h-[450px]"
+                  src={maillottie}
+                  loop
+                  autoplay
+                />
+              </motion.div>
 
 
             </div>
