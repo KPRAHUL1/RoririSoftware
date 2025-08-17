@@ -229,7 +229,7 @@ const App = () => {
                 </div>
             </Motion.section>
 
-            <Motion.section
+            {/* <Motion.section
                 className="py-16 md:py-24 bg-white rounded-lg shadow-md mx-auto my-12 max-w-screen-xl px-4"
                 initial="hidden"
                 whileInView="visible"
@@ -266,7 +266,7 @@ const App = () => {
                         <p className="text-gray-700 text-lg">No upcoming events at the moment. Please check back later!</p>
                     )}
                 </div>
-            </Motion.section>
+            </Motion.section> */}
 
             <Motion.section
                 className="py-16 md:py-24 bg-gray-100 rounded-lg shadow-md mx-auto my-12 max-w-screen-xl px-4"
