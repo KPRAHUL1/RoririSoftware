@@ -1,6 +1,6 @@
 import { facebook, instagram, linkedin, youtube } from '../../../assets/icons/icon';
 import LogoWeb from '../../../assets/logo/LogoWeb.png';
-import { MailCheck, CircleUserRound, MapPin, Loader2, Send } from "lucide-react";
+import { Loader2, Send } from "lucide-react";
 import { useState } from 'react';
 import { motion as Motion } from 'framer-motion';
 
