@@ -14,7 +14,7 @@ const Internship = () => {
   return (
     <>
   
-    <div className='flex flex-col'>
+    <div className='italic flex flex-col'>
  
       <div className="flex flex-col lg:flex-row items-center justify-center gap-3 px-8  ">
         
