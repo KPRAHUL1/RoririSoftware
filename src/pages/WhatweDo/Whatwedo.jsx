@@ -18,7 +18,7 @@ const servicesData = [
   },
   {
     id: 3,
-    title: 'Website Development',
+    title: 'Web Development',
     path:'web-app-development',
     description: 'Builds custom web applications tailored to your business needs.',
   },
