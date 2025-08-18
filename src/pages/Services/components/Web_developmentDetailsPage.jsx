@@ -8,6 +8,7 @@ import { static1 } from '../../../assets/services/service';
 import { dynamic2 } from '../../../assets/services/service';
 import { ec1 } from '../../../assets/services/service';
 import { multi1 } from '../../../assets/services/service';
+import ServicesContact from './ServicesContact';
 
 
 const WebDevelopment = () => {
@@ -62,6 +63,7 @@ const WebDevelopment = () => {
                             
                         </Motion.p>
                         <Motion.button
+                            onClick={() => window.scrollTo({ top: document.getElementById('servicescontact').offsetTop, behavior: 'smooth' })}
                             className="cursor-pointer bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:from-purple-700 hover:to-indigo-700 transition duration-300 flex items-center justify-center mx-auto md:mx-0"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
@@ -438,7 +440,7 @@ const WebDevelopment = () => {
                     </div>
                 </div>
             </Motion.section>
-
+          <ServicesContact/>
             
         </div>
     );

@@ -54,13 +54,13 @@ const IT_Consulting = () => {
                     >
                         At Roriri Software Solutions, our IT consulting services offer invaluable support in navigating dynamic tech environments. Efficient IT consulting Solutions tailored to your needs.
                     </Motion.p>
-                    <Motion.a href="#servicescontact"
+                    <Motion.button onClick={() => window.scrollTo({ top: document.getElementById('servicescontact').offsetTop, behavior: 'smooth' })}
                         className="cursor-pointer bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-blue-600 transition duration-300"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                     >
                         Book a free consulting
-                    </Motion.a>
+                    </Motion.button>
                 </div>
             </Motion.section>
             <Motion.section
