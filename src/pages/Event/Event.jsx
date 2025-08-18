@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 import { Calendar, MapPin, Users, Clock, ChevronRight, X } from 'lucide-react';
-import { event1, event2, inaguration1 } from '../../assets/events/events';
+import { event1, event2, inaguration1, onam } from '../../assets/events/events';
 import { events } from '../../assets/lottiefiles/lettie';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
@@ -143,35 +143,35 @@ const EventsComponent = () => {
             category: "Workshop Programs",
             title: "UI/UX Design Workshop",
             date: "September 1, 2024",
-            image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&h=600&fit=crop&crop=center"
+            image: event1
         },
         {
             id: 2,
             category: "Workshop Programs",
             title: "Web Development Workshop",
             date: "September 15, 2024",
-            image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=600&fit=crop&crop=center"
+            image: event2
         },
         {
             id: 3,
             category: "Internship Programs",
             title: "IT Blueprint Session",
             date: "October 12, 2024",
-            image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop&crop=center"
+            image: event2
         },
         {
             id: 4,
             category: "Internship Programs",
             title: "Coding Bootcamp",
             date: "November 5, 2024",
-            image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop&crop=center"
+            image: event2
         },
         {
             id: 5,
             category: "Inauguration",
             title: "IT Park Inauguration",
             date: "October 4, 2024",
-            image: "https://images.unsplash.com/photo-1431540015161-0bf868a2d407?w=800&h=600&fit=crop&crop=center"
+            image: inaguration1
         },
         {
             id: 6,
@@ -190,9 +190,9 @@ const EventsComponent = () => {
         {
             id: 8,
             category: "Celebrations",
-            title: "New Year Party",
+            title: "Onam Celebration",
             date: "January 1, 2025",
-            image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&h=600&fit=crop&crop=center"
+            image: onam
         },
         {
             id: 9,
