@@ -19,7 +19,7 @@ const Footer = () => {
 
   const servicesData = [
     { name: 'Mobile app development', href: '/services/mobile-app-development' },
-    { name: 'Website development', href: '/services/web-app-development' },
+    { name: 'Web development', href: '/services/web-app-development' },
     { name: 'All Products & Trials', href: '/products' },
     { name: 'IT consulting', href: '/services/it-consulting' },
   ];
