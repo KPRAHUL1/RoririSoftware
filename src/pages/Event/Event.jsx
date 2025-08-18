@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 import { Calendar, MapPin, Users, Clock, ChevronRight, X } from 'lucide-react';
-import { event1, event2, inaguration1, onam } from '../../assets/events/events';
+import { event1, event2, event3,event4,mas,  inaguration1, onam } from '../../assets/events/events';
 import { events } from '../../assets/lottiefiles/lettie';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
@@ -157,14 +157,14 @@ const EventsComponent = () => {
             category: "Internship Programs",
             title: "IT Blueprint Session",
             date: "October 12, 2024",
-            image: event2
+            image: event3
         },
         {
             id: 4,
             category: "Internship Programs",
             title: "Coding Bootcamp",
             date: "November 5, 2024",
-            image: event2
+            image: event4
         },
         {
             id: 5,
@@ -185,7 +185,7 @@ const EventsComponent = () => {
             category: "Celebrations",
             title: "Christmas Celebration",
             date: "December 25, 2024",
-            image: "https://images.unsplash.com/photo-1512389142860-9c449e58a543?w=800&h=600&fit=crop&crop=center"
+            image:mas
         },
         {
             id: 8,
