@@ -1,24 +1,15 @@
 import React, { useEffect, useRef, useState } from 'react';
-import {motion as Motion, AnimatePresence } from 'framer-motion';
 import * as THREE from 'three';
+import { Calendar, MapPin, Users, Clock, ChevronRight } from 'lucide-react';
+import { event1, event2, inaguration1 } from '../../assets/events/events';
 import { events } from '../../assets/lottiefiles/lettie';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
-import { useNavigate } from 'react-router-dom';
 
-const App = () => {
-    const [activeCategory, setActiveCategory] = useState('All'); 
-    const navigate = useNavigate();
+const EventsComponent = () => {
+    const [activeCategory, setActiveCategory] = useState('All');
+    
 
-    const sectionVariants = {
-        hidden: { opacity: 0, y: 50 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
-    };
-
-    const cardVariants = {
-        hidden: { opacity: 0, scale: 0.9 },
-        visible: { opacity: 1, scale: 1, transition: { duration: 0.5, ease: "easeOut" } }
-    };
-
+    // Three.js Background Component
     const ThreeCanvas = () => {
         const mountRef = useRef(null);
 
@@ -40,18 +31,18 @@ const App = () => {
             window.addEventListener('resize', handleResize);
 
             const particlesGeometry = new THREE.BufferGeometry();
-            const particlesCount = 500;
+            const particlesCount = 300;
             const posArray = new Float32Array(particlesCount * 3);
 
             for (let i = 0; i < particlesCount * 3; i++) {
-                posArray[i] = (Math.random() - 0.5) * 10;
+                posArray[i] = (Math.random() - 0.5) * 8;
             }
 
             particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
 
             const particlesMaterial = new THREE.PointsMaterial({
-                size: 0.02,
-                color: 0x8A2BE2,
+                size: 0.03,
+                color: 0x8B5CF6,
                 transparent: true,
                 blending: THREE.AdditiveBlending,
                 depthWrite: false
@@ -60,12 +51,12 @@ const App = () => {
             const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
             scene.add(particlesMesh);
 
-            camera.position.z = 2;
+            camera.position.z = 3;
 
             const animate = () => {
                 requestAnimationFrame(animate);
-                particlesMesh.rotation.x += 0.0005;
-                particlesMesh.rotation.y += 0.0007;
+                particlesMesh.rotation.x += 0.0008;
+                particlesMesh.rotation.y += 0.0012;
                 renderer.render(scene, camera);
             };
             animate();
@@ -84,348 +75,319 @@ const App = () => {
         return <div ref={mountRef} className="absolute inset-0 z-0 pointer-events-none"></div>;
     };
 
+    // Sample Data
     const upcomingEvents = [
         {
-            title: "Future IT Professionals Workshop",
-            date: "October 19 @ 10:00 AM",
-            location: "Roriri Foundations, Kalakad, Tirunelveli",
-            image: "https://placehold.co/400x250/E0E7FF/312E81?text=Workshop+Image"
+            id: 1,
+            title: "AI & Machine Learning Summit 2025",
+            date: "March 15, 2025",
+            time: "9:00 AM - 6:00 PM",
+            location: "Roriri IT Park, Tirunelveli",
+            description: "Join industry experts for insights into the latest AI trends and technologies.",
+            attendees: 200,
+            image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400&h=300&fit=crop&crop=center"
+        },
+        {
+            id: 2,
+            title: "Web Development Bootcamp",
+            date: "March 28, 2025",
+            time: "10:00 AM - 4:00 PM",
+            location: "Roriri Foundations, Kalakad",
+            description: "Intensive hands-on workshop covering modern web technologies and frameworks.",
+            attendees: 150,
+            image: "https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?w=400&h=300&fit=crop&crop=center"
         }
     ];
 
     const pastEvents = [
         {
-            category: "Onam Celebrations",
-            title: "Onam Celebrations",
-            date: "September 1 @ 10:00 AM",
+            id: 1,
+            category: "Workshop Programs",
+            title: "UI/UX Design Workshop",
+            date: "September 1, 2024",
             location: "Roriri Foundations, Kalakad, Tirunelveli",
-            description: "A vibrant celebration of Onam with traditional activities, cultural performances, and a grand feast.",
-            image: "https://placehold.co/400x250/E0E7FF/312E81?text=Onam+Celebration"
+            description: "A hands-on workshop focused on user interface and user experience design principles.",
+            image: event1
         },
         {
+            id: 2,
             category: "Internship Programs",
             title: "IT BLUE PRINT '24",
-            subtitle: "A Structured Approach to Shaping Future Tech Professionals",
-            details: [
-                "A Non IT to IT",
-                "Job Cracking Strategy",
-                "Mock Interviews",
-                "KT Session"
-            ],
-            hiring: "Hiring Process for Few Jobs",
-            contact: "contact@roririfoundation.com | +91 87783 28630",
-            date: "October 10 AM - 01 PM",
-            day: "Saturday",
-            recommended: "Recommended",
-            audience: ["Non IT Students & Professionals", "Mech Students", "Civil Students"],
-            qrCode: "https://placehold.co/150x150/E0E7FF/312E81?text=QR+Code",
-            qrLocation: "RORIRI IT PARK, Tirunelveli-627002",
-            image: "https://placehold.co/400x250/E0E7FF/312E81?text=IT+Blueprint"
+            date: "October 12, 2024",
+            location: "RORIRI IT PARK, Tirunelveli",
+            description: "A structured approach to shaping future tech professionals with job cracking strategies.",
+            image: event2
         },
         {
+            id: 3,
             category: "Inauguration",
             title: "Inauguration Event",
-            speaker: "MR. SANTHINESH",
-            speakerTitle: "EX- TESLA PROFESSIONAL",
-            image: "https://placehold.co/400x250/E0E7FF/312E81?text=Inauguration+Image",
-            eventDetails: "The official opening of our new Roriri IT Park, marked by inspiring speeches and networking opportunities.",
-            eventDate: "October 4 @ 9:00 AM",
-            eventLocation: "Roriri Foundations, Kalakad, Tirunelveli"
+            date: "October 4, 2024",
+            location: "Roriri Foundations, Kalakad, Tirunelveli",
+            description: "Official opening of our new Roriri IT Park with inspiring speeches and networking.",
+            image: inaguration1
         },
         {
-            category: "X-Mas",
+            id: 4,
+            category: "Celebrations",
             title: "Christmas Celebration 2024",
-            subtitle: "Festive Joy and Community Gathering",
-            speaker: "Mrs. JERINA BUBBY",
-            speakerTitle: "Post-Director at MEME Pro (Tirunelveli)",
-            specialGuest: "Mr. K. Selva, Engineer (Kanyakumari)",
-            motivationalSpeaker: "Mr. JC SELVARAJ, Motivational Speaker",
-            welcomeMessage: "Welcome All School & College Students",
-            careerCounseling: "Career Counseling for Students: Guidance on career paths, providing insights and strategies for making informed decisions.",
-            eventDate: "December 25 @ 10:00 AM",
-            eventLocation: "Roriri Foundations, Kalakad, Tirunelveli",
-            image: "https://placehold.co/400x250/E0E7FF/312E81?text=X-Mas+Event"
+            date: "December 25, 2024",
+            location: "Roriri Foundations, Kalakad, Tirunelveli",
+            description: "Festive joy and community gathering with career counseling for students.",
+            image: "https://images.unsplash.com/photo-1512389142860-9c449e58a543?w=400&h=300&fit=crop&crop=center"
         },
         {
-            category: "Internship Programs",
+            id: 5,
+            category: "Career Programs",
             title: "JOBATHON",
-            speaker: "MR. SANTHINESH",
-            speakerTitle: "EX- TESLA PROFESSIONAL",
-            image: "https://placehold.co/400x250/E0E7FF/312E81?text=Jobathon+Image",
-            eventDetails: "Jobathon for Students: Connects students with recruiters, offering mock interviews and networking sessions to enhance job readiness.",
-            eventDate: "October 4 @ 9:00 AM",
-            eventLocation: "Roriri Foundations, Kalakad, Tirunelveli"
+            date: "October 4, 2024",
+            location: "Roriri Foundations, Kalakad, Tirunelveli",
+            description: "Connecting students with recruiters through mock interviews and networking sessions.",
+            image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop&crop=center"
         },
         {
-            category: "Internship Programs",
-            title: "CAREER GUIDANCE - 2024",
-            subtitle: "THE CAREER GUIDANCE PROGRAM",
-            speaker: "Mrs. JERINA BUBBY",
-            speakerTitle: "Post-Director at MEME Pro (Tirunelveli)",
-            specialGuest: "Mr. K. Selva, Engineer (Kanyakumari)",
-            motivationalSpeaker: "Mr. JC SELVARAJ, Motivational Speaker",
-            welcomeMessage: "Welcome All School & College Students",
-            careerCounseling: "Career Counseling for Students: Guidance on career paths, providing insights and strategies for making informed decisions.",
-            eventDate: "September 28 @ 10:00 AM",
-            eventLocation: "Roriri Foundations, Kalakad, Tirunelveli",
-            image: "https://placehold.co/400x250/E0E7FF/312E81?text=Career+Guidance"
+            id: 6,
+            category: "Career Programs",
+            title: "Career Guidance 2024",
+            date: "September 28, 2024",
+            location: "Roriri Foundations, Kalakad, Tirunelveli",
+            description: "Comprehensive career counseling program providing guidance on career paths.",
+            image: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=400&h=300&fit=crop&crop=center"
         }
     ];
 
-    const eventCategories = [
-        "All", 
-        ...new Set(pastEvents.map(event => event.category)) 
-    ];
-
+    const eventCategories = ["All", ...new Set(pastEvents.map(event => event.category))];
     const filteredEvents = activeCategory === 'All' ? pastEvents : pastEvents.filter(event => event.category === activeCategory);
 
     return (
-        <div className="font-inter antialiased bg-gray-50">
-          
-
-            <Motion.section
-                className="relative bg-gray-900 text-white mt-5 md:mt-0  overflow-hidden rounded-b-lg shadow-lg"
-                initial="hidden"
-                animate="visible"
-                variants={sectionVariants}
-            >
+        <div className="min-h-screen bg-gray-50">
+            {/* Hero Section */}
+            <section className="relative bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-hidden">
                 <ThreeCanvas />
-
-                <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between max-w-screen-xl relative z-10">
-                    <div className="md:w-1/2 text-center md:text-left mb-10 md:mb-0">
-                        <Motion.h1
-                            className="text-4xl md:text-6xl font-medium leading-tight mb-4 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 rounded-lg"
-                            initial={{ opacity: 0, x: -50 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.8, delay: 0.2 }}
-                        >
+                <div className="relative flex flex-col lg:flex-row  justify-center items-center z-10 container mx-auto px-4 sm:px-6 lg:px-8 mt-20 lg:mt-5">
+                    <div className="max-w-4xl mx-auto ">
+                        <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-purple-400 via-pink-400 to-indigo-400 bg-clip-text text-transparent">
                             Roriri Events
-                        </Motion.h1>
-                        <Motion.p
-                            className="text-md md:text-lg mb-8 opacity-90 rounded-lg"
-                            initial={{ opacity: 0, x: -50 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.8, delay: 0.4 }}
-                        >
-                            Empowering innovation with hackathons, tech talks, client appreciation events, product launches, webinars, team-building activities, and workshops.
-                        </Motion.p>
-                        <Motion.button onClick={() => navigate('/contact')}
-                            className="cursor-pointer bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:from-purple-700 hover:to-indigo-700 transition duration-300 flex items-center justify-center mx-auto md:mx-0"
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                        >
-                            Get In Touch
-                            <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path></svg>
-                        </Motion.button>
+                        </h1>
+                        <p className="text-lg sm:text-xl lg:text-2xl mb-12 text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                            Empowering innovation through hackathons, tech talks, workshops, and networking events that shape the future of technology.
+                        </p>
+                        <div className="flex flex-col sm:flex-row gap-4  items-center">
+                            <button 
+                            onClick={() => window.location.href='/contact'}
+                            className="group bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-semibold py-4 px-8 rounded-full shadow-xl transition-all duration-300 transform hover:scale-105 flex items-center">
+                                Get In Touch
+                                <ChevronRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                            </button>
+                            <button 
+                            onClick={() => window.location.href='#event-gallery'}
+                            className="group border-2 border-white/30 hover:border-white/60 text-white font-semibold py-4 px-8 rounded-full backdrop-blur-sm transition-all duration-300 hover:bg-white/10">
+                                View Gallery
+                            </button>
+                        </div>
                     </div>
-                    <div className="md:w-1/2 flex justify-center md:justify-end relative">
-                        <DotLottieReact
-            className=" sm:w-[400px]  sm:h-[400px]  lg:w-[500px] lg:h-[600px]"
-            src={events}
-            loop
-            autoplay
-          />
-                    </div>
+                    <DotLottieReact
+          className=" w-96 h-96 sm:w-[400px] p-3 sm:h-[400px] md:w-[500px] md:h-[500px] lg:w-[500px] lg:h-[600px]"
+          src={events}
+          loop
+          autoplay
+        />
                 </div>
-            </Motion.section>
+                <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-gray-50 to-transparent"></div>
+            </section>
 
-            {/* <Motion.section
-                className="py-16 md:py-24 bg-white rounded-lg shadow-md mx-auto my-12 max-w-screen-xl px-4"
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.3 }}
-                variants={sectionVariants}
-            >
-                <div className="container mx-auto text-center">
-                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 leading-tight rounded-lg text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">Upcoming Events</h2>
+            {/* Upcoming Events Section */}
+            <section className="py-16 lg:py-24 bg-white">
+                <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="text-center mb-16">
+                        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+                            Upcoming Events
+                        </h2>
+                        <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                            Join us for exciting upcoming events and workshops
+                        </p>
+                    </div>
 
                     {upcomingEvents.length > 0 ? (
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                            {upcomingEvents.map((event, index) => (
-                                <Motion.div
-                                    key={index}
-                                    className="bg-gray-100 p-6 rounded-xl shadow-lg text-left border border-gray-200"
-                                    variants={cardVariants}
-                                    initial="hidden"
-                                    whileInView="visible"
-                                    viewport={{ once: true, amount: 0.2 }}
-                                    transition={{ delay: index * 0.1 }}
-                                >
-                                    <img src={event.image} alt={event.title} className="w-full h-48 object-cover rounded-lg mb-4" onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/400x250/E0E7FF/312E81?text=Event+Image'; }} />
-                                    <h3 className="text-xl font-semibold text-gray-900 mb-2 rounded-lg">{event.title}</h3>
-                                    <p className="text-gray-700 mb-1 rounded-lg">
-                                        <span className="font-medium">Date:</span> {event.date}
-                                    </p>
-                                    <p className="text-gray-700 rounded-lg">
-                                        <span className="font-medium">Location:</span> {event.location}
-                                    </p>
-                                </Motion.div>
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                            {upcomingEvents.map((event) => (
+                                <div key={event.id} className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100 hover:border-purple-200">
+                                    <div className="relative h-64 overflow-hidden">
+                                        <img 
+                                            src={event.image} 
+                                            alt={event.title}
+                                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                            onError={(e) => {
+                                                e.target.src = `https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=400&h=300&fit=crop&crop=center`;
+                                            }}
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                                    </div>
+                                    <div className="p-8">
+                                        <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-purple-600 transition-colors">
+                                            {event.title}
+                                        </h3>
+                                        <p className="text-gray-600 mb-6 leading-relaxed">
+                                            {event.description}
+                                        </p>
+                                        <div className="space-y-3 mb-6">
+                                            <div className="flex items-center text-gray-700">
+                                                <Calendar className="w-5 h-5 text-purple-600 mr-3" />
+                                                <span className="font-medium">{event.date}</span>
+                                            </div>
+                                            <div className="flex items-center text-gray-700">
+                                                <Clock className="w-5 h-5 text-purple-600 mr-3" />
+                                                <span>{event.time}</span>
+                                            </div>
+                                            <div className="flex items-center text-gray-700">
+                                                <MapPin className="w-5 h-5 text-purple-600 mr-3" />
+                                                <span>{event.location}</span>
+                                            </div>
+                                            <div className="flex items-center text-gray-700">
+                                                <Users className="w-5 h-5 text-purple-600 mr-3" />
+                                                <span>{event.attendees} Expected Attendees</span>
+                                            </div>
+                                        </div>
+                                        <button className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-[1.02] shadow-lg">
+                                            Register Now
+                                        </button>
+                                    </div>
+                                </div>
                             ))}
                         </div>
                     ) : (
-                        <p className="text-gray-700 text-lg">No upcoming events at the moment. Please check back later!</p>
+                        <div className="text-center py-16">
+                            <div className="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                                <Calendar className="w-12 h-12 text-gray-400" />
+                            </div>
+                            <p className="text-xl text-gray-600">No upcoming events at the moment.</p>
+                            <p className="text-gray-500 mt-2">Check back soon for exciting new events!</p>
+                        </div>
                     )}
                 </div>
-            </Motion.section> */}
+            </section>
 
-            <Motion.section
-                className="py-16 md:py-24 bg-gray-100 rounded-lg shadow-md mx-auto my-12 max-w-screen-xl px-4"
-                viewport={{ once: true, amount: 0.3 }}
-                variants={sectionVariants}
-            >
-                <div className="container mx-auto text-center">
-                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 leading-tight rounded-lg text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">Past Events</h2>
-
-                    <div className="flex flex-wrap justify-center gap-4 mb-12">
-                        {eventCategories.map((category) => (
-                            <Motion.button
-                                key={category}
-                                className={`py-2 px-6 rounded-full font-semibold transition duration-300 ${
-                                    activeCategory === category
-                                        ? 'bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-md'
-                                        : 'bg-white text-gray-700 border border-gray-300 hover:bg-gray-100'
-                                }`}
-                                onClick={() => setActiveCategory(category)}
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                            >
-                                {category}
-                            </Motion.button>
-                        ))}
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        <AnimatePresence mode="wait">
-                            {filteredEvents.length > 0 ? (
-                                filteredEvents.map((event, index) => (
-                                    <Motion.div
-                                        key={event.title} 
-                                        initial={{ opacity: 0, y: 20 }}
-                                        animate={{ opacity: 1, y: 0 }}
-                                        exit={{ opacity: 0, y: -20 }}
-                                        transition={{ duration: 0.3, delay: index * 0.05 }}
-                                        className="bg-white p-6 rounded-xl shadow-lg text-left border border-gray-200"
-                                    >
-                                        <img src={event.image} alt={event.title} className="w-full h-48 object-cover rounded-lg mb-4" onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/400x250/E0E7FF/312E81?text=Event+Image'; }} />
-                                        <h3 className="text-xl font-semibold text-gray-900 mb-2 rounded-lg">{event.title}</h3>
-                                        {event.subtitle && <p className="text-sm text-gray-600 mb-2 rounded-lg">{event.subtitle}</p>}
-                                        {event.description && <p className="text-gray-700 mb-2 rounded-lg">{event.description}</p>}
-                                        {event.details && (
-                                            <ul className="list-disc list-inside text-gray-700 mb-2 rounded-lg">
-                                                {event.details.map((detail, i) => (
-                                                    <li key={i}>{detail}</li>
-                                                ))}
-                                            </ul>
-                                        )}
-                                        {event.hiring && <p className="text-lg font-bold text-blue-600 mb-2 rounded-lg">{event.hiring}</p>}
-                                        {event.contact && <p className="text-gray-700 text-sm mb-2 rounded-lg">{event.contact}</p>}
-                                        {event.speaker && <p className="text-gray-800 font-medium mb-1 rounded-lg">Speaker: {event.speaker}</p>}
-                                        {event.speakerTitle && <p className="text-gray-600 text-sm mb-2 rounded-lg">{event.speakerTitle}</p>}
-                                        {event.specialGuest && <p className="text-gray-800 font-medium mb-1 rounded-lg">Special Guest: {event.specialGuest}</p>}
-                                        {event.motivationalSpeaker && <p className="text-gray-800 font-medium mb-1 rounded-lg">Motivational Speaker: {event.motivationalSpeaker}</p>}
-                                        {event.welcomeMessage && <p className="text-gray-700 italic mb-2 rounded-lg">{event.welcomeMessage}</p>}
-                                        {event.careerCounseling && <p className="text-gray-700 mb-2 rounded-lg">{event.careerCounseling}</p>}
-                                        {event.eventDetails && <p className="text-gray-700 mb-2 rounded-lg">{event.eventDetails}</p>}
-                                        {event.date && <p className="text-gray-700 mb-1 rounded-lg"><span className="font-medium">Date:</span> {event.date}</p>}
-                                        {event.day && <p className="text-gray-700 mb-1 rounded-lg"><span className="font-medium">Day:</span> {event.day}</p>}
-                                        {event.location && <p className="text-gray-700 rounded-lg"><span className="font-medium">Location:</span> {event.location}</p>}
-                                        {event.eventDate && <p className="text-gray-700 mb-1 rounded-lg"><span className="font-medium">Date:</span> {event.eventDate}</p>}
-                                        {event.eventLocation && <p className="text-gray-700 rounded-lg"><span className="font-medium">Location:</span> {event.eventLocation}</p>}
-                                        {event.recommended && <p className="text-green-600 font-bold mt-2 rounded-lg">{event.recommended}</p>}
-                                        {event.audience && (
-                                            <div className="mt-2 rounded-lg">
-                                                <p className="font-medium text-gray-800">Audience:</p>
-                                                <ul className="list-disc list-inside text-gray-700">
-                                                    {event.audience.map((aud, i) => <li key={i}>{aud}</li>)}
-                                                </ul>
-                                            </div>
-                                        )}
-                                        {event.qrCode && <img src={event.qrCode} alt="QR Code" className="w-24 h-24 mx-auto mt-4 rounded-lg" onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/150x150/E0E7FF/312E81?text=QR+Code'; }} />}
-                                        {event.qrLocation && <p className="text-gray-700 text-sm mt-2 rounded-lg">{event.qrLocation}</p>}
-                                    </Motion.div>
-                                ))
-                            ) : (
-                                <Motion.p
-                                    key="no-events"
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
-                                    exit={{ opacity: 0 }}
-                                    className="text-gray-700 text-lg col-span-full mt-4"
-                                >
-                                    No events found for this category.
-                                </Motion.p>
-                            )}
-                        </AnimatePresence>
-                    </div>
-                </div>
-            </Motion.section>
-
-            <Motion.section
-                className="py-16 md:py-24 bg-white rounded-lg shadow-md mx-auto my-12 max-w-screen-xl px-4"
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.3 }}
-                variants={sectionVariants}
-            >
-                <div className="container mx-auto text-center">
-                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 leading-tight rounded-lg">Event Gallery</h2>
-
-                    <div className="flex flex-wrap justify-center gap-4 mb-12">
-                        {eventCategories.slice(1).map((category) => ( 
-                            <Motion.button
-                                key={category}
-                                className={`py-2 px-6 rounded-full font-semibold transition duration-300 ${
-                                    activeCategory === category
-                                        ? 'bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-md'
-                                        : 'bg-white text-gray-700 border border-gray-300 hover:bg-gray-100'
-                                }`}
-                                onClick={() => setActiveCategory(category)}
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                            >
-                                {category}
-                            </Motion.button>
-                        ))}
+            {/* Past Events Section */}
+            <section className="py-16 lg:py-24 bg-gray-100">
+                <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="text-center mb-16">
+                        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+                            Past Events
+                        </h2>
+                        <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                            Explore our successful events and community gatherings
+                        </p>
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                        
-                        <AnimatePresence mode="wait">
-                            {filteredEvents.length > 0 ? (
-                                filteredEvents.map((event, index) => (
-                                    <Motion.div
-                                        key={event.title}
-                                        className="bg-gray-100 p-4 rounded-xl shadow-lg overflow-hidden"
-                                        initial={{ opacity: 0, y: 20 }}
-                                        animate={{ opacity: 1, y: 0 }}
-                                        exit={{ opacity: 0, y: -20 }}
-                                        transition={{ duration: 0.3, delay: index * 0.05 }}
-                                    >
-                                        <img
-                                            src={event.image}
-                                            alt={event.title}
-                                            className="w-full h-64 object-cover rounded-lg transform hover:scale-105 transition duration-300"
-                                            onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/400x300/E0E7FF/312E81?text=Event+Photo'; }}
-                                        />
-                                    </Motion.div>
-                                ))
-                            ) : (
-                                <Motion.p
-                                    key="no-gallery-images"
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
-                                    exit={{ opacity: 0 }}
-                                    className="text-gray-700 text-lg col-span-full mt-4"
-                                >
-                                    No gallery images found for this category.
-                                </Motion.p>
-                            )}
-                        </AnimatePresence>
+                        {pastEvents.map((event) => (
+                            <div key={event.id} className="group bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-200 hover:border-purple-300">
+                                <div className="relative h-80 overflow-hidden">
+                                    <img 
+                                        src={event.image} 
+                                        alt={event.title}
+                                        className="w-full h-full  group-hover:scale-110 transition-transform duration-500"
+                                        onError={(e) => {
+                                            e.target.src = `https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=400&h=300&fit=crop&crop=center`;
+                                        }}
+                                    />
+                                    <div className="absolute top-4 left-4">
+                                        <span className="bg-purple-600 text-white text-xs font-semibold px-3 py-1 rounded-full">
+                                            {event.category}
+                                        </span>
+                                    </div>
+                                </div>
+                                <div className="p-6">
+                                    <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-purple-600 transition-colors line-clamp-2">
+                                        {event.title}
+                                    </h3>
+                                    <p className="text-gray-600 text-sm mb-4 line-clamp-2">
+                                        {event.description}
+                                    </p>
+                                    <div className="space-y-2 text-sm text-gray-500">
+                                        <div className="flex items-center">
+                                            <Calendar className="w-4 h-4 mr-2 text-purple-500" />
+                                            <span>{event.date}</span>
+                                        </div>
+                                        <div className="flex items-center">
+                                            <MapPin className="w-4 h-4 mr-2 text-purple-500" />
+                                            <span className="truncate">{event.location}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
                     </div>
                 </div>
-            </Motion.section>
+            </section>
+
+            {/* Event Gallery Section */}
+            <section className="py-16 lg:py-24 bg-white" id='event-gallery'>
+                <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="text-center mb-16">
+                        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+                            Event Gallery
+                        </h2>
+                        <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                            Relive the moments from our amazing events
+                        </p>
+                    </div>
+
+                    {/* Category Filter */}
+                    <div className="flex flex-wrap justify-center gap-3 mb-12">
+                        {eventCategories.slice(1).map((category) => (
+                            <button
+                                key={category}
+                                onClick={() => setActiveCategory(category)}
+                                className={`px-6 py-3 rounded-full font-semibold text-sm transition-all duration-300 ${
+                                    activeCategory === category
+                                        ? 'bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-lg'
+                                        : 'bg-white text-gray-700 border-2 border-gray-300 hover:border-purple-300 hover:text-purple-600'
+                                }`}
+                            >
+                                {category}
+                            </button>
+                        ))}
+                    </div>
+
+                    {/* Gallery Grid */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                        {filteredEvents.map((event) => (
+                            <div 
+                                key={event.id} 
+                                className="group relative aspect-square overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+                            >
+                                <img
+                                    src={event.image}
+                                    alt={event.title}
+                                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                    onError={(e) => {
+                                        e.target.src = `https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=400&h=400&fit=crop&crop=center`;
+                                    }}
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <div className="absolute bottom-4 left-4 right-4">
+                                        <h3 className="text-white font-semibold text-lg mb-1 truncate">
+                                            {event.title}
+                                        </h3>
+                                        <p className="text-white/80 text-sm">
+                                            {event.date}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+
+                    {filteredEvents.length === 0 && (
+                        <div className="text-center py-16">
+                            <p className="text-xl text-gray-600">No gallery images found for this category.</p>
+                        </div>
+                    )}
+                </div>
+            </section>
         </div>
     );
 };
 
-export default App;
+export default EventsComponent;
