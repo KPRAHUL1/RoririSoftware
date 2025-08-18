@@ -12,6 +12,11 @@ import ServicesContact from './ServicesContact';
 
 
 const WebDevelopment = () => {
+    const navigate=useNavigate();
+    const gocontact = () =>
+    {
+        navigate("/contact")
+    }
     const sectionVariants = {
         hidden: { opacity: 0, y: 50 },
         visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
