@@ -38,7 +38,7 @@ const Navbar = () => {
       path: "/about",
       submenu: [
         { title: "Products", path: "/products" },
-        // { title: "Events", path: "/events" },
+        { title: "Events", path: "/events" },
       ],
     },
     {

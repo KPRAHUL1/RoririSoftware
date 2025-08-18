@@ -61,14 +61,7 @@ const ProductDetails = () => {
                 <span className="text-sm font-medium text-purple-600 bg-purple-100 px-3 py-1 rounded-full">
                   {product.category}
                 </span>
-                <div className="flex items-center space-x-2">
-                  <button className="p-2 rounded-full border border-gray-300 hover:bg-gray-50 transition-colors">
-                    <Heart className="h-5 w-5 text-gray-600" />
-                  </button>
-                  <button className="p-2 rounded-full border border-gray-300 hover:bg-gray-50 transition-colors">
-                    <Share2 className="h-5 w-5 text-gray-600" />
-                  </button>
-                </div>
+               
               </div>
               <h1 className="text-4xl font-bold text-indigo-700 mb-3">{product.name}</h1>
               <p className="text-xl text-purple-600 font-semibold mb-4">{product.tagline}</p>
