@@ -45,7 +45,7 @@ const Product = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 font-inter text-gray-900">
+    <div className="min-h-screen italic bg-gray-50 font-inter text-gray-900">
       <RoririProductsPage/>
       
       <header className="py-16 bg-gradient-to-r from-purple-700 to-indigo-800 text-white text-center rounded-b-3xl shadow-lg">
@@ -54,7 +54,7 @@ const Product = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-5xl md:text-6xl font-extrabold mb-4 leading-tight"
+            className="text-5xl md:text-6xl font-medium mb-4 leading-tight"
           >
             Our Products
           </Motion.h1>

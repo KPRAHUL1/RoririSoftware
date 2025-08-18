@@ -31,7 +31,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="  pt-10 pb-6 px-4 font-sans">
+    <footer className="italic pt-10 pb-6 px-4 font-sans">
       <div className="max-w-7xl mx-auto">
        
         <div className="flex flex-col md:flex-row justify-between items-center pb-8 border-b border-gray-700 mb-8 gap-4">

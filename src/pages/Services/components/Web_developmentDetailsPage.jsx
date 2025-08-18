@@ -8,7 +8,6 @@ import { static1 } from '../../../assets/services/service';
 import { dynamic2 } from '../../../assets/services/service';
 import { ec1 } from '../../../assets/services/service';
 import { multi1 } from '../../../assets/services/service';
-import { useNavigate } from 'react-router-dom';
 import ServicesContact from './ServicesContact';
 
 
@@ -50,7 +49,7 @@ const WebDevelopment = () => {
                 <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between max-w-screen-xl relative z-10">
                     <div className="md:w-1/2 text-center md:text-left mb-10 md:mb-0">
                         <Motion.h1
-                            className="text-4xl md:text-6xl font-extrabold leading-tight mb-4 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 rounded-lg"
+                            className="text-4xl md:text-6xl font-medium leading-tight mb-4 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 rounded-lg"
                             initial={{ opacity: 0, x: -50 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.8, delay: 0.2 }}
@@ -58,21 +57,25 @@ const WebDevelopment = () => {
                             Web Applications
                         </Motion.h1>
                         <Motion.p
-                            className="text-lg md:text-xl mb-8 opacity-90 rounded-lg"
+                            className="text-md md:text-lg mb-8 opacity-90 rounded-lg"
                             initial={{ opacity: 0, x: -50 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.8, delay: 0.4 }}
                         >
-                            At Roriri Software Solutions, we redefine the standards of website development. As trendsetters and game changers in the industry, we specialize in crafting innovative and customized websites tailored to meet your business needs. Our approach combines cutting-edge technology, creativity, and strategic thinking to deliver websites that don't just look great but also drive results.
+                            At Roriri Software Solutions, we redefine the standards of website development. 
+                            As trendsetters and game changers in the industry, we specialize in crafting innovative and 
+                            customized websites tailored to meet your business needs.
+                            
                         </Motion.p>
-                        <Motion.a href="#servicescontact"
-                            className=" w-50 cursor-pointer bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:from-purple-700 hover:to-indigo-700 transition duration-300 flex items-center justify-center mx-auto md:mx-0"
+                        <Motion.button
+                            onClick={() => window.scrollTo({ top: document.getElementById('servicescontact').offsetTop, behavior: 'smooth' })}
+                            className="cursor-pointer bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:from-purple-700 hover:to-indigo-700 transition duration-300 flex items-center justify-center mx-auto md:mx-0"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                         >
                             Get In Touch
                             <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path></svg>
-                        </Motion.a>
+                        </Motion.button>
                     </div>
                     <div className="md:w-1/2 flex justify-center md:justify-end relative">
                         <Motion.img
@@ -442,8 +445,7 @@ const WebDevelopment = () => {
                     </div>
                 </div>
             </Motion.section>
-            <ServicesContact/>
-
+          <ServicesContact/>
             
         </div>
     );

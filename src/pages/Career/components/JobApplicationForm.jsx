@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useRef} from 'react';
-import emailjs from "@emailjs/browser";
 import { MailCheck, CircleUserRound, MapPin, Loader2, Send } from "lucide-react";
 
 
@@ -180,7 +178,7 @@ const JobApplicationForm = ({ isOpen, onClose, jobTitle = '', allJobTitles = [] 
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          className="fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center p-4 z-50 overflow-y-auto"
+          className="fixed italic  inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center p-4 z-50 overflow-y-auto"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}

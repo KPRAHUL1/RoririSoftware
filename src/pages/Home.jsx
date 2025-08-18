@@ -12,7 +12,6 @@ import MarketingSection from './MarcetingSection/MarketingSection';
 import { Link, useNavigate } from 'react-router-dom';
 import AboutSection from './About/components/AboutSection';
 import CompanyHighlightsSection from './About/components/CompanyHighlightsSection';
-import Products from './Product/components/ProductDetails/ProductDetails';
 import ProductsList from './Product/components/ProductDetails/ProductList';
 
 const Home = () => {
@@ -35,7 +34,7 @@ const Home = () => {
       
       
     </div>
-    <div className='flex flex-col-reverse md:flex-row justify-evenly gap-10 bg-gray-50'>  
+    <div className='flex flex-col-reverse italic md:flex-row justify-evenly gap-10 bg-gray-50'>  
       
       <div className="relative hidden lg:block  left-0 w-[300px] h-[300px] sm:w-[250px] sm:h-[250px] md:w-[600px] md:h-[600px] flex items-center justify-center">
         <img
@@ -59,8 +58,8 @@ const Home = () => {
         />
       </div>
       <div className='flex flex-col  justify-center p-5 z-10'>
-       <h1 className='text-6xl '>Innovation at the Core of</h1>
-       <TextType className='text-[#f8acff] z-50'
+       <h1 className='text-6xl italic'>Innovation at the Core of</h1>
+       <TextType className='text-[#f8acff] z-50 italic'
   text={["Every Solution.", "Evaluate Your Business.", "Paving A Way To Success."]}
   typingSpeed={75}
   pauseDuration={1500}
@@ -71,7 +70,7 @@ const Home = () => {
   <SplitText
   text="Partner with us to enhance your business through our diverse services and discover the transformative power of our
    innovative products and trial solutions."
-  className="text-lg text-gray-500 font-semibold md:mr-28"
+  className="text-lg text-gray-500 font-semibold md:mr-28 italic"
   delay={50}
   duration={0.3}
   ease="power3.out"

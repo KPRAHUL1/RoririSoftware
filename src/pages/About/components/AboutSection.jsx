@@ -69,7 +69,7 @@ const cardVariants = {
 
 const AboutSection = () => {
   return (
-    <div className='min-h-screen flex flex-col justify-center items-center py-16 px-4 bg-gray-50'> {/* Changed background to slightly off-white */}
+    <div className='min-h-screen italic flex flex-col justify-center items-center py-16 px-4 bg-gray-50'> {/* Changed background to slightly off-white */}
       <div className='flex flex-col md:flex-row w-full max-w-7xl items-center md:items-start space-y-12 md:space-y-0 md:space-x-12'> {/* Increased max-w and space-x */}
         
         <Motion.div

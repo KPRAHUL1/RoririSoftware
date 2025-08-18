@@ -3,7 +3,7 @@ import { motion as Motion} from 'framer-motion';
 import founder from "../../assets/founderimage/founder.png"
 const FounderSection = () => {
   return (
-    <section className="py-16 md:py-24 bg-roriri-dark px-4">
+    <section className="italic py-16 md:py-24 bg-roriri-dark px-4">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center md:justify-between gap-12">
         <Motion.div
           initial={{ x: -100, opacity: 0 }}

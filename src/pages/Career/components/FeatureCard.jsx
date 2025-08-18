@@ -94,7 +94,7 @@ const FeaturesSection = () => {
   };
 
   return (
-    <div className="bg-white py-16 px-4">
+    <div className="bg-white py-16 px-4 italic ">
       <div className="container mx-auto">
         <motion.h2
           className="text-3xl md:text-4xl font-medium text-gray-800 mb-12 text-center md:text-left"

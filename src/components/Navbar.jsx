@@ -38,7 +38,7 @@ const Navbar = () => {
       path: "/about",
       submenu: [
         { title: "Products", path: "/products" },
-        // { title: "Events", path: "/events" },
+        { title: "Events", path: "/events" },
       ],
     },
     {
@@ -86,7 +86,7 @@ const Navbar = () => {
   return (
     <Motion.nav
       className={`
-        fixed top-0 left-0 w-full z-50 bg-white shadow-lg backdrop-blur-md bg-opacity-90 px-4 py-3 md:px-6 md:py-4 flex justify-between items-center rounded-b-lg
+        fixed top-0 left-0 italic w-full z-50 bg-white shadow-lg backdrop-blur-md bg-opacity-90 px-4 py-3 md:px-6 md:py-4 flex justify-between items-center rounded-b-lg
         transition-transform duration-300 ease-in-out
         ${showNavbar ? 'translate-y-0' : '-translate-y-full'}
       `}

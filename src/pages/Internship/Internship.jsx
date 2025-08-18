@@ -14,18 +14,10 @@ const Internship = () => {
   return (
     <>
   
-    <div className='flex flex-col'>
+    <div className='italic flex flex-col'>
  
       <div className="flex flex-col lg:flex-row items-center justify-center gap-3 px-8  ">
-        <div className="flex items-center ">
-          <DotLottieReact
-            className=" sm:w-[400px]  sm:h-[400px]  lg:w-[500px] lg:h-[600px]"
-            src={contactlottie}
-            loop
-            autoplay
-          />
-        </div>
-
+        
 
       <div className=" flex flex-col justify-center text-center px-3 lg:text-left">
         <h1 className="text-3xl sm:text-4xl lg:text-6xl font-medium text-gray-900 leading-tight mb-4">
@@ -46,7 +38,15 @@ const Internship = () => {
           </a>
         </div>
       </div>
-         
+         <div className="flex items-center ">
+          <DotLottieReact
+            className=" sm:w-[400px]  sm:h-[400px]  lg:w-[500px] lg:h-[600px]"
+            src={contactlottie}
+            loop
+            autoplay
+          />
+        </div>
+
     </div> 
     <section className=" py-8 px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row gap-5 items-center justify-center">
      

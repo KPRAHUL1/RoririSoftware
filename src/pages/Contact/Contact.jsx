@@ -43,23 +43,8 @@ const Contact = () => {
     <>
       <div id="contactpage">
         <div>
-          <section className="bg-gradient-to-br  flex items-center justify-center px-6">
+          <section className="italic bg-gradient-to-br  flex items-center justify-center px-6">
             <div className="container mx-auto flex flex-col-reverse md:flex-row items-center gap-8 md:gap-8">
-              <motion.div
-                className="flex-1 flex justify-center"
-                initial={{ opacity: 0, x: 50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-              >
-                {/* className="w-[250px] sm:w-[350px] md:w-[450px] h-[250px] sm:h-[350px] md:h-[450px]" */}
-                <DotLottieReact
-                  className="w-[250px] sm:w-[350px] md:w-[450px] h-[250px] sm:h-[350px] md:h-[450px]"
-                  src={maillottie}
-                  loop
-                  autoplay
-                />
-              </motion.div>
-
               <motion.div
                 className="flex-1 text-center md:text-left mt-10"
                 initial={{ opacity: 0, x: -50 }}
@@ -86,12 +71,25 @@ const Contact = () => {
                   Get in Touch
                 </motion.button>
               </motion.div>
-
+  <motion.div
+                className="flex-1 flex justify-center"
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              >
+                {/* className="w-[250px] sm:w-[350px] md:w-[450px] h-[250px] sm:h-[350px] md:h-[450px]" */}
+                <DotLottieReact
+                  className="w-[250px] sm:w-[350px] md:w-[450px] h-[250px] sm:h-[350px] md:h-[450px]"
+                  src={maillottie}
+                  loop
+                  autoplay
+                />
+              </motion.div>
 
 
             </div>
           </section>
-          <div className=" top-7/12 left-25  flex items-center justify-center  px-4 sm:px-6  font-inter">
+          <div className="italic top-7/12 left-25  flex items-center justify-center  px-4 sm:px-6  font-inter">
             <div className="max-w-7xl mx-auto w-full bg-white rounded-3xl  p-8 sm:p-12 relative overflow-hidden">
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -123,7 +121,7 @@ const Contact = () => {
 
         </div>
         <ContactUsPage />
-        <div className=" bg-white  text-gray-900 font-inter py-8 px-4 sm:px-6  flex flex-col items-center">
+        <div className=" bg-white italic  text-gray-900 font-inter py-8 px-4 sm:px-6  flex flex-col items-center">
           <div className="max-w-4xl mx-auto text-center mb-12">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
               Lost? Don't worry, we're not <br />
