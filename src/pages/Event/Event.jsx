@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
-import { Calendar, MapPin, Users, Clock, ChevronRight, X } from 'lucide-react';
-import { event1, event2, event3,event4,mas,  inaguration1, onam } from '../../assets/events/events';
+import { Calendar, MapPin, Users, Clock, ChevronRight, X, Send, Loader2 } from 'lucide-react';
+import { career1, event1, event2, inaguration1, inaguration2, intern1, intern2, max1, onam1, work1, work4 } from '../../assets/events/events';
 import { events } from '../../assets/lottiefiles/lettie';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
@@ -15,6 +15,9 @@ const EventsComponent = () => {
         phone: '',
         institution: ''
     });
+    const [errors, setErrors] = useState({});
+    const [submitStatus, setSubmitStatus] = useState(null);
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     // Three.js Background Component
     const ThreeCanvas = () => {
@@ -136,122 +139,174 @@ const EventsComponent = () => {
         }
     ];
 
-    // Extensive event gallery images
+    // Event gallery images
     const eventGallery = [
         {
             id: 1,
             category: "Workshop Programs",
             title: "UI/UX Design Workshop",
             date: "September 1, 2024",
-            image: event1
+            image: work1
         },
         {
             id: 2,
             category: "Workshop Programs",
             title: "Web Development Workshop",
             date: "September 15, 2024",
-            image: event2
+            image: work4
         },
         {
             id: 3,
             category: "Internship Programs",
             title: "IT Blueprint Session",
             date: "October 12, 2024",
-            image: event3
+            image: intern1
         },
         {
             id: 4,
             category: "Internship Programs",
             title: "Coding Bootcamp",
             date: "November 5, 2024",
-            image: event4
+            image: intern2
         },
         {
             id: 5,
             category: "Inauguration",
             title: "IT Park Inauguration",
             date: "October 4, 2024",
-            image: inaguration1
+            image: inaguration2
         },
         {
             id: 6,
-            category: "Inauguration",
-            title: "Ribbon Cutting Ceremony",
-            date: "October 4, 2024",
-            image: "https://images.unsplash.com/photo-1521791055366-0d553872125f?w=800&h=600&fit=crop&crop=center"
+            category: "Celebrations",
+            title: "Christmas Celebration",
+            date: "December 25, 2024",
+            image: max1
         },
         {
             id: 7,
             category: "Celebrations",
-            title: "Christmas Celebration",
-            date: "December 25, 2024",
-            image:mas
+            title: "Onam Celebration",
+            date: "January 1, 2025",
+            image: onam1
         },
         {
             id: 8,
-            category: "Celebrations",
-            title: "Onam Celebration",
-            date: "January 1, 2025",
-            image: onam
-        },
-        {
-            id: 9,
             category: "Career Programs",
             title: "Jobathon 2024",
             date: "November 20, 2024",
-            image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop&crop=center"
-        },
-        {
-            id: 10,
-            category: "Career Programs",
-            title: "Career Guidance Session",
-            date: "December 10, 2024",
-            image: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800&h=600&fit=crop&crop=center"
-        },
-        {
-            id: 11,
-            category: "Tech Talks",
-            title: "AI Revolution Talk",
-            date: "January 15, 2025",
-            image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=600&fit=crop&crop=center"
-        },
-        {
-            id: 12,
-            category: "Tech Talks",
-            title: "Blockchain Workshop",
-            date: "February 5, 2025",
-            image: "https://images.unsplash.com/photo-1639762681057-408e52192e55?w=800&h=600&fit=crop&crop=center"
+            image: career1
         }
     ];
 
     const eventCategories = ["All", ...new Set(eventGallery.map(event => event.category))];
     const filteredGallery = activeCategory === 'All' ? eventGallery : eventGallery.filter(event => event.category === activeCategory);
 
+    // Form validation function
+    const validateForm = () => {
+        const newErrors = {};
+
+        if (!formData.name.trim()) {
+            newErrors.name = 'Full name is required';
+        }
+
+        if (!formData.email.trim()) {
+            newErrors.email = 'Email is required';
+        } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+            newErrors.email = 'Invalid email address';
+        }
+
+        if (!formData.phone.trim()) {
+            newErrors.phone = 'Phone number is required';
+        }
+
+        if (!formData.institution.trim()) {
+            newErrors.institution = 'Institution is required';
+        }
+
+        setErrors(newErrors);
+        return Object.keys(newErrors).length === 0;
+    };
+
+    // Handle input changes and clear errors
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({ ...prev, [name]: value }));
+
+        // Clear error for this field when user starts typing
+        if (errors[name]) {
+            setErrors(prev => ({ ...prev, [name]: '' }));
+        }
+    };
+
     const handleRegisterClick = (event) => {
         setSelectedEvent(event);
         setShowModal(true);
+        // Reset form state when opening modal
+        setFormData({ name: '', email: '', phone: '', institution: '' });
+        setErrors({});
+        setSubmitStatus(null);
     };
 
-    const handleInputChange = (e) => {
-        const { name, value } = e.target;
-        setFormData(prev => ({
-            ...prev,
-            [name]: value
-        }));
-    };
-
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // Here you would typically send the form data to your backend
-        console.log('Form submitted:', formData);
-        alert(`Thank you for registering for ${selectedEvent.title}! We'll contact you soon.`);
-        setShowModal(false);
-        setFormData({
-            name: '',
-            email: '',
-            phone: '',
-            institution: ''
-        });
+        
+        // Validate form before submission
+        if (!validateForm()) {
+            return;
+        }
+
+        setIsSubmitting(true);
+        setSubmitStatus(null);
+
+        try {
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    access_key: "510e84f9-6c6a-4bf5-85fb-8a6bba4b6b45",
+                    name: formData.name,
+                    phone: formData.phone,
+                    email: formData.email,
+                    institution: formData.institution,
+                    event: selectedEvent?.title || 'Unknown Event',
+                    to: "roririsoftpvtltd@gmail.com"
+                })
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+                setSubmitStatus('success');
+                setFormData({ name: '', email: '', phone: '', institution: '' });
+                setErrors({});
+            } else {
+                throw new Error(result.message || 'Failed to send registration');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+
+            // Fallback to mailto
+            const subject = encodeURIComponent(`Event Registration - ${selectedEvent?.title || 'Unknown Event'}`);
+            const body = encodeURIComponent(
+                `Name: ${formData.name}\n` +
+                `Email: ${formData.email}\n` +
+                `Phone: ${formData.phone}\n` +
+                `Institution: ${formData.institution}\n` +
+                `Event: ${selectedEvent?.title || 'Unknown Event'}`
+            );
+
+            window.location.href = `mailto:roririsoftpvtltd@gmail.com?subject=${subject}&body=${body}`;
+            
+            setSubmitStatus('fallback');
+            setFormData({ name: '', email: '', phone: '', institution: '' });
+            setErrors({});
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -289,61 +344,137 @@ const EventsComponent = () => {
                             </div>
                             
                             <form onSubmit={handleSubmit}>
+                                {/* Success Message - Only show after successful submission */}
+                                {submitStatus === 'success' && (
+                                    <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-xl">
+                                        ✅ Registered successfully! We'll get back to you soon.
+                                    </div>
+                                )}
+
+                                {/* Error Message */}
+                                {submitStatus === 'error' && (
+                                    <div className="mb-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded-xl">
+                                        ❌ Failed to register. Please try again or contact us directly.
+                                    </div>
+                                )}
+
+                                {/* Fallback Message */}
+                                {submitStatus === 'fallback' && (
+                                    <div className="mb-6 p-4 bg-blue-100 border border-blue-400 text-blue-700 rounded-xl">
+                                        📧 Registration form opened in your email client. Please send the email to complete registration.
+                                    </div>
+                                )}
+
                                 <div className="space-y-4 mb-6">
+                                    {/* Full Name Field */}
                                     <div>
-                                        <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                                        <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                                            Full Name <span className="text-red-500">*</span>
+                                        </label>
                                         <input
                                             type="text"
                                             id="name"
                                             name="name"
                                             value={formData.name}
                                             onChange={handleInputChange}
-                                            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent"
-                                            required
+                                            className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent ${
+                                                errors.name ? 'border-red-500 bg-red-50' : 'border-gray-300'
+                                            }`}
+                                            placeholder="Enter your full name"
                                         />
+                                        {errors.name && (
+                                            <p className="text-red-500 text-sm mt-1 flex items-center">
+                                                ⚠️ {errors.name}
+                                            </p>
+                                        )}
                                     </div>
+
+                                    {/* Email Field */}
                                     <div>
-                                        <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                                        <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                                            Email Address <span className="text-red-500">*</span>
+                                        </label>
                                         <input
                                             type="email"
                                             id="email"
                                             name="email"
                                             value={formData.email}
                                             onChange={handleInputChange}
-                                            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent"
-                                            required
+                                            className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent ${
+                                                errors.email ? 'border-red-500 bg-red-50' : 'border-gray-300'
+                                            }`}
+                                            placeholder="Enter your email address"
                                         />
+                                        {errors.email && (
+                                            <p className="text-red-500 text-sm mt-1 flex items-center">
+                                                ⚠️ {errors.email}
+                                            </p>
+                                        )}
                                     </div>
+
+                                    {/* Phone Field */}
                                     <div>
-                                        <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                                        <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
+                                            Phone Number <span className="text-red-500">*</span>
+                                        </label>
                                         <input
                                             type="tel"
                                             id="phone"
                                             name="phone"
                                             value={formData.phone}
                                             onChange={handleInputChange}
-                                            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent"
-                                            required
+                                            className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent ${
+                                                errors.phone ? 'border-red-500 bg-red-50' : 'border-gray-300'
+                                            }`}
+                                            placeholder="Enter your phone number"
                                         />
+                                        {errors.phone && (
+                                            <p className="text-red-500 text-sm mt-1 flex items-center">
+                                                ⚠️ {errors.phone}
+                                            </p>
+                                        )}
                                     </div>
+
+                                    {/* Institution Field */}
                                     <div>
-                                        <label htmlFor="institution" className="block text-sm font-medium text-gray-700 mb-1">Institution/Company</label>
+                                        <label htmlFor="institution" className="block text-sm font-medium text-gray-700 mb-1">
+                                            Institution/Company <span className="text-red-500">*</span>
+                                        </label>
                                         <input
                                             type="text"
                                             id="institution"
                                             name="institution"
                                             value={formData.institution}
                                             onChange={handleInputChange}
-                                            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent"
-                                            required
+                                            className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-purple-600 focus:border-transparent ${
+                                                errors.institution ? 'border-red-500 bg-red-50' : 'border-gray-300'
+                                            }`}
+                                            placeholder="Enter your institution or company"
                                         />
+                                        {errors.institution && (
+                                            <p className="text-red-500 text-sm mt-1 flex items-center">
+                                                ⚠️ {errors.institution}
+                                            </p>
+                                        )}
                                     </div>
                                 </div>
+
                                 <button
                                     type="submit"
-                                    className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300"
+                                    disabled={isSubmitting}
+                                    className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold py-3 px-6 rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-200 flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
                                 >
-                                    Complete Registration
+                                    {isSubmitting ? (
+                                        <>
+                                            <Loader2 size={20} className="animate-spin" />
+                                            <span>Registering...</span>
+                                        </>
+                                    ) : (
+                                        <>
+                                            <Send size={20} />
+                                            <span>Submit Registration</span>
+                                        </>
+                                    )}
                                 </button>
                             </form>
                         </div>
@@ -354,42 +485,46 @@ const EventsComponent = () => {
             {/* Hero Section */}
             <section className="relative bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white overflow-hidden">
                 <ThreeCanvas />
-                <div className="relative italic flex flex-col lg:flex-row justify-center items-center z-10 container mx-auto px-4 sm:px-6 lg:px-8 mt-20 lg:mt-5">
-                    <div className="max-w-4xl mx-auto">
+                <div className="relative italic flex flex-col lg:flex-row justify-center items-center z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
+                    <div className="max-w-4xl mx-auto text-center lg:text-left lg:w-1/2">
                         <h1 className="text-4xl sm:text-5xl lg:text-7xl font-medium mb-6 bg-gradient-to-r from-purple-400 via-pink-400 to-indigo-400 bg-clip-text text-transparent">
                             Roriri Events
                         </h1>
-                        <p className="text-lg sm:text-lg lg:text-xl mb-12 text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                        <p className="text-lg sm:text-lg lg:text-xl mb-12 text-gray-300 max-w-3xl leading-relaxed">
                             Empowering innovation through hackathons, tech talks, workshops, and networking events that shape the future of technology.
                         </p>
-                        <div className="flex flex-col sm:flex-row gap-4 items-center">
+                        <div className="flex flex-col sm:flex-row gap-4 items-center lg:justify-start">
                             <button 
-                                onClick={() => window.location.href='/contact'}
-                                className="group bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-semibold py-4 px-8 rounded-full shadow-xl transition-all duration-300 transform hover:scale-105 flex items-center"
+                                onClick={() => document.getElementById('upcoming-events').scrollIntoView({ behavior: 'smooth' })}
+                                className="cursor-pointer group bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-semibold py-4 px-8 rounded-full shadow-xl transition-all duration-300 transform hover:scale-105 flex items-center"
                             >
-                                Get In Touch
+                                View Events
                                 <ChevronRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                             </button>
                             <button 
                                 onClick={() => document.getElementById('event-gallery').scrollIntoView({ behavior: 'smooth' })}
-                                className="group border-2 border-white/30 hover:border-white/60 text-white font-semibold py-4 px-8 rounded-full backdrop-blur-sm transition-all duration-300 hover:bg-white/10"
+                                className="cursor-pointer group border-2 border-white/30 hover:border-white/60 text-white font-semibold py-4 px-8 rounded-full backdrop-blur-sm transition-all duration-300 hover:bg-white/10"
                             >
                                 View Gallery
                             </button>
                         </div>
                     </div>
-                    <DotLottieReact
-                        className="w-96 h-96 sm:w-[400px] p-3 sm:h-[400px] md:w-[500px] md:h-[500px] lg:w-[500px] lg:h-[600px]"
-                        src={events}
-                        loop
-                        autoplay
-                    />
+                    <div className="lg:w-1/2 flex justify-center">
+                        <div className="w-96 h-96 sm:w-[400px] sm:h-[400px] md:w-[500px] md:h-[500px] lg:w-[500px] lg:h-[600px]  rounded-full flex items-center justify-center">
+                             <DotLottieReact
+          className="sm:w-[400px] p-3 sm:h-[400px] md:w-[500px] md:h-[500px] lg:w-[500px] lg:h-[600px]"
+          src={events}
+          loop
+          autoplay
+        />
+                        </div>
+                    </div>
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-gray-50 to-transparent"></div>
             </section>
 
             {/* Upcoming Events Section */}
-            <section className="italic py-16 lg:py-24 bg-white">
+            <section className="italic py-16 lg:py-24 bg-white" id="upcoming-events">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-gray-900 mb-4">
@@ -442,7 +577,7 @@ const EventsComponent = () => {
                                         </div>
                                         <button 
                                             onClick={() => handleRegisterClick(event)}
-                                            className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-[1.02] shadow-lg"
+                                            className=" cursor-pointer w-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-[1.02] shadow-lg"
                                         >
                                             Register Now
                                         </button>
@@ -481,7 +616,7 @@ const EventsComponent = () => {
                                     <img 
                                         src={event.image} 
                                         alt={event.title}
-                                        className="w-full h-full group-hover:scale-110 transition-transform duration-500"
+                                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                                         onError={(e) => {
                                             e.target.src = `https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=600&fit=crop&crop=center`;
                                         }}
@@ -534,7 +669,7 @@ const EventsComponent = () => {
                             <button
                                 key={category}
                                 onClick={() => setActiveCategory(category)}
-                                className={`px-6 py-3 rounded-full font-semibold text-sm transition-all duration-300 ${
+                                className={` cursor-pointer px-6 py-3 rounded-full font-semibold text-sm transition-all duration-300 ${
                                     activeCategory === category
                                         ? 'bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-lg'
                                         : 'bg-white text-gray-700 border-2 border-gray-300 hover:border-purple-300 hover:text-purple-600'
