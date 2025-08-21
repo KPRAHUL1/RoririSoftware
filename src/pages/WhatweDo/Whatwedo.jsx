@@ -92,7 +92,7 @@ const Whatwedo = () => {
       </div> 
       <div className=''>
     <DotLottieReact
-          className=" sm:w-[400px] p-3 sm:h-[400px] md:w-[500px] md:h-[500px] lg:w-[500px] lg:h-[600px]"
+          className="  md:w-[500px] md:h-[500px] lg:w-[500px] lg:h-[600px]"
           src={lottie2}
           loop
           autoplay
