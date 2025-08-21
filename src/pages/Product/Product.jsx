@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion as Motion } from 'framer-motion';
 import RoririProductsPage from './ProductHeading';
-import { product1,product2,product3 } from '../../assets/product/product';
+import { product1,product2,product3, product4 } from '../../assets/product/product';
 import { useNavigate } from 'react-router-dom';
 
 const Product = () => {
@@ -13,7 +13,7 @@ const Product = () => {
       name: 'Nexemy',
       tagline: 'Empower Learning, Anywhere',
       description: 'Take control of your education with a modern e-learning platform. Nexemy offers personalized courses, real-time progress tracking, and engaging content to help students and professionals achieve their goals—on their schedule, at their pace.',
-      imageUrl:'https://placehold.co/600x400/BA55D3/FFFFFF?text=Sales+Dashboard+Image',
+      imageUrl: product4,
     },
     {
       id: 2,

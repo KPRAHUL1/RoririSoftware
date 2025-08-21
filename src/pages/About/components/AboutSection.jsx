@@ -99,17 +99,17 @@ const AboutSection = () => {
           </Motion.a>
         </Motion.div>
 
-       <div className="flex flex-col md:w-1/2 p-4 md:mt-40 space-y-8 max-h-[85vh] md:max-h-[80vh] overflow-y-auto hide-scrollbar pr-2">{/* Increased max-h, added pr-2 for scrollbar room */}
+       <div className="flex flex-col md:w-1/2 p-4 md:mt-40 space-y-8 max-h-[80vh] md:max-h-[80vh] overflow-y-auto hide-scrollbar pr-2  snap-y snap-mandatory scroll-py-8">{/* Increased max-h, added pr-2 for scrollbar room */}
           {cardData.map((card) => (
             <Motion.div
               key={card.id}
               initial="offscreen"
               whileInView="onscreen"
-              viewport={{ once: false, amount: 0.3 }} 
+              viewport={{ once: true, amount: 0.3 }} 
               variants={cardVariants}
               whileHover={{ scale: 1.03, boxShadow: "0px 15px 25px rgba(0, 0, 0, 0.15)" }} 
               transition={{ type: "spring", stiffness: 300, damping: 20 }} 
-              className='relative cursor-target bg-white p-8 rounded-xl shadow-xl  border border-gray-100' 
+              className='relative cursor-target bg-white p-8 rounded-xl shadow-xl  border border-gray-100 ' 
             >
               <span className='absolute -top-6 -right-6 text-[12rem] sm:text-[14rem] lg:text-[16rem] font-extrabold text-purple-100 opacity-50 z-0 select-none pointer-events-none'>
                 {card.number}

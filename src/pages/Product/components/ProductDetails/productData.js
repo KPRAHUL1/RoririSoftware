@@ -1,4 +1,4 @@
-import { product1, product2, product3 } from "../../../../assets/product/product";
+import { product1, product2, product3, product4 } from "../../../../assets/product/product";
 
 
 const products = [
@@ -7,7 +7,7 @@ const products = [
     name: 'Nexemy',
     tagline: 'Empower Learning, Anywhere',
     description: 'Take control of your education with a modern e-learning platform...',
-    imageUrl: 'https://placehold.co/600x400/8A2BE2/FFFFFF?text=Nexemy+Image',
+    imageUrl: product4,
     rating: 4.8,
     reviews: 234,
     features: [

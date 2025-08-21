@@ -256,7 +256,7 @@ const MarketingSection = () => {
 
         <div className="flex-1 p-8 sm:p-12 lg:p-16 flex flex-col justify-center text-center lg:text-left">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-4">
-            You don't know marketing
+            You don't know marketing ?
           </h1>
           <p className="text-base sm:text-lg text-gray-700 mb-8 max-w-lg lg:max-w-none mx-auto lg:mx-0">
             ...but we're going to help. We send out weekly break downs of exactly what's working and what's not for the largest companies in the world. It's free.
@@ -356,14 +356,14 @@ const MarketingSection = () => {
               </Motion.div>
             ))}
           </Motion.div>
-          <div className="absolute bottom-4 flex space-x-2">
+          <div className="absolute bottom-4 flex space-x-2 ">
             {originalTestimonials.map((_, index) => (
               <button
                 key={index}
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${currentIndex === index + buffer ? 'bg-blue-600' : 'bg-gray-300 hover:bg-gray-400'
                   }`}
                 onClick={() => setCurrentIndex(index + buffer)}
-                aria-label={`Go to slide ${index + 1}`}
+                aria-label={`Go to slide ${index + 1} `}
               ></button>
             ))}
           </div>
