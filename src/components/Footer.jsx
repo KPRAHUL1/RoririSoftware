@@ -45,37 +45,7 @@ const Footer = () => {
 
         <div className="flex justify-between mb-10 flex-wrap gap-8">
   
-  <div className="min-w-[220px]">
-    <h3 className="text-lg font-semibold mb-3 text-blue-400">Contact Us</h3>
-    <p className="flex items-center mb-2">
-      <Phone className="w-4 h-4 mr-2" /> (+91) 7338941579
-    </p>
-    <a href="https://mail.google.com/mail/?view=cm&to=contact@roririsoft.com" className="block hover:text-blue-400 transition mb-2">
-      contact@roririsoft.com
-    </a>
-    <p className="text-sm mb-2">
-      RORIRI IT PARK,<br />
-      NALLANATHAPURAM, KALAKAD,<br />
-      Tamil Nadu 629003
-    </p>
-    <div className=" space-x-4 mt-3">
-      <h2 className='mb-5'>Follow Us:</h2>
-      <div className='flex space-x-4 mt3 '>
-      <a href="https://www.facebook.com/RoririSoftwareSolutionsPvtLtd/" className="hover:text-blue-400 transition">
-        <Facebook className="w-6 h-6" />
-      </a>
-      <a href="https://www.instagram.com/roriri_it_park/" className="hover:text-pink-400 transition">
-        <Instagram className="w-6 h-6" />
-      </a>
-      <a href="https://www.linkedin.com/company/roriri-software-solutions-pvt-ltd/" className="hover:text-blue-500 transition">
-        <Linkedin className="w-6 h-6" />
-      </a>
-      <a href="https://youtube.com/@roriri_soft?si=u-VGsjZ_rmU7-liH" className="hover:text-red-500 transition">
-        <Youtube className="w-6 h-6" />
-      </a>
-      </div>
-    </div>
-  </div>
+
 
   <div>
     <h3 className="text-lg font-semibold mb-3 text-blue-400">Links</h3>
@@ -120,7 +90,39 @@ const Footer = () => {
       ))}
     </ul>
   </div>
+    <div className="min-w-[220px]">
+    <h3 className="text-lg font-semibold mb-3 text-blue-400">Reach Out</h3>
+    <p className="flex items-center mb-2">
+      <Phone className="w-4 h-4 mr-2" /> (+91) 7338941579
+    </p>
+    <a href="https://mail.google.com/mail/?view=cm&to=contact@roririsoft.com" className="block hover:text-blue-400 transition mb-2">
+      contact@roririsoft.com
+    </a>
+    <p className="text-sm mb-2">
+      RORIRI IT PARK,<br />
+      NALLANATHAPURAM, KALAKAD,<br />
+      Tamil Nadu 629003
+    </p>
+    <div className=" space-x-4 mt-3">
+      <h2 className='mb-5'>Follow Us:</h2>
+      <div className='flex space-x-4 mt3 '>
+      <a href="https://www.facebook.com/RoririSoftwareSolutionsPvtLtd/" className="hover:text-blue-400 transition">
+        <Facebook className="w-6 h-6" />
+      </a>
+      <a href="https://www.instagram.com/roriri_it_park/" className="hover:text-pink-400 transition">
+        <Instagram className="w-6 h-6" />
+      </a>
+      <a href="https://www.linkedin.com/company/roriri-software-solutions-pvt-ltd/" className="hover:text-blue-500 transition">
+        <Linkedin className="w-6 h-6" />
+      </a>
+      <a href="https://youtube.com/@roriri_soft?si=u-VGsjZ_rmU7-liH" className="hover:text-red-500 transition">
+        <Youtube className="w-6 h-6" />
+      </a>
+      </div>
+    </div>
+  </div>
 </div>
+
 
 
         <div className="text-center text-gray-400 text-xs mt-6">
