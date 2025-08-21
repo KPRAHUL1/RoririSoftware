@@ -36,7 +36,7 @@ const Home = () => {
     </div>
     <div className='flex flex-col-reverse italic md:flex-row justify-evenly gap-10 bg-gray-50'>  
       
-      <div className="relative hidden lg:block  left-0 w-[300px] h-[300px] sm:w-[250px] sm:h-[250px] md:w-[600px] md:h-[600px] flex items-center justify-center">
+      <div className="relative hidden lg:block   left-0 w-[300px] h-[300px] sm:w-[250px] sm:h-[250px] md:w-[600px] md:h-[600px] flex items-center justify-center">
         <img
           src="hero1.897db1b8.png"
           alt="Hand"
@@ -57,7 +57,7 @@ const Home = () => {
           }}
         />
       </div>
-      <div className='flex flex-col  justify-center p-5 z-10'>
+      <div className='flex flex-col mt-10 justify-center p-5 z-10'>
        <h1 className='text-6xl italic'>Innovation at the Core of</h1>
        <TextType className='text-[#f8acff] z-50 italic'
   text={["Every Solution.", "Evaluate Your Business.", "Paving A Way To Success."]}
