@@ -60,7 +60,7 @@ const Home = () => {
       <div className='flex flex-col mt-10 justify-center p-5 z-10'>
        <h1 className='text-6xl italic'>Innovation at the Core of</h1>
        <TextType className='text-[#f8acff] z-50 italic'
-  text={["Every Solution.", "Evaluate Your Business.", "Paving A Way To Success."]}
+  text={["Every Solution.", "Evaluate Your Business", "Paving A Way To Success"]}
   typingSpeed={75}
   pauseDuration={1500}
   showCursor={true}
